@@ -1,0 +1,22 @@
+name affilauthor
+category Package
+revision 76924
+shortdesc Tag author and affiliation information in a key-value style
+longdesc This package provides key-value style author and affiliation
+longdesc information tagging in a structured format. Each field has a
+longdesc specific name similar to the bib format. We can customize the
+longdesc styles as per preferences for article.cls class layout. Instead
+longdesc of giving all the information (author and affiliation) in a
+longdesc single tag, we can split the information in a format of
+longdesc key-value style.
+containersize 2820
+containerchecksum a86b66c1b558b922c49d2fcd2166d15b83aabf9acfba3931b03c929dc700e2bff22a15e66ebb25d458b2a288e983fbf947bc9f8645559f805826315c5fd293f3
+doccontainersize 252240
+doccontainerchecksum 48b8a3f9cda6fb9520d52e6367703bda23444b5c912b5d374abe8a6f4b4673399634ba961410486e09fd472b349c3607aeee4e681b801ee383ebbc591cfcde87
+runfiles size=3
+ texmf-dist/tex/latex/affilauthor/affilauthor.sty
+catalogue-contact-bugs https://github.com/selvamtech08/affilauthor/issues
+catalogue-ctan /macros/latex/contrib/affilauthor
+catalogue-license lppl1.3c
+catalogue-topics layout index-auth keyval
+catalogue-version 1.0.1

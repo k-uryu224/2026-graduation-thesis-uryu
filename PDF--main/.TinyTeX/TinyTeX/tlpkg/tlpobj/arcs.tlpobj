@@ -1,0 +1,20 @@
+name arcs
+category Package
+revision 79461
+shortdesc Draw arcs over and under text
+longdesc The package provides two commands for placing an arc over
+longdesc (\overarc) or under (\underarc) a piece of text. (The text may
+longdesc be up to three letters long.) The commands generate an \hbox,
+longdesc and may be used both in text and in maths formulae.
+containersize 1512
+containerchecksum 124a1494ccb92cfc8004434abded5e7b0ad31f8f4c6886228f5a5f7960ec5495e5e063fd6418d0cc098671ed2bd43dfa087b0e6e7df9364702c23c7bc1b02eaf
+doccontainersize 52132
+doccontainerchecksum e38d93bb7907f9b0fec3f20e45c1c705d5d38625a43e8655d6effd0c64b4526a3d02ee4a268d52cd475d8e577acf03f01f0f70232cc3cd6c82e32d87b62d1c5e
+srccontainersize 2476
+srccontainerchecksum 72957eb4f0bf2fdf51fe13f6f8c69a714a008d222de01377d2273548ff6ac68d490f2d266f32dceb0099879bce86434d62c36b2ddf9face66dbd3c947e0328a3
+runfiles size=1
+ texmf-dist/tex/latex/arcs/arcs.sty
+catalogue-ctan /macros/latex/contrib/arcs
+catalogue-license lppl
+catalogue-topics linguistic tagged-pdf-unsupported
+catalogue-version 1

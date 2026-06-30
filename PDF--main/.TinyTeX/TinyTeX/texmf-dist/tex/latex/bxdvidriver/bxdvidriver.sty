@@ -1,0 +1,348 @@
+%%
+%% This is file 'bxdvidriver.sty'.
+%%
+%% Copyright (c) 2016-2026 Takayuki YATO (aka. "ZR")
+%%   GitHub:   https://github.com/zr-tex8r
+%%   Twitter:  @zr_tex8r
+%%
+%% This package is distributed under the MIT License.
+%%
+
+%% package declaration
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bxdvidriver}[2026/05/20 v0.3]
+\def\bxdd@pkgname{bxdvidriver}
+
+%--------------------------------------- general
+
+%% \bxdd@dvi@driver@list
+% List of dvi-driver names.
+\@onlypreamble\bxdd@dvi@driver@list
+\def\bxdd@dvi@driver@list{%
+  dvips,xdvi,dvipdf,dvipdfm,dvipdfmx,dvisvgm,dvipsone,%
+  dviwindo,oztex,textures,pctexps,pctex32}
+%% \bxdd@pdf@driver@list
+% List of "PDF-mode" driver names.
+\@onlypreamble\bxdd@pdf@driver@list
+\def\bxdd@pdf@driver@list{%
+  HINT,% tentative name
+  pdftex,xetex,luatex,vtex}
+
+%% packages
+\RequirePackage{iftex}
+\RequirePackage{pdftexcmds}
+
+%% variables
+\newif\ifbxdd@ok
+\newif\ifbxdd@verbose
+\newif\ifbxdd@alsorawoptions \bxdd@alsorawoptionstrue
+\let\bxdd@driver\relax  % driver given to this package
+\let\bxdd@pdf@driver\relax  % actual pdf-mode driver, or \relax
+
+%% \ifbxdd@hint
+\expandafter\let\expandafter\ifbxdd@hint\csname
+    if\ifx\ifhint\@undefined false\else hint\fi\endcsname
+
+%% \[bxdd@T/<driver>]
+\@for\bxdd@x:=\bxdd@dvi@driver@list\do{%
+  \expandafter\let\csname bxdd@T/\bxdd@x\endcsname=d}
+\@for\bxdd@x:=\bxdd@pdf@driver@list\do{%
+  \expandafter\let\csname bxdd@T/\bxdd@x\endcsname=p}
+
+%% \bxdd@detokenize\CS
+\def\bxdd@detokenize#1{%
+  \expandafter\bxdd@detokenize@a\meaning#1\relax#1}
+\def\bxdd@detokenize@a#1>#2\relax#3{%
+  \def#3{#2}}
+
+%% switch 'bxdd@in@preamble'
+% Here "in preamble" means "after \documentclass".
+\newif\ifbxdd@in@preamble
+\ifx\documentclass\@twoclasseserror
+  \bxdd@in@preambletrue
+\fi
+
+%% \bxdd@pkg@info{<message>}
+\def\bxdd@pkg@info#1{%
+  \ifbxdd@verbose \bxdd@pkg@info@a\bxdd@pkgname{#1}%
+  \else \PackageInfo\bxdd@pkgname{#1\@gobble}%
+  \fi}
+\ifx\PackageNoteNoLine\@undefined
+  \let\bxdd@pkg@info@a\PackageWarningNoLine
+\else \let\bxdd@pkg@info@a\PackageNoteNoLine
+\fi
+
+%% for safety
+\@for\bxdd@tmpa:={pdf,xetex,luatex,vtex}\do{%
+  \expandafter\ifx\csname if\bxdd@tmpa\endcsname\relax
+    \edef\bxdd@next{\noexpand\RequirePackage{if\bxdd@tmpa}{}}\bxdd@next
+  \fi}
+
+%% \bxdd@debug{<message>}
+\let\bxdd@debug\@gobble
+
+%--------------------------------------- options
+
+%% 'check'/'nocheck'
+\newif\ifbxdd@check \bxdd@checktrue
+\DeclareOption{check}{%
+  \bxdd@checktrue}
+\DeclareOption{nocheck}{%
+  \bxdd@checkfalse}
+%% 'verbose'/'noverbose'
+\DeclareOption{verbose}{%
+  \bxdd@verbosetrue}
+\DeclareOption{noverbose}{%
+  \bxdd@verbosefalse}
+%% 'alsorawoptions'/'noalsorawoptions'
+\DeclareOption{alsorawoptions}{%
+  \bxdd@alsorawoptionstrue}
+\DeclareOption{noalsorawoptions}{%
+  \bxdd@alsorawoptionsfalse}
+%% driver options
+\DeclareOption*{%
+  \bxdd@pfxplus\CurrentOption \ifx\bxdd@tmpa\@empty
+    \let\bxdd@tmpa\CurrentOption
+  \else
+    \expandafter\let\csname bxdd@T/\bxdd@tmpa\endcsname=d%
+  \fi
+  \expandafter\let\expandafter\bxdd@tmpb
+      \csname bxdd@T/\bxdd@tmpa\endcsname
+  \ifx\bxdd@tmpb\relax % unknown name
+    \PackageError\bxdd@pkgname
+     {Unknown driver name '\bxdd@tmpa' found}%
+     {The invalid option is ignored.\MessageBreak\@ehc}
+  \else\ifx\bxdd@driver\relax % first
+    \let\bxdd@driver\bxdd@tmpa
+  \else\ifx\bxdd@driver\bxdd@tmpa % repeated
+    \bxdd@pkg@info
+     {Redundant driver option '\bxdd@tmpa'}%
+  \else % second
+    \PackageError\bxdd@pkgname
+     {Multiple driver options are given\MessageBreak
+      ('\bxdd@driver' and '\bxdd@tmpa')}%
+      {The extra option '\bxdd@tmpa' is ignored.\MessageBreak\@ehc}
+  \fi\fi\fi}
+\def\bxdd@pfxplus#1{%
+  \expandafter\bxdd@pfxplus@a#1\@gobble+\@nil}
+\def\bxdd@pfxplus@a#1+#2\@nil{%
+  \edef\bxdd@tmpa{\ifx\@nil#1\@nil#2\fi}}
+%% dispatch
+\ProcessOptions*
+
+%% check consistency
+\ifx\bxdd@driver\relax
+  \bxdd@pkg@info
+   {No driver option given}
+\else\expandafter\ifx\csname bxdd@T/\bxdd@driver\endcsname p%
+  \PackageWarning\bxdd@pkgname
+   {The driver '\bxdd@driver' is a PDF-mode driver and\MessageBreak
+    inappropriate for this package,}
+\fi\fi
+
+%% debug message
+\ifx t\bxUseDebug\ifbxdd@verbose
+  \def\bxdd@debug#1{\bxDebug{<\bxdd@pkgname> #1}}
+\fi\fi
+
+%--------------------------------------- PDF mode detection
+
+%% Check if some kind of "PDF mode" is effective
+% and set \bxdd@pdf@driver accordingly.
+\ifluatex
+  \chardef\bxdd@tmpa=0
+  \ifpdf \chardef\bxdd@tmpa=1
+  \else % for old ifpdf
+    \pdf@isprimitive\outputmode\outputmode{%
+      \chardef\bxdd@tmpa\outputmode}{}
+  \fi
+  \ifnum\bxdd@tmpa>\z@
+    \def\bxdd@pdf@driver{luatex}%
+  \fi
+\else\ifxetex
+  \def\bxdd@pdf@driver{xetex}
+\else\ifvtex
+  \def\bxdd@pdf@driver{vtex}
+\else\ifpdf
+  \def\bxdd@pdf@driver{pdftex}
+\else\ifbxdd@hint
+  \def\bxdd@pdf@driver{HINT}
+\else
+\pdf@isprimitive\HINTversion\HINTversion{%
+  \def\bxdd@pdf@driver{HINT}}{}
+\fi\fi\fi\fi\fi
+
+% clear \bxdd@driver if PDF mode
+\ifx\bxdd@pdf@driver\relax\else
+  \bxdd@pkg@info
+   {Driver option '\bxdd@driver' is ignored, because\MessageBreak
+    the engine is in (kind of) PDF mode}
+  \let\bxdd@driver\relax
+\fi
+
+\bxdd@debug{**settings**^^J%
+  * before preamble = %
+  \ifbxdd@in@preamble false\else true\fi^^J%
+  * given driver = %
+  \ifx\bxdd@driver\relax(none)\else\bxdd@driver\fi^^J%
+  * PDF-mode driver = %
+  \ifx\bxdd@pdf@driver\relax(none)\else\bxdd@pdf@driver\fi}
+
+%--------------------------------------- append to global
+
+%% variables
+\let\bxdd@gopt\relax
+\let\bxdd@godrv\relax
+\let\bxdd@godrv@multiple=M% flag value
+
+%% \bxdd@scan@global@options
+% Check whether or not the given driver option should be appended
+% to the global option list, and set bxdd@ok accordingly.
+\@onlypreamble\bxdd@scan@global@options
+\def\bxdd@scan@global@options{%
+  \bxdd@debug{scan@global@options begin}%
+  \begingroup
+  \@for\bxdd@gopt:=\@classoptionslist\do{%
+    \let\bxdd@tmpa\bxdd@gopt \bxdd@detokenize\bxdd@tmpa
+    \expandafter\ifx\csname bxdd@T/\bxdd@tmpa\endcsname\relax\else
+      \ifbxdd@in@preamble
+        \@expandtwoargs\@removeelement\bxdd@gopt
+            \@unusedoptionlist\@unusedoptionlist
+      \fi
+      \ifx\bxdd@godrv\bxdd@gopt % just redundant
+      \else\ifx\bxdd@godrv\relax % first
+        \let\bxdd@godrv\bxdd@gopt
+      \else\ifx\bxdd@godrv\bxdd@godrv@multiple % more
+        \bxdd@pkg@info
+         {Extra driver option in global option list\MessageBreak
+          ('\bxdd@gopt')}%
+      \else % second
+        \bxdd@pkg@info
+         {Multiple driver options in global option list\MessageBreak
+          ('\bxdd@godrv' and '\bxdd@gopt')}%
+        \let\bxdd@godrv\bxdd@godrv@multiple
+      \fi\fi\fi
+    \fi}
+  \global\let\@unusedoptionlist\@unusedoptionlist
+  \bxdd@debug{global driver option = \ifx\bxdd@godrv\relax(none)%
+    \else\ifx\bxdd@godrv\bxdd@godrv@multiple(multi)%
+    \else\bxdd@godrv\fi\fi}%
+  \aftergroup\bxdd@okfalse
+  \ifx\bxdd@godrv\relax
+    \ifx\bxdd@driver\relax\else
+      \bxdd@pkg@info
+       {Driver option '\bxdd@driver' is appended to the\MessageBreak
+        global option list}
+      \aftergroup\bxdd@oktrue
+    \fi
+  \else\ifx\bxdd@godrv\bxdd@driver
+    \bxdd@pkg@info
+     {Driver option '\bxdd@driver' is already contained\MessageBreak
+      in the global option list}
+  \else\ifx\bxdd@godrv\bxdd@godrv@multiple
+    \ifbxdd@check
+      \PackageError\bxdd@pkgname
+       {Multiple driver options in global option list\MessageBreak
+        (see log for detail)}%
+       {\@ehd}%
+    \fi
+  \else\ifx\bxdd@driver\relax
+    % nothing to do
+  \else % inconsistent
+    \ifbxdd@check
+      \PackageError\bxdd@pkgname
+       {The driver specified is '\bxdd@driver',\MessageBreak
+        but the global list contains '\bxdd@godrv'}%
+       {\@ehd}%
+    \else
+      \bxdd@pkg@info
+       {Driver option '\bxdd@driver' is discarded,\MessageBreak
+        because the global option list has another driver\MessageBreak
+        option '\bxdd@godrv'}
+    \fi
+  \fi\fi\fi\fi
+  \endgroup
+  \bxdd@debug{scan@global@options end}}
+
+%% append the specified driver option
+\ifbxdd@in@preamble
+  \bxdd@scan@global@options
+  \ifbxdd@ok
+    \edef\bxdd@tmpa{%
+      \noexpand\g@addto@macro\noexpand\@classoptionslist{%
+        ,\bxdd@driver}%
+    }\bxdd@tmpa
+    \ifx\@raw@classoptionslist\@undefined\else
+      \ifx\@raw@classoptionslist\relax\else
+        \edef\bxdd@tmpa{%
+          \noexpand\g@addto@macro\noexpand\@raw@classoptionslist{%
+            ,\bxdd@driver}%
+        }\bxdd@tmpa
+      \fi
+    \fi
+  \fi
+\else % 'before-preamble'
+  \let\bxdd@org@fileswith@pti@ns\@fileswith@pti@ns
+  \def\@fileswith@pti@ns#1{%
+    \ifx#1\@clsextension
+      \let\@fileswith@pti@ns\bxdd@org@fileswith@pti@ns
+      \let\bxdd@org@fileswith@pti@ns\@undefined
+      \g@addto@macro\@documentclasshook{%
+        \bxdd@scan@global@options}%
+      \ifx\bxdd@driver\relax
+        \def\bxdd@tmpa{\@fileswith@pti@ns#1}%
+      \else
+        \edef\bxdd@tmpa{\noexpand\bxdd@tmpb{\bxdd@driver}}%
+        \def\bxdd@tmpb##1[##2]{\@fileswith@pti@ns#1[{##2,##1}]}%
+      \fi
+    \else
+      \def\bxdd@tmpa{\bxdd@org@fileswith@pti@ns#1}%
+    \fi
+    \bxdd@tmpa}
+\fi
+
+%--------------------------------------- check for graphics drivers
+
+%% \bxdd@scan@graphics@drivers
+\@onlypreamble\bxdd@scan@graphics@drivers
+\def\bxdd@scan@graphics@drivers{%
+  \begingroup
+  \edef\bxdd@tmpa{\bxdd@dvi@driver@list,\bxdd@pdf@driver@list}%
+  \@for\bxdd@gopt:=\bxdd@tmpa\do{%
+    \expandafter\ifx\csname ver@\bxdd@gopt.def\endcsname\relax\else
+      \ifx\bxdd@godrv\relax % first
+        \let\bxdd@godrv\bxdd@gopt
+      \else\ifx\bxdd@godrv\bxdd@godrv@multiple % more
+        \bxdd@pkg@info
+         {Extra graphics driver is loaded\MessageBreak
+          ('\bxdd@gopt')}%
+      \else % second
+        \bxdd@pkg@info
+         {Multiple graphics driver is loaded\MessageBreak
+          ('\bxdd@godrv' and '\bxdd@gopt')}%
+        \let\bxdd@godrv\bxdd@godrv@multiple
+      \fi\fi
+    \fi}
+  \ifx\bxdd@godrv\relax
+    \bxdd@pkg@info
+     {No graphics driver used}
+  \else\ifx\bxdd@godrv\bxdd@godrv@multiple
+    \ifbxdd@check
+      \PackageError\bxdd@pkgname
+       {Multiple graphics drivers are loaded\MessageBreak
+        (see log for detail)}%
+       {\@ehd}%
+    \fi
+  \else
+    \bxdd@pkg@info
+     {Graphics driver is '\bxdd@godrv'}
+  \fi\fi
+  \endgroup}
+
+%% add hook
+\AtBeginDocument{%
+  \bxdd@scan@graphics@drivers}
+
+%--------------------------------------- all done
+\endinput
+%% EOF

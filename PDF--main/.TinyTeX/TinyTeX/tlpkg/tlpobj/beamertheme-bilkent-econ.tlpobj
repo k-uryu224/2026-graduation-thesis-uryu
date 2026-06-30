@@ -1,0 +1,20 @@
+name beamertheme-bilkent-econ
+category Package
+revision 76561
+shortdesc LaTeX Beamer theme for the Department of Economics at Bilkent University
+longdesc This is a LaTeX Beamer theme designed for the Department of
+longdesc Economics at Bilkent University. It provides a clean,
+longdesc professional presentation style with department-specific
+longdesc colors, custom title pages, and consistent slide formatting for
+longdesc lectures, seminars, and research talks.
+containersize 174732
+containerchecksum 1ee1686ca46cf962befef0aa922c167d1104caab595690fb6f3369ec65525c3b583918777ace358490e0825f0024caff8917ee5a06762793cb6a4e674623bcf8
+doccontainersize 294176
+doccontainerchecksum d635656b9bf81e20af77c2d9ce53a720f10158b36e169f7821aca2fb6774b04ebf6030ae91215535a425640f9fa6ee5da6747a4a3538133ce1519764451849df
+runfiles size=45
+ texmf-dist/tex/latex/beamertheme-bilkent-econ/beamertheme-bilkent-econ.sty
+ texmf-dist/tex/latex/beamertheme-bilkent-econ/bilkent_logo.png
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-bilkent-econ
+catalogue-license lppl1.3c
+catalogue-topics presentation
+catalogue-version 0.1

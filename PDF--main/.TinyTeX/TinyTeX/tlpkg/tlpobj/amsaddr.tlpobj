@@ -1,0 +1,23 @@
+name amsaddr
+category Package
+revision 77682
+shortdesc Alter the position of affiliations in amsart
+longdesc The package is to be used with the amsart documentclass. It
+longdesc lets you move the authors' affiliations either just below the
+longdesc authors' names on the front page or as footnotes on the first
+longdesc page. The email addresses are always listed as a footnote on
+longdesc the front page.
+containersize 1928
+containerchecksum 25d108578301c43415553a988e6d45274c954a113fbddade3114d9fd87146761824621027230f9d8a0a98b9ecf5634e44139aa5dbdf358d0398682cb8419e2b1
+doccontainersize 218152
+doccontainerchecksum 368f59465eab7458e144bfec042a7100f9f7e8dceac8265c8fb53de6563bf750e4dd899adcd028d1aedd8c68288c1fae1f1ba4a898ff6f938817f150a66f15ce
+srccontainersize 4108
+srccontainerchecksum 216d1ac60d5617865d3b03e7b2df1026e8f9e714740b6cc83ce7ec2ef9a56c95e828ef4757f53f1b1bded03dd291044a26684ddb7500abdc66416c523a3f296a
+runfiles size=1
+ texmf-dist/tex/latex/amsaddr/amsaddr.sty
+catalogue-contact-bugs https://github.com/jlelong/amsaddr/issues
+catalogue-contact-repository https://github.com/jlelong/amsaddr
+catalogue-ctan /macros/latex/contrib/amsaddr
+catalogue-license lppl1.3c
+catalogue-topics article-like tagged-pdf-incompatible
+catalogue-version 1.3

@@ -1,0 +1,22 @@
+name tocloft
+category Package
+revision 79461
+shortdesc Control table of contents, figures, etc.
+longdesc Provides control over the typography of the Table of Contents,
+longdesc List of Figures and List of Tables, and the ability to create
+longdesc new 'List of ...'. The ToC \parskip may be changed.
+containersize 6172
+containerchecksum d004416400a2c3d3e0d5180cde6faf72520b3fb2f483b6e0801e2e4e452c3f2974dad15b0e15d1bd03cd187bfeae9ea3c1a33a0bf9b8bb7e9b6a540cb14ccfd7
+doccontainersize 496680
+doccontainerchecksum 04406eb1eea36574e3e53bee3e1f2edce4b53a1d0c7aba8fa30bea01217c023ca86367c7cea07310bb97e8a98cf36b20e7e94072fd6b40dea30be18867ac0422
+srccontainersize 29064
+srccontainerchecksum f22dc7d19d878c83e8bae57cc569ec1fe1affc55ea1a7d27c5454d14e05b243c6e131eb2e4b48664a1aa66e5ab1829b82112e3d378c74a0084d9da1d0662f544
+runfiles size=9
+ texmf-dist/tex/latex/tocloft/tocloft.sty
+catalogue-also tocbasic
+catalogue-contact-bugs https://github.com/LaTeX-Package-Repositories/herries-press/issues
+catalogue-contact-repository https://github.com/LaTeX-Package-Repositories/herries-press
+catalogue-ctan /macros/latex/contrib/tocloft
+catalogue-license lppl1.3c
+catalogue-topics tagged-pdf-incompatible toc-etc
+catalogue-version 2.3j

@@ -1,0 +1,27 @@
+name adrconv
+category Package
+revision 76790
+shortdesc BibTeX styles to implement an address database
+longdesc The bundle provides a collection of BibTeX style files to turn
+longdesc an address database stored in the .bib format into files
+longdesc suitable for printing as address books or included into letter
+longdesc classes like akletter or scrletter2. The data may be sorted
+longdesc either by name or birthday and output provides files in various
+longdesc formats for address books or time planners.
+containersize 2788
+containerchecksum 2a4417e86f9d6a7551e9ca12faa6a88db89c0957b5247d420f4da5dab874f196a7524edc47a996fda635c38400803a8acace95c6b16c553af31646a254922acb
+doccontainersize 690600
+doccontainerchecksum e5f9e0570b88d289556f0ab11327e667ab2a8a0d02fc200b3b7141d1cb6cea6d6b3c66764f8e2e37e18cecae7f9b8f295c2d234619081e52919c64dbd9884fad
+srccontainersize 8872
+srccontainerchecksum d8c0aba69f2ec87e2988e4a4719ca793d9283145ec73c50ca3e754ee1ffc94cd406b1984352c5791d576294c886a8a3681cfc239fd5c4ef4e213b2ca8206e6af
+runfiles size=6
+ texmf-dist/bibtex/bst/adrconv/adrbirthday.bst
+ texmf-dist/bibtex/bst/adrconv/adrconv.bst
+ texmf-dist/bibtex/bst/adrconv/adrfax.bst
+ texmf-dist/tex/latex/adrconv/adrdir.cfg
+ texmf-dist/tex/latex/adrconv/adrplaner.cfg
+ texmf-dist/tex/latex/adrconv/adrsmall.cfg
+catalogue-ctan /macros/latex/contrib/adrconv
+catalogue-license lppl1.3
+catalogue-topics bibtex-supp biblio
+catalogue-version 1.4

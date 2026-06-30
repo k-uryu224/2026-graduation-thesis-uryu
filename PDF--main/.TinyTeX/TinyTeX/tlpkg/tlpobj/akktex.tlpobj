@@ -1,0 +1,46 @@
+name akktex
+category Package
+revision 26055
+shortdesc A collection of packages and classes
+longdesc The bundle provides: new document classes for technical
+longdesc documents, thesis works, manuscripts and lecture notes; many
+longdesc mathematical packages providing a large number of macros for
+longdesc mathematical texts; layout providing a non-empty parskip with
+longdesc extended length corrections and new section definition
+longdesc commands; easy label creation for counters; and german language
+longdesc tools and predefined abbreviations.
+containersize 14272
+containerchecksum 481502410094aedb36f00dc93ff3cad9479e756b00c60abdd7da98713f273cf45a314ccb55ef2436dc54cf7e8f84e2bf9fc5f00974c9978aebacee177380c9a5
+doccontainersize 1600
+doccontainerchecksum 4378f1e2c96bab5f5926b22863580dc2ae555400d770f5875eff09b8f915da4c83e99679fa7487f788970d17537123d854400e31bfca868d693b3d950c33051b
+runfiles size=37
+ texmf-dist/tex/latex/akktex/akkconditional.sty
+ texmf-dist/tex/latex/akktex/akkcounterlabelpattern.sty
+ texmf-dist/tex/latex/akktex/akkcs.sty
+ texmf-dist/tex/latex/akktex/akkdoc.sty
+ texmf-dist/tex/latex/akktex/akkgerman.sty
+ texmf-dist/tex/latex/akktex/akkgermanabbreviations.sty
+ texmf-dist/tex/latex/akktex/akklecture.cls
+ texmf-dist/tex/latex/akktex/akklongpage.sty
+ texmf-dist/tex/latex/akktex/akkmath.sty
+ texmf-dist/tex/latex/akktex/akkmathbasic.sty
+ texmf-dist/tex/latex/akktex/akkmathdisc.sty
+ texmf-dist/tex/latex/akktex/akkmathfun.sty
+ texmf-dist/tex/latex/akktex/akkmathnum.sty
+ texmf-dist/tex/latex/akktex/akkmathpaper.sty
+ texmf-dist/tex/latex/akktex/akkmathproof.sty
+ texmf-dist/tex/latex/akktex/akkmathrel.sty
+ texmf-dist/tex/latex/akktex/akkmathset.sty
+ texmf-dist/tex/latex/akktex/akkmathtext.sty
+ texmf-dist/tex/latex/akktex/akknum.sty
+ texmf-dist/tex/latex/akktex/akkparskip.sty
+ texmf-dist/tex/latex/akktex/akkscript.cls
+ texmf-dist/tex/latex/akktex/akksection.sty
+ texmf-dist/tex/latex/akktex/akkstring.sty
+ texmf-dist/tex/latex/akktex/akktecdoc.cls
+ texmf-dist/tex/latex/akktex/akktex.sty
+ texmf-dist/tex/latex/akktex/akkwidepage.sty
+catalogue-ctan /macros/latex/contrib/akktex
+catalogue-license lppl
+catalogue-topics class maths
+catalogue-version 0.3.2

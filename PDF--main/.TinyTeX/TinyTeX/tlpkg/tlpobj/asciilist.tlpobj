@@ -1,0 +1,23 @@
+name asciilist
+category Package
+revision 77682
+shortdesc Environments AsciiList and AsciiDocList for prototyping nested lists in LaTeX
+longdesc The asciilist provides the environments AsciiList and
+longdesc AsciiDocList, which enable quickly typesetting nested lists in
+longdesc LaTeX without having to type individual item macros or
+longdesc opening/closing list environments. The package provides
+longdesc auxiliary functionality for loading such lists from files and
+longdesc provides macros for configuring the use of the list
+longdesc environments and the appearance of the typeset results.
+containersize 3092
+containerchecksum 96035a0982f1b9834e4099618b788092aa7a70d97f0e6419b5d661128b8b6bcfe30c82903385a34ab06e6261562a819f2b4acac4e781a415fae5a5d0c6114445
+doccontainersize 383820
+doccontainerchecksum a183c0ec834082250c5ee161f5d99b64e452ddb1ec9b66d94acd91ee264afaeddc8ad9dd2206d225070d5a33da9f1fa6fd2e3343f39e30bbd2a4da1b90055d81
+srccontainersize 14092
+srccontainerchecksum f2a7a0e60aa06ab00e7244a28cb1fbad47b4b6b1b6ffb16569a103fc634aeb8f45222d3594548b9cb03cfb3d94710ca395fa5f84236f0ac88954cffb61b60935
+runfiles size=3
+ texmf-dist/tex/latex/asciilist/asciilist.sty
+catalogue-ctan /macros/latex/contrib/asciilist
+catalogue-license lppl1.2
+catalogue-topics list list-bull list-descr list-enum list-supp tagged-pdf
+catalogue-version 2.2b

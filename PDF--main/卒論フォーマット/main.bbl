@@ -1,0 +1,83 @@
+\begin{thebibliography}{10}
+
+\bibitem{rt2}
+Benjamin Zitkovich et~al.
+\newblock Rt-2: Vision-language-action models transfer web knowledge to robotic control.
+\newblock In {\em Proceedings of the 7th Conference on Robot Learning}, volume 229 of {\em Proceedings of Machine Learning Research}, pages 2165--2183, 2023.
+
+\bibitem{openvla}
+Moo~Jin Kim, Karl Pertsch, Siddharth Karamcheti, Ted Xiao, Ashwin Balakrishna, Suraj Nair, Rafael Rafailov, et~al.
+\newblock Openvla: An open-source vision-language-action model.
+\newblock {\em arXiv preprint arXiv:2406.09246}, 2024.
+
+\bibitem{rt1}
+Anthony Brohan, Noah Brown, Justice Carbajal, Yevgen Chebotar, Xi~Chen, Krzysztof Choromanski, Tianliang Ding, et~al.
+\newblock Rt-1: Robotics transformer for real-world control at scale.
+\newblock {\em arXiv preprint arXiv:2212.06817}, 2022.
+
+\bibitem{knowno}
+Allen~Z. Ren, Aastha Dixit, Anna Bodrova, Shubham Singh, Stephen Tu, Noah Brown, Peng Xu, et~al.
+\newblock Robots that ask for help: Uncertainty alignment for large language model planners.
+\newblock In {\em Proceedings of the 7th Conference on Robot Learning}, volume 229 of {\em Proceedings of Machine Learning Research}, 2023.
+
+\bibitem{apvlm}
+Vivek Sripada, Simon Carter, Frank Guerin, and Amir Ghalamzan.
+\newblock Ap-vlm: Active perception enabled by vision-language models.
+\newblock {\em arXiv preprint arXiv:2409.17641}, 2024.
+
+\bibitem{aha}
+Jiafei Duan, Walter Pumacay, Nishant Kumar, Y.~R. Wang, Sirui Tian, Wei Yuan, Ranjay Krishna, et~al.
+\newblock Aha: A vision-language-model for detecting and reasoning over failures in robotic manipulation.
+\newblock {\em arXiv preprint arXiv:2410.00371}, 2024.
+
+\bibitem{tracevla}
+Ruohan Zheng, Yixuan Liang, Siyuan Huang, Jun Gao, Hal Daumé~III, Andrey Kolobov, Fei Huang, and Jie Yang.
+\newblock Tracevla: Visual trace prompting enhances spatial-temporal awareness for generalist robotic policies.
+\newblock {\em arXiv preprint arXiv:2412.10345}, 2024.
+
+\bibitem{memoryvla}
+Haonan Shi, Bohan Xie, Yifan Liu, Liting Sun, Fangchen Liu, Tianhe Wang, E~Zhou, et~al.
+\newblock Memoryvla: Perceptual-cognitive memory in vision-language-action models for robotic manipulation.
+\newblock {\em arXiv preprint arXiv:2508.19236}, 2025.
+
+\bibitem{mapvla}
+Rui Li, Wenhao Guo, Zhen Wu, Cheng Wang, Haoran Deng, Zhe Weng, Yap-Peng Tan, and Zheng Wang.
+\newblock Map-vla: Memory-augmented prompting for vision-language-action model in robotic manipulation.
+\newblock {\em arXiv preprint arXiv:2511.09516}, 2025.
+
+\bibitem{moka}
+Fangchen Liu, Kuan Fang, Pieter Abbeel, and Sergey Levine.
+\newblock Moka: Open-world robotic manipulation through mark-based visual prompting.
+\newblock In {\em Robotics: Science and Systems XX}, 2024.
+
+\bibitem{gestllm}
+Oleg Kobzarev, Aleksei Lykov, and Dzmitry Tsetserukou.
+\newblock Gestllm: Advanced hand gesture interpretation via large language models for human-robot interaction.
+\newblock {\em arXiv preprint arXiv:2501.07295}, 2025.
+
+\bibitem{gestos}
+Aleksei Lykov, Oleg Kobzarev, and Dzmitry Tsetserukou.
+\newblock Gestos: Advanced hand gesture interpretation via large language models to control any type of robot.
+\newblock {\em arXiv preprint arXiv:2509.14412}, 2025.
+
+\bibitem{roboprocessbench}
+Dong Xia, Yue Shi, Yixuan Mu, Heng Ji, Cheng Ma, Yifan Zhou, Hao Chen, et~al.
+\newblock Roboprocessbench: Benchmarking process-aware understanding in vision-language robotic manipulation.
+\newblock {\em arXiv preprint arXiv:2606.13040}, 2026.
+
+\bibitem{tampura}
+Alexander Curtis, George Matheos, Nikhil Gothoskar, Vikash Mansinghka, Joshua~B. Tenenbaum, Tom{\'a}s Lozano-P{\'e}rez, and Leslie~Pack Kaelbling.
+\newblock Partially observable task and motion planning with uncertainty and risk awareness.
+\newblock In {\em Robotics: Science and Systems XX}, 2024.
+
+\bibitem{vjepa2}
+Mahmoud Assran, Quentin Duval, Ishan Misra, Piotr Bojanowski, Pascal Vincent, Mike Rabbat, Yann LeCun, and Nicolas Ballas.
+\newblock V-jepa 2: Self-supervised video models enable understanding, prediction and planning.
+\newblock {\em arXiv preprint arXiv:2506.09985}, 2025.
+
+\bibitem{flare}
+Ruohan Zheng, Jialu Wang, Scott Reed, Johan Bjorck, Yixin Fang, Fan Hu, Jaehoon Jang, et~al.
+\newblock Flare: Robot learning with implicit world modeling.
+\newblock {\em arXiv preprint arXiv:2505.15659}, 2025.
+
+\end{thebibliography}

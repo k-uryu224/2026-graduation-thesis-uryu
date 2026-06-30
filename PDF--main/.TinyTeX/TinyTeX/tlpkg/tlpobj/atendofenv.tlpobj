@@ -1,0 +1,20 @@
+name atendofenv
+category Package
+revision 62164
+shortdesc Add a custom symbol at the end of an environment
+longdesc This package allows adding a custom symbol at the end of an
+longdesc environment (e.g. theorems, definitions, remarks).
+containersize 1584
+containerchecksum 04a6c644b9235dce6495c46e2bcc093c03dfadf279d354c8b43b81a0b4a14daae71e7105642bcc95025c55ce92094c01292be2fc379e6c0c720aaa9b5a21ca9b
+doccontainersize 91728
+doccontainerchecksum 22249061d4340939e597d50a5ae4c09f8b4514ddcb0862003ec7fff7006bebb207b5926ffcc0d723190b409435279c815a5880c6fc989294f26098c3db15d1d4
+srccontainersize 3104
+srccontainerchecksum 7b457f3643595f98138aeb25090e7cfc98f2d613689428559aae60898f81d586d509b7124ad3fd77383f9524f8611ac8bfcd361391670cd689f1025cf0078859
+runfiles size=1
+ texmf-dist/tex/latex/atendofenv/atendofenv.sty
+catalogue-also nccthm
+catalogue-contact-home https://github.com/fangyi-zhou/at-end-of-env
+catalogue-ctan /macros/latex/contrib/atendofenv
+catalogue-license pd
+catalogue-topics maths
+catalogue-version 0.2

@@ -1,0 +1,21 @@
+name autofancyhdr
+category Package
+revision 54049
+shortdesc Automatically compute headlength for fancyhdr package
+longdesc The package automatically computes headlength for the fancyhdr
+longdesc package
+containersize 1200
+containerchecksum 3ee2452c80ba671414a1669e0c47c7069189dcc0dde97bb33f94e77251b2ac8511b7cb79fd5866c2d3acfbe7768e20f715e61a6303a847ab82564743fb8d2a2f
+doccontainersize 6596
+doccontainerchecksum 1fc9ac9d47d65eecb1a6736aa5fb148a6309fa64cd18053b038483d484f974f3f1aafe8afb03b88921ab5a990b78a2aa9dc6d7149884a550c57340218f72159a
+runfiles size=1
+ texmf-dist/tex/latex/autofancyhdr/autofancyhdr.sty
+catalogue-also fancyhdr
+catalogue-contact-bugs https://framagit.org/baghban/autofancyhdr/issues
+catalogue-contact-home https://framagit.org/baghban/autofancyhdr
+catalogue-contact-repository https://framagit.org/baghban/autofancyhdr
+catalogue-contact-support http://qa.parsilatex.com/
+catalogue-ctan /macros/latex/contrib/autofancyhdr
+catalogue-license lppl1.3c
+catalogue-topics page-hf
+catalogue-version 0.1

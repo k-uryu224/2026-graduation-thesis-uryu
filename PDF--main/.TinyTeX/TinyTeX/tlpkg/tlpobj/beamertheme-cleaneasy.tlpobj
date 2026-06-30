@@ -1,0 +1,27 @@
+name beamertheme-cleaneasy
+category Package
+revision 74971
+shortdesc A clean and minimalist Beamer theme
+longdesc This package provides a clean and minimalist Beamer theme
+longdesc designed for professional and academic presentations. It
+longdesc separates style components into modular .sty files for
+longdesc flexibility and clarity.
+containersize 22288
+containerchecksum 5c38d182ba904f907d6560e517cb508e8b8ae7cfe15f9bede5b9298e785da3cedecb79720a007e78e522906535d62be7ef4243989a2a2ec3628d5d80f2cc637e
+doccontainersize 370240
+doccontainerchecksum eec8f2fee259995039d3051204882a1dcc0fade2326982a04d714bcd1e2aaa636fea4175edfd44fe5ad335492a5b3b266788c4e2e1fc5de5d8794b584ffcd860
+runfiles size=13
+ texmf-dist/tex/latex/beamertheme-cleaneasy/beamercolorthemeCleanEasy.sty
+ texmf-dist/tex/latex/beamertheme-cleaneasy/beamerfontthemeCleanEasy.sty
+ texmf-dist/tex/latex/beamertheme-cleaneasy/beamerinnerthemeCleanEasy.sty
+ texmf-dist/tex/latex/beamertheme-cleaneasy/beamerouterthemeCleanEasy.sty
+ texmf-dist/tex/latex/beamertheme-cleaneasy/beamerthemeCleanEasy.sty
+ texmf-dist/tex/latex/beamertheme-cleaneasy/logos/CleanEasy-logo1.png
+ texmf-dist/tex/latex/beamertheme-cleaneasy/logos/CleanEasy-logo2.png
+ texmf-dist/tex/latex/beamertheme-cleaneasy/logos/CleanEasy-logo3.png
+ texmf-dist/tex/latex/beamertheme-cleaneasy/logos/CleanEasy-logo4.png
+catalogue-contact-repository https://github.com/zemarchezi/CleanEasy_BeamerTheme
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-cleaneasy
+catalogue-license pd
+catalogue-topics presentation doc-templ
+catalogue-version 1.0.3

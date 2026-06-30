@@ -1,0 +1,19 @@
+name autopuncitems
+category Package
+revision 78415
+shortdesc Automatically punctuate lists
+longdesc This package provides the autopunc option in the enumitem
+longdesc environments itemize, enumerate, and description to
+longdesc automatically punctuate the items. It uses Lua pattern matching
+longdesc to modify the environment's contents.
+containersize 3076
+containerchecksum fa834d265cd48731023f2e702b5ecc5ca97e89188d0b30498044e59fc70f611640c17a7005da36aa09bb884cfdd23e5c993db57af4b3b05cfaa0ecb8e86b689f
+doccontainersize 37724
+doccontainerchecksum eb4ab4f02a8ed78014e1bdcc9e0ad37a4193314a8b6034dcf429e9d8bdcc62bed44614462b0beb33c7a957a368036afe3c66992ed069c339eeb1870232e520e6
+runfiles size=3
+ texmf-dist/tex/lualatex/autopuncitems/autopuncitems.lua
+ texmf-dist/tex/lualatex/autopuncitems/autopuncitems.sty
+catalogue-contact-repository https://github.com/kalekje/autopuncitems
+catalogue-ctan /macros/luatex/latex/autopuncitems
+catalogue-license mit
+catalogue-topics luatex

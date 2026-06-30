@@ -1,0 +1,20 @@
+name beamertheme-rainbow
+category Package
+revision 72864
+shortdesc A beamer colour theme which alternates theme colours on every frame
+longdesc This package provides a beamer colour theme which alternates
+longdesc theme colours on every frame.
+depend beamer
+depend tools
+containersize 1328
+containerchecksum 022b7845a99e4a5b3df85bb6043b778be9f8e6b06cef305981ecd3f18a0221f4d7792579531a6da0c9c3b410184355b938cb0b13e88c4bb8be2fb42c1d2499e8
+doccontainersize 164276
+doccontainerchecksum 7afcb83069f78d1170f72c88625b3d8eee7d8e69c78fcd7b184d571e83b5b34945be6d934d8b1360141ccf7f9042b1197bc9c4e86a9d8f3b6e7c8f42125b6034
+runfiles size=1
+ texmf-dist/tex/latex/beamertheme-rainbow/beamercolorthemerainbow.sty
+catalogue-contact-repository https://github.com/samcarter/beamertheme-rainbow
+catalogue-contact-support https://github.com/samcarter/beamertheme-rainbow/issues
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-rainbow
+catalogue-license lppl1.3c
+catalogue-topics presentation
+catalogue-version 1.0

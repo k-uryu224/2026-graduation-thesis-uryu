@@ -1,0 +1,27 @@
+name boolexpr
+category Package
+revision 17830
+shortdesc A boolean expression evaluator and a switch command
+longdesc The \boolexpr macro evaluates boolean expressions in a purely
+longdesc expandable way. \boolexpr{ A \OR B \AND C } expands to 0 if the
+longdesc logical expression is TRUE. A, B, C may be: numeric expressions
+longdesc such as: x=y, x<>y, x>y or x<y; - boolean switches: \iftrue
+longdesc 0\else 1\fi; - conditionals: \ifcsname whatsit\endcsname 0\else
+longdesc 1\fi; - another \boolexpr: \boolexpr{ D \OR E \AND F }:
+longdesc \boolexpr may be used with \ifcase: \ifcase\boolexpr{ A \OR B
+longdesc \AND C } What to do if true \else What to do if false \fi The
+longdesc \switch command (which is also expandable) has the form:
+longdesc \switch \case{<boolean expression>} ... \case{<boolean
+longdesc expression>} ... ... \otherwise ... \endswitch
+containersize 2772
+containerchecksum 677a397363b80126e45609d125ec2cf22b3ef144216e19183bcd48c1f0ccd6e2e079fbb0a2e7ac03f094470c8c0bc64ae652863aed970ee9fc75a9a69b60c618
+doccontainersize 142296
+doccontainerchecksum 6351bf2d3382c5a3b9a07a8458d7f158ee3bd0e72c96af5f2f985d28a40859f95ae7ae956e5dbaa1ed93b1331322ae1e8901ad3110f5e74024efd831e29b6b44
+srccontainersize 11884
+srccontainerchecksum 561daf8eb74f10987be27e884023ad443f24e8d48b573dbe8eab5e958c2ac9f2319b293874050c7d7f56ea3c22f31eaa57f3101c8878b466ad8938018427e765
+runfiles size=2
+ texmf-dist/tex/latex/boolexpr/boolexpr.sty
+catalogue-ctan /macros/latex/contrib/boolexpr
+catalogue-license lppl
+catalogue-topics macro-supp
+catalogue-version 3.14

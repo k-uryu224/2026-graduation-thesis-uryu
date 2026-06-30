@@ -1,0 +1,25 @@
+name beamertheme-geode
+category Package
+revision 79040
+shortdesc A colourful modernised style package for beamer documents
+longdesc This style package aims to provide a new, modernised style to
+longdesc beamer class documents, loosely inspired by minerals, and
+longdesc features multiple colour palettes as well as the ability to
+longdesc create new ones.
+containersize 4544
+containerchecksum 91882f28aa0d42edd6ca8d152ceb0e52b1c4d245c7022a06836c382c2a11f67688616451e810166fb7453b9d326d430c46d007d15fa931edd6c07cc305b2e5d3
+doccontainersize 1248248
+doccontainerchecksum 92b897d7375be0b8c5a3b4f075084015c92c4b9893bc103d532f7e642d1eeb694e793f24e44ba7452e21e6337bac2d23822579df8f3d7f941dc34d6225f758c4
+runfiles size=16
+ texmf-dist/tex/latex/beamertheme-geode/beamercolorthemegeode-amethyst.sty
+ texmf-dist/tex/latex/beamertheme-geode/beamercolorthemegeode-citrine.sty
+ texmf-dist/tex/latex/beamertheme-geode/beamercolorthemegeode-diamond.sty
+ texmf-dist/tex/latex/beamertheme-geode/beamercolorthemegeode-obsidian.sty
+ texmf-dist/tex/latex/beamertheme-geode/beamercolorthemegeode-phosphophyllite.sty
+ texmf-dist/tex/latex/beamertheme-geode/beamercolorthemegeode-pinkquartz.sty
+ texmf-dist/tex/latex/beamertheme-geode/beamertheme-geode.sty
+catalogue-contact-repository https://github.com/camillejaret/beamertheme-geode
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-geode
+catalogue-license lppl1.3c
+catalogue-topics presentation pgf-tikz
+catalogue-version 1.0.0

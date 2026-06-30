@@ -1,0 +1,229 @@
+ %% ============================================================================
+  % !Mode:: "TeX:UK:UTF-8"
+  % !TEX program = XeLaTeX
+  % -----------------------------------------------------------------------------
+
+% XeLaTeX layer for the alchemist symbols in UTF-8
+% copyright 2023 by Dr Engelbert Buxbaum <engelbert_buxbaum@web.de>
+% This file may be shared under Gnu copyleft or under the LaTeX Project Public License.
+
+\ProvidesPackage{alchemist}[2023/02/26 v1.00 access to alchemist symbols]
+\NeedsTeXFormat{LaTeX2e}
+
+\providefontfamily\AlchemistA{Unifont}
+\providefontfamily\AlchemistB{Unifont Upper}
+
+% Concepts
+\providecommand{\AlchemistQuintessence}{\AlchemistB \symbol{"1F700}} % aether
+\providecommand{\AlchemistAir}{\AlchemistB \symbol{"1F701}}
+\providecommand{\AlchemistFire}{\AlchemistB \symbol{"1F702}}
+\providecommand{\AlchemistSoil}{\AlchemistB \symbol{"1F703}}
+\providecommand{\AlchemistWater}{\AlchemistB \symbol{"1F704}}
+\providecommand{\AlchemistSpirit}{\AlchemistB \symbol{"1F747}}
+\providecommand{\AlchemistPhilosophersSulphur}{\AlchemistB \symbol{"1F70E}}
+\providecommand{\AlchemistMateriaPrima}{\AlchemistA \symbol{"2721}}
+
+% Compounds
+\providecommand{\AlchemistAquaFortis}{\AlchemistB \symbol{"1F705}}  % HNO3
+\providecommand{\AlchemistAquaRegiaA}{\AlchemistB \symbol{"1F706}} % HNO3 + HCl
+\providecommand{\AlchemistAquaRegiaB}{\AlchemistB \symbol{"1F707}}
+\providecommand{\AlchemistAquaVitaeA}{\AlchemistB \symbol{"1F708}}  % Ethanol, distilled spirit
+\providecommand{\AlchemistAquaVitaeB}{\AlchemistB \symbol{"1F709}}
+\providecommand{\AlchemistVinegar}{\AlchemistB \symbol{"1F70A}}    % acetic acid
+\providecommand{\AlchemistDistilledVinegarA}{\AlchemistB \symbol{"1F70B}}
+\providecommand{\AlchemistDistilledVinegarB}{\AlchemistB \symbol{"1F70C}}
+\providecommand{\AlchemistSublimateOfMercuryA}{\AlchemistB \symbol{"1F710}} % HgCl2
+\providecommand{\AlchemistSublimateOfMercuryB}{\AlchemistB \symbol{"1F711}}
+\providecommand{\AlchemistSublimateOfMercuryC}{\AlchemistB \symbol{"1F712}}
+\providecommand{\AlchemistCinnabar}{\AlchemistB \symbol{"1F713}}  % Cinnabarit, HgS
+\providecommand{\AlchemistSalt}{\AlchemistB \symbol{"1F714}}  % NaCl
+\providecommand{\AlchemistNitre}{\AlchemistB \symbol{"1F715}} % KNO3, salpeter
+\providecommand{\AlchemistVitriolA}{\AlchemistB \symbol{"1F716}} % H2SO4
+\providecommand{\AlchemistVitriolB}{\AlchemistB \symbol{"1F717}}
+\providecommand{\AlchemistRockSaltA}{\AlchemistB \symbol{"1F718}}  % sal gemmae, impure NaCl
+\providecommand{\AlchemistRockSaltB}{\AlchemistB \symbol{"1F719}}
+\providecommand{\AlchemistIronOreA}{\AlchemistB \symbol{"1F71C}}
+\providecommand{\AlchemistIronOreB}{\AlchemistB \symbol{"1F71D}}
+\providecommand{\AlchemistCrocusOfIron}{\AlchemistB \symbol{"1F71E}} % crocus martis, rust
+\providecommand{\AlchemistCopperOre}{\AlchemistB \symbol{"1F720}}
+\providecommand{\AlchemistCrocusOfCopperA}{\AlchemistB \symbol{"1F723}}    % CuO
+\providecommand{\AlchemistCrocusOfCopperB}{\AlchemistB \symbol{"1F724}}
+\providecommand{\AlchemistIronCopperOre}{\AlchemistB \symbol{"1F721}}
+\providecommand{\AlchemistSublimateOfCopperA}{\AlchemistB \symbol{"1F71B}} % CuCl
+\providecommand{\AlchemistSublimateOfCopperB}{\AlchemistB \symbol{"1F727}}
+\providecommand{\AlchemistCopperAntimonateA}{\AlchemistB \symbol{"1F725}}  % CuSb2O6
+\providecommand{\AlchemistCopperAntimonateB}{\AlchemistB \symbol{"1F726}}
+\providecommand{\AlchemistVerdigris}{\AlchemistB \symbol{"1F728}}  % patina on copper, acetate, hydroxyde, chloride
+\providecommand{\AlchemistTinOre}{\AlchemistB \symbol{"1F729}}
+\providecommand{\AlchemistLeadOre}{\AlchemistB \symbol{"1F72A}}
+\providecommand{\AlchemistAntimonyOre}{\AlchemistB \symbol{"1F72B}}
+\providecommand{\AlchemistSublimateOfAntimony}{\AlchemistB \symbol{"1F72C}}  % Sb2O3, valentinite and senarmontite
+\providecommand{\AlchemistSaltOfAntimony}{\AlchemistB \symbol{"1F72D}}       % double salt SbF3 + NaF, mordant
+\providecommand{\AlchemistSublimateOfSaltOfAntimony}{\AlchemistB \symbol{"1F72E}}
+\providecommand{\AlchemistVinegarOfAntimony}{\AlchemistB \symbol{"1F72F}}    % may be Sb(CH3COO)3, but this is unstable
+\providecommand{\AlchemistRegulusA}{\AlchemistB \symbol{"1F732}}
+\providecommand{\AlchemistRegulusB}{\AlchemistB \symbol{"1F733}}
+\providecommand{\AlchemistRegulusC}{\AlchemistB \symbol{"1F734}}
+\providecommand{\AlchemistRegulusD}{\AlchemistB \symbol{"1F735}}
+\providecommand{\AlchemistAlkaliA}{\AlchemistB \symbol{"1F736}}
+\providecommand{\AlchemistAlkaliB}{\AlchemistB \symbol{"1F737}}
+\providecommand{\AlchemistMarcasite}{\AlchemistB \symbol{"1F738}}  % iron pyrite, fools gold
+\providecommand{\AlchemistSalAmmoniak}{\AlchemistB \symbol{"1F739}} % NH4Cl
+\providecommand{\AlchemistRealgarA}{\AlchemistB \symbol{"1F73B}}    % As4S4
+\providecommand{\AlchemistRealgarB}{\AlchemistB \symbol{"1F73C}}
+\providecommand{\AlchemistAuripigment}{\AlchemistB \symbol{"1F73D}} % As2S3
+\providecommand{\AlchemistBismuthOre}{\AlchemistB \symbol{"1F73E}}  % tin glass
+\providecommand{\AlchemistTartarA}{\AlchemistB \symbol{"1F73F}}     % potassium hydrogen tartrate
+\providecommand{\AlchemistTartarB}{\AlchemistB \symbol{"1F740}}
+\providecommand{\AlchemistQuicklime}{\AlchemistB \symbol{"1F741}}   % CaO
+\providecommand{\AlchemistBoraxA}{\AlchemistB \symbol{"1F742}}
+\providecommand{\AlchemistBoraxB}{\AlchemistB \symbol{"1F743}}
+\providecommand{\AlchemistBoraxC}{\AlchemistB \symbol{"1F744}}
+\providecommand{\AlchemistAlum}{\AlchemistB \symbol{"1F745}}
+\providecommand{\AlchemistLodestone}{\AlchemistB \symbol{"1F753}}   % magnetite, Fe(II, III)oxyde
+\providecommand{\AlchemistSoap}{\AlchemistB \symbol{"1F754}}
+\providecommand{\AlchemistPotashes}{\AlchemistB \symbol{"1F758}}    % K2CO3
+\providecommand{\AlchemistStratumSuperStratumA}{\AlchemistB \symbol{"1F75C}}
+\providecommand{\AlchemistStratumSuperStratumB}{\AlchemistB \symbol{"1F75D}}
+% Mixtures
+\providecommand{\AlchemistBlackSulphur}{\AlchemistB \symbol{"1F70F}}  % residue left after sublimation of sulphur
+\providecommand{\AlchemistUrine}{\AlchemistB \symbol{"1F755}}
+\providecommand{\AlchemistHorseDung}{\AlchemistB \symbol{"1F756}}
+\providecommand{\AlchemistAshes}{\AlchemistB \symbol{"1F757}}
+\providecommand{\AlchemistBrick}{\AlchemistB \symbol{"1F759}}
+\providecommand{\AlchemistPowderedBrick}{\AlchemistB \symbol{"1F75A}}
+\providecommand{\AlchemistAmalgam}{\AlchemistB \symbol{"1F75B}}       % alloy of mercury
+\providecommand{\AlchemistCaputMortuum}{\AlchemistB \symbol{"1F74E}}  % slag left after a purification
+\providecommand{\AlchemistOil}{\AlchemistB \symbol{"1F746}}
+\providecommand{\AlchemistTincture}{\AlchemistB \symbol{"1F748}}      % alcoholic extract
+\providecommand{\AlchemistGum}{\AlchemistB \symbol{"1F749}}
+\providecommand{\AlchemistWax}{\AlchemistB \symbol{"1F74A}}
+\providecommand{\AlchemistPowder}{\AlchemistB \symbol{"1F74B}}
+\providecommand{\AlchemistCalx}{\AlchemistB \symbol{"1F74C}}          % oxydised residue, also CaO
+\providecommand{\AlchemistTutty}{\AlchemistB \symbol{"1F74D}}         % ZnO or ZnCO3
+% Elements
+\providecommand{\AlchemistSulphur}{\AlchemistB \symbol{"1F70D}}
+\providecommand{\AlchemistGoldA}{\AlchemistB \symbol{"1F71A}}
+\providecommand{\AlchemistGoldB}{\AlchemistA \symbol{"2609}}  % also sun
+\providecommand{\AlchemistSilverA}{\AlchemistB \symbol{"1F71B}}
+\providecommand{\AlchemistSilverB}{\AlchemistA \symbol{"263D}} % first quarter moon
+\providecommand{\AlchemistSilverC}{\AlchemistA \symbol{"263E}} %  Last quarter moon
+\providecommand{\AlchemistRegulusOfAntimonyA}{\AlchemistB \symbol{"1F730}} % impure antimony
+\providecommand{\AlchemistRegulusOfAntimonyB}{\AlchemistB \symbol{"1F731}}
+\providecommand{\AlchemistRegulusOfIron}{\AlchemistB \symbol{"1F71F}}      % antimony prepared from stibnite by reduction with iron
+\providecommand{\AlchemistArsenic}{\AlchemistB \symbol{"1F73A}}
+\providecommand{\AlchemistMercury}{\AlchemistA \symbol{"263F}} % also the planet
+\providecommand{\AlchemistCopper}{\AlchemistA \symbol{"2640}}  % also Venus
+\providecommand{\AlchemistIron}{\AlchemistA \symbol{"2642}}     % also Mars
+\providecommand{\AlchemistTin}{\AlchemistA \symbol{"2643}} % also Jupiter
+\providecommand{\AlchemistLead}{\AlchemistA \symbol{"2644}} % also Saturn
+\providecommand{\AlchemistBismuth}{\AlchemistA \symbol{"2646}} % also Neptune
+
+% Tools
+\providecommand{\AlchemistAlembicA}{\AlchemistB  \symbol{"1F76A}}  % distillation helmet
+\providecommand{\AlchemistAlembicB}{\AlchemistA \symbol{"2697}}
+\providecommand{\AlchemistAsclepius}{\AlchemistA \symbol{"2695}}  % staff of Asclepius
+\providecommand{\AlchemistCaduceusA}{\AlchemistB \symbol{"1F750}} % staff of Hermes
+\providecommand{\AlchemistCaduceusB}{\AlchemistA \symbol{"2624}}
+\providecommand{\AlchemistCrucibleA}{\AlchemistB \symbol{"1F765}}
+\providecommand{\AlchemistCrucibleB}{\AlchemistB \symbol{"1F766}}
+\providecommand{\AlchemistCrucibleC}{\AlchemistB \symbol{"1F767}}
+\providecommand{\AlchemistCrucibleD}{\AlchemistB \symbol{"1F768}}
+\providecommand{\AlchemistCrucibleE}{\AlchemistB \symbol{"1F769}}
+\providecommand{\AlchemistBalneumMariae}{\AlchemistB \symbol{"1F76B}} % water bath used to heat for extended time, invented by Maria Prophetissa of Alexandria in the 1st century AD
+\providecommand{\AlchemistRetort        }{\AlchemistB         \symbol{"1F76D}}
+\providecommand{\AlchemistScepterOfJove }{\AlchemistB  \symbol{"1F74F}} % bident
+\providecommand{\AlchemistTrident       }{\AlchemistB        \symbol{"1F751}}
+\providecommand{\AlchemistStarredTrident}{\AlchemistB \symbol{"1F752}}
+\providecommand{\AlchemistVapourBath    }{\AlchemistB     \symbol{"1F76C}}
+% Process
+\providecommand{\AlchemistCalcination}{\AlchemistA \symbol{"2648}} % also aries
+\providecommand{\AlchemistCeration}{\AlchemistA \symbol{"2650}} % also Sagittarius
+\providecommand{\AlchemistCongelation}{\AlchemistA \symbol{"2649}} % also Taurus
+\providecommand{\AlchemistDigestion}{\AlchemistA \symbol{"264C}} % also Leo
+\providecommand{\AlchemistDistillationA}{\AlchemistB \symbol{"1F760}}
+\providecommand{\AlchemistDistillationB}{\AlchemistA \symbol{"264D}} % also Virgo
+\providecommand{\AlchemistDissolveA}{\AlchemistB \symbol{"1F761}}
+\providecommand{\AlchemistDissolveB}{\AlchemistB \symbol{"1F762}}
+\providecommand{\AlchemistFermentation}{\AlchemistA \symbol{"2651}} % also Capricorn
+\providecommand{\AlchemistFixation}{\AlchemistA \symbol{"264A}} % also Gemini
+\providecommand{\AlchemistMultiplication}{\AlchemistA \symbol{"2652}} % also Aquarius
+\providecommand{\AlchemistPrecipitation}{\AlchemistB \symbol{"1F75F}}
+\providecommand{\AlchemistProjection}{\AlchemistA \symbol{"2653}} % also Pisces
+\providecommand{\AlchemistPurify}{\AlchemistB \symbol{"1F763}}
+\providecommand{\AlchemistPutrefaction}{\AlchemistB \symbol{"1F764}}
+\providecommand{\AlchemistSeparation}{\AlchemistA \symbol{"264F}} % also Scorpio
+\providecommand{\AlchemistSolution}{\AlchemistA \symbol{"264B}} % also Cancer
+\providecommand{\AlchemistSublimationA}{\AlchemistB \symbol{"1F75E}}
+\providecommand{\AlchemistSublimationB}{\AlchemistA \symbol{"264E}} % also Libra
+\providecommand{\AlchemistTincture}{\AlchemistB \symbol{"1F748}} % alcoholic extract
+
+% Time
+\providecommand{\AlchemistHourA}{\AlchemistB \symbol{"1F76E}}
+\providecommand{\AlchemistHourB}{\AlchemistA \symbol{"29D6}}
+\providecommand{\AlchemistHourC}{\AlchemistA \symbol{"29D7}}
+\providecommand{\AlchemistNight}{\AlchemistB \symbol{"1F76F}}
+\providecommand{\AlchemistDayNight}{\AlchemistB \symbol{"1F770}}
+\providecommand{\AlchemistMonth}{\AlchemistB \symbol{"1F771}}
+% Measures
+\providecommand{\AlchemistHalfDram}{\AlchemistB \symbol{"1F772}}  % about 3.6 mL
+\providecommand{\AlchemistHalfOunce}{\AlchemistB \symbol{"1F773}} % about 28--31 g
+% Astrology
+\providecommand{\AlchemistAscendingNode}{\AlchemistA \symbol{"260A}}
+\providecommand{\AlchemistDescendingNode}{\AlchemistA \symbol{"260B}}
+\providecommand{\AlchemistConjunction}{\AlchemistA \symbol{"260C}}
+\providecommand{\AlchemistOpposition}{\AlchemistA \symbol{"260D}}
+\providecommand{\AlchemistSextile}{\AlchemistA \symbol{"26B9}}
+\providecommand{\AlchemistSemisextile}{\AlchemistA \symbol{"26BA}}
+\providecommand{\AlchemistQuincunx}{\AlchemistA \symbol{"26BB}}
+\providecommand{\AlchemistSesquiquadrate}{\AlchemistA \symbol{"26BC}}
+\providecommand{\AlchemistLotOfFortune}{\AlchemistB \symbol{"1F774}}
+\providecommand{\AlchemistOccultation}{\AlchemistB \symbol{"1F775}}  % hiding one celestial body by another
+\providecommand{\AlchemistLunarEclipse}{\AlchemistB \symbol{"1F776}}
+
+\providecommand{\AlchemistSun}{\AlchemistA \symbol{"2609}}  % also gold
+\providecommand{\AlchemistFirstQuarterMoon}{\AlchemistA \symbol{"263D}} % also silver
+\providecommand{\AlchemistLastQuarterMoon}{\AlchemistA \symbol{"263E}}
+\providecommand{\AlchemistBlackMoonLilith}{\AlchemistA \symbol{"26B8}}
+\providecommand{\AlchemistMercury}{\AlchemistA \symbol{"263F}} % also the element mercury
+\providecommand{\AlchemistVenus}{\AlchemistA \symbol{"2640}} % also copper
+\providecommand{\AlchemistEarth}{\AlchemistA \symbol{"2641}}
+\providecommand{\AlchemistMars}{\AlchemistA \symbol{"2642}} % also iron
+\providecommand{\AlchemistJupiter}{\AlchemistA \symbol{"2643}} % also tin
+\providecommand{\AlchemistSaturn}{\AlchemistA \symbol{"2644}} % also lead
+\providecommand{\AlchemistUranus}{\AlchemistA \symbol{"2645}}
+\providecommand{\AlchemistNeptune}{\AlchemistA \symbol{"2646}} % also bismuth
+\providecommand{\AlchemistPlutoA}{\AlchemistA \symbol{"2647}}
+\providecommand{\AlchemistPlutoB}{\AlchemistA \symbol{"2BD3}}
+
+
+\providecommand{\AlchemistAries}{\AlchemistA \symbol{"2648}} % also calcination
+\providecommand{\AlchemistTaurus}{\AlchemistA \symbol{"2649}} % also congelation
+\providecommand{\AlchemistGemini}{\AlchemistA \symbol{"264A}} % also fixation
+\providecommand{\AlchemistCancer}{\AlchemistA \symbol{"264B}} % also solution
+\providecommand{\AlchemistLeo}{\AlchemistA \symbol{"264C}} % also digestion
+\providecommand{\AlchemistVirgo}{\AlchemistA \symbol{"264D}} % also distillation
+\providecommand{\AlchemistLibra}{\AlchemistA \symbol{"264E}} % also sublimation
+\providecommand{\AlchemistScorpio}{\AlchemistA \symbol{"264F}} % also separation
+\providecommand{\AlchemistSagittarius}{\AlchemistA \symbol{"2650}} % also ceration
+\providecommand{\AlchemistCapricorn}{\AlchemistA \symbol{"2651}} % also fermentation
+\providecommand{\AlchemistAquarius}{\AlchemistA \symbol{"2652}} % also multiplication
+\providecommand{\AlchemistPisces}{\AlchemistA \symbol{"2653}} % also projection
+
+\providecommand{\AlchemistCeres}{\AlchemistA \symbol{"26B3}}
+\providecommand{\AlchemistPallas}{\AlchemistA \symbol{"26B4}}
+\providecommand{\AlchemistJuno}{\AlchemistA \symbol{"26B5}}
+\providecommand{\AlchemistVesta}{\AlchemistA \symbol{"26B6}}
+\providecommand{\AlchemistChiron}{\AlchemistA \symbol{"26B7}}
+\providecommand{\AlchemistErisA}{\AlchemistA \symbol{"2BF0}}
+\providecommand{\AlchemistErisB}{\AlchemistA \symbol{"2BF1}}
+\providecommand{\AlchemistSedna}{\AlchemistA \symbol{"2BF2}}
+
+\providecommand{\AlchemistHaumea}{\AlchemistB \symbol{"1F77B}}  % dwarf planet in Kuiperbelt
+\providecommand{\AlchemistMakemake}{\AlchemistB \symbol{"1F77C}}
+\providecommand{\AlchemistGonggong}{\AlchemistB \symbol{"1F77D}}
+\providecommand{\AlchemistQuaoar}{\AlchemistB \symbol{"1F77E}}
+\providecommand{\AlchemistOrcus}{\AlchemistB \symbol{"1F77F}}
+
+\providecommand{\AlchemistPentagram}{\AlchemistA \symbol{"26E4}}
+

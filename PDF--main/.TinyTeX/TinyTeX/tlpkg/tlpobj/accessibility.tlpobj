@@ -1,0 +1,34 @@
+name accessibility
+category Package
+revision 55777
+shortdesc Create tagged and structured PDF files
+longdesc The accessibility package is intended to create tagged,
+longdesc structured PDF documents from LaTeX source code. It allows to
+longdesc produce tagged PDF output following Adobe's PDF-1.5 and 1.6
+longdesc specifications. This package is predominantly targeted at
+longdesc documents produced using the KOMA-Script document classes.
+longdesc However, the author told us towards the end of June 2020:
+longdesc "Based on feedback to the 'accessibility' package and
+longdesc discussions with a few folks, I'd like to discourage people
+longdesc from using the package any more. It's evident that it's not
+longdesc going to work in it's current form, and I don't have the skills
+longdesc or time to update it. I know the general concept is very
+longdesc important, and so I'm looking at getting support from various
+longdesc funding agencies to employ someone to completely refactor the
+longdesc code in a more future-proof fashion. I'll coordinate this with
+longdesc the core LaTeX Team once I have more solid ideas."
+containersize 13628
+containerchecksum 6cbc455f40a6aeb5862bbed64e6ec111d497f1948fa6eb83d26fc04c85c1145437005aa046e20eae70f177ff04c7084f03c2d4b3234be6c6ece822d6f366520f
+doccontainersize 496876
+doccontainerchecksum 261d13857558973edb692ed320745173a5006d0cd23418e926be5398b4f3a2da0a670e3a08a26083381e830f4bd327eaa4451822ef096612a7a3c3492833c328
+srccontainersize 31060
+srccontainerchecksum a7218b14ca307c9e02f6c562db3bb381a8a57ff758fecfc36f758bb70a151ca83e3401c7e2254ad2f75fe62d762cedec0746b07f5f5f6b82982675f42faa4e31
+runfiles size=17
+ texmf-dist/tex/latex/accessibility/accessibility.sty
+catalogue-also accsupp
+catalogue-contact-home https://github.com/AndyClifton/accessibility
+catalogue-contact-support https://github.com/AndyClifton/accessibility/issues
+catalogue-ctan /macros/latex/contrib/accessibility
+catalogue-license lppl1.3c
+catalogue-topics accessible pdf-feat
+catalogue-version 2.0.3

@@ -1,0 +1,9 @@
+name tex.universal-darwin
+category TLCore
+revision 77928
+shortdesc universal-darwin files of tex
+containersize 438320
+containerchecksum 3be8808149202a4542cf207a825fed9abbc967a0c24ca8179140d95842bd2da607463915921b0c725199436a8896a49aa72c46e68d6a6e767028562c8b550234
+binfiles arch=universal-darwin size=341
+ bin/universal-darwin/initex
+ bin/universal-darwin/tex

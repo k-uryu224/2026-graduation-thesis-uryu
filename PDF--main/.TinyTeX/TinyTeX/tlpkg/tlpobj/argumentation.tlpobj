@@ -1,0 +1,17 @@
+name argumentation
+category Package
+revision 79431
+shortdesc Create abstract argumentation frameworks via TikZ
+longdesc This package provides commands for creating abstract
+longdesc argumentation frameworks via TikZ.
+containersize 5400
+containerchecksum df9eadc85ef052c46745d3d0a71e462819bb5729790cc74f8d1e7395944169e08ce8946a455642dafe01f4746717e3245f0fb6a7f0917f482a7fcb8e77c82e64
+doccontainersize 560700
+doccontainerchecksum 3c591676712c6f8ade64567cdbf4fbe4cbf12e5aac6a7c5b4bcfafdfb24788a4fb36379035f8786998d29edf693274885d2c8cddd99b31004ed3b74207326327
+runfiles size=7
+ texmf-dist/tex/latex/argumentation/argumentation.sty
+catalogue-contact-repository https://github.com/aig-hagen/tikz_argumentation
+catalogue-ctan /graphics/pgf/contrib/argumentation
+catalogue-license lppl1.3c
+catalogue-topics diagram graphics pgf-tikz
+catalogue-version 1.7

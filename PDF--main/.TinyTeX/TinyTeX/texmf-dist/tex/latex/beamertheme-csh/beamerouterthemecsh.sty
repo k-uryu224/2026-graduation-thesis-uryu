@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% beamerouterthemecsh.sty - CSH Outer Theme
+% Complexity Science Hub Vienna
+%
+% Copyright (c) 2025 Complexity Science Hub Vienna
+% This work may be distributed under the terms of the LPPL 1.3c.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerouterthemecsh}[2025/11/27 v1.1 CSH Beamer Outer Theme]
+
+\mode<presentation>
+
+% frame title
+\defbeamertemplate*{frametitle}{csh}[1][]{%
+\vskip1cm%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.7cm]{frametitle}
+    \begin{tikzpicture}
+      \useasboundingbox (0,0) rectangle(0.625*\the\paperwidth, 1.2);
+      \fill[white] (0,0) rectangle(0.625*\the\paperwidth, 1.2);
+      \ifx\insertframesubtitle\@empty%
+        {\node[anchor=west,font=\large] at (0.5,0.61)%
+          {\Large\bfseries\insertframetitle};}
+      \else%
+        {\node[anchor=west,font=\large] at (0.5,0.81)%
+          {\Large\bfseries\insertframetitle};%
+         \node[anchor=west,font=\small] at (0.5,0.21)%
+          {\insertframesubtitle};}%
+      \fi
+    \end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+\mode<all>

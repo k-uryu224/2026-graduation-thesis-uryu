@@ -1,0 +1,25 @@
+name beamer-reveal
+category Package
+revision 78638
+shortdesc Convert beamer slides to reveal.js HTML presentations
+longdesc Beamer is a very powerful and convenient document class to
+longdesc create presentations and slides. However, integrating
+longdesc multimedia in it, is still a bit of a faff. The (limited)
+longdesc functionality heavily relies on the availability of acroread.
+longdesc This package allows you to convert your beamer presentation to
+longdesc the reveal.js framework, rendering your presentation as an HTML
+longdesc website in your browser. This allows for easy incorporation of
+longdesc videos, audio fragments, iframe chunks, images and LaTeX
+longdesc animations.
+containersize 6976
+containerchecksum 24d3514d1eadbe419b985e802924d5f6ec20bf347080b83be2d727c97dc3431c6313f38e623250c61acfb9da598a9210a182cf7a7fca8a90fe0c2f2a0fef03bc
+doccontainersize 8415896
+doccontainerchecksum fef921f8e1b6215f93e57dcdfc40aee337a8b81910cea56c69412acec894fb3672c6b836ac81f269a6c2933fc50c104bb4a02287f3a10fc84177799f20bdf378
+srccontainersize 26468
+srccontainerchecksum 21db4572c5762bb34792d1447a6e4f376c703d717670a72b6bc05dc1390d12f60e10d04f31195b57990b2e95dcfff1a28466a52cfa90148cdd485a9bba443f64
+runfiles size=11
+ texmf-dist/tex/latex/beamer-reveal/beamer-reveal.sty
+catalogue-ctan /macros/latex/contrib/beamer-contrib/beamer-reveal
+catalogue-license lppl1.3
+catalogue-topics presentation
+catalogue-version 1.10

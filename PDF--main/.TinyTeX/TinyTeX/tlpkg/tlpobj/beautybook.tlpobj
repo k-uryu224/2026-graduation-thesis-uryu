@@ -1,0 +1,23 @@
+name beautybook
+category Package
+revision 76924
+shortdesc A beautiful book template for maths and science
+longdesc The package contains a LaTeX class as well as style files for
+longdesc creating beautiful science books.
+containersize 15252
+containerchecksum d0be4eef75a6931835d32b6254dcb6e48417d77e06938914526ba849f118e0373d4846ebedd7697f9a6e3a6dcb127e4dc8acaa0a6e1aaf70d453591b564d7c59
+doccontainersize 52185048
+doccontainerchecksum a86849f9e147cc7107d100d8b09a3bb39fc6f79898f90d9470b3548630fd51bd1375a5bcf7c4547db5adf00bd96a0012a611818bbd053d2822afa7549eefea11
+runfiles size=30
+ texmf-dist/tex/latex/beautybook/beautybook.cls
+ texmf-dist/tex/latex/beautybook/stys/beautybook-bottompage.sty
+ texmf-dist/tex/latex/beautybook/stys/beautybook-cover-birkar.sty
+ texmf-dist/tex/latex/beautybook/stys/beautybook-cover-cn.sty
+ texmf-dist/tex/latex/beautybook/stys/beautybook-cover-en.sty
+ texmf-dist/tex/latex/beautybook/stys/beautybook-cover-enfig.sty
+catalogue-contact-bugs https://github.com/BeautyLaTeX/latex-template/issues
+catalogue-contact-development https://github.com/BeautyLaTeX
+catalogue-contact-repository https://github.com/BeautyLaTeX/latex-template
+catalogue-ctan /macros/latex/contrib/beautybook
+catalogue-license lppl1.3c
+catalogue-topics book-pub class doc-templ

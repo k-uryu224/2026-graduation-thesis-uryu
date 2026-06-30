@@ -1,0 +1,13 @@
+name mfware.universal-darwin
+category TLCore
+revision 77928
+shortdesc universal-darwin files of mfware
+containersize 251112
+containerchecksum e8d2f3dbc7ec923221118658f3c5d20a01dedebc32e4d7aaf5e539959228f5e6b95c7d0dceef4a663bb308e30833b0b75c5e3bbb871fb557bb765c64dca5ddf0
+binfiles arch=universal-darwin size=483
+ bin/universal-darwin/gftodvi
+ bin/universal-darwin/gftopk
+ bin/universal-darwin/gftype
+ bin/universal-darwin/mft
+ bin/universal-darwin/pktogf
+ bin/universal-darwin/pktype

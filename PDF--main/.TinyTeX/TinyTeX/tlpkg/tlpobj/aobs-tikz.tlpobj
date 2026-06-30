@@ -1,0 +1,21 @@
+name aobs-tikz
+category Package
+revision 70952
+shortdesc TikZ styles for creating overlaid pictures in beamer
+longdesc The package defines auxiliary TikZ styles useful for overlaying
+longdesc pictures' elements in Beamer. The TikZ styles are grouped in a
+longdesc library, overlay-beamer-styles which is automatically called by
+longdesc the package itself. Users may either load just aobs-tikz or the
+longdesc library; the latter method necessitates TikZ manual load.
+containersize 1656
+containerchecksum 3b8865136cac0af006f8b02b527f7dcdb609a97101a6d5e51ece579a04c53ebc9b912dece8ea541d3014080a39554edb0cfd6f67529087a1ea57b93ae24a2684
+doccontainersize 94668
+doccontainerchecksum f91aa5de9a8042edd4394ddc08f9c81503f7bab40d0bcd4f864eb454f9bab86684efe8452c53149dcce1d5eb80b335e90ef06d2007fbbc769a862253ea44e05f
+srccontainersize 5936
+srccontainerchecksum bcd45b2d8a50f9004f21e5d776843f255f016c584b43c2b6be4db5d4cb0b2c61f9432b0afa89873e649f8fe5ec97b59ccdb4458b58017d220ca84489afa03f81
+runfiles size=1
+ texmf-dist/tex/latex/aobs-tikz/tikzlibraryoverlay-beamer-styles.code.tex
+catalogue-ctan /graphics/pgf/contrib/aobs-tikz
+catalogue-license lppl1.3c
+catalogue-topics pgf-tikz presentation
+catalogue-version 1.01

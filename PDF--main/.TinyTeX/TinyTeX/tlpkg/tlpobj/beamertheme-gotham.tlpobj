@@ -1,0 +1,29 @@
+name beamertheme-gotham
+category Package
+revision 78692
+shortdesc A modern, minimal-ish, versatile and extendable yet robust theme for Beamer
+longdesc This package provides a modern, minimal-ish, versatile, LaTeX3
+longdesc and extendable yet robust Beamer theme with some lines of code
+longdesc gathered or borrowed from other themes. It uses the l3build
+longdesc system to both build and verify (Test-Driven Development) the
+longdesc delivered code. "Gotham" tries to bring higher flexibility
+longdesc thanks to LaTeX3 implementation on top of the good-looking
+longdesc Metropolis theme.
+containersize 21080
+containerchecksum 4eb2b3ddd0bf68e3a1873a3aa5fba6dc34df422aef1360a61f92bd5622fb778fcc44f6d9af81c4d350ef9c7c9464d0fde27fcb53412257721db3adf7af532516
+doccontainersize 2406316
+doccontainerchecksum ca1d1008e39aa783848c9db6fb35ad4e2508771357cc7cc2e729484ff87152fa3e92a04a7859f566602acf331756cab0919a83cf043b369784c5af912ea0f746
+srccontainersize 42792
+srccontainerchecksum bff734ddbd0de7a7c9081882fd42da1c7aea0bd8c0bfb06d2744e7fd7756f7ad889c3a121adb047b1a87eb3906eee7a4497a2e4af3235f38bb0be662426fc2f4
+runfiles size=47
+ texmf-dist/tex/latex/beamertheme-gotham/beamercolorthemegotham.sty
+ texmf-dist/tex/latex/beamertheme-gotham/beamerfontthemegotham.sty
+ texmf-dist/tex/latex/beamertheme-gotham/beamerinnerthemegotham.sty
+ texmf-dist/tex/latex/beamertheme-gotham/beamerouterthemegotham.sty
+ texmf-dist/tex/latex/beamertheme-gotham/beamerthemegotham.sty
+catalogue-contact-repository https://gitlab.com/RomainNOEL/beamertheme-gotham/
+catalogue-contact-support https://gitlab.com/RomainNOEL/beamertheme-gotham/issues
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-gotham
+catalogue-license lppl1.3c cc-by-sa-4
+catalogue-topics presentation
+catalogue-version 1.2.5.a

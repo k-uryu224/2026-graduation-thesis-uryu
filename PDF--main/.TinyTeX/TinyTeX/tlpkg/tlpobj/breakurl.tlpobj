@@ -1,0 +1,23 @@
+name breakurl
+category Package
+revision 77682
+shortdesc Line-breakable \url-like links in hyperref when compiling via dvips/ps2pdf
+longdesc This package provides a command much like hyperref's \url that
+longdesc typesets a URL using a typewriter-like font. However, if the
+longdesc dvips driver is being used, the original \url doesn't allow
+longdesc line breaks in the middle of the created link: the link comes
+longdesc in one atomic piece. This package allows such line breaks in
+longdesc the generated links.
+containersize 3092
+containerchecksum e3d78b9730a9dcfa9ec63178686d00e7d66eb3af1218ca71ac65b99b50a944bc9ca1dae8f4020cb801af0ed878e3abed04ee23df8ae983e4d40d54018573f150
+doccontainersize 107520
+doccontainerchecksum 82d2e474dc25a39f03cad437325d40b84ba34b45182fef06eda951e0ad731866646ea326514da572207a55a17e48326e8bedcc427d778d16d9b325b0bb4ab536
+srccontainersize 10328
+srccontainerchecksum 937f5dff1aea32700b3afe742beb65f98cab642896ae2af72e083b67e5ff1f04d8c6b46b7734d45ef204a74e06d4398467a763d9b45a87e95efc7fdf333636e4
+runfiles size=3
+ texmf-dist/tex/latex/breakurl/breakurl.sty
+catalogue-also hyperref
+catalogue-ctan /macros/latex/contrib/breakurl
+catalogue-license lppl
+catalogue-topics hyper tagged-pdf-incompatible
+catalogue-version 1.40

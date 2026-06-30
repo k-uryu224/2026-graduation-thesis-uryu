@@ -1,0 +1,19 @@
+name bizcard
+category Package
+revision 15878
+shortdesc Typeset business cards
+longdesc This is an adaption for current LaTeX of a LaTeX 2.09 style by
+longdesc Silvano Balemi. It produces cards at the normal US card size,
+longdesc 76.2mm x 50.8mm.
+containersize 2032
+containerchecksum 1575499c7118a96f3273c5b8d68e25a20410daeecbce48d1e6355039b97867b34a06c40785052d378dffbc80b862beafc06b9fedf62254d8b31445d8f95cdd29
+doccontainersize 74552
+doccontainerchecksum f529ec77b370def29ad77927170874dc02af37bfb9f57a4e1383b5adaa93f6e59aa33df06d40a80e2374db514f55e2f115e7c8f22e4c92cbd3cb621d8a735bdd
+srccontainersize 4376
+srccontainerchecksum ea5567a5b3f2a8f70954ca9b5939cb4f9cda05dd128da4d6592dcab25babf284d5fdb2c6af7a31e181f871802ab267fe012d9da3df963be19d789c6984c88cd5
+runfiles size=1
+ texmf-dist/tex/latex/bizcard/bizcard.sty
+catalogue-ctan /macros/latex/contrib/bizcard
+catalogue-license gpl
+catalogue-topics file-card
+catalogue-version 1.1

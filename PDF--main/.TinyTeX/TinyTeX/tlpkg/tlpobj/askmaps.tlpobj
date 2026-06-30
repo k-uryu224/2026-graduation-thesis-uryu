@@ -1,0 +1,21 @@
+name askmaps
+category Package
+revision 56730
+shortdesc Typeset American style Karnaugh maps
+longdesc The package provides 1, 2, 3, 4 and 5 variable Karnaugh maps,
+longdesc in the style used in numerous American textbooks on digital
+longdesc design. The package draws K-maps where the most significant
+longdesc input variables are placed on top of the columns and the least
+longdesc significant variables are placed left of the rows.
+containersize 3312
+containerchecksum 0f4d91a15053d40d329744c429540075c33e2098f6d9d07eccc5ad16c5696233dd01de89c61a7090dc127c3730ef04e24f8d56845919cd268ec8c0bc68d9c09f
+doccontainersize 384640
+doccontainerchecksum 268915d685c8bea4388055487ca0d30418557babd01547457449085e58d639bb17787b6b5c97fa99301555afa9d9d11754196cd2b1dbf48b642b05a835b383b0
+runfiles size=6
+ texmf-dist/tex/latex/askmaps/askmaps.sty
+catalogue-also karnaugh
+catalogue-contact-repository https://github.com/jesseopdenbrouw/askmaps
+catalogue-ctan /macros/latex/contrib/askmaps
+catalogue-license lppl
+catalogue-topics engineering maths
+catalogue-version 0.2

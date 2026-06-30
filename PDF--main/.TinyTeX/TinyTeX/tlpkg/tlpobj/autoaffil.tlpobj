@@ -1,0 +1,27 @@
+name autoaffil
+category Package
+revision 79311
+shortdesc Automatic deduplicated affiliation numbering
+longdesc This package provides the author and affiliation layout style
+longdesc common in physics and related fields. All authors appear in a
+longdesc single block with superscript numbers linking each name to a
+longdesc list of affiliations printed below. This is the style native to
+longdesc revtex4-2 with the superscriptaddress option, and is familiar
+longdesc from journals such as Physical Review Letters. The package
+longdesc brings this style to the standard article class and compatible
+longdesc classes, without requiring a specialised document class.
+containersize 3364
+containerchecksum 33e2b619d43ac2bb7e26be11624f4b4dc1b3e2a04dda1d5b1e287cea28998c5709ef067f81b3eca628537376ed82a4c25e17c12a51a6f569dee12adad102865d
+doccontainersize 527928
+doccontainerchecksum 67266d207afaa9d1bb0c4e043f20eeb1710cdcb8ec130b71db9b4d482e4a55d298e0fd266cd8508fe01da6367b891e2a584387c1b7ae25e88ac9b4cec5568409
+srccontainersize 10484
+srccontainerchecksum f7c0f35cee8487523be9285ed8c05ca46d6c329c573283ecce1f8ce9c3fe3022e134f49b6cce5e362ec27908df22fe732ae6b29718806b20ba98c581cbf3e624
+runfiles size=3
+ texmf-dist/tex/latex/autoaffil/autoaffil.sty
+catalogue-contact-bugs https://github.com/philbit/autoaffil/issues
+catalogue-contact-home https://github.com/philbit/autoaffil
+catalogue-contact-repository https://github.com/philbit/autoaffil
+catalogue-ctan /macros/latex/contrib/autoaffil
+catalogue-license lppl1.3c
+catalogue-topics journalpub scientific-docs
+catalogue-version 1.0

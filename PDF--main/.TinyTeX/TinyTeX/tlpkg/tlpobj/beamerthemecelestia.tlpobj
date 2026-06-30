@@ -1,0 +1,26 @@
+name beamerthemecelestia
+category Package
+revision 79461
+shortdesc A modern and elegant Beamer theme
+longdesc A modern and elegant Beamer theme designed for academic and
+longdesc professional presentations. It offers customizable footer
+longdesc styles (quarter-circle, full bar, classic), decorative elements
+longdesc that can be enabled/disabled, and enhanced typography options
+longdesc for headers. The theme includes special layouts for code
+longdesc listings, section pages, and standout frames. Color scheme can
+longdesc be customized through theme options, with support for both main
+longdesc and accent colors. The typography system supports both serif
+longdesc and sans-serif variants, and provides flexible font styling
+longdesc across different elements. Focused on readability and visual
+longdesc appeal, Celestia offers a clean and professional look for
+longdesc presentations.
+containersize 14400
+containerchecksum 052a61ff8043148e0dac27cace053c51141201890df2f5583ed0bafef6749c4663991cc06717ff6512dea570f40cd6852eaf965657affd8461dfb0b5bdd1bb91
+doccontainersize 1057572
+doccontainerchecksum d282c9e4e515d5af8ddf11f59c1f4939e97d524f04bd15fdee15d85c504139c06fa4df75bef99937297962369a1c029bb0d27e655763ccdee7838b8b2265c922
+runfiles size=22
+ texmf-dist/tex/latex/beamerthemecelestia/beamerthemeCelestia.sty
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamerthemecelestia
+catalogue-license lppl1.3c
+catalogue-topics presentation
+catalogue-version 1.2.4

@@ -1,0 +1,108 @@
+\chapter{提案手法}
+
+\section{本章の概要}
+
+本章では、本研究で提案する工程文脈依存的不確実性診断手法について述べる。まず問題設定を定義し、入力と出力、扱う不確実性原因、処理分岐の定義を示したうえで、VLM による構造化診断の流れを説明する。
+
+\section{手法の全体像}
+
+提案手法では、現在画像のみから次行動を直接生成するのではなく、作業履歴、現在工程、次工程候補、工程条件リストを併せて VLM に入力する。VLM は各工程条件について、証拠充足性、不確実性原因、現在工程との関連性、実行保留条件を診断し、最終的に act / reobserve / ask\_user / stop / defer の処理分岐を出力する。
+
+\section{問題定式化}
+
+長期ロボットタスクを、複数の工程からなる作業とする。各工程には、次工程へ進むために確認すべき工程条件が存在する。各データ点を
+\begin{equation}
+  x_i = (I_i, H_i, S_i, N_i, C_i)
+  \label{eq:input}
+\end{equation}
+と表す。ここで、$I_i$ は現在画像、$H_i$ は作業履歴、$S_i$ は現在工程、$N_i$ は次工程候補、$C_i$ は工程条件リストである。モデルは、各入力 $x_i$ に対して、処理分岐
+\begin{equation}
+  r_i \in \{\mathrm{act}, \mathrm{reobserve}, \mathrm{ask\_user}, \mathrm{stop}, \mathrm{defer}\}
+  \label{eq:resolution}
+\end{equation}
+を予測する。
+
+\section{入力と出力}
+
+入力は以下の五要素から構成される。
+\begin{enumerate}
+  \item 現在画像
+  \item 作業履歴
+  \item 現在工程
+  \item 次工程候補
+  \item 工程条件リスト
+\end{enumerate}
+
+VLM の出力は、各工程条件に対して以下の構造を持つ。
+\begin{enumerate}
+  \item evidence sufficiency：現在の証拠で判断可能か
+  \item uncertainty source：不確実性の原因
+  \item task relevance：現在工程において重要か
+  \item resolution mode：act / reobserve / ask\_user / stop / defer
+  \item execution guard：実行してよいか、確認まで停止するか
+\end{enumerate}
+
+\section{不確実性原因の定義}
+
+本研究では、不確実性原因を以下のように整理する。
+\begin{itemize}
+  \item visual occlusion：遮蔽により対象が見えない
+  \item perspective limitation：視点不足により判断困難である
+  \item missing execution：まだ工程が実行されていない
+  \item history mismatch：履歴と現在観測が整合しない
+  \item user/context dependency：ユーザ意図や家庭ルールが必要である
+  \item non-visual safety risk：熱さ、重さ、壊れやすさなど画像だけでは判断困難である
+  \item irrelevant now：現在工程ではまだ重要でない
+\end{itemize}
+
+\section{処理分岐の定義}
+
+本研究では、resolution mode を \tabref{tab:resolution_mode} の五種類に定義する。
+
+\begin{table}[tbp]
+\centering
+\caption{Resolution mode の定義}
+\label{tab:resolution_mode}
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+mode & 定義 \\
+\midrule
+act & 現在工程に必要な条件が満たされており、追加確認なしに予定 primitive へ進める分岐 \\
+reobserve & 視覚証拠が不足しており、視点変更や再撮影で判断可能になる分岐 \\
+ask\_user & 画像や履歴だけでは判断できず、人間由来情報が必要な分岐 \\
+stop & 危険性や不可逆リスクがあり、確認なしに実行すべきでない分岐 \\
+defer & 不確実性はあるが現在工程には影響せず、後工程まで延期する分岐 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+なお、解消方法と実行安全性を分離するため、必要に応じて execution guard を併用する。例えば、人間確認が必要で、確認まで実行してはならない場合は、resolution mode を ask\_user、execution guard を stop\_until\_confirmed として表す。
+
+\section{構造化診断アルゴリズム}
+
+提案手法では、VLM に直接処理分岐を選ばせるのではなく、以下の順に構造化診断を行う。
+\begin{enumerate}
+  \item 現在工程で必要な工程条件を確認する。
+  \item 現在画像と履歴から、条件の証拠が十分かを判定する。
+  \item 不確実性がある場合、その原因を分類する。
+  \item その不確実性が現在工程を妨げるかを判定する。
+  \item 最終的な resolution mode と execution guard を選択する。
+\end{enumerate}
+
+出力例を以下に示す。
+\begin{verbatim}
+{
+  "condition_id": "cup_content_safety",
+  "current_step": "move_cup_to_clear_workspace",
+  "history": "cup_has_not_been_checked",
+  "evidence_sufficiency": "insufficient",
+  "uncertainty_source": "non_visual_safety_risk",
+  "task_relevance": "blocking",
+  "resolution_mode": "ask_user",
+  "execution_guard": "stop_until_confirmed"
+}
+\end{verbatim}
+
+\section{実装上の工夫}
+
+実装上は、VLM に自由記述で結論のみを答えさせるのではなく、工程条件ごとの診断項目を明示した構造化プロンプトを与えることで、判断根拠と分岐選択の対応を保ちやすくする。また、現在工程だけでなく次工程候補も入力に含めることで、「いま重要か」「後回し可能か」の判定精度向上を狙う。

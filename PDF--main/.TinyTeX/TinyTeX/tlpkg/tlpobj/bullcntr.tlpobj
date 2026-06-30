@@ -1,0 +1,21 @@
+name bullcntr
+category Package
+revision 15878
+shortdesc Display list item counter as regular pattern of bullets
+longdesc The bullcntr package defines the command bullcntr, which may be
+longdesc thought of as an analogue of the \fnsymbol command: like the
+longdesc latter, it displays the value of a counter lying between 1 and
+longdesc 9, but uses, for the purpose, a regular pattern of bullets.
+containersize 2536
+containerchecksum 886109fdce6a936d22b829ff769b130a445876073c73b2bc1767610302ba8a40112938311a138e1c93a0495a6e7d5cafa8d3606ca3b2fe48af442e023195ab93
+doccontainersize 726416
+doccontainerchecksum ab01cfba0570bc565d8b40945aec5d87739a0826d5c323c5ee960c0d3c7c3135ef2c8b7878268b415ffae3beb06fbc6af48656e7c4a6a45ee423254ce23cad1e
+srccontainersize 17072
+srccontainerchecksum cd05d28c2e5c759863403e3ea9e8700002a4ef4f9021decec9a681b92d944ecc4c6765bae332f8645d06d12ab6adc096f4a560a195c981d5e6cbc72acb56e812
+runfiles size=3
+ texmf-dist/tex/latex/bullcntr/bullcntr.sty
+ texmf-dist/tex/latex/bullcntr/bullenum.sty
+catalogue-ctan /macros/latex/contrib/bullcntr
+catalogue-license lppl1.3
+catalogue-topics numbers
+catalogue-version 0.04

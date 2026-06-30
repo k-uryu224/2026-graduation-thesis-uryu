@@ -1,0 +1,23 @@
+name alphalph
+category Package
+revision 79461
+shortdesc Convert numbers to letters
+longdesc Provides commands \alphalph and \AlphAlph. They are like
+longdesc \number but the expansion consists of lowercase and uppercase
+longdesc letters respectively (1 to a, 26 to z, 27 to aa, 52 to zz, 53
+longdesc to ba, 702 to zz, 703 to aaa, etc.). Can be used as a
+longdesc replacement for LaTeX's \@alph and \@Alph macros.
+containersize 3440
+containerchecksum 0b3f1b6efb00c1120326b9b8313d1bc55eb232e7f7d10acaab9425bd164ffa0552c6b63c6282983bdb9845d8a59553bd577b2ce7c377bd2e31c79baa4fde0534
+doccontainersize 351720
+doccontainerchecksum 1006dbb99d7fabd4a9910a92c49e0cd5b94607582fa05bbff71c8b1555bb5ddfb0e99ba101fb03665145c4b7f553fa8e1f9adda9b0b0eaa7d937ef55e5a79fd8
+srccontainersize 11292
+srccontainerchecksum 543f67ef935693e90d9b8f286f265b7787092eacb7f47e2fc90d2b27573dfcdfc34d56cb498e7d361267f2f6733ed37d0ba2487ebd4c21e3821a8e5412db5a67
+runfiles size=3
+ texmf-dist/tex/generic/alphalph/alphalph.sty
+catalogue-contact-bugs https://github.com/LaTeX-Package-Repositories/alphalph/issues
+catalogue-contact-repository https://github.com/LaTeX-Package-Repositories/alphalph
+catalogue-ctan /macros/latex/contrib/alphalph
+catalogue-license lppl1.3
+catalogue-topics numbers tagged-pdf
+catalogue-version 2.6

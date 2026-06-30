@@ -1,0 +1,30 @@
+name bhcexam
+category Package
+revision 72638
+shortdesc An exam class for mathematics teachers in China
+longdesc BHCexam.cls is a LaTeX document class designed for typesetting
+longdesc exams. It is currently used by the Mathcrowd Problem Database
+longdesc to generate exam PDF files. The class supports the following
+longdesc features: Support for configuring whether to display answers.
+longdesc Ability to set whether the document is formatted in multiple
+longdesc columns. Alignment customization options. Automatic alignment
+longdesc of option lengths to a grid. Ability to adjust the width of
+longdesc blank lines based on the length of fill-in-the-blank answers.
+longdesc Option to display or hide scores for question groups.
+longdesc Customizable answer space for each question. Ability to restart
+longdesc numbering in question groups. Support for sub-questions and
+longdesc nested sub-questions in short-answer questions.
+containersize 3556
+containerchecksum 1d8f8a13cf02f20762447d50d19d72b3abbeab9d31181650411169cfcf9b494703483d48866789fa33c1bd6f85b1e8342001debedcaad3c5f3dcbae6dbdf3579
+doccontainersize 334616
+doccontainerchecksum b9527fac9454bc468a64494a9e6003be8e852d88f72487bfd0548100bfef78fa5b6ff005648d8eaa09b41637d51ebcde3c99dce66a1ca34ca2b79b9ff75dffdc
+runfiles size=3
+ texmf-dist/tex/xelatex/bhcexam/BHCexam.cls
+catalogue-contact-announce https://github.com/mathedu4all/bhcexam/wiki
+catalogue-contact-bugs https://github.com/mathedu4all/bhcexam/issues
+catalogue-contact-home https://lab.mathcrowd.cn/bhcexam
+catalogue-contact-repository https://github.com/mathedu4all/bhcexam
+catalogue-ctan /macros/xetex/latex/bhcexam
+catalogue-license lppl1.3
+catalogue-topics exam class chinese
+catalogue-version 1.8

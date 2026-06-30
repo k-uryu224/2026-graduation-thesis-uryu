@@ -1,0 +1,20 @@
+name abstract
+category Package
+revision 79461
+shortdesc Control the typesetting of the abstract environment
+longdesc The abstract package gives you control over the typesetting of
+longdesc the abstract environment, and in particular provides for a one
+longdesc column abstract in a two column paper.
+containersize 2016
+containerchecksum 3a3955a845f64baa3b2790fba1637ff4baf300ce9ac35866236fe6b85cb8ca8a8b029bb3350bd756713cb1e9f9f79d1dca562d51162be026b7e144073a8c68fd
+doccontainersize 146716
+doccontainerchecksum 3dcdbeadb94cfaef6ce3321af046dab331776c055f0be581adebf137e4959bc3f225d8ef767405f7bc8f143c7f70760513e6fe5cf02a477f46c63622a4d7c737
+srccontainersize 8320
+srccontainerchecksum a6c925154b0996281d38486a742789575b3d735ecff015a88a5af95d6029630472994fe439ffd93b42200427c5315e1b2aeede6be56d183a1ad667bc2b23e9cf
+runfiles size=2
+ texmf-dist/tex/latex/abstract/abstract.sty
+catalogue-contact-repository https://github.com/LaTeX-Package-Repositories/herries-press
+catalogue-ctan /macros/latex/contrib/abstract
+catalogue-license lppl
+catalogue-topics abstract tagged-pdf-partially
+catalogue-version 1.2a

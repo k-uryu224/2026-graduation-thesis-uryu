@@ -1,0 +1,23 @@
+name basicarith
+category Package
+revision 35460
+shortdesc Macros for typesetting basic arithmetic
+longdesc The package provides macros for typesetting basic arithmetic,
+longdesc in the style typically found in textbooks. It focuses on the
+longdesc American style of performing these algorithms. It is written
+longdesc mostly in low-level TeX, with the goal that it should run in
+longdesc either plain TeX or LaTeX, but there are two constructions that
+longdesc currently prevent this. It is highly configurable, with macros
+longdesc and lengths described in the documentation.
+containersize 2628
+containerchecksum 346edf1704ed621a326e4f945b8f5341dfbd2d46af095691c7b853a9683dfb2254d443ae04bf235f192a57dd55336dd50249b0963bde041120468499e61012b7
+doccontainersize 219292
+doccontainerchecksum bf454539b0202321121437d2448c3b49a2d6122459af4788a573cc2525f0301d1267b12f3df8636a36fe807c474cb23347a41a2c412eb12b674c58541516ade2
+srccontainersize 10016
+srccontainerchecksum 6c8b449cd8f356be6403a48943d6b91cf2c2dcff90020041a8dde0fb8ad1fa598727137dfda0b091ee776c968d4dffdad1215716111a36be16cc5c5e5b2cc5e6
+runfiles size=2
+ texmf-dist/tex/latex/basicarith/basicarith.sty
+catalogue-ctan /macros/latex/contrib/basicarith
+catalogue-license lppl1.3
+catalogue-topics arithmetic calculation
+catalogue-version 1.1

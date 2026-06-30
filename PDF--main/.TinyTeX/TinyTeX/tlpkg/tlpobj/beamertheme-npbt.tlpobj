@@ -1,0 +1,43 @@
+name beamertheme-npbt
+category Package
+revision 54512
+shortdesc A collection of LaTeX beamer themes
+longdesc "NPBT" stands for "Norman's Pandoc Beamer Themes". Currently
+longdesc the following themes are supported: Sefiroth Consulting: A
+longdesc private (demonstration) theme. FOM: The layout of Hochschule
+longdesc FOM. FOM ifes: The layout of Hochschule FOM, Institut fur
+longdesc Empirie & Statistik. eufom: The layout of eufom.
+containersize 1457176
+containerchecksum 9125794ab2ebc4d15ab500b67b9943234d80088393d9b31989ae8209359dca97778feaab3d11365ae1b4131f06dad2fe73bb21fae1220b401c5f31f413cff171
+doccontainersize 418012
+doccontainerchecksum 7703951f2afee05627847980a05b0bef0cb2fe87eec078f64a3e4796feb4057bdf93708ef0476090d40dad2605c69e23f695b9164a969e6a67f8329e6e340a3b
+runfiles size=404
+ texmf-dist/tex/latex/beamertheme-npbt/beamercolorthemeNPBT_EUFOM.sty
+ texmf-dist/tex/latex/beamertheme-npbt/beamercolorthemeNPBT_FOM.sty
+ texmf-dist/tex/latex/beamertheme-npbt/beamercolorthemeNPBT_FOM_ifes.sty
+ texmf-dist/tex/latex/beamertheme-npbt/beamercolorthemeNPBT_SC.sty
+ texmf-dist/tex/latex/beamertheme-npbt/beamerouterthemeNPBT_FOM.sty
+ texmf-dist/tex/latex/beamertheme-npbt/beamerouterthemeNPBT_FOM_ifes.sty
+ texmf-dist/tex/latex/beamertheme-npbt/beamerthemeNPBT.sty
+ texmf-dist/tex/latex/beamertheme-npbt/images/LICENSE.md
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_FOM_background.png
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_FOM_frametitlebackground.png
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_FOM_ifes_backgound.png
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_FOM_ifes_frametitlebackgound.png
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_FOM_ifes_linie.pdf
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_FOM_ifes_logo.png
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_FOM_linie.pdf
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_FOM_logo.pdf
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_SC_background.jpg
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_SC_logo.png
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_eufom_backgound.png
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_eufom_frametitlebackgound.png
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_eufom_linie.png
+ texmf-dist/tex/latex/beamertheme-npbt/images/NPBT_eufom_logo.png
+ texmf-dist/tex/latex/beamertheme-npbt/images/lNPBT_SC_linie.png
+catalogue-contact-bugs https://github.com/NMarkgraf/NPBT/issues
+catalogue-contact-repository https://github.com/NMarkgraf/NPBT
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-npbt
+catalogue-license gpl3 pd
+catalogue-topics presentation
+catalogue-version 4.1

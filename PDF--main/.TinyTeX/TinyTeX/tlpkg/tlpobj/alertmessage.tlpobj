@@ -1,0 +1,23 @@
+name alertmessage
+category Package
+revision 76924
+shortdesc Alert messages for LaTeX
+longdesc Some macros to display alert messages (informational, error,
+longdesc warning and success messages).
+containersize 6844
+containerchecksum c1dd6b93f74db3aeffa75726423149c2701872674050e67f957bbee6c355090da6280473a51c404694434cdf8bb83b9db3e623b5c3f2d89d4d5d3b485c99eee4
+doccontainersize 106740
+doccontainerchecksum c66b0615a2e83496ca39fdd645f0ef652c75a8b638159bf35b44a9505c0d256463694fd33be703acfad7e955d463b782e848f664e8569e22fa4cf420e96d95dd
+srccontainersize 2460
+srccontainerchecksum b16a311c768e0eed97c81c1dcf657253645b58292d59f05a75237aa1f96efe28cb25b9d4d13d066459f81323ef135fd7767369e11ef8f9c234cb1759138b6f3f
+runfiles size=5
+ texmf-dist/tex/latex/alertmessage/alertmessage.sty
+ texmf-dist/tex/latex/alertmessage/img/alertmessage-error.png
+ texmf-dist/tex/latex/alertmessage/img/alertmessage-info.png
+ texmf-dist/tex/latex/alertmessage/img/alertmessage-success.png
+ texmf-dist/tex/latex/alertmessage/img/alertmessage-warning.png
+catalogue-contact-repository https://github.com/pidupuis/latex-alert-message
+catalogue-ctan /macros/latex/contrib/alertmessage
+catalogue-license lppl1.3
+catalogue-topics boxing
+catalogue-version 1.1

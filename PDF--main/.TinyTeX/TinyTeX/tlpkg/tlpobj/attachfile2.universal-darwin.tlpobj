@@ -1,0 +1,8 @@
+name attachfile2.universal-darwin
+category Package
+revision 57908
+shortdesc universal-darwin files of attachfile2
+containersize 348
+containerchecksum 7a2c2a3b8a292ffca71556ccfa81bf5978096dcbbb5ca05b9e67bb3d4a9b71d9803d5ac8779636138bf7d01cd06c18ec127b479ef475381c9b8bd87944051d31
+binfiles arch=universal-darwin size=1
+ bin/universal-darwin/pdfatfi

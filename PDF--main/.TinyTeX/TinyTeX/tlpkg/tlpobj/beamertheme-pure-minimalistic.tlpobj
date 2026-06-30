@@ -1,0 +1,28 @@
+name beamertheme-pure-minimalistic
+category Package
+revision 56934
+shortdesc A minimalistic presentation theme for LaTeX Beamer
+longdesc The main features of this minimalistic Beamer theme are: Easily
+longdesc use own logos. Customizable. Looks good in a 4:3 and 16:9
+longdesc aspect ratio, without the need to change anything. Provides an
+longdesc environment for vertically-spaced items. Provides light and
+longdesc dark mode. Is designed to be purely minimalistic without any
+longdesc distractions.
+containersize 4256
+containerchecksum b9c6237108e1aa5f4859ebd1100efbddd2bca55c76bca876e0e3a0c10dbd322a3ee834e4e452b80b2f7755ce026fd2bbe5c69434371ad29df1fe3280b409bdc6
+doccontainersize 365176
+doccontainerchecksum 791e3a367f5c7ebfee453e7d7a76753763e2bbe122616e49fd0d4268dbd274e3ecb308b5adb850765d143bc46a311316f86bd13e60ce1449b0217d7b4f733830
+runfiles size=6
+ texmf-dist/tex/latex/beamertheme-pure-minimalistic/beamercolorthemepureminimalistic.sty
+ texmf-dist/tex/latex/beamertheme-pure-minimalistic/beamerfontthemepureminimalistic.sty
+ texmf-dist/tex/latex/beamertheme-pure-minimalistic/beamerinnerthemepureminimalistic.sty
+ texmf-dist/tex/latex/beamertheme-pure-minimalistic/beamerouterthemepureminimalistic.sty
+ texmf-dist/tex/latex/beamertheme-pure-minimalistic/beamerthemepureminimalistic.sty
+catalogue-also beamertheme-focus
+catalogue-contact-announce https://github.com/kai-tub/latex-beamer-pure-minimalistic/releases
+catalogue-contact-bugs https://github.com/kai-tub/latex-beamer-pure-minimalistic/issues
+catalogue-contact-repository https://github.com/kai-tub/latex-beamer-pure-minimalistic
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-pure-minimalistic
+catalogue-license gpl3+
+catalogue-topics presentation
+catalogue-version 2.0.0

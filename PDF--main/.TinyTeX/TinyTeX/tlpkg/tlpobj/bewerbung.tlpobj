@@ -1,0 +1,28 @@
+name bewerbung
+category Package
+revision 61632
+shortdesc Typesetting job applications
+longdesc The package provides packages and classes for typesetting
+longdesc applications with titlepage, cover letter, cv and additional
+longdesc documents in just a single document. There is also a class for
+longdesc printing a table of the latest applications that can be shown
+longdesc to the German authorities. The data for these applications can
+longdesc be maintained in a simple CSV file.
+containersize 9908
+containerchecksum 1a5f652ce8e7ad60f22b7c3c5cc46c3963e5511965445fdacef01aecb157ecc4fbd3eed07140d64716b90a11db96f1b7dab8b4568aa41f7049f8a3a1ed0e290c
+doccontainersize 818960
+doccontainerchecksum 1713c1d4ef0982cf635ea57cb7af7805b001b48cdfef5bf770c627f5460f57945d2d2ead87c6e0ae8ad7cdc66036caa5dffafccc5ccd59ba889154cc6e4f9f5e
+srccontainersize 25552
+srccontainerchecksum df95e8bcc71b83dc196699dc9f4581ce3482ae9f1b673fbd2bb2551d84c68c97cbb70771ad710052d1f2652bcb2d32d8a4392a038e747e4ce7a25b65aaed2e79
+runfiles size=18
+ texmf-dist/tex/latex/bewerbung/argetabelle.cls
+ texmf-dist/tex/latex/bewerbung/bewerbung-cv-casual.sty
+ texmf-dist/tex/latex/bewerbung/bewerbung-cv-classic.sty
+ texmf-dist/tex/latex/bewerbung/bewerbung-cv-oldstyle.sty
+ texmf-dist/tex/latex/bewerbung/bewerbung-cv.sty
+ texmf-dist/tex/latex/bewerbung/bewerbung.cls
+ texmf-dist/tex/latex/bewerbung/bewerbung.sty
+catalogue-ctan /macros/latex/contrib/bewerbung
+catalogue-license lppl1.3
+catalogue-topics cv class german
+catalogue-version 1.3

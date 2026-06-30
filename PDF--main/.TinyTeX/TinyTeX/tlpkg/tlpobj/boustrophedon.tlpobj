@@ -1,0 +1,34 @@
+name boustrophedon
+category Package
+revision 79090
+shortdesc A LaTeX package for boustrophedon typography
+longdesc This package typesets text in boustrophedon style, alternating
+longdesc the writing direction on each line. Have you ever wondered why
+longdesc most Western languages are written left-to-right, while many
+longdesc Middle Eastern languages are written right-to-left? Both
+longdesc conventions may seem arbitrary today -- but this was not always
+longdesc the case. In one of the earliest fully developed alphabets, the
+longdesc Archaic Greek alphabet (from alpha and beta, hence "alphabet"),
+longdesc writing was often performed boustrophedon, meaning "as the ox
+longdesc turns in ploughing." Text was written left-to-right on one
+longdesc line, then right-to-left on the next, with both the direction
+longdesc of the text and the letterforms themselves mirrored
+longdesc accordingly. This method creates a continuous flow of reading,
+longdesc as the reader does not need to jump back to the start of each
+longdesc new line, but instead follows the text in a natural
+longdesc back-and-forth motion. Reading takes some getting used to, but
+longdesc after a while it becomes surprisingly natural.
+containersize 5804
+containerchecksum 0dec1702c977b688022bbb3d90f9be4ca9b6c3ae20ad5598f18f65cafb6a665cf59b8ce8e5de5a8025896eaa449820cbfd6ce403aecbf1e08e6910b49796468d
+doccontainersize 148808
+doccontainerchecksum 91015a5d8de4dc7c4e2a160650670edcb5f60c8ba77e3baa66674bc02cc8a1c661b9d443c093e1e5b1ccb3d19382a96a8767c2f5d650bc0ab554febecd677483
+srccontainersize 7624
+srccontainerchecksum f5fc445b8e4703f582593ef77ca66e1dc524006f8a8617cd2d865d74a59af824d61d14be5ff81bc67f4eed816fdfc73337997ab661b89099519413e5e97021a4
+runfiles size=8
+ texmf-dist/tex/latex/boustrophedon/boustrophedon.sty
+catalogue-contact-bugs https://github.com/arishadj/latex-boustrophedon/issues
+catalogue-contact-repository https://github.com/arishadj/latex-boustrophedon
+catalogue-ctan /macros/latex/contrib/boustrophedon
+catalogue-license lppl1.3c
+catalogue-topics bidi
+catalogue-version 1.1.0

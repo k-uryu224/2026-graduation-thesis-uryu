@@ -1,0 +1,18 @@
+name beamertheme-mirage
+category Package
+revision 73516
+shortdesc A beamer theme with dark and light colour schemes
+longdesc A beamer theme inspired by the album art of Zhou Shen's song
+longdesc Mirage, with a default dark and alternative light mode. Sample
+longdesc .tex files for beamer presentations and posters are provided.
+containersize 2428
+containerchecksum 1ebedcd3b9f7b4d28ad53ef9cdc03401f9632ac24673cce89e7a8360ea9606a4e6b58336bd74451895323d089e9bd1bb3e75d5e8fe00727720c5b81773fd2f6a
+doccontainersize 793656
+doccontainerchecksum b666cef2f31cb29572998900ab95d860bbcb7c8a42677ed0ae08c59ee4d0558c570418bc46f035ec64b39d9077dd7a841f14298edb5fe13aa16af143181e34c1
+runfiles size=2
+ texmf-dist/tex/latex/beamertheme-mirage/beamerthemeMirage.sty
+catalogue-contact-repository https://github.com/liantze/beamerthemeMirage
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-mirage
+catalogue-license lppl1.3c
+catalogue-topics presentation
+catalogue-version 1.1.1

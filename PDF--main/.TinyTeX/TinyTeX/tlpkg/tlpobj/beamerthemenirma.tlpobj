@@ -1,0 +1,17 @@
+name beamerthemenirma
+category Package
+revision 20765
+shortdesc A Beamer theme for academic presentations
+longdesc The package developed for academic purposes. The distribution
+longdesc includes nothing more than style file needed for preparing
+longdesc presentations.
+containersize 2704
+containerchecksum 6fe83e0805fde96d585dc027ecadd23862815171f56f6a05db0a6788018a096c193c995895f7ca18af6d322877e24d570743d84a922a2c7e4baef35d3f6dfca1
+doccontainersize 404
+doccontainerchecksum 13f1dfbc8f09662b627dd4ed6c7ff297612c5d05a140a446ccdcb6f0ad3a9995b434d418994cccc2323ead666eaeb10b32e1a9d410a38c632df9873717397231
+runfiles size=2
+ texmf-dist/tex/latex/beamerthemenirma/beamerthemenirma.sty
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/nirma
+catalogue-license lppl
+catalogue-topics presentation
+catalogue-version 0.1

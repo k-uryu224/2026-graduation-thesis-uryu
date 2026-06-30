@@ -1,0 +1,31 @@
+name haranoaji
+category Package
+revision 76078
+shortdesc Harano Aji Fonts
+longdesc Harano Aji Fonts (Harano Aji Mincho and Harano Aji Gothic) are
+longdesc fonts obtained by replacing Adobe-Identity-0 (AI0) CIDs of
+longdesc Source Han fonts (Source Han Serif and Source Han Sans) with
+longdesc Adobe-Japan1 (AJ1) CIDs. There are 14 fonts, 7 weights each for
+longdesc Mincho and Gothic.
+postaction script file=tlpkg/tlpostcode/haranoaji-tlpost.pl
+containersize 26259784
+containerchecksum 929c2d95d8ea2f04d336d1da4e5926d8edfc0ed8119b9b690c37607407ba19b804a9cd03a4127a6591c2b8752e45834a0eb038826694e8ad847b4e00c52fc26c
+doccontainersize 3032
+doccontainerchecksum 44103e14792e8a7559caa1c907e4d467c5f71036c01413ec96ecc5e7971b9abdb5f3547c88a8893e7d1848d8353acf5fa5be1e2320c9c210e6a3b316fff9dc01
+runfiles size=9510
+ texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Bold.otf
+ texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Heavy.otf
+ texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf
+ texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Regular.otf
+ texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Bold.otf
+ texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Light.otf
+ texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf
+ texmf-dist/tex/latex/haranoaji/HaranoAjiGothic.fontspec
+ texmf-dist/tex/latex/haranoaji/HaranoAjiMincho.fontspec
+ tlpkg/tlpostcode/haranoaji-tlpost.pl
+catalogue-also haranoaji-extra
+catalogue-contact-home https://github.com/trueroad/HaranoAjiFonts
+catalogue-ctan /fonts/haranoaji
+catalogue-license ofl
+catalogue-topics font font-cjk japanese
+catalogue-version 20250811

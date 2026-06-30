@@ -1,0 +1,21 @@
+name beamerdarkthemes
+category Package
+revision 55117
+shortdesc Dark color themes for beamer
+longdesc A package with three dark color themes for beamer, designed for
+longdesc presentations with pictures and/or for bright rooms without
+longdesc screen. These themes mix one dominant foreground colour and a
+longdesc black background. Cormorant stands for green, frigatebird for
+longdesc red and magpie for blue.
+containersize 1828
+containerchecksum ced5c093d0c4e3c23fcf774bfcc768b8a3adb20287e0677e1a2474d5ad1eeea1f5f979f988c0f0ae6a484ec1953b95c044b0803df9f76f289e999ec50889433a
+doccontainersize 1885368
+doccontainerchecksum 45d0daee876c0e0d94b2ce6ce7b49f6eb8282643b1bf3540abb07e0e7782434c224ba40ff933e9febd893467ebab2ba7cb588669a98784e8eba6acefa0d30611
+runfiles size=3
+ texmf-dist/tex/latex/beamerdarkthemes/beamercolorthemecormorant.sty
+ texmf-dist/tex/latex/beamerdarkthemes/beamercolorthemefrigatebird.sty
+ texmf-dist/tex/latex/beamerdarkthemes/beamercolorthememagpie.sty
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamerdarkthemes
+catalogue-license lppl1.3 cc-by-4
+catalogue-topics presentation
+catalogue-version 0.5.1

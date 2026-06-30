@@ -1,0 +1,8 @@
+name bibtex.universal-darwin
+category Package
+revision 77928
+shortdesc universal-darwin files of bibtex
+containersize 179176
+containerchecksum ffe93b5126b5192b153d978ba5f408cb98d268bb9acf2ec1e62c6521e336eb5bd28f9f822bbda7481376e9deee5526e8d39713bcdecdc6dd5e580dbf527d7cf0
+binfiles arch=universal-darwin size=146
+ bin/universal-darwin/bibtex

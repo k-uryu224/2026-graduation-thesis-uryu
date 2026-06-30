@@ -1,0 +1,26 @@
+name beamertheme-spectrum
+category Package
+revision 77770
+shortdesc A clean beamer/ltx-talk theme with a big title graphic
+longdesc This package provides a clean beamer/ltx-talk theme with a big
+longdesc title graphic. The theme is deliberately fairly clean and
+longdesc simple in order to not distract too much from the content. The
+longdesc one vanity are the big graphics on the title, section, and
+longdesc standout slides.
+depend beamer
+depend pgf
+depend tools
+containersize 4884
+containerchecksum 9d4a384eb7188ead2a4becf154f64efc12a9cfc0e0a39fbed5ac3afca041ce89dac2a3f4fd492f427e2ac469565056521819bbd6a1c20d751b20391d91403318
+doccontainersize 419932
+doccontainerchecksum 812a3c2a665585f339dfacf518a7c80a13ed83bbccac16de7bf640f62feac3a4fefe7fa10d64139eb7dde97e1b490783c8aad86d99f4e7de80f242a9a24976db
+runfiles size=8
+ texmf-dist/tex/latex/beamertheme-spectrum/beamertheme-spectrum-bg.jpg
+ texmf-dist/tex/latex/beamertheme-spectrum/beamerthemespectrum.sty
+ texmf-dist/tex/latex/beamertheme-spectrum/talkthemespectrum.sty
+catalogue-contact-repository https://github.com/samcarter/beamertheme-spectrum
+catalogue-contact-support https://github.com/samcarter/beamertheme-spectrum/issues
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-spectrum
+catalogue-license lppl1.3c
+catalogue-topics presentation pgf-tikz
+catalogue-version 0.6

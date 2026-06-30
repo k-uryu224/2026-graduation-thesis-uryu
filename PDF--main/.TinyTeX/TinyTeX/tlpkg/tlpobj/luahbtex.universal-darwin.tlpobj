@@ -1,0 +1,8 @@
+name luahbtex.universal-darwin
+category TLCore
+revision 78048
+shortdesc universal-darwin files of luahbtex
+containersize 4678604
+containerchecksum f90c0853ee68fdbc66fdad22a0f17e767331c34d444be856af316a43f9a60471418551f47d53aba0f63556182a74334b397d866e5311d3683fedf0115957209b
+binfiles arch=universal-darwin size=4313
+ bin/universal-darwin/luahbtex

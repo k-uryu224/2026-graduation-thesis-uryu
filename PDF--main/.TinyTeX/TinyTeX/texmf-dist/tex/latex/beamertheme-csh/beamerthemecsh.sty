@@ -1,0 +1,85 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% beamerthemecsh.sty - CSH Beamer Theme
+% Complexity Science Hub Vienna
+%
+% Copyright (c) 2025 Complexity Science Hub Vienna
+% This work may be distributed under the terms of the LPPL 1.3c.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemecsh}[2025/11/27 v1.1 CSH Beamer Theme]
+
+\mode<presentation>
+
+\RequirePackage{lastpage}
+\RequirePackage{tikz}
+\RequirePackage{qrcode}
+\RequirePackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+
+% settings
+\useinnertheme{csh}
+\useoutertheme{csh}
+\usecolortheme{csh}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\setbeamersize{text margin left=1.8em, text margin right=3em}
+
+% Source citation command
+% Usage: \source{Your citation text here}
+\newcommand{\source}[1]{%
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[xshift=12pt, yshift=12pt, anchor=south west] at (current page.south west)%
+            {\tiny\textcolor{dark}{#1}};
+    \end{tikzpicture}
+}
+
+% CSH Closing slide command
+% Usage: \cshclosingslide{Name}{email@csh.ac.at}{https://example.com}
+\newcommand{\cshclosingslide}[3]{%
+    {\setbeamertemplate{background}{%
+        \begin{tikzpicture}
+        \useasboundingbox (0, 0) rectangle(\the\paperwidth, \the\paperheight);
+
+        % Blue background for closing slide
+        \fill[fill=tertiary] (0, 0)--
+                        (\the\paperwidth, 0)--
+                        (\the\paperwidth, \the\paperheight)--
+                        (0*\the\paperwidth, \the\paperheight);
+        \node[xshift=80pt, yshift=-40pt] at (current page.north west)%
+          {\includegraphics[height=1.2cm]{\institutionlogomain}};
+        \end{tikzpicture}
+      }
+    \setbeamertemplate{sidebar right}{}
+    \begin{frame}[plain]
+        \begin{columns}
+            \begin{column}{0.4\textwidth}
+                \vspace{-2cm}
+                \hspace{-0.4cm}
+                \qrcode[height=3cm]{#3}
+            \end{column}
+            \begin{column}{0.55\textwidth}
+                \centering
+                \Large
+
+                \vspace{2em}
+
+                \textbf{Thank You!}
+
+                \vspace{2em}
+
+                {\small
+                \textbf{Contact}\\
+                \vspace{0.3em}
+                #1\\
+                Complexity Science Hub\\
+                \vspace{0.2em}
+                \textcolor{primary}{#2}
+                }
+            \end{column}
+        \end{columns}
+    \end{frame}}
+}
+
+\mode<all>

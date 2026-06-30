@@ -1,0 +1,24 @@
+name beamertheme-csh
+category Package
+revision 76967
+shortdesc A Beamer presentation theme for the Complexity Science Hub Vienna
+longdesc This package provides a Beamer theme following the corporate
+longdesc design of the Complexity Science Hub (CSH) Vienna. It includes
+longdesc a title page, automatic section slides, source citation
+longdesc commands, and a closing slide with QR code. The theme uses TeX
+longdesc Gyre Heros as the default font.
+containersize 7440
+containerchecksum 52a7b7532de3f90194c793daf00b281ed7f31a371237cec4950dbafcf641f836bd356ac258db8ab0444e493965b6584b38f48fd0806732c6132a1e20a5f5eb37
+doccontainersize 138768
+doccontainerchecksum 1f19c87b8dfc0c82c70b653ebcdee83f99019e4113ad5269406d4d0caf007855eb13ec8425f1bd0fed9484c791951ae74d6d1654d9253e65dd7c25d2e6e1c297
+runfiles size=7
+ texmf-dist/tex/latex/beamertheme-csh/beamercolorthemecsh.sty
+ texmf-dist/tex/latex/beamertheme-csh/beamerinnerthemecsh.sty
+ texmf-dist/tex/latex/beamertheme-csh/beamerouterthemecsh.sty
+ texmf-dist/tex/latex/beamertheme-csh/beamerthemecsh.sty
+ texmf-dist/tex/latex/beamertheme-csh/csh-logo-star-crop.pdf
+ texmf-dist/tex/latex/beamertheme-csh/csh-logo-web.pdf
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-csh
+catalogue-license lppl1.3c
+catalogue-topics presentation std-conform
+catalogue-version 1.1

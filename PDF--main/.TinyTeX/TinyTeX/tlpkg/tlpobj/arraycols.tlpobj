@@ -1,0 +1,22 @@
+name arraycols
+category Package
+revision 71168
+shortdesc New column types for array and tabular environments
+longdesc This small package provides new column types for array and
+longdesc tabular environments, horizontally and vertically centered, or
+longdesc with adjusted height for big mathematical expressions. The
+longdesc columns width can be fixed or calculated like in tabularx
+longdesc environments. Macros for drawing vertical and horizontal rules
+longdesc of variable thickness are also provided.
+containersize 1292
+containerchecksum 6b111a498e567d2fc06614841eebc36cae7256f99b7f1dc903f4cb5fb68c66c3d9ad6fec15757a91290f092fedd23ce64120a073480d6c282270f1c844e5fc41
+doccontainersize 108476
+doccontainerchecksum bf2eb31b818d3c2e245b781f083b76e9c8b4ae7715fd85607195b2456bfb2e8b23f8fb8459b7c7f0b5bb28dbc5a88f113fc8fec4712dd02c3bc395f11e705faf
+srccontainersize 7372
+srccontainerchecksum 72f2f99c904ea7e386a3211693b9b7395b58fd53f8d718d359f5dff86b29f53734ff617cfb31a33b256d3162c40b2eb63355aff6c77120f41226e14380c1bc48
+runfiles size=1
+ texmf-dist/tex/latex/arraycols/arraycols.sty
+catalogue-ctan /macros/latex/contrib/arraycols
+catalogue-license lppl1.3
+catalogue-topics table alignment alignment-supp
+catalogue-version 1.5

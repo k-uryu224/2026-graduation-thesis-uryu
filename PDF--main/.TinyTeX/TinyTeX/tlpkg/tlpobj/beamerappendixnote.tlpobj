@@ -1,0 +1,22 @@
+name beamerappendixnote
+category Package
+revision 55732
+shortdesc Create notes on appendix frames in beamer
+longdesc This package introduces the \appxnote command, which puts the
+longdesc note's content on a separate beamer frame shown by the command
+longdesc \printappxnotes. It also creates interactive buttons to move
+longdesc back and forth between the two frames.
+containersize 1556
+containerchecksum bfb855380ded0b9ef019a139c93cc4f520d4390d98ddfb43483679742ee597b8e045c8286a9391ec068f51ae6c50372b0438b41e449e23804efbc18767c11726
+doccontainersize 70428
+doccontainerchecksum abf6b36bfad890b37a0add2ad443c39ba2f2484bd19f9730fec4cbb416eafc6fce723fd5fa684cb7adba4110f888641cc570ac7b7a26ccbf06dcd3697e2c5921
+srccontainersize 3336
+srccontainerchecksum f90db38b52c3c5dd3867111c17716160191ba238b965185d31d497494cb17046a83dcc62966bdc01d79a3f1ddfe53d9d9a4e31a6084c951b68598bb4ca392c4c
+runfiles size=1
+ texmf-dist/tex/latex/beamerappendixnote/beamerappendixnote.sty
+catalogue-contact-bugs https://github.com/csemken/beamerappendixnote/issues
+catalogue-contact-repository https://github.com/csemken/beamerappendixnote
+catalogue-ctan /macros/latex/contrib/beamer-contrib/beamerappendixnote
+catalogue-license lppl1.3c
+catalogue-topics presentation
+catalogue-version 1.2.0

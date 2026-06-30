@@ -1,0 +1,19 @@
+name autonum
+category Package
+revision 77682
+shortdesc Automatic equation references
+longdesc The package arranges that equation numbers are applied only to
+longdesc those equations that are referenced. This operation is similar
+longdesc to the showonlyrefs option of the package mathtools.
+containersize 3444
+containerchecksum 0323a59eee4399291ba1dc30f52c85352e3001e3a081047896aa81d939b2bd18e2bf6a8573c88d24e6dd2a6d65b9346817a2221a3a1a4b019ff2dbf5768cb3bf
+doccontainersize 400788
+doccontainerchecksum 6227425ea4fdd9b22d1c9af46ef685ec2819be25dd9da5bf3921ec2b597f411536515121afb549b251e616f0ce7e27b0683032301228e669f6acf6a736d3420c
+srccontainersize 17168
+srccontainerchecksum 315b78c2f27373bbb199d162dec0a0d2eefb599b0eda840e046301343f816f67fc0ad55d18a3609f8fb3dc6f7179e9635cde8cdec7d33a0c3db19bf882560a05
+runfiles size=3
+ texmf-dist/tex/latex/autonum/autonum.sty
+catalogue-ctan /macros/latex/contrib/autonum
+catalogue-license lppl1.3
+catalogue-topics maths label-ref tagged-pdf-unsupported
+catalogue-version 0.3.11

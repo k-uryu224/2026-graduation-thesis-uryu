@@ -1,0 +1,25 @@
+name beamertheme-tcolorbox
+category Package
+revision 77380
+shortdesc A beamer/ltx-talk inner theme to reproduce standard beamer blocks using tcolorboxes
+longdesc This package provides an inner theme for beamer or ltx-talk
+longdesc which reproduces standard beamer blocks using tcolorboxes. The
+longdesc look and feel (rounded/sharp corners, shadows and colours) will
+longdesc automatically adapt to which other themes are loaded.
+depend beamer
+depend tcolorbox
+depend tikzfill
+depend tools
+containersize 3768
+containerchecksum e270944f1e3f1c1ff3a6e897cd52f7ff3f25ef994a462021998dd5c98270b111590a78d9795fd5b365a811d57f68d1c9e1092d1e4af3ef62197674967d58a3a7
+doccontainersize 334724
+doccontainerchecksum 8bd16513af521fd7d429cd02d302c36f0f7137b73610a32ae3f314d6f419486c55c5dadb1f175eb5b80bc432c2f04af5132e5ffbbd35acf926373f2a26ba50c3
+runfiles size=5
+ texmf-dist/tex/latex/beamertheme-tcolorbox/beamerinnerthemetcolorbox.sty
+ texmf-dist/tex/latex/beamertheme-tcolorbox/talkthemetcolorbox.sty
+catalogue-contact-repository https://github.com/samcarter/beamertheme-tcolorbox
+catalogue-contact-support https://github.com/samcarter/beamertheme-tcolorbox/issues
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-tcolorbox
+catalogue-license lppl1.3c
+catalogue-topics presentation
+catalogue-version 1.4

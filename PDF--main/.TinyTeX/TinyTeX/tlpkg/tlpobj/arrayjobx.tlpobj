@@ -1,0 +1,22 @@
+name arrayjobx
+category Package
+revision 18125
+shortdesc Array data structures for (La)TeX
+longdesc This package provides array data structures in (La)TeX, in the
+longdesc meaning of the classical procedural programming languages like
+longdesc Fortran, Ada or C, and macros to manipulate them. Arrays can be
+longdesc mono or bi-dimensional. This is useful for applications which
+longdesc require high level programming techniques, like algorithmic
+longdesc graphics programmed in the TeX language. The package supersedes
+longdesc the arrayjob package.
+containersize 2976
+containerchecksum 5cf6573de2bf55c1b75c2a0f38515ecde848dafcc0e5f0e77185ac039d0bcc4049bf6fdef62134ea5e4839570fc20cc6928bc9357bee0c4396f08d714eca8d13
+doccontainersize 436304
+doccontainerchecksum 495f7f8f3265e349e16ad170eeda10296926864084ace743df54f5a4b304da6bc344bce901edc0fca8d835bd0f90943b192b0e16e3a8f5bc81e0f269f2b480a7
+runfiles size=4
+ texmf-dist/tex/generic/arrayjobx/arrayjob.sty
+ texmf-dist/tex/generic/arrayjobx/arrayjobx.sty
+catalogue-ctan /macros/generic/arrayjobx
+catalogue-license lppl
+catalogue-topics macro-supp
+catalogue-version 1.04

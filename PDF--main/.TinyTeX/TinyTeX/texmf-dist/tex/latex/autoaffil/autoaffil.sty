@@ -1,0 +1,327 @@
+%%
+%% This is file `autoaffil.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% autoaffil.dtx  (with options: `package')
+%% 
+%% File: autoaffil.sty
+%% Description: Automatic affiliation footnote numbering for LaTeX.
+%% 
+%% Copyright (C) 2026 Philip Bittihn <philip@bittihn.de>
+%% 
+%% This work may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License, either version 1.3c of this license
+%% or (at your option) any later version.
+%% The latest version of this license is in
+%%     https://www.latex-project.org/lppl.txt
+%% 
+%% This work has the LPPL maintenance status `maintained'.
+%% The Current Maintainer of this work is Philip Bittihn.
+%% 
+%% This work consists of the files autoaffil.dtx and autoaffil.ins
+%% and the derived file autoaffil.sty.
+%% 
+%%
+%% autoaffil.dtx  --  Documented source for the autoaffil LaTeX package
+%%
+%% Copyright (C) 2026 Philip Bittihn <philip@bittihn.de>
+%%
+%% This work may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License, either version 1.3c of this license
+%% or (at your option) any later version.
+%% The latest version of this license is in
+%%     https://www.latex-project.org/lppl.txt
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% The Current Maintainer of this work is Philip Bittihn.
+%%
+%% This work consists of the files autoaffil.dtx and autoaffil.ins
+%% and the derived file autoaffil.sty.
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{autoaffil}[2026/06/06 v1.0 Automatic affiliation footnotes (PB)]
+\RequirePackage{etoolbox}
+
+\newif\ifaaf@ranges
+\aaf@rangesfalse
+\DeclareOption{ranges}{\aaf@rangestrue}
+
+\newif\ifaaf@superaftercomma
+\aaf@superaftercommafalse
+\DeclareOption{superaftercomma}{\aaf@superaftercommatrue}
+
+\newif\ifaaf@nobreak
+\aaf@nobreakfalse
+\DeclareOption{nobreak}{\aaf@nobreaktrue}
+
+\newif\ifaaf@manual
+\aaf@manualfalse
+\DeclareOption{manual}{\aaf@manualtrue}
+
+\ProcessOptions\relax
+\newcommand\aafauthorfont[1]{\textbf{#1}}
+\newcommand\aafauthorsep{,}
+\newcommand\aafauthorspace{\hspace{0.5em plus 0.2em minus 0.1em}}
+\makeatletter
+\newcounter{aaf@naffils}
+\newcounter{aaf@nauthors}
+\newcounter{aaf@nremarks}
+\newcounter{aaf@i}
+\newcommand\aaf@findaffil[1]{%
+  \def\aaf@found{0}%
+  \setcounter{aaf@i}{0}%
+  \@whilenum\value{aaf@i}<\value{aaf@naffils}\do{%
+    \stepcounter{aaf@i}%
+    \def\aaf@tmp{#1}%
+    \expandafter\ifx\csname aaf@affiltext@\arabic{aaf@i}\endcsname\aaf@tmp
+      \xdef\aaf@found{\arabic{aaf@i}}%
+      \setcounter{aaf@i}{\value{aaf@naffils}}%
+    \fi
+  }%
+}
+\newcommand\aaf@registeraffil[1]{%
+  \aaf@findaffil{#1}%
+  \ifnum\aaf@found=0\relax
+    \stepcounter{aaf@naffils}%
+    \expandafter\gdef\csname aaf@affiltext@\arabic{aaf@naffils}\endcsname{#1}%
+    \xdef\aaf@curnum{\arabic{aaf@naffils}}%
+  \else
+    \xdef\aaf@curnum{\aaf@found}%
+  \fi
+}
+\newcommand\autoauthor[2][]{%
+  \stepcounter{aaf@nauthors}%
+  \edef\aaf@aid{\arabic{aaf@nauthors}}%
+  \expandafter\gdef\csname aaf@authorname@\aaf@aid\endcsname{#2}%
+  \expandafter\gdef\csname aaf@authorextra@\aaf@aid\endcsname{#1}%
+  \expandafter\gdef\csname aaf@authormarks@\aaf@aid\endcsname{}%
+}
+\newcommand\autoaffil[1]{%
+  \edef\aaf@aid{\arabic{aaf@nauthors}}%
+  \aaf@registeraffil{#1}%
+  \expandafter\let\expandafter\aaf@curmarks\csname aaf@authormarks@\aaf@aid\endcsname
+  \ifx\aaf@curmarks\@empty
+    \expandafter\xdef\csname aaf@authormarks@\aaf@aid\endcsname{\aaf@curnum}%
+  \else
+    \expandafter\xdef\csname aaf@authormarks@\aaf@aid\endcsname{\aaf@curmarks,\aaf@curnum}%
+  \fi
+}
+\newcommand\autoremark[2]{%
+  \stepcounter{aaf@nremarks}%
+  \expandafter\gdef\csname aaf@remarksym@\arabic{aaf@nremarks}\endcsname{#1}%
+  \expandafter\gdef\csname aaf@remarktext@\arabic{aaf@nremarks}\endcsname{#2}%
+}
+
+\def\aaf@dash{\mbox{--}}
+
+\newcommand\aaf@compress[1]{%
+  \def\aaf@rc@out{}%
+  \def\aaf@rc@start{}%
+  \def\aaf@rc@end{}%
+  \def\aaf@rc@len{0}%
+  \@for\aaf@rc@n:=#1\do{%
+    \expandafter\aaf@rc@process\expandafter{\aaf@rc@n}%
+  }%
+  \ifx\aaf@rc@start\@empty\else\aaf@rc@flush\fi
+  \let\aaf@result\aaf@rc@out
+}
+\newcommand\aaf@rc@process[1]{%
+  \ifx\aaf@rc@start\@empty
+    \def\aaf@rc@start{#1}%
+    \def\aaf@rc@end{#1}%
+    \def\aaf@rc@len{1}%
+  \else
+    \edef\aaf@rc@succ{\the\numexpr\aaf@rc@end+1\relax}%
+    \edef\aaf@rc@cur{#1}%
+    \ifx\aaf@rc@cur\aaf@rc@succ
+      \def\aaf@rc@end{#1}%
+      \edef\aaf@rc@len{\the\numexpr\aaf@rc@len+1\relax}%
+    \else
+      \aaf@rc@flush
+      \def\aaf@rc@start{#1}%
+      \def\aaf@rc@end{#1}%
+      \def\aaf@rc@len{1}%
+    \fi
+  \fi
+}
+\newcommand\aaf@rc@flush{%
+  \ifnum\aaf@rc@len=1\relax
+    \edef\aaf@rc@piece{\aaf@rc@start}%
+  \else\ifnum\aaf@rc@len=2\relax
+    \edef\aaf@rc@piece{\aaf@rc@start,\aaf@rc@end}%
+  \else
+    \edef\aaf@rc@piece{\aaf@rc@start\noexpand\aaf@dash\aaf@rc@end}%
+  \fi\fi
+  \ifx\aaf@rc@out\@empty
+    \let\aaf@rc@out\aaf@rc@piece
+  \else
+    \toks0=\expandafter{\aaf@rc@out}%
+    \toks2=\expandafter{\aaf@rc@piece}%
+    \edef\aaf@rc@out{\the\toks0,\the\toks2}%
+  \fi
+  \def\aaf@rc@start{}%
+}
+\newcommand\aaf@prepare@marks[1]{%
+  \edef\aaf@allmarks{\csname aaf@authormarks@#1\endcsname}%
+  \edef\aaf@extramarks{\csname aaf@authorextra@#1\endcsname}%
+  \ifaaf@ranges
+    \ifx\aaf@allmarks\@empty\else
+      \aaf@compress{\aaf@allmarks}%
+      \toks0=\expandafter{\aaf@result}%
+      \edef\aaf@allmarks{\the\toks0}%
+    \fi
+  \fi
+}
+\newcommand\aaf@emit@super{%
+  \ifx\aaf@allmarks\@empty
+    \ifx\aaf@extramarks\@empty\else$^{\aaf@extramarks}$\fi
+  \else
+    \ifx\aaf@extramarks\@empty
+      $^{\aaf@allmarks}$%
+    \else
+      $^{\aaf@allmarks,\aaf@extramarks}$%
+    \fi
+  \fi
+}
+\newcommand\printauthors{%
+  \begingroup
+  \setcounter{aaf@i}{0}%
+  % Set up the unit wrapper: \aaf@unit{tokens} either outputs tokens
+  % directly (no nobreak) or wraps them in \mbox{tokens} (nobreak).
+  \ifaaf@nobreak
+    \def\aaf@unit##1{\mbox{##1}}%
+  \else
+    \def\aaf@unit##1{##1}%
+  \fi
+  \ifaaf@superaftercomma
+    %
+    % ---- superaftercomma layout ----
+    %
+    % Each unit is: \aafauthorfont{name}\aafauthorsep^{marks}, wrapped by \aaf@unit.
+    % The last unit is: \aafauthorfont{name}^{marks} (no trailing sep).
+    % Between units: \aafauthorspace (breakable unless nobreak).
+    %
+    \def\aaf@prev@marks{}%
+    \def\aaf@prev@extra{}%
+    \def\aaf@isfirst{1}%
+    \@whilenum\value{aaf@i}<\value{aaf@nauthors}\do{%
+      \stepcounter{aaf@i}%
+      \edef\aaf@aid{\arabic{aaf@i}}%
+      % Emit inter-author space before all but the first author.
+      \ifx\aaf@isfirst\@empty
+        \aafauthorspace
+      \fi
+      \def\aaf@isfirst{}%
+      % Prepare this author's marks now (needed to build the unit).
+      \aaf@prepare@marks{\aaf@aid}%
+      \let\aaf@prev@marks\aaf@allmarks
+      \let\aaf@prev@extra\aaf@extramarks
+      % Emit unit: name+sep+super for non-last authors, name+super for the last.
+      \ifnum\aaf@aid<\value{aaf@nauthors}%
+        % Not last: unit = name + separator + super.
+        \aaf@unit{%
+          \aafauthorfont{\csname aaf@authorname@\aaf@aid\endcsname}\aafauthorsep%
+          \let\aaf@allmarks\aaf@prev@marks
+          \let\aaf@extramarks\aaf@prev@extra
+          \aaf@emit@super
+        }%
+      \else
+        % Last author: unit = name + super (no trailing separator).
+        \aaf@unit{%
+          \aafauthorfont{\csname aaf@authorname@\aaf@aid\endcsname}%
+          \let\aaf@allmarks\aaf@prev@marks
+          \let\aaf@extramarks\aaf@prev@extra
+          \aaf@emit@super
+        }%
+      \fi
+    }%
+    %
+  \else
+    %
+    % ---- default layout ----
+    %
+    % Each unit is: \aafauthorfont{name}^{marks}, wrapped by \aaf@unit.
+    % Between units: \aafauthorsep\aafauthorspace.
+    %
+    \def\aaf@sep{}%
+    \@whilenum\value{aaf@i}<\value{aaf@nauthors}\do{%
+      \stepcounter{aaf@i}%
+      \edef\aaf@aid{\arabic{aaf@i}}%
+      \aaf@sep
+      \aaf@prepare@marks{\aaf@aid}%
+      \aaf@unit{%
+        \aafauthorfont{\csname aaf@authorname@\aaf@aid\endcsname}%
+        \aaf@emit@super
+      }%
+      \def\aaf@sep{\aafauthorsep\aafauthorspace}%
+    }%
+  \fi
+  \endgroup
+}
+\newcommand\printaffils{%
+  \begingroup
+  \setcounter{aaf@i}{0}%
+  \@whilenum\value{aaf@i}<\value{aaf@naffils}\do{%
+    \stepcounter{aaf@i}%
+    \noindent$^{\arabic{aaf@i}}$\csname aaf@affiltext@\arabic{aaf@i}\endcsname\par
+  }%
+  \endgroup
+}
+\newcommand\printremarks{%
+  \begingroup
+  \setcounter{aaf@i}{0}%
+  \@whilenum\value{aaf@i}<\value{aaf@nremarks}\do{%
+    \stepcounter{aaf@i}%
+    \noindent$^{\csname aaf@remarksym@\arabic{aaf@i}\endcsname}$%
+    \csname aaf@remarktext@\arabic{aaf@i}\endcsname\par
+  }%
+  \endgroup
+}
+
+\newcommand\aaf@block{%
+  \normalfont  % reset font family/series/shape (some classes apply \bf
+               % or other font commands around \@author in \@maketitle)
+  \normalsize  % reset font size
+  \printauthors\par
+  \vskip 0.6em\relax
+  \printaffils
+  \ifnum\value{aaf@nremarks}>0\relax
+    \vskip 0.4em\relax
+    \printremarks
+  \fi
+}
+\AtBeginDocument{%
+  \ifaaf@manual
+    % Manual mode: call \author{} to suppress the "No \author given"
+    % warning (autoaffil manages author display itself).
+    \author{}%
+  \else
+    % Auto mode: set \@author to our block inside a \parbox[t]{\textwidth}.
+    %
+    % This is the general injection strategy: rather than patching
+    % \@maketitle (which would require exact token-level matching of
+    % the surrounding context, varying across classes), we place our
+    % content directly into \@author.  Since every \@maketitle typesets
+    % \@author somewhere, the block always appears at the correct location
+    % regardless of the surrounding structure.
+    %
+    % \parbox[t]{\textwidth} creates a top-aligned paragraph box spanning
+    % the full text width.  This lets \printauthors, \printaffils, and
+    % \printremarks use paragraph-mode commands (such as \par and \noindent)
+    % even when \@author is typeset inside a tabular cell (LR mode).
+    % \centering centres each line within the parbox.
+    \author{%
+      \parbox[t]{\textwidth}{%
+        \centering
+        \aaf@block
+      }%
+    }%
+  \fi
+}
+
+\makeatother
+\endinput
+%%
+%% End of file `autoaffil.sty'.

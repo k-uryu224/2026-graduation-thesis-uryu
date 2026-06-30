@@ -1,0 +1,483 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamertheme-geode}[1.0.0 beamertheme geode Package] %Putting a '-' here breaks the package...
+
+% #-----------------------------------------------------#
+%             beamertheme-geode package
+%                    by Camille Jaret
+%   under the LaTeX Project Public License 1.3c
+% #-----------------------------------------------------#
+
+%    ################
+%     ### DEPENDENCIES ###
+%       ################
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{helvet}
+\usepackage{helvet}
+
+
+%    #############
+%     ### OPTIONS ####
+%      ##############
+
+\newif\ifbg
+\bgtrue
+\newif\iflowpoly
+\lowpolyfalse
+\newif\ifultralowpoly
+\ultralowpolyfalse
+\newif\ifhighpoly
+\highpolyfalse
+
+\newcommand{\themecolor}{geode-amethyst}
+
+\def\Ifbg{bg}
+\def\Ifcacc{acc}
+\def\Ifcbga{bg1}
+\def\Ifcbgb{bg2}
+\def\Ifcbgc{bg3}
+\def\Ifcbgd{bg4}
+\def\Ifctone{tone}
+\def\Ifcgeode{geode}
+\def\Ifcdot{dots}
+
+\NewDocumentCommand\custompalette{mmmm}{
+\def\IfOpt{#1}
+
+\ifx\IfOpt\Ifctone
+  \definecolor{accent}{rgb}{#2,#3,#4}
+  \definecolor{geode}{rgb}{\fpeval{(#2+0.15)*2},\fpeval{(#3+0.15)*2},\fpeval{(#4+0.2)*2}}
+\else
+
+\ifx\IfOpt\Ifbg
+  \definecolor{bg1}{rgb}{#2,#3,#4}
+  \definecolor{bg2}{rgb}{\fpeval{#2*0.95},\fpeval{#3*0.95},\fpeval{#4*0.95}}
+  \definecolor{bg3}{rgb}{\fpeval{#2*0.9},\fpeval{#3*0.9},\fpeval{#4*0.9}}
+  \definecolor{bg4}{rgb}{\fpeval{#2*0.85},\fpeval{#3*0.85},\fpeval{#4*0.85}}
+\else
+
+\ifx\IfOpt\Ifcacc
+  \definecolor{accent}{rgb}{#2,#3,#4}
+\else
+
+\ifx\IfOpt\Ifcgeode
+  \definecolor{geode}{rgb}{#2,#3,#4}
+\else
+
+\ifx\IfOpt\Ifcdot
+  \definecolor{dot}{rgb}{#2,#3,#4}
+\else
+
+\ifx\IfOpt\Ifcbga
+  \definecolor{bg1}{rgb}{#2,#3,#4}
+\else
+
+\ifx\IfOpt\Ifcbgb
+  \definecolor{bg2}{rgb}{#2,#3,#4}
+\else
+
+\ifx\IfOpt\Ifcbgc
+  \definecolor{bg3}{rgb}{#2,#3,#4}
+\else
+
+\ifx\IfOpt\Ifcbgd
+  \definecolor{bg4}{rgb}{#2,#3,#4}
+
+\else \PackageWarning{geode}{Unknown element `\IfOpt'. See documentation for a list of all elements.}
+    
+\fi\fi\fi\fi\fi\fi\fi\fi\fi
+}
+
+\DeclareOption{amethyst}{\renewcommand{\themecolor}{geode-amethyst}}
+\DeclareOption{citrine}{\renewcommand{\themecolor}{geode-citrine}}
+\DeclareOption{obs}{\renewcommand{\themecolor}{geode-obsidian}}
+\DeclareOption{phos}{\renewcommand{\themecolor}{geode-phosphophyllite}}
+\DeclareOption{pquartz}{\renewcommand{\themecolor}{geode-pinkquartz}}
+\DeclareOption{diamond}{\renewcommand{\themecolor}{geode-diamond}}
+\DeclareOption{lowpoly}{\lowpolytrue}
+\DeclareOption{ultralowpoly}{\ultralowpolytrue}
+\DeclareOption{highpoly}{\highpolytrue}
+\DeclareOption*{\PackageWarning{geode}{Unknown option `\CurrentOption'. See documentation for a list of options }}
+\ProcessOptions\relax
+
+%    ############
+%     ### MACROS ###
+%      ############
+
+% ---Presentation---
+
+\def\geotitle{{
+
+\bgfalse
+\frame{\titlepage}
+\bgtrue
+
+}}
+
+\def\geosection{{
+
+\bgfalse
+\frame{\sectionpage}
+\bgtrue
+
+}}
+
+\def\geosubsec{{
+
+\bgfalse
+\frame{\subsectionpage}
+\bgtrue
+
+}}
+
+% ---Custom Palette---
+
+%    ###########
+%     ### THEME ###
+%      ###########
+
+% ---Adjustments---
+
+\usecolortheme{\themecolor}
+
+% Settings
+\setbeamercolor*{title page header}{fg=white}
+\setbeamercolor*{author}{fg=white}
+\setbeamercolor*{date}{fg=white}
+\setbeamercolor*{item}{fg=accent}
+\setbeamercolor*{footline}{fg=accent}
+\setbeamercolor*{frametitle}{fg=accent}
+\setbeamercolor*{block title}{fg=accent, bg=geode}
+\setbeamercolor*{block body}{bg=geode!5}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]  
+
+% ---Background---
+
+\setbeamertemplate{background}{
+  \ifultralowpoly
+    \begin{tikzpicture}
+      \useasboundingbox (0,0) rectangle(\paperwidth,\paperheight);
+       \fill[color=bg1] (0/12*\paperwidth,9/9*\paperheight) -- (2/12*\paperwidth,4/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+       \fill[color=bg2] (0/12*\paperwidth,9/9*\paperheight) -- (12/12*\paperwidth,9/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+       \fill[color=bg3] (0/12*\paperwidth,9/9*\paperheight) -- (0/12*\paperwidth,0/9*\paperheight) -- (2/12*\paperwidth,4/9*\paperheight) -- cycle;
+       \fill[color=bg3] (12/12*\paperwidth,9/9*\paperheight) -- (11/12*\paperwidth,6/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+       \fill[color=bg2] (11/12*\paperwidth,6/9*\paperheight) -- (12/12*\paperwidth,0/9*\paperheight) -- (6/12*\paperwidth,3/9*\paperheight) -- cycle;
+       \fill[color=bg4] (12/12*\paperwidth,9/9*\paperheight) -- (11/12*\paperwidth,6/9*\paperheight) -- (12/12*\paperwidth,0/9*\paperheight) -- cycle;
+       \fill[color=bg1] (6/12*\paperwidth,3/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- (11/12*\paperwidth,6/9*\paperheight) -- cycle;
+       \fill[color=bg3] (6/12*\paperwidth,3/9*\paperheight) -- (2/12*\paperwidth,4/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+       \fill[color=bg4] (6/12*\paperwidth,3/9*\paperheight) -- (0/12*\paperwidth,0/9*\paperheight) -- (2/12*\paperwidth,4/9*\paperheight) -- cycle;
+       \fill[color=bg1] (0/12*\paperwidth,0/9*\paperheight) -- (12/12*\paperwidth,0/9*\paperheight) -- (6/12*\paperwidth,3/9*\paperheight) -- cycle;
+       \ifbg
+         \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,0.3);
+         \fill[white,opacity=1] (0,0.8) rectangle(\the\paperwidth,8.8);
+         \fill[geode, opacity=0.5] (11,0.3) rectangle(\the\paperwidth,0.8);
+      \fi
+    \end{tikzpicture}
+  \else \iflowpoly
+    \begin{tikzpicture}
+      \useasboundingbox (0,0) rectangle(\paperwidth,\paperheight);
+      \fill[color=bg1] (0/12*\paperwidth,0/9*\paperheight) -- (2/12*\paperwidth,0/9*\paperheight) -- (0/12*\paperwidth,3/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (2/12*\paperwidth,0/9*\paperheight) -- (0/12*\paperwidth,3/9*\paperheight) -- (6/12*\paperwidth,5/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (2/12*\paperwidth,0/9*\paperheight) -- (6/12*\paperwidth,2/9*\paperheight) -- (10/12*\paperwidth,0/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (10/12*\paperwidth,0/9*\paperheight) -- (12/12*\paperwidth,0/9*\paperheight) -- (12/12*\paperwidth,2/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (12/12*\paperwidth,0/9*\paperheight) -- (12/12*\paperwidth,2/9*\paperheight) -- (12/12*\paperwidth,3/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (12/12*\paperwidth,2/9*\paperheight) -- (12/12*\paperwidth,3/9*\paperheight) -- (12/12*\paperwidth,7/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (12/12*\paperwidth,7/9*\paperheight) -- (10/12*\paperwidth,6/9*\paperheight) -- (12/12*\paperwidth,2/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (11/12*\paperwidth,9/9*\paperheight) -- (12/12*\paperwidth,9/9*\paperheight) -- (12/12*\paperwidth,7/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (11/12*\paperwidth,9/9*\paperheight) -- (12/12*\paperwidth,9/9*\paperheight) -- (6/12*\paperwidth,9/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (2/12*\paperwidth,9/9*\paperheight) -- (6/12*\paperwidth,9/9*\paperheight) -- (7/12*\paperwidth,8/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (0/12*\paperwidth,8/9*\paperheight) -- (0/12*\paperwidth,9/9*\paperheight) -- (2/12*\paperwidth,9/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (0/12*\paperwidth,8/9*\paperheight) -- (0/12*\paperwidth,3/9*\paperheight) -- (3/12*\paperwidth,6/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (0/12*\paperwidth,8/9*\paperheight) -- (3/12*\paperwidth,6/9*\paperheight) -- (2/12*\paperwidth,9/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (2/12*\paperwidth,9/9*\paperheight) -- (3/12*\paperwidth,6/9*\paperheight) -- (7/12*\paperwidth,8/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (3/12*\paperwidth,6/9*\paperheight) -- (0/12*\paperwidth,3/9*\paperheight) -- (6/12*\paperwidth,5/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (2/12*\paperwidth,0/9*\paperheight) -- (6/12*\paperwidth,2/9*\paperheight) -- (6/12*\paperwidth,5/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (6/12*\paperwidth,2/9*\paperheight) -- (6/12*\paperwidth,5/9*\paperheight) -- (10/12*\paperwidth,0/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (7/12*\paperwidth,8/9*\paperheight) -- (6/12*\paperwidth,9/9*\paperheight) -- (11/12*\paperwidth,9/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (10/12*\paperwidth,6/9*\paperheight) -- (11/12*\paperwidth,9/9*\paperheight) -- (12/12*\paperwidth,7/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (7/12*\paperwidth,8/9*\paperheight) -- (10/12*\paperwidth,6/9*\paperheight) -- (11/12*\paperwidth,9/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (3/12*\paperwidth,6/9*\paperheight) -- (6/12*\paperwidth,5/9*\paperheight) -- (7/12*\paperwidth,8/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (12/12*\paperwidth,2/9*\paperheight) -- (6/12*\paperwidth,5/9*\paperheight) -- (10/12*\paperwidth,6/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (10/12*\paperwidth,0/9*\paperheight) -- (12/12*\paperwidth,2/9*\paperheight) -- (6/12*\paperwidth,5/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (7/12*\paperwidth,8/9*\paperheight) -- (10/12*\paperwidth,6/9*\paperheight) -- (6/12*\paperwidth,5/9*\paperheight) -- cycle;
+		  \ifbg
+        \fill[white,opacity=1] (0,0) rectangle(\paperwidth,0.3);
+        \fill[white,opacity=1] (0,0.8) rectangle(\paperwidth,8.8);
+        \fill[geode, opacity=0.5] (11,0.3) rectangle(\paperwidth,0.8);
+      \fi
+    \end{tikzpicture}
+  \else \ifhighpoly
+    \begin{tikzpicture}
+      \useasboundingbox (0,0) rectangle(\paperwidth,\paperheight);
+	  	\fill[color=bg1] (5.5/12*\paperwidth,8/9*\paperheight) -- (4.5/12*\paperwidth,6.5/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg1] (4.5/12*\paperwidth,6.5/9*\paperheight) -- (6/12*\paperwidth,7/9*\paperheight) -- (5.5/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg2] (6/12*\paperwidth,7/9*\paperheight) -- (5.5/12*\paperwidth,8/9*\paperheight) -- (4.5/12*\paperwidth,6.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (5.5/12*\paperwidth,8/9*\paperheight) -- (7/12*\paperwidth,8/9*\paperheight) -- (6/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg1] (7/12*\paperwidth,8/9*\paperheight) -- (8.5/12*\paperwidth,7.5/9*\paperheight) -- (8/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg4] (7/12*\paperwidth,8/9*\paperheight) -- (6/12*\paperwidth,7/9*\paperheight) -- (8/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg4] (6/12*\paperwidth,7/9*\paperheight) -- (7.5/12*\paperwidth,5.5/9*\paperheight) -- (8/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg1] (8/12*\paperwidth,7/9*\paperheight) -- (8/12*\paperwidth,6/9*\paperheight) -- (6/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg4] (8.5/12*\paperwidth,7.5/9*\paperheight) -- (9.5/12*\paperwidth,7/9*\paperheight) -- (8/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg3] (8.5/12*\paperwidth,7.5/9*\paperheight) -- (8/12*\paperwidth,7/9*\paperheight) -- (8/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg2] (6/12*\paperwidth,7/9*\paperheight) -- (6.5/12*\paperwidth,5/9*\paperheight) -- (7.5/12*\paperwidth,5.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (5.5/12*\paperwidth,6/9*\paperheight) -- (6.5/12*\paperwidth,5/9*\paperheight) -- (6/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg4] (6.5/12*\paperwidth,5/9*\paperheight) -- (7/12*\paperwidth,4/9*\paperheight) -- (7.5/12*\paperwidth,5.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (7.5/12*\paperwidth,5.5/9*\paperheight) -- (8/12*\paperwidth,5/9*\paperheight) -- (8/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg1] (8/12*\paperwidth,5/9*\paperheight) -- (9.5/12*\paperwidth,7/9*\paperheight) -- (8/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg4] (8/12*\paperwidth,5/9*\paperheight) -- (9/12*\paperwidth,5.5/9*\paperheight) -- (9/12*\paperwidth,4.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (10.5/12*\paperwidth,6.5/9*\paperheight) -- (9/12*\paperwidth,5.5/9*\paperheight) -- (11/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg1] (9.5/12*\paperwidth,7/9*\paperheight) -- (10.5/12*\paperwidth,6.5/9*\paperheight) -- (9/12*\paperwidth,5.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (9.5/12*\paperwidth,7/9*\paperheight) -- (8/12*\paperwidth,5/9*\paperheight) -- (9/12*\paperwidth,5.5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (9/12*\paperwidth,4.5/9*\paperheight) -- (10/12*\paperwidth,5/9*\paperheight) -- (9/12*\paperwidth,5.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (10/12*\paperwidth,5/9*\paperheight) -- (9/12*\paperwidth,5.5/9*\paperheight) -- (11/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg3] (10/12*\paperwidth,5/9*\paperheight) -- (12/12*\paperwidth,5/9*\paperheight) -- (11/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg4] (10.5/12*\paperwidth,6.5/9*\paperheight) -- (11/12*\paperwidth,7.5/9*\paperheight) -- (9.5/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg3] (10.5/12*\paperwidth,6.5/9*\paperheight) -- (12/12*\paperwidth,7/9*\paperheight) -- (11/12*\paperwidth,7.5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (11/12*\paperwidth,6/9*\paperheight) -- (12.5/12*\paperwidth,6.5/9*\paperheight) -- (12/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg2] (10.5/12*\paperwidth,6.5/9*\paperheight) -- (11/12*\paperwidth,6/9*\paperheight) -- (12/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg4] (11/12*\paperwidth,6/9*\paperheight) -- (12.5/12*\paperwidth,6.5/9*\paperheight) -- (12/12*\paperwidth,5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (11.5/12*\paperwidth,3/9*\paperheight) -- (10/12*\paperwidth,5/9*\paperheight) -- (12/12*\paperwidth,5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (10/12*\paperwidth,4/9*\paperheight) -- (10/12*\paperwidth,5/9*\paperheight) -- (9/12*\paperwidth,4.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (8/12*\paperwidth,5/9*\paperheight) -- (7/12*\paperwidth,4/9*\paperheight) -- (7.5/12*\paperwidth,5.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (7/12*\paperwidth,4/9*\paperheight) -- (9/12*\paperwidth,4.5/9*\paperheight) -- (8/12*\paperwidth,5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (7/12*\paperwidth,4/9*\paperheight) -- (8/12*\paperwidth,3/9*\paperheight) -- (9/12*\paperwidth,4.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (6.5/12*\paperwidth,5/9*\paperheight) -- (5/12*\paperwidth,4.5/9*\paperheight) -- (5.5/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg4] (4/12*\paperwidth,5.5/9*\paperheight) -- (4.5/12*\paperwidth,6.5/9*\paperheight) -- (5.5/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg2] (7/12*\paperwidth,8/9*\paperheight) -- (9/12*\paperwidth,8/9*\paperheight) -- (8.5/12*\paperwidth,7.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (8.5/12*\paperwidth,8.5/9*\paperheight) -- (9/12*\paperwidth,8/9*\paperheight) -- (7/12*\paperwidth,8/9*\paperheight) -- cycle;
+			\fill[color=bg3] (8.5/12*\paperwidth,8.5/9*\paperheight) -- (10.5/12*\paperwidth,9/9*\paperheight) -- (6.5/12*\paperwidth,9/9*\paperheight) -- cycle;
+			\fill[color=bg2] (8.5/12*\paperwidth,8.5/9*\paperheight) -- (11.5/12*\paperwidth,8.5/9*\paperheight) -- (10.5/12*\paperwidth,9/9*\paperheight) -- cycle;
+			\fill[color=bg1] (9/12*\paperwidth,8/9*\paperheight) -- (9.5/12*\paperwidth,7/9*\paperheight) -- (8.5/12*\paperwidth,7.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (9/12*\paperwidth,8/9*\paperheight) -- (11/12*\paperwidth,7.5/9*\paperheight) -- (9.5/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg4] (11/12*\paperwidth,7.5/9*\paperheight) -- (11.5/12*\paperwidth,8.5/9*\paperheight) -- (12/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg1] (9/12*\paperwidth,8/9*\paperheight) -- (11.5/12*\paperwidth,8.5/9*\paperheight) -- (8.5/12*\paperwidth,8.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (9/12*\paperwidth,8/9*\paperheight) -- (11/12*\paperwidth,7.5/9*\paperheight) -- (11.5/12*\paperwidth,8.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (10/12*\paperwidth,4/9*\paperheight) -- (11.5/12*\paperwidth,3/9*\paperheight) -- (10/12*\paperwidth,5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (11/12*\paperwidth,3/9*\paperheight) -- (10/12*\paperwidth,4/9*\paperheight) -- (11.5/12*\paperwidth,3/9*\paperheight) -- cycle;
+			\fill[color=bg1] (11.5/12*\paperwidth,3/9*\paperheight) -- (14/12*\paperwidth,4/9*\paperheight) -- (12/12*\paperwidth,5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (11/12*\paperwidth,3/9*\paperheight) -- (10.5/12*\paperwidth,1.5/9*\paperheight) -- (11.5/12*\paperwidth,3/9*\paperheight) -- cycle;
+			\fill[color=bg3] (10.5/12*\paperwidth,1.5/9*\paperheight) -- (14/12*\paperwidth,4/9*\paperheight) -- (11.5/12*\paperwidth,3/9*\paperheight) -- cycle;
+			\fill[color=bg4] (10.5/12*\paperwidth,1.5/9*\paperheight) -- (12/12*\paperwidth,1/9*\paperheight) -- (14/12*\paperwidth,4/9*\paperheight) -- cycle;
+			\fill[color=bg4] (9.5/12*\paperwidth,2.5/9*\paperheight) -- (10/12*\paperwidth,4/9*\paperheight) -- (11/12*\paperwidth,3/9*\paperheight) -- cycle;
+			\fill[color=bg1] (8/12*\paperwidth,3/9*\paperheight) -- (10/12*\paperwidth,4/9*\paperheight) -- (9/12*\paperwidth,4.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (8/12*\paperwidth,3/9*\paperheight) -- (9.5/12*\paperwidth,2.5/9*\paperheight) -- (10/12*\paperwidth,4/9*\paperheight) -- cycle;
+			\fill[color=bg2] (9.5/12*\paperwidth,2.5/9*\paperheight) -- (10.5/12*\paperwidth,1.5/9*\paperheight) -- (11/12*\paperwidth,3/9*\paperheight) -- cycle;
+			\fill[color=bg3] (4/12*\paperwidth,7/9*\paperheight) -- (4/12*\paperwidth,5.5/9*\paperheight) -- (4.5/12*\paperwidth,6.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (4/12*\paperwidth,5.5/9*\paperheight) -- (5/12*\paperwidth,4.5/9*\paperheight) -- (5.5/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg2] (5.5/12*\paperwidth,3.5/9*\paperheight) -- (5/12*\paperwidth,4.5/9*\paperheight) -- (6.5/12*\paperwidth,5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (5.5/12*\paperwidth,3.5/9*\paperheight) -- (6.5/12*\paperwidth,5/9*\paperheight) -- (7/12*\paperwidth,4/9*\paperheight) -- cycle;   
+			\fill[color=bg3] (5/12*\paperwidth,3/9*\paperheight) -- (5/12*\paperwidth,4.5/9*\paperheight) -- (5.5/12*\paperwidth,3.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (6/12*\paperwidth,2/9*\paperheight) -- (5.5/12*\paperwidth,3.5/9*\paperheight) -- (5/12*\paperwidth,3/9*\paperheight) -- cycle;
+			\fill[color=bg4] (7/12*\paperwidth,2.5/9*\paperheight) -- (7/12*\paperwidth,4/9*\paperheight) -- (8/12*\paperwidth,3/9*\paperheight) -- cycle;
+			\fill[color=bg1] (7/12*\paperwidth,2.5/9*\paperheight) -- (5.5/12*\paperwidth,3.5/9*\paperheight) -- (7/12*\paperwidth,4/9*\paperheight) -- cycle;
+			\fill[color=bg3] (7/12*\paperwidth,2.5/9*\paperheight) -- (6/12*\paperwidth,2/9*\paperheight) -- (5.5/12*\paperwidth,3.5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (7/12*\paperwidth,2.5/9*\paperheight) -- (8.5/12*\paperwidth,2/9*\paperheight) -- (8/12*\paperwidth,3/9*\paperheight) -- cycle;
+			\fill[color=bg1] (8.5/12*\paperwidth,2/9*\paperheight) -- (9.5/12*\paperwidth,2.5/9*\paperheight) -- (8/12*\paperwidth,3/9*\paperheight) -- cycle;
+			\fill[color=bg2] (8.5/12*\paperwidth,2/9*\paperheight) -- (9/12*\paperwidth,1/9*\paperheight) -- (9.5/12*\paperwidth,2.5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (10.5/12*\paperwidth,1.5/9*\paperheight) -- (9.5/12*\paperwidth,2.5/9*\paperheight) -- (9/12*\paperwidth,1/9*\paperheight) -- cycle;
+			\fill[color=bg3] (7.5/12*\paperwidth,1.5/9*\paperheight) -- (7/12*\paperwidth,2.5/9*\paperheight) -- (8.5/12*\paperwidth,2/9*\paperheight) -- cycle;
+			\fill[color=bg4] (7.5/12*\paperwidth,1.5/9*\paperheight) -- (9/12*\paperwidth,1/9*\paperheight) -- (8.5/12*\paperwidth,2/9*\paperheight) -- cycle;
+			\fill[color=bg2] (7.5/12*\paperwidth,1.5/9*\paperheight) -- (7/12*\paperwidth,2.5/9*\paperheight) -- (6/12*\paperwidth,2/9*\paperheight) -- cycle;
+			\fill[color=bg1] (3/12*\paperwidth,4/9*\paperheight) -- (5/12*\paperwidth,4.5/9*\paperheight) -- (4/12*\paperwidth,5.5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (4/12*\paperwidth,3/9*\paperheight) -- (5/12*\paperwidth,3/9*\paperheight) -- (5/12*\paperwidth,4.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (4/12*\paperwidth,3/9*\paperheight) -- (3/12*\paperwidth,4/9*\paperheight) -- (5/12*\paperwidth,4.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (4/12*\paperwidth,3/9*\paperheight) -- (4.5/12*\paperwidth,1.5/9*\paperheight) -- (5/12*\paperwidth,3/9*\paperheight) -- cycle;
+			\fill[color=bg2] (6/12*\paperwidth,2/9*\paperheight) -- (5/12*\paperwidth,3/9*\paperheight) -- (4.5/12*\paperwidth,1.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (6/12*\paperwidth,2/9*\paperheight) -- (5.5/12*\paperwidth,1/9*\paperheight) -- (4.5/12*\paperwidth,1.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (7/12*\paperwidth,1/9*\paperheight) -- (7.5/12*\paperwidth,1.5/9*\paperheight) -- (6/12*\paperwidth,2/9*\paperheight) -- cycle;
+			\fill[color=bg1] (7/12*\paperwidth,1/9*\paperheight) -- (5.5/12*\paperwidth,1/9*\paperheight) -- (6/12*\paperwidth,2/9*\paperheight) -- cycle;
+			\fill[color=bg3] (11/12*\paperwidth,0.5/9*\paperheight) -- (10.5/12*\paperwidth,1.5/9*\paperheight) -- (12/12*\paperwidth,1/9*\paperheight) -- cycle;
+			\fill[color=bg2] (11/12*\paperwidth,0.5/9*\paperheight) -- (9/12*\paperwidth,1/9*\paperheight) -- (10.5/12*\paperwidth,1.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (8.5/12*\paperwidth,-1/9*\paperheight) -- (7.5/12*\paperwidth,1.5/9*\paperheight) -- (7/12*\paperwidth,1/9*\paperheight) -- cycle;
+			\fill[color=bg1] (9/12*\paperwidth,1/9*\paperheight) -- (8.5/12*\paperwidth,-1/9*\paperheight) -- (7.5/12*\paperwidth,1.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (11/12*\paperwidth,0.5/9*\paperheight) -- (8.5/12*\paperwidth,-1/9*\paperheight) -- (9/12*\paperwidth,1/9*\paperheight) -- cycle;
+			\fill[color=bg2] (11/12*\paperwidth,0.5/9*\paperheight) -- (12/12*\paperwidth,1/9*\paperheight) -- (12/12*\paperwidth,0/9*\paperheight) -- cycle;
+			\fill[color=bg3] (12/12*\paperwidth,0/9*\paperheight) -- (8.5/12*\paperwidth,-1/9*\paperheight) -- (11/12*\paperwidth,0.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (5/12*\paperwidth,-0.5/9*\paperheight) -- (7/12*\paperwidth,1/9*\paperheight) -- (5.5/12*\paperwidth,1/9*\paperheight) -- cycle;
+			\fill[color=bg3] (5/12*\paperwidth,-0.5/9*\paperheight) -- (7/12*\paperwidth,1/9*\paperheight) -- (8.5/12*\paperwidth,-1/9*\paperheight) -- cycle;
+			\fill[color=bg4] (4/12*\paperwidth,0/9*\paperheight) -- (5.5/12*\paperwidth,1/9*\paperheight) -- (5/12*\paperwidth,-0.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (4/12*\paperwidth,0/9*\paperheight) -- (3.5/12*\paperwidth,1/9*\paperheight) -- (5.5/12*\paperwidth,1/9*\paperheight) -- cycle;
+			\fill[color=bg1] (3.5/12*\paperwidth,1/9*\paperheight) -- (4.5/12*\paperwidth,1.5/9*\paperheight) -- (5.5/12*\paperwidth,1/9*\paperheight) -- cycle;
+			\fill[color=bg1] (2.5/12*\paperwidth,0.5/9*\paperheight) -- (4/12*\paperwidth,0/9*\paperheight) -- (3.5/12*\paperwidth,1/9*\paperheight) -- cycle;
+			\fill[color=bg4] (7/12*\paperwidth,8/9*\paperheight) -- (6.5/12*\paperwidth,9/9*\paperheight) -- (8.5/12*\paperwidth,8.5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (5.5/12*\paperwidth,8/9*\paperheight) -- (5/12*\paperwidth,9/9*\paperheight) -- (6.5/12*\paperwidth,9/9*\paperheight) -- cycle;
+			\fill[color=bg2] (5.5/12*\paperwidth,8/9*\paperheight) -- (7/12*\paperwidth,8/9*\paperheight) -- (6.5/12*\paperwidth,9/9*\paperheight) -- cycle;
+			\fill[color=bg4] (5.5/12*\paperwidth,8/9*\paperheight) -- (4/12*\paperwidth,8.5/9*\paperheight) -- (5/12*\paperwidth,9/9*\paperheight) -- cycle;
+			\fill[color=bg2] (3.5/12*\paperwidth,8/9*\paperheight) -- (4/12*\paperwidth,8.5/9*\paperheight) -- (5.5/12*\paperwidth,8/9*\paperheight) -- cycle;
+			\fill[color=bg2] (4/12*\paperwidth,7/9*\paperheight) -- (2/12*\paperwidth,7.5/9*\paperheight) -- (2.5/12*\paperwidth,6.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (2/12*\paperwidth,7.5/9*\paperheight) -- (3.5/12*\paperwidth,8/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg2] (2/12*\paperwidth,7.5/9*\paperheight) -- (2.5/12*\paperwidth,8.5/9*\paperheight) -- (3.5/12*\paperwidth,8/9*\paperheight) -- cycle;
+			\fill[color=bg4] (3.5/12*\paperwidth,8/9*\paperheight) -- (5.5/12*\paperwidth,8/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg1] (2.5/12*\paperwidth,8.5/9*\paperheight) -- (2/12*\paperwidth,9/9*\paperheight) -- (4/12*\paperwidth,8.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (2/12*\paperwidth,9/9*\paperheight) -- (5/12*\paperwidth,9/9*\paperheight) -- (4/12*\paperwidth,8.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (3.5/12*\paperwidth,8/9*\paperheight) -- (4/12*\paperwidth,8.5/9*\paperheight) -- (2.5/12*\paperwidth,8.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (0.5/12*\paperwidth,9/9*\paperheight) -- (1/12*\paperwidth,8/9*\paperheight) -- (0.5/12*\paperwidth,7.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (0.5/12*\paperwidth,9/9*\paperheight) -- (2/12*\paperwidth,9/9*\paperheight) -- (1/12*\paperwidth,8/9*\paperheight) -- cycle;
+			\fill[color=bg3] (1/12*\paperwidth,8/9*\paperheight) -- (2.5/12*\paperwidth,8.5/9*\paperheight) -- (2/12*\paperwidth,9/9*\paperheight) -- cycle;
+			\fill[color=bg1] (1/12*\paperwidth,8/9*\paperheight) -- (2/12*\paperwidth,7.5/9*\paperheight) -- (2.5/12*\paperwidth,8.5/9*\paperheight) -- cycle;     
+			\fill[color=bg3] (0.5/12*\paperwidth,7.5/9*\paperheight) -- (1.5/12*\paperwidth,6.5/9*\paperheight) -- (1/12*\paperwidth,8/9*\paperheight) -- cycle;
+			\fill[color=bg2] (2/12*\paperwidth,7.5/9*\paperheight) -- (1.5/12*\paperwidth,6.5/9*\paperheight) -- (1/12*\paperwidth,8/9*\paperheight) -- cycle;
+			\fill[color=bg4] (2.5/12*\paperwidth,6.5/9*\paperheight) -- (3/12*\paperwidth,6/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg3] (2.5/12*\paperwidth,6.5/9*\paperheight) -- (1.5/12*\paperwidth,6.5/9*\paperheight) -- (2/12*\paperwidth,7.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (3/12*\paperwidth,6/9*\paperheight) -- (4/12*\paperwidth,5.5/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg1] (2/12*\paperwidth,5/9*\paperheight) -- (4/12*\paperwidth,5.5/9*\paperheight) -- (3/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg4] (3/12*\paperwidth,4/9*\paperheight) -- (2/12*\paperwidth,5/9*\paperheight) -- (4/12*\paperwidth,5.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (2/12*\paperwidth,5/9*\paperheight) -- (2.5/12*\paperwidth,6.5/9*\paperheight) -- (3/12*\paperwidth,6/9*\paperheight) -- cycle;
+			\fill[color=bg1] (2/12*\paperwidth,5/9*\paperheight) -- (1.5/12*\paperwidth,6.5/9*\paperheight) -- (2.5/12*\paperwidth,6.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (1.5/12*\paperwidth,6.5/9*\paperheight) -- (0/12*\paperwidth,6/9*\paperheight) -- (1/12*\paperwidth,5.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (1.5/12*\paperwidth,6.5/9*\paperheight) -- (1/12*\paperwidth,5.5/9*\paperheight) -- (2/12*\paperwidth,5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (0/12*\paperwidth,6/9*\paperheight) -- (0/12*\paperwidth,7/9*\paperheight) -- (1.5/12*\paperwidth,6.5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (0/12*\paperwidth,7/9*\paperheight) -- (0.5/12*\paperwidth,7.5/9*\paperheight) -- (1.5/12*\paperwidth,6.5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (10.5/12*\paperwidth,9/9*\paperheight) -- (12/12*\paperwidth,10/9*\paperheight) -- (11.5/12*\paperwidth,8.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (12/12*\paperwidth,7/9*\paperheight) -- (12/12*\paperwidth,10/9*\paperheight) -- (11.5/12*\paperwidth,8.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (3.5/12*\paperwidth,1/9*\paperheight) -- (4/12*\paperwidth,3/9*\paperheight) -- (4.5/12*\paperwidth,1.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (-1/12*\paperwidth,9/9*\paperheight) -- (0.5/12*\paperwidth,7.5/9*\paperheight) -- (0/12*\paperwidth,7/9*\paperheight) -- cycle;
+			\fill[color=bg4] (-1/12*\paperwidth,9/9*\paperheight) -- (0/12*\paperwidth,10/9*\paperheight) -- (0.5/12*\paperwidth,7.5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (0/12*\paperwidth,10/9*\paperheight) -- (0.5/12*\paperwidth,9/9*\paperheight) -- (0.5/12*\paperwidth,7.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (-0.5/12*\paperwidth,5.5/9*\paperheight) -- (0/12*\paperwidth,6/9*\paperheight) -- (1/12*\paperwidth,5.5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (2/12*\paperwidth,3/9*\paperheight) -- (2.5/12*\paperwidth,3.5/9*\paperheight) -- (2.5/12*\paperwidth,2.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (2.5/12*\paperwidth,3.5/9*\paperheight) -- (3/12*\paperwidth,4/9*\paperheight) -- (2/12*\paperwidth,5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (2.5/12*\paperwidth,3.5/9*\paperheight) -- (4/12*\paperwidth,3/9*\paperheight) -- (3/12*\paperwidth,4/9*\paperheight) -- cycle;
+			\fill[color=bg3] (2.5/12*\paperwidth,2.5/9*\paperheight) -- (4/12*\paperwidth,3/9*\paperheight) -- (2.5/12*\paperwidth,3.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (2.5/12*\paperwidth,2.5/9*\paperheight) -- (2/12*\paperwidth,1.5/9*\paperheight) -- (3/12*\paperwidth,2/9*\paperheight) -- cycle;
+			\fill[color=bg2] (3/12*\paperwidth,2/9*\paperheight) -- (4/12*\paperwidth,3/9*\paperheight) -- (2.5/12*\paperwidth,2.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (3.5/12*\paperwidth,1/9*\paperheight) -- (3/12*\paperwidth,2/9*\paperheight) -- (2.5/12*\paperwidth,0.5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (3.5/12*\paperwidth,1/9*\paperheight) -- (4/12*\paperwidth,3/9*\paperheight) -- (3/12*\paperwidth,2/9*\paperheight) -- cycle;
+			\fill[color=bg2] (2.5/12*\paperwidth,0.5/9*\paperheight) -- (2/12*\paperwidth,1.5/9*\paperheight) -- (3/12*\paperwidth,2/9*\paperheight) -- cycle;
+			\fill[color=bg4] (2.5/12*\paperwidth,0.5/9*\paperheight) -- (0.5/12*\paperwidth,-0.5/9*\paperheight) -- (4/12*\paperwidth,0/9*\paperheight) -- cycle;
+			\fill[color=bg2] (0.5/12*\paperwidth,-0.5/9*\paperheight) -- (1/12*\paperwidth,1/9*\paperheight) -- (2.5/12*\paperwidth,0.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (-0.5/12*\paperwidth,-0.5/9*\paperheight) -- (1/12*\paperwidth,1/9*\paperheight) -- (0.5/12*\paperwidth,-0.5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (1/12*\paperwidth,1/9*\paperheight) -- (2/12*\paperwidth,1.5/9*\paperheight) -- (2.5/12*\paperwidth,0.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (0/12*\paperwidth,4.5/9*\paperheight) -- (-0.5/12*\paperwidth,5.5/9*\paperheight) -- (1/12*\paperwidth,5.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (1/12*\paperwidth,4/9*\paperheight) -- (1/12*\paperwidth,5.5/9*\paperheight) -- (2/12*\paperwidth,5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (1/12*\paperwidth,4/9*\paperheight) -- (1.5/12*\paperwidth,4/9*\paperheight) -- (2/12*\paperwidth,5/9*\paperheight) -- cycle;
+			\fill[color=bg1] (1.5/12*\paperwidth,4/9*\paperheight) -- (2.5/12*\paperwidth,3.5/9*\paperheight) -- (2/12*\paperwidth,5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (1.5/12*\paperwidth,4/9*\paperheight) -- (2/12*\paperwidth,3/9*\paperheight) -- (2.5/12*\paperwidth,3.5/9*\paperheight) -- cycle;
+			\fill[color=bg3] (1/12*\paperwidth,4/9*\paperheight) -- (2/12*\paperwidth,3/9*\paperheight) -- (1.5/12*\paperwidth,4/9*\paperheight) -- cycle;
+			\fill[color=bg1] (0/12*\paperwidth,4.5/9*\paperheight) -- (1/12*\paperwidth,4/9*\paperheight) -- (1/12*\paperwidth,5.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (0/12*\paperwidth,4.5/9*\paperheight) -- (-0.5/12*\paperwidth,3.5/9*\paperheight) -- (1/12*\paperwidth,4/9*\paperheight) -- cycle;
+			\fill[color=bg3] (0/12*\paperwidth,3/9*\paperheight) -- (1/12*\paperwidth,4/9*\paperheight) -- (-0.5/12*\paperwidth,3.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (0/12*\paperwidth,3/9*\paperheight) -- (0.5/12*\paperwidth,2/9*\paperheight) -- (1/12*\paperwidth,4/9*\paperheight) -- cycle;
+			\fill[color=bg1] (0.5/12*\paperwidth,2/9*\paperheight) -- (2/12*\paperwidth,3/9*\paperheight) -- (1/12*\paperwidth,4/9*\paperheight) -- cycle;
+			\fill[color=bg2] (2/12*\paperwidth,3/9*\paperheight) -- (2/12*\paperwidth,1.5/9*\paperheight) -- (2.5/12*\paperwidth,2.5/9*\paperheight) -- cycle;
+			\fill[color=bg4] (0.5/12*\paperwidth,2/9*\paperheight) -- (2/12*\paperwidth,1.5/9*\paperheight) -- (2/12*\paperwidth,3/9*\paperheight) -- cycle;
+			\fill[color=bg1] (1/12*\paperwidth,1/9*\paperheight) -- (-1/12*\paperwidth,0/9*\paperheight) -- (-0.5/12*\paperwidth,-0.5/9*\paperheight) -- cycle;
+			\fill[color=bg2] (1/12*\paperwidth,1/9*\paperheight) -- (-1/12*\paperwidth,2/9*\paperheight) -- (-1/12*\paperwidth,0/9*\paperheight) -- cycle;
+			\fill[color=bg4] (-1/12*\paperwidth,2/9*\paperheight) -- (0.5/12*\paperwidth,2/9*\paperheight) -- (1/12*\paperwidth,1/9*\paperheight) -- cycle;
+			\fill[color=bg1] (-1/12*\paperwidth,2/9*\paperheight) -- (0/12*\paperwidth,3/9*\paperheight) -- (0.5/12*\paperwidth,2/9*\paperheight) -- cycle;
+			\fill[color=bg3] (0.5/12*\paperwidth,2/9*\paperheight) -- (2/12*\paperwidth,1.5/9*\paperheight) -- (1/12*\paperwidth,1/9*\paperheight) -- cycle;    
+			\ifbg
+        \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,0.3);
+        \fill[white,opacity=1] (0,0.8) rectangle(\the\paperwidth,8.8);
+        \fill[geode, opacity=0.5] (11,0.3) rectangle(\the\paperwidth,0.8);
+      \fi
+    \end{tikzpicture}
+  \else
+    \begin{tikzpicture}
+      \useasboundingbox (0,0) rectangle(\paperwidth,\paperheight);
+      \fill[color=bg1] (1/12*\paperwidth,8/9*\paperheight) -- (3/12*\paperwidth,9/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (4/12*\paperwidth,7/9*\paperheight) -- (6/12*\paperwidth,9/9*\paperheight) -- (3/12*\paperwidth,9/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (1/12*\paperwidth,8/9*\paperheight) -- (3/12*\paperwidth,5/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (3/12*\paperwidth,5/9*\paperheight) -- (6/12*\paperwidth,6/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (6/12*\paperwidth,6/9*\paperheight) -- (6/12*\paperwidth,9/9*\paperheight) -- (4/12*\paperwidth,7/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (6/12*\paperwidth,6/9*\paperheight) -- (8/12*\paperwidth,8/9*\paperheight) -- (6/12*\paperwidth,9/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (10/12*\paperwidth,7/9*\paperheight) -- (8/12*\paperwidth,8/9*\paperheight) -- (12/12*\paperwidth,9/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (10/12*\paperwidth,5/9*\paperheight) -- (8/12*\paperwidth,8/9*\paperheight) -- (6/12*\paperwidth,6/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (10/12*\paperwidth,7/9*\paperheight) -- (10/12*\paperwidth,5/9*\paperheight) -- (8/12*\paperwidth,8/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (6/12*\paperwidth,6/9*\paperheight) -- (8/12*\paperwidth,4/9*\paperheight) -- (10/12*\paperwidth,5/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (11/12*\paperwidth,3/9*\paperheight) -- (10/12*\paperwidth,5/9*\paperheight) -- (8/12*\paperwidth,4/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (8/12*\paperwidth,4/9*\paperheight) -- (8/12*\paperwidth,1/9*\paperheight) -- (11/12*\paperwidth,3/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (8/12*\paperwidth,1/9*\paperheight) -- (10/12*\paperwidth,0/9*\paperheight) -- (11/12*\paperwidth,3/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (3/12*\paperwidth,5/9*\paperheight) -- (4/12*\paperwidth,3/9*\paperheight) -- (6/12*\paperwidth,6/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (1/12*\paperwidth,4/9*\paperheight) -- (3/12*\paperwidth,5/9*\paperheight) -- (4/12*\paperwidth,3/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (2/12*\paperwidth,0/9*\paperheight) -- (1/12*\paperwidth,4/9*\paperheight) -- (4/12*\paperwidth,3/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (0/12*\paperwidth,6/9*\paperheight) -- (3/12*\paperwidth,5/9*\paperheight) -- (1/12*\paperwidth,8/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (3/12*\paperwidth,5/9*\paperheight) -- (0/12*\paperwidth,6/9*\paperheight) -- (1/12*\paperwidth,4/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (0/12*\paperwidth,9/9*\paperheight) -- (3/12*\paperwidth,9/9*\paperheight) -- (1/12*\paperwidth,8/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (12/12*\paperwidth,9/9*\paperheight) -- (7.5/12*\paperwidth,9/9*\paperheight) -- (8/12*\paperwidth,8/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (7.5/12*\paperwidth,9/9*\paperheight) -- (6/12*\paperwidth,9/9*\paperheight) -- (8/12*\paperwidth,8/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (12/12*\paperwidth,6./9*\paperheight) -- (10/12*\paperwidth,7/9*\paperheight) -- (12/12*\paperwidth,9/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (12/12*\paperwidth,6./9*\paperheight) -- (12/12*\paperwidth,5.5/9*\paperheight) -- (10/12*\paperwidth,5/9*\paperheight) -- (10/12*\paperwidth,7/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (10/12*\paperwidth,5/9*\paperheight) -- (12/12*\paperwidth,5.5/9*\paperheight) -- (12/12*\paperwidth,4.5/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (11/12*\paperwidth,3/9*\paperheight) -- (12/12*\paperwidth,4.5/9*\paperheight) -- (10/12*\paperwidth,5/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (11/12*\paperwidth,3/9*\paperheight) -- (12/12*\paperwidth,2/9*\paperheight) -- (12.0/12*\paperwidth,4.5/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (10/12*\paperwidth,0/9*\paperheight) -- (12/12*\paperwidth,0/9*\paperheight) -- (11/12*\paperwidth,3/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (12/12*\paperwidth,0/9*\paperheight) -- (12/12*\paperwidth,0/9*\paperheight) -- (11/12*\paperwidth,3/9*\paperheight) -- (12.0/12*\paperwidth,2/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (10/12*\paperwidth,0/9*\paperheight) -- (6.5/12*\paperwidth,0/9*\paperheight) -- (8/12*\paperwidth,1/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (4.5/12*\paperwidth,0/9*\paperheight) -- (4/12*\paperwidth,3/9*\paperheight) -- (8/12*\paperwidth,1/9*\paperheight) -- (6.5/12*\paperwidth,0/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (4.5/12*\paperwidth,0/9*\paperheight) -- (2/12*\paperwidth,0/9*\paperheight) -- (4/12*\paperwidth,3/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (0/12*\paperwidth,1.5/9*\paperheight) -- (0/12*\paperwidth,0/9*\paperheight) -- (2/12*\paperwidth,0/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (0/12*\paperwidth,6/9*\paperheight) -- (1/12*\paperwidth,4/9*\paperheight) -- (0/12*\paperwidth,3/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (0/12*\paperwidth,3/9*\paperheight) -- (1/12*\paperwidth,4/9*\paperheight) -- (2/12*\paperwidth,0/9*\paperheight) -- (0/12*\paperwidth,1.5/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (0/12*\paperwidth,9/9*\paperheight) -- (1/12*\paperwidth,8/9*\paperheight) -- (0/12*\paperwidth,6/9*\paperheight) -- cycle;
+		  \fill[color=bg1] (4/12*\paperwidth,3/9*\paperheight) -- (6.5/12*\paperwidth,3.5/9*\paperheight) -- (6/12*\paperwidth,6/9*\paperheight) -- cycle;
+		  \fill[color=bg4] (4/12*\paperwidth,3/9*\paperheight) -- (6.5/12*\paperwidth,3.5/9*\paperheight) -- (8/12*\paperwidth,1/9*\paperheight) -- cycle;
+		  \fill[color=bg3] (6.5/12*\paperwidth,3.5/9*\paperheight) -- (6/12*\paperwidth,6/9*\paperheight) -- (8/12*\paperwidth,4/9*\paperheight) -- cycle;
+		  \fill[color=bg2] (8/12*\paperwidth,4/9*\paperheight) -- (6.5/12*\paperwidth,3.5/9*\paperheight) -- (8/12*\paperwidth,1/9*\paperheight) -- cycle;
+       \ifbg
+         \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,0.3);
+         \fill[white,opacity=1] (0,0.8) rectangle(\the\paperwidth,8.8);
+         \fill[geode, opacity=0.5] (11,0.3) rectangle(\the\paperwidth,0.8);
+      \fi
+    \end{tikzpicture}
+  \fi
+  \fi
+  \fi
+}
+
+% ---Frametitle---
+\setbeamertemplate{frametitle}{
+ \vspace{0.14cm} \hspace{-0.6cm} \usebeamerfont{accent} \insertframetitle
+ }
+
+% ---Footline---
+\setbeamertemplate{footline}{
+  \ifnum\thepage>1
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex, leftskip=.25cm,rightskip=.25cm plus1fil]{footer}
+      \usebeamerfont{footer}\footnotesize\insertshortauthor
+      \hfill
+      \usebeamerfont{footer}\inserttitle
+      \hfill
+      \usebeamerfont{framenumber}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+    \end{beamercolorbox}
+  \vskip0.38cm
+  \fi
+}
+
+% ###########
+%  ### PAGES ###
+%   ###########
+
+% ---Title Page---
+\defbeamertemplate*{title page}{accent}[1][]
+{ 
+   \vskip2.7cm
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
+      \begin{center}
+       \textbf{\usebeamerfont{title} \huge{\inserttitle}}
+      \end{center}
+      \vskip1cm
+      \begin{center}
+        \usebeamerfont{author}\color{accent}\insertauthor
+      \end{center}
+       \vskip2.5cm
+      \begin{center}
+        \usebeamerfont{date}\color{accent}\insertdate
+      \end{center}
+    \end{beamercolorbox}
+  \vfill
+}
+
+% ---Section Page---
+\defbeamertemplate*{section page}{accent}[1][]
+{
+  \vfill
+  \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
+      \begin{center}
+        \huge{\textbf{\secname}}
+      \end{center}
+  \end{beamercolorbox}
+  \vfill
+}

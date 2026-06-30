@@ -1,0 +1,26 @@
+name bithesis
+category Package
+revision 79190
+shortdesc Templates for the Beijing Institute of Technology
+longdesc This package establishes a simple and easy-to-use LaTeX
+longdesc template for Beijing Institute of Technology dissertations,
+longdesc including general undergraduate theses and master theses.
+containersize 26320
+containerchecksum 7712fed37c784f7a065f8854f3e1b9f02aeab4eaf5654d6973260cb435cc6f140b3be285e117ddd8f1d1651d30c78d0385cc59c439836404c21345e7280f686f
+doccontainersize 7023016
+doccontainerchecksum c1635bb4536c3f1cf3d90afdba06f6fa5f4c44bb1084be4a451816274a36be77bc0aefc66bad3a50ad96f1893eba159df1d67ed18b95e5cab59516794b1ae160
+srccontainersize 35744
+srccontainerchecksum f16cced20887a0f0d1f3dbd717acd30e79a8c40e9c8c530fe997504e33522104b812b433c2149d004ca81e815be08f8bd975c0598d1b332982fc95830895b3bb
+runfiles size=33
+ texmf-dist/tex/latex/bithesis/bitbeamer.cls
+ texmf-dist/tex/latex/bithesis/bithesis.cls
+ texmf-dist/tex/latex/bithesis/bitreport.cls
+catalogue-contact-announce https://github.com/BITNP/BIThesis/releases
+catalogue-contact-bugs https://github.com/BITNP/BIThesis/issues
+catalogue-contact-home https://bithesis.bitnp.net
+catalogue-contact-repository https://github.com/BITNP/BIThesis
+catalogue-contact-support https://github.com/BITNP/BIThesis/discussions
+catalogue-ctan /macros/unicodetex/latex/bithesis
+catalogue-license lppl1.3c
+catalogue-topics chinese class dissertation doc-templ
+catalogue-version 3.8.12

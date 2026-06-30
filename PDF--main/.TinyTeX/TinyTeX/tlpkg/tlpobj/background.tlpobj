@@ -1,0 +1,22 @@
+name background
+category Package
+revision 79461
+shortdesc Placement of background material on pages of a document
+longdesc The package offers the placement of background material on the
+longdesc pages of a document. The user can control many aspects
+longdesc (contents, position, color, opacity) of the background material
+longdesc that will be displayed; all placement and attribute settings
+longdesc are controlled by setting key values. The package makes use of
+longdesc the everypage package, and uses pgf/tikz for attribute control.
+containersize 2076
+containerchecksum 5274a95320e10a66153cf4001451c3cad1826b292c82a3935b6df4d429d4c81c65a986e45e29c37ce805a02e608c48c919ca55615ba83615ccca1ba1a0f61736
+doccontainersize 115784
+doccontainerchecksum 70a9646f1f4cbcefde516e939aa8d71b220868f3ea18d1af968d9d1adc6d8f292527e2826d6a0eead13a41c46c729597e8fbf0bf26a17f578339edf7d8f90463
+srccontainersize 8408
+srccontainerchecksum 055c88e29ad1a28351f334bdd7b53bf976ad239c56be89494fa2fb60e0f9950f1efad8158626523243d656290ee7ab7cb25885afe68fed0aec39a97846e26042
+runfiles size=2
+ texmf-dist/tex/latex/background/background.sty
+catalogue-ctan /macros/latex/contrib/background
+catalogue-license lppl
+catalogue-topics background decoration tagged-pdf-incompatible
+catalogue-version 2.1

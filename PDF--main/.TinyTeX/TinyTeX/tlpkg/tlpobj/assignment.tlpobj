@@ -1,0 +1,14 @@
+name assignment
+category Package
+revision 20431
+shortdesc A class file for typesetting homework and lab assignments
+longdesc A class file for typesetting homework and lab assignments.
+containersize 1924
+containerchecksum 5b8ceaa313eccffff8930b4e1896c7aa069664244623baae2aa1eb3555786dfeb8af8245e56ca149754093f6d74d6b86c891cb9e52e67c7b76e2501ac206658e
+doccontainersize 81860
+doccontainerchecksum 49198297494adbb538385029d41681e55bf64c89fc9cee7d923b7ba9849c039a7e5aa2c1fbfc15f06c1a93a3b694899ffd8988d1833fd88c6f5dd51379289a14
+runfiles size=2
+ texmf-dist/tex/latex/assignment/assignment.cls
+catalogue-ctan /macros/latex/contrib/assignment
+catalogue-license lppl
+catalogue-topics essay class

@@ -1,0 +1,72 @@
+%%
+%% This is file `beamertools.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% beamertools.dtx  (with options: `table,beamertools.sty')
+%% 
+%%   __________________________________________________
+%%   Vafa Khalighi
+%% 
+%%   Copyright (c) 2025  Vafa Khalighi
+%% 
+%%   It may be distributed and/or modified under the LaTeX Project Public License,
+%%   version 1.3c or higher (your choice). The latest version of
+%%   this license is at: http://www.latex-project.org/lppl.txt
+%% 
+%%   This work is “author-maintained” (as per LPPL maintenance status)
+%%   by Vafa Khalighi.
+%% 
+%% \CheckSum{0}
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamertools}[2025/01/09 v0.1 A collection of programming tools for beamer]
+\newcommand<>\redefbeamertemplate{
+  \ifblank{#1}
+  {\def\beamer@@oar{<presentation>}}
+  {\def\beamer@@oar{#1}}\beamer@redefbeamertemplate}
+
+\def\beamer@redefbeamertemplate{\@ifstar{\beamer@sbttrue\beamer@redef@sbtoo}{\beamer@sbtfalse\beamer@redef@sbtoo}}
+
+\def\beamer@redef@sbtoo#1#2{\@ifnextchar[{\beamer@redef@sbto{#1}{#2}}{\beamer@redef@sbto{#1}{#2}[0]}}
+
+\def\beamer@redef@sbto#1#2[#3]{\@ifnextchar[{\beamer@@redef@sbto{#1}{#2}[{#3}]}{\def\beamer@sbtotemp{}\beamer@@@redef@sbto{#1}{#2}[{#3}]}}
+
+\long\def\beamer@@redef@sbto#1#2[#3][#4]{\long\def\beamer@sbtotemp{[{#4}]}\beamer@@@redef@sbto{#1}{#2}[{#3}]}
+
+\long\def\beamer@@@redef@sbto#1#2[#3]#4{%
+  \beamer@sbttoks={\beamer@@@@redef@sbto{#1}{#2}[{#3}]{#4}}%
+  \@ifnextchar[{\the\beamer@sbttoks}{\the\beamer@sbttoks[action]{}}%
+}
+
+\long\def\beamer@@@@redef@sbto#1#2[#3]#4[#5]#6{%
+  \edef\beamer@@sbtoarg{\expandafter\noexpand\csname beamer@@tmpop@#1@#2\endcsname[{#3}]}%
+\@ifundefined{beamer@@tmpop@#1@#2}{%
+  \PackageError{beamertools}{beamer template with element name `#1' and predefined option `#2' undefined}\@ehc
+}
+\expandafter\expandafter\expandafter\renewcommand\expandafter\beamer@@sbtoarg\beamer@sbtotemp{%
+    \expandafter\long\expandafter\def\csname beamer@@tmpl@#1\endcsname{#4}#6}%
+  \let\beamer@@next=\beamer@resetsbtoarg%
+  \expandafter\mode\beamer@@oar{\let\beamer@@next=\relax}%
+  \beamer@@next%
+  \ifbeamer@sbt\setbeamertemplate{#1}[{#2}]\relax\relax\relax\relax\relax\relax\relax\relax\relax\fi%
+}
+\endinput
+%%
+%% End of file `beamertools.sty'.

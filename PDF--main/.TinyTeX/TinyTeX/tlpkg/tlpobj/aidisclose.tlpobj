@@ -1,0 +1,44 @@
+name aidisclose
+category Package
+revision 79452
+shortdesc Generate disclosure statements and checklists for the use of generative AI
+longdesc This package provides a standardized, transparent way to
+longdesc declare the use of generative artificial intelligence (AI)
+longdesc tools in academic, technical, and professional documents. It
+longdesc implements an extension of the GAIDeT (Generative AI Delegation
+longdesc Taxonomy), letting authors mark which tasks were delegated to
+longdesc AI, list the tools used (or state that none were), add optional
+longdesc numbered or unnumbered comments, and automatically typeset a
+longdesc formatted disclosure section or chapter with a task-based
+longdesc checklist. Configuration uses a key-value interface, and
+longdesc citations for the taxonomy and the package can be managed
+longdesc automatically. The package detects the document language
+longdesc through babel or polyglossia and ships translations for
+longdesc fourteen languages, falling back to English. A companion web
+longdesc generator/configurator is available at https://aidisclose.org.
+containersize 24952
+containerchecksum 8efb53fe22ba97465d92352674ba8123c412cbd98a5465dd7538b4b81c3803d90c6ea4409ceec05ab2b398c72baaa1554beae883f541d0699cf8907e1fa7d28d
+doccontainersize 210524
+doccontainerchecksum 20a359905d760e68cace6eabfacb448aee57f93ca1695109bb20411ed0ad80946143b6005750ec1e3ba2f385e9ce3d26f8e247a5737b34c7231a7ab9b6033ac2
+runfiles size=35
+ texmf-dist/tex/latex/aidisclose/aidisclose.sty
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-cat.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-cz.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-de.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-dk.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-en.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-es.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-fr.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-gr.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-it.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-nl.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-pl.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-pt.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-sk.ldf
+ texmf-dist/tex/latex/aidisclose/langdef/aidisclose-uk.ldf
+catalogue-contact-home https://aidisclose.org
+catalogue-contact-repository https://github.com/joaomlourenco/aidisclose
+catalogue-ctan /macros/latex/contrib/aidisclose
+catalogue-license lppl1.3c
+catalogue-topics form-fillin
+catalogue-version 1.12.0

@@ -1,0 +1,22 @@
+name acronym
+category Package
+revision 78101
+shortdesc Expand acronyms at least once
+longdesc This package ensures that all acronyms used in the text are
+longdesc spelled out in full at least once. It also provides an
+longdesc environment to build a list of acronyms used. The package is
+longdesc compatible with pdf bookmarks. The package requires the suffix
+longdesc package, which in turn requires that it runs under e-TeX.
+containersize 5228
+containerchecksum 0b59eb9809b7ae9faeadc33261f158698b24d4c38821bafd5b77ccdfe2406e5cda25a9818c98bb91397a1c4969967b929cdc2f81161a65da23a54879380550c1
+doccontainersize 318056
+doccontainerchecksum 8f48d840d0fef44b8bf93676897a253d0cb4c4bd8124de3df4100c2adc44e89825909f75bd35c3da8a315bae1801ac96ff0d07a41f901a6d854fddc8da6943c8
+srccontainersize 18040
+srccontainerchecksum c8ab356468191c674dc7f09066bf7130136c9bb98c6fecdb0de520341110117352832b4922a19e0d4a01e4cf35ad43255d75f2f84c5d29b9563c3bc0ec13dcd9
+runfiles size=7
+ texmf-dist/tex/latex/acronym/acronym.sty
+catalogue-also glossaries
+catalogue-ctan /macros/latex/contrib/acronym
+catalogue-license lppl1.3
+catalogue-topics acronym tagged-pdf-partially
+catalogue-version 1.50

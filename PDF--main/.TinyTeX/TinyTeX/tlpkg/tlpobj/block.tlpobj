@@ -1,0 +1,18 @@
+name block
+category Package
+revision 17209
+shortdesc A block letter style for the letter class
+longdesc A style file for use with the letter class that overwrites the
+longdesc \opening and \closing macros so that letters can be styled with
+longdesc the block letter style instead of the default style. Thus, the
+longdesc return address, the closing, and the signature appear flushed
+longdesc on the left margin.
+containersize 924
+containerchecksum 0dedf4b50238e3f12c3d17eca19e4640f2a36511fd65fe4d0baf4f221df279a5d9f28024cb0e20f528e32921e1d6b4c785071210e5ff6471c73e42e58faf89a5
+doccontainersize 60880
+doccontainerchecksum 77b8c5b6949fb7eade5eee082be1c28433136b8374d45f255a80daa0c7a0340a3154a9f6f174fc52b25c252f1b5a2304b32e26c6d6a2f9af033569d7ba602952
+runfiles size=1
+ texmf-dist/tex/latex/block/block.sty
+catalogue-ctan /macros/latex/contrib/block
+catalogue-license pd
+catalogue-topics letter

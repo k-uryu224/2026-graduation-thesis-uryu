@@ -1,0 +1,20 @@
+name acroterm
+category Package
+revision 61719
+shortdesc Manage and index acronyms and terms
+longdesc Yet another package for acronyms: the package offers simple
+longdesc markup of acronyms and technical terms in the text, giving an
+longdesc index each of terms and acronyms with their expanded form.
+containersize 1408
+containerchecksum f8ce516ba2de1367bf414061e14c260be31304ce93693a95e6b9ed29d5cf170bb041248eafb76546cfb1547e687d07ec51333177405ffa8a5c9ea76070394832
+doccontainersize 157936
+doccontainerchecksum 66610cbd2e77d8f9b0eda3c61382dc1a8436169017d363a5716e0ad1991849824a1958552af4a14545dcac37191302c0907b505884f7cf1c7d83f8087d888b6a
+srccontainersize 3828
+srccontainerchecksum 531b5768a7312bd40797b6cc67abc58050481ef97455219698018a635a298f542506669956211dab32d51dce2c86f3d3d6a2e913c4a0f81f072035a63470e5c0
+runfiles size=1
+ texmf-dist/tex/latex/acroterm/acroterm.sty
+catalogue-contact-repository https://github.com/nichtich/acroterm/
+catalogue-ctan /macros/latex/contrib/acroterm
+catalogue-license lppl1.3
+catalogue-topics acronym glossary
+catalogue-version 0.1

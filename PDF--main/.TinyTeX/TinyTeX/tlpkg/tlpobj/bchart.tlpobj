@@ -1,0 +1,20 @@
+name bchart
+category Package
+revision 79461
+shortdesc Draw simple bar charts in LaTeX
+longdesc The package provides horizontal bar charts, drawn using TikZ on
+longdesc a numeric X-axis. The focus of the package is simplicity and
+longdesc aesthetics.
+containersize 1864
+containerchecksum 78206166a89e9c6c3af86a9ba0174d36c4e4229b26f519f012ee19441a9f01ada596248059fb622dd760ba8da061c2cc146d3c4571297b33aab423d3bc5a5d1d
+doccontainersize 148224
+doccontainerchecksum f067040f8c05f01db8cf05e8f9a1feed63f4a2a32331e579a3f63f55c0d9cc8a852334dfd11ffbc90a9b93753d916f3532fb4529b863dcc9a50110894ca4b029
+runfiles size=2
+ texmf-dist/tex/latex/bchart/bchart.sty
+catalogue-also pst-bar
+catalogue-contact-bugs https://github.com/tkuhn/bchart/issues
+catalogue-contact-repository https://github.com/tkuhn/bchart
+catalogue-ctan /macros/latex/contrib/bchart
+catalogue-license mit
+catalogue-topics genchart pgf-tikz tagged-pdf-incompatible
+catalogue-version 0.1.3

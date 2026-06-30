@@ -1,0 +1,23 @@
+name beamertheme-simpleplus
+category Package
+revision 73362
+shortdesc A simple and clean theme for LaTeX beamer
+longdesc This package provides a simple and clean theme for LaTeX
+longdesc Beamer. It can be used for academic and scientific
+longdesc presentations.
+containersize 1940
+containerchecksum 8281d86145ab16d00c4c2042406ac94627e642aac35979022d178afae155e78f5b95c443cb097e40e22a7b77475ddebb35c3d74f54e949a7aa2f0da7dfbb2708
+doccontainersize 108844
+doccontainerchecksum 92158c09ff11f453608a52c9302cd6fe512f668fac2e20c0234ac5f30bfafaad01512d7c6cdb3b2fcdbf87019255a55bbdceb34306b1dacb66cd7b21ee99b446
+runfiles size=4
+ texmf-dist/tex/latex/beamertheme-simpleplus/beamercolorthemeSimplePlus.sty
+ texmf-dist/tex/latex/beamertheme-simpleplus/beamerfontthemeSimplePlus.sty
+ texmf-dist/tex/latex/beamertheme-simpleplus/beamerinnerthemeSimplePlus.sty
+ texmf-dist/tex/latex/beamertheme-simpleplus/beamerthemeSimplePlus.sty
+catalogue-contact-bugs https://github.com/pm25/SimplePlus-BeamerTheme/issues
+catalogue-contact-development https://pm25.github.io
+catalogue-contact-repository https://github.com/pm25/SimplePlus-BeamerTheme
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-simpleplus
+catalogue-license pd
+catalogue-topics presentation
+catalogue-version 1.1

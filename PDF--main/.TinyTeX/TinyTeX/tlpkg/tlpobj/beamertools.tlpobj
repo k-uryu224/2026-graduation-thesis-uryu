@@ -1,0 +1,20 @@
+name beamertools
+category Package
+revision 76639
+shortdesc A collection of programming tools for beamer
+longdesc This packages provides a collection of programming tools for
+longdesc beamer. Currently, it provides the control sequence
+longdesc \redefbeamertemplate for redefining a predefined beamer
+longdesc template.
+containersize 1732
+containerchecksum 35595f43fc9588443e33d7c97e70b0a9b9742dcf91c3d4c7527a6d342e791f9664161b81a7aa9930891303e340c87553f9847fc701b3938bb18600cf264ac5c3
+doccontainersize 186492
+doccontainerchecksum 355f348d12b9b98a30e489ad0080fbb332bfe4901c51eaf516eb1179f109a61293b816efb980dffdfb2ff65841829425020134d531eb72c12cd55626f02227ad
+srccontainersize 3864
+srccontainerchecksum e2d4e70219852e4c17bc93819466b86d19e21adeae22f1910efb33e03775650c83bd1f37c45a88d4448d4539eb6a0bbfed0b7e6a2336f676c13e92a9bc641930
+runfiles size=1
+ texmf-dist/tex/latex/beamertools/beamertools.sty
+catalogue-ctan /macros/latex/contrib/beamertools
+catalogue-license lppl1.3c
+catalogue-topics macro-supp presentation
+catalogue-version 0.1

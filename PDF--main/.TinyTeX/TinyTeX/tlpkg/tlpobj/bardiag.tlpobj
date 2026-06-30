@@ -1,0 +1,22 @@
+name bardiag
+category Package
+revision 22013
+shortdesc LaTeX package for drawing bar diagrams
+longdesc The main purpose of the package is to make the drawing of bar
+longdesc diagrams possible and easy in LaTeX. The BarDiag package is
+longdesc inspired by and based on PSTricks.
+containersize 12260
+containerchecksum dad9b5a50e5a82ed0285fb36c609c4302f7b22daf71c159848788d8c7c91c19dd44398e98357dd58366cd97140e943540d05b6e1c9937124a40c4b4070065a1a
+doccontainersize 588832
+doccontainerchecksum 54fcfb2473c6ece46ec2b01853c89046c7f5396e97f62b9175cedaf4b1e783285c7c417700c827a7b9fefe5055b10723ce278e5fff0e864434f84020472c1cd8
+runfiles size=18
+ texmf-dist/tex/latex/bardiag/barddoc.sty
+ texmf-dist/tex/latex/bardiag/bardiag.bar
+ texmf-dist/tex/latex/bardiag/bardiag.cfg
+ texmf-dist/tex/latex/bardiag/bardiag.sty
+ texmf-dist/tex/latex/bardiag/pstfp.sty
+catalogue-also pst-bar bchart
+catalogue-ctan /graphics/bardiag
+catalogue-license lppl
+catalogue-topics genchart
+catalogue-version 0.4a

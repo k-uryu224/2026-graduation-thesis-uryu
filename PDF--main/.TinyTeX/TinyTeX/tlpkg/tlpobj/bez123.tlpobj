@@ -1,0 +1,23 @@
+name bez123
+category Package
+revision 79461
+shortdesc Support for Bezier curves
+longdesc Provides additional facilities in a picture environment for
+longdesc drawing linear, cubic, and rational quadratic Bezier curves
+longdesc (standard LaTeX only offers non-rational quadratic splines).
+longdesc Provides a package multiply that provides a command for
+longdesc multiplication of a length without numerical overflow.
+containersize 2676
+containerchecksum 9499a1f6a2a216a2ab3fa9be44e4bcfe08828333803470822ee411803f6b8be46d3662d53edc5e15bd004ea758cf64ac1ede373240f5e7874106a6a44b5f2677
+doccontainersize 256736
+doccontainerchecksum 90c80cb335a7fe56087e16247763928b8a29c5d3a34ec67062a6804b3874a1b16add197527069b4bd65157e9d8d4546fe993201b3af314ca64b3cadab75bc598
+srccontainersize 14296
+srccontainerchecksum 3e7dfacd55dcba79c25649e3fda392eb0814a8576555a2e44d91c6812a3a2a8f23fb4cc095393ae67086f8c8afdbe8b0090e89e5495513cc36e1b9388bd3ec51
+runfiles size=4
+ texmf-dist/tex/latex/bez123/bez123.sty
+ texmf-dist/tex/latex/bez123/multiply.sty
+catalogue-contact-repository https://github.com/LaTeX-Package-Repositories/herries-press
+catalogue-ctan /macros/latex/contrib/bez123
+catalogue-license lppl1.3
+catalogue-topics graphics-curve graphics-in-tex tagged-pdf
+catalogue-version 1.1b

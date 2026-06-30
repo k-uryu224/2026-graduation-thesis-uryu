@@ -1,0 +1,17 @@
+name alchemist
+category Package
+revision 66924
+shortdesc Typeset alchemist and astrological symbols
+longdesc This style file makes the alchemical and astrological symbols
+longdesc accessible in Unicode.
+containersize 3172
+containerchecksum 3e4c4902c70deb8f380d3ff5e1a621f595ea1dc47cde3579bcfc12bd0a066d5d1d6773ffb1d1f98aef336c8cfdbe7770e1d48f5b89fabb98308f54df5dc75fcf
+doccontainersize 144288
+doccontainerchecksum cb978dd26bb9b95a29f6ced2ed4891f27fd0646daf560316dc1b20827a7af454fca1b6500bd4bd5c723c4fc6a24b77d6d7c7a6eafb3edc99e2098b11e4f53029
+runfiles size=4
+ texmf-dist/tex/latex/alchemist/alchemist.sty
+catalogue-also starfont
+catalogue-ctan /macros/unicodetex/latex/alchemist
+catalogue-license gpl lppl
+catalogue-topics astrology font-supp-symbol unicode
+catalogue-version 1.00

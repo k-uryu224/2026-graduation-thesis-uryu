@@ -1,0 +1,20 @@
+name bootstrapicons
+category Package
+revision 76502
+shortdesc Icons from the framework Bootstrap
+longdesc The package provides over 2,000 icons from the frontend
+longdesc framework Bootstrap. Note: this is NOT an official package from
+longdesc Bootstrap.
+containersize 908796
+containerchecksum 87dbd1c5568d745059e13f1180eb7a76ce93093a1a36fe49280b3ca3402472728a984a223b41d734fa15edd46742571eb040dfd5614fdae580936c702aad56d3
+doccontainersize 1185424
+doccontainerchecksum 26839041d30be1d5c43741350a85686dd0749ed7e3c6d151e8e66f8715d96725b710efd67d8d37da307448f0af97f644449549967d9579449b22dc81908632c4
+runfiles size=501
+ texmf-dist/tex/latex/bootstrapicons/bootstrapicons-complete.pdf
+ texmf-dist/tex/latex/bootstrapicons/bootstrapicons.sty
+catalogue-contact-bugs https://github.com/BenSt099/bootstrapicons/issues
+catalogue-contact-repository https://github.com/BenSt099/bootstrapicons
+catalogue-ctan /macros/latex/contrib/bootstrapicons
+catalogue-license mit
+catalogue-topics logo graphics-symb
+catalogue-version 1.1

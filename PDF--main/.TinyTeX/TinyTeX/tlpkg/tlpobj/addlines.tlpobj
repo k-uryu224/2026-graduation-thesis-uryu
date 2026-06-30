@@ -1,0 +1,21 @@
+name addlines
+category Package
+revision 77682
+shortdesc A user-friendly wrapper around \enlargethispage
+longdesc This small package provides the command \addlines for adding or
+longdesc removing space in the textblock of the page it's used on. E.g.,
+longdesc adding an extra line of text to the page so that a section fits
+longdesc better on the next page. It will also add space to the facing
+longdesc page in a two-sided document.
+containersize 1516
+containerchecksum 622dd4bf6d077905676d75ea3f65794d009c62ebc57870c29b23a04089e6db78b8abf0474ea3647ab29b6ae10c5c55f7dd3306d64ab58aa18a02b991e62fefd2
+doccontainersize 135972
+doccontainerchecksum c4fa97d531199803735969bda924d13f76acbe0cd3e0e5cfcb101363329038db8298bc45b92338e007046d5e7c4e4725f597ca73927eee9aa509ee7676711db3
+srccontainersize 4120
+srccontainerchecksum 8d5b5a0a5eae7f9ee77a0c7d6dd06abfbd0c3466c52af2707298e67a77664383c98747d3bbd211376838ab9f2a2b5f7173f24091ba233e5f28402a01b6a91fe6
+runfiles size=1
+ texmf-dist/tex/latex/addlines/addlines.sty
+catalogue-ctan /macros/latex/contrib/addlines
+catalogue-license lppl1.3c
+catalogue-topics geometry tagged-pdf
+catalogue-version 0.3

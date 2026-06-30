@@ -1,0 +1,208 @@
+%%
+%% This is file `beamerthemewestlake.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% beamertheme-westlake.dtx  (with options: `package')
+%% -----------------------------------------------------------------------
+%%   Copyright (C) 2026 by Mingyu Xia <myhsia@outlook.com>               *
+%% -----------------------------------------------------------------------
+%%   This work may be distributed and/or modified under the conditions   *
+%%   of the LaTeX Project Public License (LPPL), either version 1.3c of  *
+%%   this license or (at your option) any later version.                 *
+%%   The latest version of this license is in                            *
+%%                                                                       *
+%%       http://www.latex-project.org/lppl.txt                           *
+%%                                                                       *
+%%   and version 1.3c or later is part of all distributions of LaTeX     *
+%%   version 2008 or later.                                              *
+%%                                                                       *
+%%   This work has the LPPL maintenance status `maintained'.             *
+%%                                                                       *
+%%   The Current Maintainer of this work is Mingyu Xia.                  *
+%% -----------------------------------------------------------------------
+\def \westlake@date    {2026-03-06}
+\def \westlake@version {v0.2A}
+\ProvidesPackage{beamerthemewestlake}%
+  [\westlake@date\ \westlake@version Westlake beamer theme]
+\mode<presentation>
+\DeclareOptionBeamer{themeRGB}  {\definecolor{westlake}{RGB}{#1}}
+\DeclareOptionBeamer{lbadge}    {\gdef \westlake@lbadge     {#1}}
+\DeclareOptionBeamer{rbadge}    {\gdef \westlake@rbadge     {#1}}
+\DeclareOptionBeamer{logobg}    {\gdef \westlake@logobg     {#1}}
+\DeclareOptionBeamer{logobg.op} {\gdef \westlake@logobg@op  {#1}}
+\DeclareOptionBeamer{mainbg}    {\gdef \westlake@mainbg     {#1}}
+\DeclareOptionBeamer{mainbg.op} {\gdef \westlake@mainbg@op  {#1}}
+\DeclareOptionBeamer{basebg}    {\gdef \westlake@basebg     {#1}}
+\DeclareOptionBeamer{basebg.op} {\gdef \westlake@basebg@op  {#1}}
+\ExecuteOptionsBeamer{themeRGB = {0, 70, 134},
+                      logobg.op = .1, mainbg.op = .16, basebg.op = .8}
+\ProcessOptionsBeamer
+\usecolortheme[named = westlake]{structure}
+\useinnertheme{rounded}
+\RequirePackage{tikz}
+\usetikzlibrary{fadings}
+\newif \ifsection
+\AtBeginSection[]{%
+  \sectiontrue
+  \begin{frame}
+    \tikz [remember picture, overlay] {%
+      \ifcsname westlake@lbadge\endcsname
+        \node [below right, shift = {(.5ex,-1em)}]
+          at (current page.north west)
+          {\includegraphics
+            [height = \dimeval{2\paperheight/15}]{\westlake@lbadge}};
+      \fi
+      \ifcsname westlake@rbadge\endcsname
+        \node [below left, shift = {(-.5ex,-1em)}]
+          at (current page.north east)
+          {\includegraphics
+            [height = \dimeval{2\paperheight/15}]{\westlake@rbadge}};
+      \fi
+    }
+    \vfill
+    \usebeamerfont{title}\bfseries \color{westlake}%
+    \insertsectionhead \par
+    \tikz{%
+      \draw [ultra thick, line cap = round, westlake!20]
+        (0,0) --++ (2\linewidth/3,0);
+      \filldraw [ultra thick, line cap = round, westlake!60, path fading = west]
+        (0,0) --++
+        (\fpeval{\insertpagenumber/\insertdocumentendpage * 2/3}\linewidth,0);
+    }
+    \vfill
+  \end{frame}
+  \sectionfalse
+}
+\usebackgroundtemplate{%
+  \tikz [remember picture, overlay] {%
+    \ifnum \insertpagenumber=1
+      \ifcsname westlake@mainbg\endcsname
+        \node [above, inner sep = 0pt, opacity = \westlake@mainbg@op]
+          at (current page.south)
+          {\includegraphics
+            [width = \paperwidth, height = \paperwidth]{\westlake@mainbg}};
+      \fi
+      \fill [westlake!90]
+        (current page.south west) --++ ({-pi/6*\paperwidth},.4)
+        cos + ({(1/18+pi/12)*\paperwidth},+.4)
+        sin + ({(1/18+pi/12)*\paperwidth},+.4)
+        cos + ({(1/18+pi/12)*\paperwidth},-.4)
+        sin + ({(1/18+pi/12)*\paperwidth},-.4)
+        cos + ({(1/18+pi/12)*\paperwidth},+.4) --
+        (current page.south east) -- cycle;
+      \fill [westlake!90, opacity = .5]
+        (current page.south east) --++ (-.75\paperwidth, 0)
+        to[bend left = 6] ([yshift = 1.4cm]current page.south east) -- cycle;
+    \else
+      \ifsection \ifcsname westlake@mainbg\endcsname
+        \node [above, inner sep = 0pt, opacity = \westlake@mainbg@op]
+          at (current page.south)
+          {\includegraphics
+            [width = \paperwidth, height = \paperwidth]{\westlake@mainbg}};
+        \fi
+      \else \ifcsname westlake@basebg\endcsname
+        \node [above, inner sep = 0pt, opacity = \westlake@basebg@op]
+          at (current page.south)
+          {\includegraphics
+            [width = \paperwidth, height = \paperwidth]{\westlake@basebg}};
+        \fi
+        \ifcsname westlake@logobg\endcsname
+          \node [inner sep = 0pt, opacity = \westlake@logobg@op, xshift = -2em]
+            at (current page.east)
+            {\includegraphics[height = .75\paperheight]{\westlake@logobg}};
+        \fi
+      \fi
+    \fi
+  }
+}
+\titlegraphic{%
+  \tikz [remember picture, overlay] {%
+    \ifcsname westlake@lbadge\endcsname
+      \node [below right, shift = {(.5ex,-.5em)}] at (current page.north west)
+        {\includegraphics
+          [height = \dimeval{2\paperheight/15}]{\westlake@lbadge}};
+    \fi
+    \ifcsname westlake@rbadge\endcsname
+      \node [below left, shift = {(-.5ex,-.5em)}] at (current page.north east)
+        {\includegraphics
+          [height = \dimeval{2\paperheight/15}]{\westlake@rbadge}};
+    \fi
+  }
+}
+\let \@maketitle \maketitle
+\renewcommand \maketitle {\begingroup
+  \setbeamertemplate{footline}{}
+  \setbeamertemplate{headline}{}
+  \setbeamerfont{title}{series = \bfseries \Large}
+  \@maketitle \endgroup
+}
+\setbeamercolor{block title}
+  {use = structure, fg = structure.fg, bg = structure.fg!20!bg}
+\setbeamercolor{block title alerted}
+  {use = alerted text, fg = alerted text.fg, bg = alerted text.fg!20!bg}
+\setbeamercolor{block title example}
+  {use = example text,fg = example text.fg, bg = example text.fg!20!bg}
+\setbeamercolor{block body}{%
+  use = block title, parent = normal text,
+  bg  = block title.bg!50!bg
+}
+\setbeamercolor{block body alerted}{%
+  use = block title alerted, parent = normal text,
+  bg  = block title alerted.bg!50!bg
+}
+\setbeamercolor{block body example}{%
+  use = block title example, parent = normal text,
+  bg  = block title example.bg!50!bg
+}
+\addtobeamertemplate{block begin}
+  {\pgfsetfillopacity{.8}}{\pgfsetfillopacity{1}}
+\addtobeamertemplate{block alerted begin}
+  {\pgfsetfillopacity{.8}}{\pgfsetfillopacity{1}}
+\addtobeamertemplate{block example begin}
+  {\pgfsetfillopacity{.8}}{\pgfsetfillopacity{1}}
+\useoutertheme{infolines}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{title}{parent = author in head/foot}
+\setbeamercolor*{palette primary}
+  {use = structure, fg = black, bg = structure.fg!30!white}
+\setbeamercolor*{palette secondary}
+  {use = structure, fg = white, bg = structure.fg!60!white}
+\setbeamercolor*{palette tertiary}
+  {use = structure, fg = white, bg = structure.fg!90!white}
+\addtobeamertemplate{headline}{}{%
+  \tikz [remember picture, overlay]{%
+    \ifnum \inteval{2*\insertpagenumber}>\insertdocumentendpage
+      \filldraw [westlake!60]
+        (current page.north) --++ (0,-4ex) [rounded corners = 1ex] --++
+        (\fpeval
+          {\insertpagenumber/\insertdocumentendpage/2}\paperwidth,0)
+        [rounded corners = 0pt] --++ (4ex,4ex)
+       node [left = 2ex, midway, white, font = \bfseries \small]
+        {\inteval{100*\insertpagenumber/\insertdocumentendpage}\%} -- cycle;
+    \else
+      \filldraw [westlake!60]
+        (current page.north) --++ (0,-4ex) [rounded corners = 1ex] --++
+        (\fpeval
+          {\insertpagenumber/\insertdocumentendpage/2}\paperwidth,0)
+        [rounded corners = 0pt] --++ (4ex,4ex)
+       node [right = 2ex, midway, westlake, font = \bfseries \small]
+        {\inteval{100*\insertpagenumber/\insertdocumentendpage}\%} -- cycle;
+    \fi
+  }
+}
+\RequirePackage{ragged2e}
+\justifying
+\let\raggedright=\justifying
+\setbeamertemplate{bibliography item}[text]
+\mode<all>
+%% -----------------------------------------------------------------------
+%%   This work consists of the files beamertheme-westlake.dtx,           *
+%%                                   beamertheme-westlake.ins,           *
+%%                 the derived files beamerthemewestlake.sty,            *
+%%           the documentation files beamertheme-westlake.pdf,           *
+%%                               and README.md.                          *
+%% -----------------------------------------------------------------------
+%%
+%% End of file `beamerthemewestlake.sty'.

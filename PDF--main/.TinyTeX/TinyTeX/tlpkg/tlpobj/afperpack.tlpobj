@@ -1,0 +1,20 @@
+name afperpack
+category Package
+revision 77050
+shortdesc A parametric questions' repositories framework
+longdesc This is a personal pre-configuration package which
+longdesc (selectively) loads package sets with package options
+longdesc pre-defined by the author.
+containersize 4236
+containerchecksum 1be1324868f779a7b9141d801759bfebc9d44dd489c8843eeb241fea78d0fbd7ba00d3ef2e183121914422c2cbf4eacaf8796eecab1db6ca9b9178b8d297c82f
+doccontainersize 317964
+doccontainerchecksum d94942c56bc6dfbde0b6cfed5b57a110db199a58d8ce3607553cfbe9952fb8da971e37acb44ea7f58e4645844ee3f1dd4450fc7d21e1cbd21042bcb07e78dbf6
+runfiles size=4
+ texmf-dist/tex/latex/afperpack/afperpack.sty
+catalogue-contact-announce https://github.com/alceu-frigeri/afperpack/releases
+catalogue-contact-bugs https://github.com/alceu-frigeri/afperpack/issues
+catalogue-contact-repository https://github.com/alceu-frigeri/afperpack
+catalogue-ctan /macros/latex/contrib/afperpack
+catalogue-license lppl1.3c agpl3
+catalogue-topics doc-supp documentation
+catalogue-version 1.0b

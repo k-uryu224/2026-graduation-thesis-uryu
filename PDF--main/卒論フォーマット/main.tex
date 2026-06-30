@@ -1,0 +1,72 @@
+\documentclass{my_bthesis}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue, hypertexnames=false}
+\graphicspath{{figures/}}
+
+\newcommand{\figref}[1]{図~\ref{#1}}
+\newcommand{\tabref}[1]{表~\ref{#1}}
+\newcommand{\eqnref}[1]{式~\eqref{#1}}
+\renewcommand{\bibname}{参考文献}
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+
+% ここを書き換えてください
+\title{VLMを用いた長期ロボットタスクにおける工程文脈依存的不確実性診断}
+\etitle{Process-Context-Dependent Uncertainty Diagnosis for Long-Horizon Robot Tasks Using Vision-Language Models}
+\author{瓜生 滉宜}
+\date{2027年2月}
+
+\begin{document}
+\maketitle
+
+% --- 要旨（ページ番号なし） ---
+\startabstractpage
+\pagenumbering{gobble}
+
+\begin{center}
+  {\Large \textbf{要 \quad 旨}}
+\end{center}
+
+\input{chapters/00_abstract}
+
+\vspace*{1mm}
+\begin{center}
+\noindent \textbf{キーワード} \underline{VLM, 長期ロボットタスク, 不確実性診断, 工程文脈, Physical AI}
+\end{center}
+
+\newpage
+
+% --- 目次 ---
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+
+\listoffigures
+\clearpage
+
+\listoftables
+\clearpage
+
+% --- 本文 ---
+\startmaintext
+\pagenumbering{arabic}
+
+\input{chapters/chapter1_intro}
+\input{chapters/chapter2_related_work}
+\input{chapters/chapter3_method}
+\input{chapters/chapter4_dataset_design}
+\input{chapters/chapter5_experiment1}
+\input{chapters/chapter6_experiment2}
+\input{chapters/chapter7_discussion}
+\input{chapters/chapter8_conclusion}
+
+\appendix
+\input{chapters/appendix_a}
+
+\bibliographystyle{unsrt}
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,39 @@
+name beamertheme-trigon
+category Package
+revision 65985
+shortdesc A modern, elegant, and versatile theme for Beamer
+longdesc This package provides a modern, elegant and versatile theme for
+longdesc Beamer, with a high degree of customization. Trigon found its
+longdesc origin and inspiration in the graphical guidelines resulting
+longdesc from the visual identity overhaul of the University of Liege.
+longdesc Although directly inspired from these guidelines, the theme was
+longdesc stripped out of any mention or specificities related to the
+longdesc University and its faculties. This makes the Trigon theme
+longdesc perfectly suitable for many different contexts. The final
+longdesc product provides a modern, elegant and versatile theme with a
+longdesc high degree of customization. The main design focuses on
+longdesc triangular shapes for major layout elements and noise
+longdesc minimization for the main body of the work. The theme's
+longdesc implementation is heavily inspired from the Metropolis theme.
+longdesc Most options from Metropolis have been ported to Trigon in
+longdesc order to improve customization and ease-of-use. Trigon also
+longdesc includes different styles and layouts for the main title page,
+longdesc the section page and the default slide background.
+containersize 6096
+containerchecksum 1269b79603c415123a91093bc69cd672aa54518da7e7cef52193804fcede45dc09fe6748f2c0c940a754767963174e768b52873fbac5a520f7076229100ff016
+doccontainersize 585252
+doccontainerchecksum 83b6946c17d060c299260ff272130938933dbeb9124b1608e8f3bd886b2f63851773181dc1efabe901196b37f7254569a5b5de0de7fd39ff558eb21376ffaa27
+srccontainersize 15168
+srccontainerchecksum 49f9d4cf001b45b29a5c7b59155d72e286092157dfa5c0dfa05e7a20958adefda2a182974508f9a0936acb1d5ce199e21b350e85da7e292525b2aaab60e2c6d3
+runfiles size=11
+ texmf-dist/tex/latex/beamertheme-trigon/beamercolorthemetrigon.sty
+ texmf-dist/tex/latex/beamertheme-trigon/beamerfontthemetrigon.sty
+ texmf-dist/tex/latex/beamertheme-trigon/beamerinnerthemetrigon.sty
+ texmf-dist/tex/latex/beamertheme-trigon/beamerouterthemetrigon.sty
+ texmf-dist/tex/latex/beamertheme-trigon/beamerthemetrigon.sty
+catalogue-contact-bugs https://gitlab.com/thlamb/beamertheme-trigon/-/issues
+catalogue-contact-repository https://gitlab.com/thlamb/beamertheme-trigon
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-trigon
+catalogue-license cc-by-sa-4
+catalogue-topics presentation
+catalogue-version 0.7.0

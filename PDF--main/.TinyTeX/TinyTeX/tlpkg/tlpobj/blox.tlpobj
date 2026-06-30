@@ -1,0 +1,20 @@
+name blox
+category Package
+revision 57949
+shortdesc Draw block diagrams, using TikZ
+longdesc This package, along with TikZ, will typeset block diagrams for
+longdesc use with programming and control theory. It is an English
+longdesc translation of the schemabloc package.
+containersize 2328
+containerchecksum 4f874416f3115f9abc5514d805952d576d3ee597475ad27523990820d485a3601e43e503a23d948a875db343ce4817eb7fedae6aef48a78a38a1656478190b74
+doccontainersize 378432
+doccontainerchecksum a9b8c964c8a43d9d6b0c4b5555c2c555246d04ad0c0b1209ddf953958f52af8e2ce3118f573d12c0bf727a2545a326bd284e61a27afd417cb672480e1025a5ac
+srccontainersize 13840
+srccontainerchecksum 7c8ab912484f90d5aa8f406e2d3c6176eb8908457cb184260c600fd72fb91c5ecd179ec4d80c55b6eddd7607c7fc36e3ec51af5fff31e9352b17360c470e8405
+runfiles size=2
+ texmf-dist/tex/latex/blox/blox.sty
+catalogue-also schemabloc
+catalogue-ctan /graphics/pgf/contrib/blox
+catalogue-license lppl1.3
+catalogue-topics graphics diagram-block pgf-tikz
+catalogue-version 2.51

@@ -1,0 +1,21 @@
+name autopdf
+category Package
+revision 32377
+shortdesc Conversion of graphics to pdfLaTeX-compatible formats
+longdesc The package facilitates the on-the-fly conversion of various
+longdesc graphics formats to formats supported by pdfLaTeX (e.g. PDF).
+longdesc It uses a range of external programs, and therefore requires
+longdesc that the LaTeX run starts with write18 enabled.
+containersize 4936
+containerchecksum f855fbe477986356d34360876a4a6613638255e234ad0210cb035a1f3a9b9b827ea140654e2001aa29ac09d7b8addf8f872d34bdb4d1700ead2f6e6f083cb2a6
+doccontainersize 229084
+doccontainerchecksum d2c2ecf193f03f4f568d2304128e50f5cb5964a6c0a2ca8b739c59b9d3e80637134b5ca91e1b5c1971db11eb54a086b3eb888b6984050dbffa22a166c6757e39
+srccontainersize 8256
+srccontainerchecksum fdec2bf2079746f67f3ffb790eb2e10a7dc884fbf68b2c1a6ec9c67ad0ed411d9ff87baa89fc11dfbf9172bfcd81b411d8aa223c209def4fda6c91a4a9d32ed6
+runfiles size=5
+ texmf-dist/tex/latex/autopdf/autopdf.sty
+catalogue-also epstopdf auto-pst-pdf
+catalogue-ctan /macros/latex/contrib/autopdf
+catalogue-license lppl1.2
+catalogue-topics graphics-epspdf callback
+catalogue-version 1.1

@@ -1,0 +1,17 @@
+name assoccnt
+category Package
+revision 38497
+shortdesc Associate counters, making them step when a master steps
+longdesc The package provides the means of declaring a set of counters
+longdesc to be stepped, each time some 'master' counter is stepped.
+containersize 4036
+containerchecksum 24dd03f444ff4dd627a97840837cb14288e9021117f93fbbdc4f79cbac9cab46d43fb93769d2f05970eeef3fafd39692eefe5d1b7bec8ae04f6078d7a4b48824
+doccontainersize 353364
+doccontainerchecksum 195f1f017fe187a224bde969f45b6494007e4d05ab2e8618b62e8d40055b4ef401f5ef069c3bd1af25f8a9f5e1ad1cba22923e4d615d4f075e13a78a06752e9c
+runfiles size=5
+ texmf-dist/tex/latex/assoccnt/assoccnt.sty
+catalogue-also xassoccnt
+catalogue-ctan /macros/latex/contrib/assoccnt
+catalogue-license lppl1.3
+catalogue-topics counter-mgmt macro-supp
+catalogue-version 0.8

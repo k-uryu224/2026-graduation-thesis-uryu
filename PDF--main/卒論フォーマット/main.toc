@@ -1,0 +1,58 @@
+\contentsline {chapter}{\numberline {1}序論}{1}{chapter*.1}%
+\contentsline {section}{\numberline {1.1}本章の概要}{1}{section*.2}%
+\contentsline {section}{\numberline {1.2}研究背景}{1}{section*.3}%
+\contentsline {section}{\numberline {1.3}問題提起}{1}{section*.4}%
+\contentsline {section}{\numberline {1.4}研究目的と対象範囲}{2}{section*.5}%
+\contentsline {section}{\numberline {1.5}研究課題}{2}{section*.6}%
+\contentsline {section}{\numberline {1.6}方法論}{3}{section*.10}%
+\contentsline {section}{\numberline {1.7}本研究の貢献}{3}{section*.11}%
+\contentsline {section}{\numberline {1.8}本論文の構成}{3}{section*.15}%
+\contentsline {chapter}{\numberline {2}関連研究}{5}{chapter*.16}%
+\contentsline {section}{\numberline {2.1}本章の概要}{5}{section*.17}%
+\contentsline {section}{\numberline {2.2}VLA と Physical AI}{5}{section*.18}%
+\contentsline {section}{\numberline {2.3}長期タスク・履歴・記憶を扱う研究}{5}{section*.19}%
+\contentsline {section}{\numberline {2.4}VLM によるロボット操作支援}{6}{section*.20}%
+\contentsline {section}{\numberline {2.5}Active Perception と追加観測}{6}{section*.21}%
+\contentsline {section}{\numberline {2.6}Ask-user と Human-Robot Interaction}{6}{section*.22}%
+\contentsline {section}{\numberline {2.7}失敗検出・実行監視・過程理解}{7}{section*.23}%
+\contentsline {section}{\numberline {2.8}不確実性下の計画と World Model}{7}{section*.24}%
+\contentsline {section}{\numberline {2.9}本研究の位置づけ}{7}{section*.25}%
+\contentsline {chapter}{\numberline {3}提案手法}{8}{chapter*.26}%
+\contentsline {section}{\numberline {3.1}本章の概要}{8}{section*.27}%
+\contentsline {section}{\numberline {3.2}手法の全体像}{8}{section*.28}%
+\contentsline {section}{\numberline {3.3}問題定式化}{8}{section*.29}%
+\contentsline {section}{\numberline {3.4}入力と出力}{9}{section*.32}%
+\contentsline {section}{\numberline {3.5}不確実性原因の定義}{9}{section*.43}%
+\contentsline {section}{\numberline {3.6}処理分岐の定義}{10}{section*.44}%
+\contentsline {section}{\numberline {3.7}構造化診断アルゴリズム}{10}{section*.46}%
+\contentsline {section}{\numberline {3.8}実装上の工夫}{11}{section*.52}%
+\contentsline {chapter}{\numberline {4}データと実験設計}{12}{chapter*.53}%
+\contentsline {section}{\numberline {4.1}本章の概要}{12}{section*.54}%
+\contentsline {section}{\numberline {4.2}データセット}{12}{section*.55}%
+\contentsline {section}{\numberline {4.3}評価指標}{13}{section*.57}%
+\contentsline {section}{\numberline {4.4}ベースライン手法}{13}{section*.58}%
+\contentsline {section}{\numberline {4.5}実験設定}{13}{section*.60}%
+\contentsline {section}{\numberline {4.6}対照ペア例}{14}{section*.62}%
+\contentsline {chapter}{\numberline {5}実験1}{15}{chapter*.64}%
+\contentsline {section}{\numberline {5.1}本章の概要}{15}{section*.65}%
+\contentsline {section}{\numberline {5.2}実験1の設定}{15}{section*.66}%
+\contentsline {section}{\numberline {5.3}評価の観点}{15}{section*.67}%
+\contentsline {section}{\numberline {5.4}ベースラインとの比較}{16}{section*.68}%
+\contentsline {section}{\numberline {5.5}考察}{16}{section*.69}%
+\contentsline {chapter}{\numberline {6}実験2}{17}{chapter*.70}%
+\contentsline {section}{\numberline {6.1}本章の概要}{17}{section*.71}%
+\contentsline {section}{\numberline {6.2}実験2の設定}{17}{section*.72}%
+\contentsline {section}{\numberline {6.3}評価の観点}{17}{section*.73}%
+\contentsline {section}{\numberline {6.4}実験3：実機分岐デモ}{18}{section*.74}%
+\contentsline {section}{\numberline {6.5}考察}{18}{section*.76}%
+\contentsline {chapter}{\numberline {7}考察}{19}{chapter*.77}%
+\contentsline {section}{\numberline {7.1}本章の概要}{19}{section*.78}%
+\contentsline {section}{\numberline {7.2}結果の解釈}{19}{section*.79}%
+\contentsline {section}{\numberline {7.3}手法の限界}{19}{section*.80}%
+\contentsline {section}{\numberline {7.4}今後の方向性}{20}{section*.81}%
+\contentsline {chapter}{\numberline {8}結論}{21}{chapter*.82}%
+\contentsline {section}{\numberline {8.1}本研究のまとめ}{21}{section*.83}%
+\contentsline {section}{\numberline {8.2}今後の課題}{21}{section*.84}%
+\contentsline {chapter}{\numberline {A}付録}{22}{chapter*.85}%
+\contentsline {section}{\numberline {A.1}補足資料}{22}{section*.86}%
+\contentsline {chapter}{参考文献}{23}{appendix*.87}%

@@ -1,0 +1,17 @@
+name bookest
+category Package
+revision 15878
+shortdesc Extended book class
+longdesc The class extends the standard book class, in the areas of
+longdesc colour scheme management, document layout, headings and
+longdesc footers, front page layout, and other minor items.
+containersize 4204
+containerchecksum e49d8f0959276202dea2079df1a509dd296858841f4fa2df235743033ba852b856e5f2a9a14176fd986ad1e431ebd3581469e7ea30093b5a01b7d23b791a028e
+doccontainersize 209440
+doccontainerchecksum ad51d3cfff90ce83c7f6479f9f0eb49a54613c585561def33529b301e00915d7a8f94fb62660b3bf5bd87104651e7333c3a9b620bbfc1ab7fa9fa510e16dc15b
+runfiles size=5
+ texmf-dist/tex/latex/bookest/bookest.cls
+catalogue-ctan /macros/latex/contrib/bookest
+catalogue-license lppl
+catalogue-topics class book-pub
+catalogue-version 1.1

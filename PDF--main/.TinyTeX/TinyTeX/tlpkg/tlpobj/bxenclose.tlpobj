@@ -1,0 +1,19 @@
+name bxenclose
+category Package
+revision 40213
+shortdesc Enclose the document body with some pieces of code
+longdesc The package enables authors to designate in the preamble to
+longdesc make the document body enclosed with the given pieces of code.
+longdesc As is known, there are already various mechanisms provided by
+longdesc LaTeX kernel or packages that attach hooks at the beginning and
+longdesc end of documents.
+containersize 1764
+containerchecksum f3d0f39e9c21f3bff75d118bb1a9408e7fb2c84beb9301873cd37a678de4b7680d1e8f13693839ce32e1e816e756d8f0af14cc620952afc8fb02885debf478a8
+doccontainersize 1856
+doccontainerchecksum ea7e0f17ee70d3d4798e85e3788af1110fb2adb436106ad08f601655453af2c5d192d5e3854fee1b29f6ac21f2f6b02e239ff4ec6ae9181818b23bdbac45583e
+runfiles size=1
+ texmf-dist/tex/latex/bxenclose/bxenclose.sty
+catalogue-ctan /macros/latex/contrib/bxenclose
+catalogue-license mit
+catalogue-topics macro-supp
+catalogue-version 0.2

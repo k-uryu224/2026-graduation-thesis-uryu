@@ -1,0 +1,23 @@
+name beamer2thesis
+category Package
+revision 72949
+shortdesc Thesis presentations using beamer
+longdesc The package specifies a beamer theme for presenting a thesis.
+containersize 292020
+containerchecksum 0958518f403ec4204ed555f02a6cba46db1eddd3774999390255d3eb1cafb116c83d5070ff38a91feaf63344c3394174c05fce9b750a1365e1464a23c258e40d
+doccontainersize 296660
+doccontainerchecksum 627b31f61353a01e0e17111bd0234ed2cbd11bde4c337087343f07d2014cb5dcedbd64b109de1d8faf935e704618d71b832ff8e4720ff1c2629eea4dc8ade58d
+runfiles size=88
+ texmf-dist/tex/latex/beamer2thesis/beamer2thesis.jpg
+ texmf-dist/tex/latex/beamer2thesis/beamercolorthemetorinoth.sty
+ texmf-dist/tex/latex/beamer2thesis/beamerfontthemetorinoth.sty
+ texmf-dist/tex/latex/beamer2thesis/beamerinnerthemetorinoth.sty
+ texmf-dist/tex/latex/beamer2thesis/beamerouterthemetorinoth.sty
+ texmf-dist/tex/latex/beamer2thesis/beamerthemeTorinoTh.sty
+ texmf-dist/tex/latex/beamer2thesis/logopolito.jpg
+catalogue-contact-home https://cfiandra.github.io/Beamer2Thesis/
+catalogue-contact-repository https://github.com/cfiandra/Beamer2Thesis
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamer2thesis
+catalogue-license lppl
+catalogue-topics dissertation presentation
+catalogue-version 2.2

@@ -1,0 +1,19 @@
+name bxdvidriver
+category Package
+revision 79089
+shortdesc Enables specifying a driver option effective only in DVI output
+longdesc This single-function package enables authors to specify a
+longdesc global driver option (dvips, dvipdfmx, etc) which is applied
+longdesc only when the engine outputs a DVI file. It is useful to create
+longdesc special document- templates that can be compiled in both
+longdesc PDF-mode and DVI-mode.
+containersize 3232
+containerchecksum f50631503f112c4030d39b637ff1369df11327d2482eb3b1bedf7d0556d99cf3b329ab52221c978205ec1afec2a03c456c969e0f8222ad4fcb2aa23bd3caf259
+doccontainersize 2396
+doccontainerchecksum 11d83c70bd5b233066356357802cde6ac87be8935f8f2f55cfbeaa14b8870898096dc68f8fa849f186dcc749b18cf02121fcd176af6629435c4177cf14688891
+runfiles size=3
+ texmf-dist/tex/latex/bxdvidriver/bxdvidriver.sty
+catalogue-ctan /macros/latex/contrib/bxdvidriver
+catalogue-license mit
+catalogue-topics dvi-proc tagged-pdf
+catalogue-version 0.3

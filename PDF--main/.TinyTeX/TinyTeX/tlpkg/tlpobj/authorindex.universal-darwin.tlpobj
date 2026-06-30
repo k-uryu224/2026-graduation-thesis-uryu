@@ -1,0 +1,8 @@
+name authorindex.universal-darwin
+category Package
+revision 57908
+shortdesc universal-darwin files of authorindex
+containersize 340
+containerchecksum 486ff192e81dbbeca686217d4c1a5d2c878796ce1ce28216ccd50a04d58c5fd171b1e646cc755fd14d62bdbc05d1b22e8dd0820820b8d990e6940de74ca9dfde
+binfiles arch=universal-darwin size=1
+ bin/universal-darwin/authorindex

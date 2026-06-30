@@ -1,0 +1,27 @@
+name beamertheme-arguelles
+category Package
+revision 78826
+shortdesc Simple, typographic beamer theme
+longdesc Arguelles is a beamer theme that helps you create beautiful
+longdesc presentations. It aims for simplicity and readability by
+longdesc following best practices of graphic design. The layout is
+longdesc elegant but subtle, so as to keep the audience's attention on
+longdesc your content. This is brought to life by Alegreya, one of the
+longdesc 53 Fonts of the Decade selected by the Association
+longdesc Typographique Internationale (2011).
+containersize 3432
+containerchecksum 99ac69f655f6e8cbfc240d5cc1691637a26829dfa3b0a5733c14c965cfca36c8b8c04156c32578aa9f95e738902849a72b7236fb883a10415ba9b5e1c23b6ffa
+doccontainersize 2207624
+doccontainerchecksum 5ec4be623629806c7aaf5682360b9529eacffb5123f6d2dabba39f6539c0917603cc29b6e2177b79d75653d576e04774fa8985d87b4210d24d160edf5a965aca
+runfiles size=6
+ texmf-dist/tex/latex/beamertheme-arguelles/beamercolorthemeArguelles.sty
+ texmf-dist/tex/latex/beamertheme-arguelles/beamerfontthemeArguelles.sty
+ texmf-dist/tex/latex/beamertheme-arguelles/beamerinnerthemeArguelles.sty
+ texmf-dist/tex/latex/beamertheme-arguelles/beamerouterthemeArguelles.sty
+ texmf-dist/tex/latex/beamertheme-arguelles/beamerthemeArguelles.sty
+catalogue-contact-bugs https://github.com/piazzai/arguelles/issues
+catalogue-contact-repository https://github.com/piazzai/arguelles
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-arguelles
+catalogue-license mit
+catalogue-topics presentation
+catalogue-version 2.6.0

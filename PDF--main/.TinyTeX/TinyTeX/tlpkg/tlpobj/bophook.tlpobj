@@ -1,0 +1,21 @@
+name bophook
+category Package
+revision 17062
+shortdesc Provides an At-Begin-Page hook
+longdesc Using the \AtBeginPage hook, you can add material in the
+longdesc background of a page. \PageLayout can be used to give page
+longdesc makeup commands to be executed on every page (e.g., depending
+longdesc on the page style).
+containersize 1764
+containerchecksum 8ce41fecd2befaf448ed238d8bf643362f5a945b7391d18b2698c006421b7b60ce4d886e09dc579eef12cfb459f49247f7f3afebdf8b590e9285c608d654ed60
+doccontainersize 44772
+doccontainerchecksum 7d8ce0b7caffa4e16539154ade5a3df6d6b42b75bc521643473ff568ef5c65c3014fb22053b353a917d2c4782f378bc765475dca5d20b3dc06ff02c0dd2a63ec
+srccontainersize 4104
+srccontainerchecksum ca7e5fc30d23c022e4fec8414c9ef11d2acd5707ad781428021f8a828c6c8b891674fc6eb372a0dc33944e2a54adb9b86645529ff28b4438c31d8477cb2b3a6d
+runfiles size=1
+ texmf-dist/tex/latex/bophook/bophook.sty
+catalogue-also everyshi
+catalogue-ctan /macros/latex/contrib/bophook
+catalogue-license lppl
+catalogue-topics defer-stuff
+catalogue-version 0.02

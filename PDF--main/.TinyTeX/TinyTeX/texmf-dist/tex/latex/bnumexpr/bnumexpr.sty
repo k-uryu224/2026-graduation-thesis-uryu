@@ -1,0 +1,818 @@
+%%
+%% This is file `bnumexpr.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% bnumexpr.dtx  (with options: `package')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from bnumexpr.sty.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file bnumexpr.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%% ---------------------------------------------------------------
+%% The bnumexpr package: Expressions with big integers
+%% Copyright (C) 2014-2022, 2025 Jean-Francois Burnol
+%%
+\NeedsTeXFormat{LaTeX2e}%
+\ProvidesPackage{bnumexpr}[2025/09/27 v1.7b Expressions with big integers (JFB)]%
+\RequirePackage{xintkernel}[2025/09/05]%
+\edef\BNErestorecatcodesendinput{\XINTrestorecatcodes\noexpand\endinput}%
+\XINTsetcatcodes%
+\def\BNE_tmpa{1}\def\BNE_tmpb{1}%
+\DeclareOption{custom}{\def\BNE_tmpa{0}\def\BNE_tmpb{0}}%
+\DeclareOption{customcore}{\def\BNE_tmpa{0}}%
+\DeclareOption{custombinhex}{\def\BNE_tmpb{0}}%
+\ProcessOptions\relax
+\if1\BNE_tmpa\RequirePackage{xintcore}[2025/09/05]\fi
+\if1\BNE_tmpb\RequirePackage{xintbinhex}[2025/09/05]\fi
+\catcode`! 3
+\def\bnumsetup #1{\BNE_parsekeys #1,=!,}%
+\def\BNE_parsekeys #1=#2#3,%
+  {%
+    \ifx!#2\expandafter\BNE_parsedone\fi
+  \XINT_global
+    \expandafter
+    \let\csname BNE_Op_\xint_zapspaces #1 \xint_gobble_i\endcsname%
+    =#2%
+  \ifxintverbose
+    \PackageInfo{bnumexpr}{assigned
+    \ifxintglobaldefs globally \fi
+     \string#2 to \xint_zapspaces #1 \xint_gobble_i\MessageBreak
+     \expandafter\xint_firstofone}%
+  \fi
+  \BNE_parsekeys
+  }%
+\def\BNE_parsedone #1\BNE_parsekeys {}%
+\catcode`! 12
+\bnumsetup{%
+  add = \xintiiAdd, sub = \xintiiSub, opp = \xintiiOpp,
+  mul = \xintiiMul, pow = \xintiiPow, fac = \xintiiFac,
+  div = \xintiiDivFloor, mod = \xintiiMod, divround = \xintiiDivRound,
+  hextodec=\xintHexToDec, octtodec=\xintOctToDec, bintodec=\xintBinToDec,
+  dectohex=\xintDecToHex, dectooct=\xintDecToOct, dectobin=\xintDecToBin,
+}%
+\chardef\xint_c_xi   11
+\chardef\xint_c_xiii 13
+\chardef\xint_c_xv   15
+\chardef\xint_c_xix  19
+\chardef\xint_c_xxi  21
+\def\XINTfstop {\noexpand\XINTfstop}%
+\def\bnumexpr  {\romannumeral0\bnumexpro}%
+\def\bnumexpro {\csname BNE_wrap\expandafter\endcsname
+                \romannumeral0\BNE_bareeval}%
+\def\BNE_wrap  {\XINTfstop\BNEprint.}%
+\protected\def\BNEprint.#1{{\BNE_unpack#1.}}%
+\def\BNEprint_#1{{\BNE_unpack#1.}}%
+\def\bnethe{\expanded\expandafter\xint_gobble_i\romannumeral`&&@}%
+\def\thebnumexpr{\expanded\csname BNEprint_\expandafter\endcsname
+                 \romannumeral0\BNE_bareeval}%
+\def\BNE_bareeval{\expandafter\BNE_check\romannumeral`&&@\BNE_getnext}%
+\expandafter\def\csname BNEprint_[h]\endcsname#1{{\BNE_unpack_tohex#1.}}%
+\expandafter\def\csname BNEprint_[ha]\endcsname#1{{\BNE_unpack_tolowhex#1.}}%
+\expandafter\def\csname BNEprint_[o]\endcsname#1{{\BNE_unpack_tooct#1.}}%
+\expandafter\def\csname BNEprint_[b]\endcsname#1{{\BNE_unpack_tobin#1.}}%
+\expandafter\let\csname BNEprint_[]\endcsname\BNEprint_
+\def\bnumeval #1#{\expanded\bnumeval_a{#1}}%
+\def\bnumeval_a#1#2{%
+   \csname BNEprint_\xint_zapspaces #1 \xint_gobble_i\expandafter
+   \endcsname\romannumeral0\BNE_bareeval#2\relax
+}%
+\def\BNE_unpack#1{%
+   \bnumprintone{#1}\expandafter\BNE_unpack_a\string
+}%
+\def\BNE_unpack_a#1{%
+   \if#1.\BNE_allitemsdone\fi\bnumprintonesep
+   \expandafter\BNE_unpack\expandafter{\iffalse}\fi
+}%
+\def\BNE_allitemsdone\fi#1\fi{\fi}%
+\def\BNE_unpack_tohex#1{%
+    \expandafter\bnumprintonehex
+    \expandafter{\romannumeral`&&@\BNE_Op_dectohex{#1}}%
+    \expandafter\BNE_unpack_tohex_a\string
+}%
+\def\BNE_unpack_tohex_a#1{%
+    \if#1.\BNE_allitemsdone\fi\bnumprintonesep
+    \expandafter\BNE_unpack_tohex\expandafter{\iffalse}\fi
+}%
+\def\BNE_unpack_tolowhex#1{%
+    \expandafter\bnumprintonelowerhex
+    \expanded{{\BNE_dectolowhex_a{#1}\xint_bye23456789\xint_bye\endcsname}}%
+    \expandafter\BNE_unpack_tolowhex_a\string
+}%
+\def\BNE_unpack_tolowhex_a#1{%
+    \if#1.\BNE_allitemsdone\fi\bnumprintonesep
+    \expandafter\BNE_unpack_tolowhex\expandafter{\iffalse}\fi
+}%
+\def\BNE_dectolowhex_a{%
+    \expandafter\BNE_dectolowhex_b\romannumeral`&&@\BNE_Op_dectohex
+}%
+\def\BNE_dectolowhex_b #1#2#3#4#5#6#7#8#9{%
+    \csname BNE_lower #1\endcsname
+    \csname BNE_lower #2\endcsname
+    \csname BNE_lower #3\endcsname
+    \csname BNE_lower #4\endcsname
+    \csname BNE_lower #5\endcsname
+    \csname BNE_lower #6\endcsname
+    \csname BNE_lower #7\endcsname
+    \csname BNE_lower #8\endcsname
+    \csname BNE_lower #9\endcsname
+    \BNE_dectolowhex_b
+}%
+\expandafter\let\csname BNE_lower \endcsname\empty
+\expandafter\def\csname BNE_lower 0\endcsname{0}%
+\expandafter\def\csname BNE_lower 1\endcsname{1}%
+\expandafter\def\csname BNE_lower 2\endcsname{2}%
+\expandafter\def\csname BNE_lower 3\endcsname{3}%
+\expandafter\def\csname BNE_lower 4\endcsname{4}%
+\expandafter\def\csname BNE_lower 5\endcsname{5}%
+\expandafter\def\csname BNE_lower 6\endcsname{6}%
+\expandafter\def\csname BNE_lower 7\endcsname{7}%
+\expandafter\def\csname BNE_lower 8\endcsname{8}%
+\expandafter\def\csname BNE_lower 9\endcsname{9}%
+\expandafter\def\csname BNE_lower A\endcsname{a}%
+\expandafter\def\csname BNE_lower B\endcsname{b}%
+\expandafter\def\csname BNE_lower C\endcsname{c}%
+\expandafter\def\csname BNE_lower D\endcsname{d}%
+\expandafter\def\csname BNE_lower E\endcsname{e}%
+\expandafter\def\csname BNE_lower F\endcsname{f}%
+\def\BNE_unpack_tooct#1{%
+    \expandafter\bnumprintoneoct
+    \expandafter{\romannumeral`&&@\BNE_Op_dectooct{#1}}%
+    \expandafter\BNE_unpack_tooct_a\string
+}%
+\def\BNE_unpack_tooct_a#1{%
+    \if#1.\BNE_allitemsdone\fi\bnumprintonesep
+    \expandafter\BNE_unpack_tooct\expandafter{\iffalse}\fi
+}%
+\def\BNE_unpack_tobin#1{%
+    \expandafter\bnumprintonebin
+    \expandafter{\romannumeral`&&@\BNE_Op_dectobin{#1}}%
+    \expandafter\BNE_unpack_tobin_a\string
+}%
+\def\BNE_unpack_tobin_a#1{%
+    \if#1.\BNE_allitemsdone\fi\bnumprintonesep
+    \expandafter\BNE_unpack_tobin\expandafter{\iffalse}\fi
+}%
+\let\bnumprintone   \xint_firstofone
+\let\bnumprintonehex\xint_firstofone
+\let\bnumprintonelowerhex\xint_firstofone
+\let\bnumprintoneoct\xint_firstofone
+\let\bnumprintonebin\xint_firstofone
+\def\bnumprintonesep{, }%
+\def\BNE_getnext #1%
+{%
+    \expandafter\BNE_put_op_first\romannumeral`&&@%
+    \expandafter\BNE_getnext_a\romannumeral`&&@#1%
+}%
+\def\BNE_put_op_first #1#2#3{#2#3{#1}}%
+\def\BNE_getnext_a #1%
+{%
+    \ifx\relax #1\xint_dothis\BNE_foundprematureend\fi
+    \ifx\XINTfstop#1\xint_dothis\BNE_subexpr\fi
+    \ifcat\relax#1\xint_dothis\BNE_countetc\fi
+    \xint_orthat{}\BNE_getnextfork #1%
+}%
+\def\BNE_foundprematureend\BNE_getnextfork #1{{0}\xint_c_\relax}%
+\def\BNE_subexpr #1.#2%
+{%
+    \expanded{\unexpanded{{#2}}\expandafter}\romannumeral`&&@\BNE_getop
+}%
+\def\BNE_countetc\BNE_getnextfork#1%
+{%
+    \if0\ifx\count#11\fi
+        \ifx\numexpr#11\fi
+        \ifx\catcode#11\fi
+        \ifx\dimen#11\fi
+        \ifx\dimexpr#11\fi
+        \ifx\skip#11\fi
+        \ifx\glueexpr#11\fi
+        \ifx\fontdimen#11\fi
+        \ifx\ht#11\fi
+        \ifx\dp#11\fi
+        \ifx\wd#11\fi
+        \ifx\fontcharht#11\fi
+        \ifx\fontcharwd#11\fi
+        \ifx\fontchardp#11\fi
+        \ifx\fontcharic#11\fi
+       0\expandafter\BNE_fetch_as_number\fi
+   \expandafter\BNE_getnext_a\number #1%
+}%
+\def\BNE_fetch_as_number
+    \expandafter\BNE_getnext_a\number #1%
+{%
+    \expanded{{{\number#1}}\expandafter}\romannumeral`&&@\BNE_getop
+}%
+\def\BNE_getnextfork #1{%
+    \if#1-\xint_dothis {{}{}-}\fi
+    \if#1(\xint_dothis {{}\xint_c_ii^v (}\fi
+    \ifnum\xint_c_ix<1\string#1 \xint_dothis {\BNE_startint#1}\fi
+    \xint_orthat {\BNE_getnextfork_a #1}%
+}%
+\def\BNE_getnextfork_a #1{%
+    \if#1_\xint_dothis {\BNE_startint 0}\fi
+    \if#1+\xint_dothis \BNE_getnext_a \fi
+    \if#1'\xint_dothis \BNE_startoct\fi
+    \if#1"\xint_dothis \BNE_starthex\fi
+    \xint_orthat {\BNE_unexpected #1}%
+}%
+\def\BNE_unexpected#1%
+{%
+    \XINT_expandableerror{Unexpected token `#1'. Ignoring.}\BNE_getnext_a
+}%
+\def\BNE_startint #1%
+{%
+    \if #10\expandafter\BNE_scanint_gobz_a\else\expandafter\BNE_scanint_a\fi #1%
+}%
+\def\BNE_wrapint_after{\iffalse{{{\fi}}}}%
+\def\BNE_scanint_gobz_a #1#2{%
+     \expandafter\BNE_scanint_gobz_b\romannumeral`&&@#2%
+}%
+\def\BNE_scanint_gobz_b #1%
+{%
+    \ifx b#1\xint_dothis \BNE_startbin \fi
+    \ifx o#1\xint_dothis \BNE_startoct \fi
+    \ifx x#1\xint_dothis \BNE_starthex \fi
+    \xint_orthat {\BNE_scanint_gobz_c #1}%
+}%
+\def\BNE_scanint_gobz_c #1%
+{%
+    \expandafter{\expanded{{\iffalse}}}\fi
+    \BNE_scanint_gobz_main#1%
+}%
+\def\BNE_scanint_a #1#2{%
+     \expandafter{\expanded{{\iffalse}}}\fi #1%
+     \expandafter\BNE_scanint_main\romannumeral`&&@#2%
+}%
+\def\BNE_scanint_main #1%
+{%
+    \ifcat \relax #1\expandafter\BNE_scanint_hit_cs \fi
+    \ifnum\xint_c_ix<1\string#1 \else\expandafter\BNE_scanint_checkagain\fi
+    #1\BNE_scanint_again
+}%
+\def\BNE_scanint_again #1%
+{%
+    \expandafter\BNE_scanint_main\romannumeral`&&@#1%
+}%
+\def\BNE_scanint_hit_cs \ifnum#1\fi#2\BNE_scanint_again
+{%
+    \expandafter\BNE_wrapint_after\romannumeral`&&@\BNE_getop_a#2%
+}%
+\def\BNE_scanint_checkagain #1\BNE_scanint_again
+{%
+    \if _#1\BNE_scanint_checkagain_skip\fi
+    \expandafter\BNE_wrapint_after\romannumeral`&&@\BNE_getop_a#1%
+}%
+\def\BNE_scanint_checkagain_skip#1#2\BNE_getop_a#3{#1\BNE_scanint_again}%
+\def\BNE_scanint_gobz_main #1%
+{%
+    \ifcat \relax #1\expandafter\BNE_scanint_gobz_hit_cs\fi
+    \ifnum\xint_c_x<1\string#1 \else\expandafter\BNE_scanint_gobz_checkagain\fi
+    #1\BNE_scanint_again
+}%
+\def\BNE_scanint_gobz_hit_cs\ifnum#1\fi#2\BNE_scanint_again
+{%
+    0\expandafter\BNE_wrapint_after\romannumeral`&&@\BNE_getop_a#2%
+}%
+\def\BNE_scanint_gobz_checkagain #1\BNE_scanint_again
+{%
+    \if    _#1\xint_dothis\BNE_scanint_gobz_again\fi
+    \if    0#1\xint_dothis\BNE_scanint_gobz_again\fi
+    \xint_orthat
+    {0\expandafter\BNE_wrapint_after\romannumeral`&&@\BNE_getop_a#1}%
+}%
+\def\BNE_scanint_gobz_again #1%
+{%
+    \expandafter\BNE_scanint_gobz_main\romannumeral`&&@#1%
+}%
+\def\BNE_starthex #1%
+{%
+    \expandafter\BNE_wraphex_before
+    \expanded{{\iffalse}}\fi
+    \expandafter\BNE_scanhex_gobz_main\romannumeral`&&@#1%
+}%
+\def\BNE_wraphex_before{\expandafter{\expandafter{%
+                        \romannumeral`&&@\iffalse}}\fi\BNE_Op_hextodec}%
+\def\BNE_wraphex_after{\iffalse{{{{\fi}}}}}%
+\def\BNE_scanhex_main #1%
+{%
+    \ifcat \relax #1\BNE_scanhex_done_hit_cs #1\fi
+    \if\ifnum`#1>`/
+       \ifnum`#1>`9
+       \ifnum`#1>`@
+       \ifnum`#1>`F
+       0\else1\fi\else0\fi\else1\fi\else0\fi 1%
+    #1%
+    \else
+      \if _#1\else
+        \if\ifnum`#1>``
+           \ifnum`#1>`f 0\else1\fi\else0\fi 1%
+           \csname BNE_upper #1\endcsname
+        \else
+           \BNE_scanhex_done #1%
+        \fi
+      \fi
+    \fi
+    \BNE_scanhex_again
+}%
+\expandafter\def\csname BNE_upper a\endcsname{A}%
+\expandafter\def\csname BNE_upper b\endcsname{B}%
+\expandafter\def\csname BNE_upper c\endcsname{C}%
+\expandafter\def\csname BNE_upper d\endcsname{D}%
+\expandafter\def\csname BNE_upper e\endcsname{E}%
+\expandafter\def\csname BNE_upper f\endcsname{F}%
+\def\BNE_scanhex_done_hit_cs #1#2#3\BNE_scanhex_again
+{%
+    #2\expandafter\BNE_wraphex_after\romannumeral`&&@\BNE_getop_a#1%
+}%
+\def\BNE_scanhex_done #1#2\BNE_scanhex_again
+{%
+    #2\expandafter\BNE_wraphex_after\romannumeral`&&@\BNE_getop_a#1%
+}%
+\def\BNE_scanhex_again #1%
+{%
+    \expandafter\BNE_scanhex_main\romannumeral`&&@#1%
+}%
+\def\BNE_scanhex_gobz_main #1%
+{%
+    \ifcat \relax #1%
+        0\BNE_scanhex_done_hit_cs #1\fi
+    \if\ifnum`#1>`0
+       \ifnum`#1>`9
+       \ifnum`#1>`@
+       \ifnum`#1>`F
+       0\else1\fi\else0\fi\else1\fi\else0\fi 1%
+    #1%
+    \else
+      \if\ifnum`#1>`` \ifnum`#1>`f 0\else1\fi\else0\fi 1%
+        \csname BNE_upper #1\endcsname
+      \else
+        \if 0#1\BNE_scanhex_gobzero\else
+        \if _#1\BNE_scanhex_gobunderscore\else
+           0\BNE_scanhex_done #1%
+        \fi\fi
+      \fi
+    \fi
+    \BNE_scanhex_again
+}%
+\def\BNE_scanhex_gobzero #1\BNE_scanhex_again #2%
+{%
+    \fi\fi\fi
+    \expandafter\BNE_scanhex_gobz_main\romannumeral`&&@#2%
+}%
+\def\BNE_scanhex_gobunderscore #1\BNE_scanhex_again #2%
+{%
+    \fi\fi\fi\fi
+    \expandafter\BNE_scanhex_gobz_main\romannumeral`&&@#2%
+}%
+\def\BNE_startoct #1%
+{%
+    \expandafter\BNE_wrapoct_before
+    \expanded{{\iffalse}}\fi
+    \expandafter\BNE_scanoct_gobz_main\romannumeral`&&@#1%
+}%
+\def\BNE_wrapoct_before{\expandafter{\expandafter{%
+                        \romannumeral`&&@\iffalse}}\fi\BNE_Op_octtodec}%
+\def\BNE_wrapoct_after{\iffalse{{{{\fi}}}}}%
+\def\BNE_scanoct_main #1%
+{%
+    \ifcat \relax #1\expandafter\BNE_scanoct_done_hit_cs #1\fi
+    \if\ifnum`#1>`/ \ifnum`#1>`7 0\else1\fi\else0\fi 1%
+    #1%
+    \else
+      \if _#1\else
+        \BNE_scanoct_done #1%
+      \fi
+    \fi
+    \BNE_scanoct_again
+}%
+\def\BNE_scanoct_done_hit_cs #1#2#3\BNE_scanoct_again
+{%
+    #2\expandafter\BNE_wrapoct_after\romannumeral`&&@\BNE_getop_a#1%
+}%
+\def\BNE_scanoct_done #1#2\BNE_scanoct_again
+{%
+    #2\expandafter\BNE_wrapoct_after\romannumeral`&&@\BNE_getop_a#1%
+}%
+\def\BNE_scanoct_again #1%
+{%
+    \expandafter\BNE_scanoct_main\romannumeral`&&@#1%
+}%
+\def\BNE_scanoct_gobz_main #1%
+{%
+    \ifcat \relax #1%
+      0\BNE_scanoct_done_hit_cs #1\fi
+    \if\ifnum`#1>`0 \ifnum`#1>`7 0\else1\fi\else0\fi 1%
+    #1%
+    \else
+      \if 0#1\BNE_scanoct_gobzero\else
+      \if _#1\BNE_scanoct_gobunderscore\else
+        0\BNE_scanoct_done #1%
+      \fi\fi
+    \fi
+    \BNE_scanoct_again
+}%
+\def\BNE_scanoct_gobzero #1\BNE_scanoct_again #2%
+{%
+    \fi\fi
+    \expandafter\BNE_scanoct_gobz_main\romannumeral`&&@#2%
+}%
+\def\BNE_scanoct_gobunderscore #1\BNE_scanoct_again #2%
+{%
+    \fi\fi\fi
+    \expandafter\BNE_scanoct_gobz_main\romannumeral`&&@#2%
+}%
+\def\BNE_startbin #1%
+{%
+    \expandafter\BNE_wrapbin_before
+    \expanded{{\iffalse}}\fi
+    \expandafter\BNE_scanbin_gobz_main\romannumeral`&&@#1%
+}%
+\def\BNE_wrapbin_before{\expandafter{\expandafter{%
+                        \romannumeral`&&@\iffalse}}\fi\BNE_Op_bintodec}%
+\def\BNE_wrapbin_after{\iffalse{{{{\fi}}}}}%
+\def\BNE_scanbin_main #1%
+{%
+    \ifcat \relax #1\expandafter\BNE_scanbin_done_hit_cs #1\fi
+    \if \if0#11\else\if1#11\else0\fi\fi 1%
+    #1%
+    \else
+      \if _#1\else
+        \BNE_scanbin_done #1%
+      \fi
+    \fi
+    \BNE_scanbin_again
+}%
+\def\BNE_scanbin_done_hit_cs #1#2#3\BNE_scanbin_again
+{%
+    #2\expandafter\BNE_wrapbin_after\romannumeral`&&@\BNE_getop_a#1%
+}%
+\def\BNE_scanbin_done #1#2\BNE_scanbin_again
+{%
+    #2\expandafter\BNE_wrapbin_after\romannumeral`&&@\BNE_getop_a#1%
+}%
+\def\BNE_scanbin_again #1%
+{%
+    \expandafter\BNE_scanbin_main\romannumeral`&&@#1%
+}%
+\def\BNE_scanbin_gobz_main #1%
+{%
+    \ifcat \relax #1%
+      0\BNE_scanbin_done_hit_cs #1\fi
+    \if \if0#11\else\if1#11\else0\fi\fi 1%
+    #1%
+    \else
+      \if 0#1\BNE_scanbin_gobzero\else
+      \if _#1\BNE_scanbin_gobunderscore\else
+        0\BNE_scanbin_done #1%
+      \fi\fi
+    \fi
+    \BNE_scanbin_again
+}%
+\def\BNE_scanbin_gobzero #1\BNE_scanbin_again #2%
+{%
+    \fi\fi
+    \expandafter\BNE_scanbin_gobz_main\romannumeral`&&@#2%
+}%
+\def\BNE_scanbin_gobunderscore #1\BNE_scanbin_again #2%
+{%
+    \fi\fi\fi
+    \expandafter\BNE_scanbin_gobz_main\romannumeral`&&@#2%
+}%
+\def\BNE_getop #1%
+{%
+    \expandafter\BNE_getop_a\romannumeral`&&@#1%
+}%
+\catcode`* 11
+\def\BNE_getop_a #1%
+{%
+    \ifx   \relax #1\xint_dothis\xint_firstofthree\fi
+    \ifcat \relax #1\xint_dothis\xint_secondofthree\fi
+    \ifnum\xint_c_ix<1\string#1 \xint_dothis\xint_secondofthree\fi
+    \if    (#1\xint_dothis      \xint_secondofthree\fi %)
+    \xint_orthat \xint_thirdofthree
+    \xint_c_
+    {\BNE_prec_tacit *}%
+    \BNE_scanop_a
+    #1%
+}%
+\catcode`* 12
+\def\BNE_scanop_a #1#2%
+{%
+    \expandafter\BNE_scanop_b\expandafter#1\romannumeral`&&@#2%
+}%
+\def\BNE_scanop_b #1#2%
+{%
+    \unless\ifcat#2\relax
+           \ifcsname BNE_itself_#1#2\endcsname
+           \BNE_scanop_c
+    \fi\fi
+    \BNE_foundop_a #1#2%
+}%
+\def\BNE_scanop_c #1#2#3#4#5% #1#2=\fi\fi
+{%
+    #1#2%
+    \expandafter\BNE_scanop_d\csname BNE_itself_#4#5\expandafter\endcsname
+    \romannumeral`&&@%
+}%
+\def\BNE_scanop_d #1#2%
+{%
+    \unless\ifcat#2\relax
+           \ifcsname BNE_itself_#1#2\endcsname
+           \BNE_scanop_c
+    \fi\fi
+    \BNE_foundop #1#2%
+}%
+\def\BNE_foundop_a #1%
+{%
+    \ifcsname BNE_precedence_#1\endcsname
+        \csname BNE_precedence_#1\expandafter\endcsname
+        \expandafter #1%
+    \else
+        \expandafter\BNE_getop_a\romannumeral`&&@%
+        \xint_afterfi{\XINT_expandableerror
+        {Expected an operator but got `#1'. Ignoring.}}%
+     \fi
+}%
+\def\BNE_foundop #1{\csname BNE_precedence_#1\endcsname #1}%
+\def\BNE_tmpa#1{%
+    \def\BNE_check##1%
+    {%
+        \xint_UDsignfork
+          ##1{\expandafter\BNE_checkp\romannumeral`&&@#1}%
+            -{\BNE_checkp##1}%
+        \krof
+    }%
+}\expandafter\BNE_tmpa\csname BNE_op_-xii\endcsname
+\def\BNE_tmpa#1{%
+    \def\BNE_checkp##1##2%
+    {%
+        \ifcase ##1%
+           \expandafter\BNE_done
+        \or\expandafter#1%
+        \else
+           \expandafter\BNE_checkp
+           \romannumeral`&&@\csname BNE_op_##2\expandafter\endcsname
+        \fi
+    }%
+}\expandafter\BNE_tmpa\csname BNE_extra_)\endcsname
+\expandafter\def\csname BNE_extra_)\endcsname{%
+        \XINT_expandableerror
+        {An extra ) was removed. Hit <return>, fingers crossed.}%
+        \expandafter\BNE_check\romannumeral`&&@\expandafter\BNE_put_op_first
+        \romannumeral`&&@\BNE_getop_legacy
+}%
+\let\BNE_done\space
+\def\BNE_getop_legacy #1%
+{%
+    \expanded{\unexpanded{{#1}}\expandafter}\romannumeral`&&@\BNE_getop
+}%
+\catcode`) 11
+\def\BNE_tmpa #1#2#3#4#5#6%
+{%
+    \def #1##1% op_(
+    {%
+        \expandafter #4\romannumeral`&&@\BNE_getnext
+    }%
+    \def #2##1% op_)
+    {%
+        \expanded{\unexpanded{\BNE_put_op_first{##1}}\expandafter}%
+        \romannumeral`&&@\BNE_getop
+    }%
+    \def #3% oparen
+    {%
+        \expandafter #4\romannumeral`&&@\BNE_getnext
+    }%
+    \def #4##1% check-
+    {%
+        \xint_UDsignfork
+            ##1{\expandafter#5\romannumeral`&&@#6}%
+              -{#5##1}%
+        \krof
+    }%
+    \def #5##1##2% checkp
+    {%
+        \ifcase ##1\expandafter\BNE_missing_)
+        \or \csname BNE_op_##2\expandafter\endcsname
+        \else
+          \expandafter #5\romannumeral`&&@\csname BNE_op_##2\expandafter\endcsname
+        \fi
+    }%
+}%
+\expandafter\BNE_tmpa
+    \csname BNE_op_(\expandafter\endcsname
+    \csname BNE_op_)\expandafter\endcsname
+    \csname BNE_oparen\expandafter\endcsname
+    \csname BNE_check-_)\expandafter\endcsname
+    \csname BNE_checkp_)\expandafter\endcsname
+    \csname BNE_op_-xii\endcsname
+\let\BNE_precedence_)\xint_c_i
+\def\BNE_missing_)
+   {\XINT_expandableerror{Missing ). Hit <return> to proceed.}%
+    \xint_c_ \BNE_done }%
+\catcode`) 12
+\def\BNE_tmpa #1#2#3#4#5%
+{%
+    \def #1##1% \BNE_op_,
+    {%
+      \expanded{\unexpanded{#2{##1}}\expandafter}%
+      \romannumeral`&&@\expandafter#3\romannumeral`&&@\BNE_getnext
+    }%
+    \def #2##1##2##3##4{##2##3{##1##4}}% \BNE_exec_,
+    \def #3##1% \BNE_check-_,
+    {%
+      \xint_UDsignfork
+        ##1{\expandafter#4\romannumeral`&&@#5}%
+          -{#4##1}%
+      \krof
+    }%
+    \def #4##1##2% \BNE_checkp_,
+    {%
+      \ifnum ##1>\xint_c_iii
+        \expandafter#4%
+           \romannumeral`&&@\csname BNE_op_##2\expandafter\endcsname
+      \else
+        \expandafter##1\expandafter##2%
+      \fi
+    }%
+}%
+\expandafter\BNE_tmpa
+    \csname BNE_op_,\expandafter\endcsname
+    \csname BNE_exec_,\expandafter\endcsname
+    \csname BNE_check-_,\expandafter\endcsname
+    \csname BNE_checkp_,\expandafter\endcsname
+    \csname BNE_op_-xii\endcsname
+\expandafter\let\csname BNE_precedence_,\endcsname\xint_c_iii
+\def\BNE_defminus_b #1#2#3#4#5%
+{%
+    \XINT_global\def #1% \BNE_op_-<level>
+    {%
+      \expandafter #2\romannumeral`&&@\expandafter#3%
+      \romannumeral`&&@\BNE_getnext
+    }%
+    \XINT_global\def #2##1##2##3% \BNE_exec_-<level>
+    {%
+      \expandafter ##1\expandafter ##2\expandafter
+       {\expandafter{\romannumeral`&&@\BNE_Op_opp##3}}%
+    }%
+    \XINT_global\def #3##1% \BNE_check-_-<level>
+    {%
+      \xint_UDsignfork
+        ##1{\expandafter #4\romannumeral`&&@#1}%
+          -{#4##1}%
+      \krof
+    }%
+    \XINT_global\def #4##1##2% \BNE_checkp_-<level>
+    {%
+      \ifnum ##1>#5%
+        \expandafter #4%
+        \romannumeral`&&@\csname BNE_op_##2\expandafter\endcsname
+      \else
+        \expandafter ##1\expandafter ##2%
+      \fi
+    }%
+}%
+\def\BNE_defminus_a #1%
+{%
+    \expandafter\BNE_defminus_b
+    \csname BNE_op_-#1\expandafter\endcsname
+    \csname BNE_exec_-#1\expandafter\endcsname
+    \csname BNE_check-_-#1\expandafter\endcsname
+    \csname BNE_checkp_-#1\expandafter\endcsname
+    \csname xint_c_#1\endcsname
+}%
+\BNE_defminus_a {xii}%
+\def\BNE_defbin_c #1#2#3#4#5#6#7%
+{%
+  \XINT_global\def #1##1% \BNE_op_<op>
+  {%
+    \expanded{\unexpanded{#2{##1}}\expandafter}%
+    \romannumeral`&&@\expandafter#3\romannumeral`&&@\BNE_getnext
+  }%
+  \XINT_global\def #2##1##2##3##4% \BNE_exec_<op>
+  {%
+    \expandafter##2\expandafter##3\expandafter
+      {\expandafter{\romannumeral`&&@#7##1##4}}%
+  }%
+  \XINT_global\def #3##1% \BNE_check-_<op>
+  {%
+    \xint_UDsignfork
+      ##1{\expandafter#4\romannumeral`&&@#5}%
+        -{#4##1}%
+    \krof
+  }%
+  \XINT_global\def #4##1##2% \BNE_checkp_<op>
+  {%
+    \ifnum ##1>#6%
+      \expandafter#4%
+      \romannumeral`&&@\csname BNE_op_##2\expandafter\endcsname
+    \else
+      \expandafter ##1\expandafter ##2%
+    \fi
+  }%
+}%
+\def\BNE_defbin_b #1#2#3#4%
+{%
+    \expandafter\BNE_defbin_c
+    \csname BNE_op_#1\expandafter\endcsname
+    \csname BNE_exec_#1\expandafter\endcsname
+    \csname BNE_check-_#1\expandafter\endcsname
+    \csname BNE_checkp_#1\expandafter\endcsname
+    \csname BNE_op_-\romannumeral\ifnum#3>12 #3\else 12\fi
+            \expandafter\endcsname
+    \csname xint_c_\romannumeral#3\endcsname #4%
+  \XINT_global
+    \expandafter
+    \let\csname BNE_precedence_#1\expandafter\endcsname
+        \csname xint_c_\romannumeral#2\endcsname
+    \unless
+    \ifcsname BNE_exec_-\romannumeral\ifnum#3>12 #3\else 12\fi\endcsname
+     \expandafter\BNE_defminus_a\expandafter{\romannumeral#3}%
+    \fi
+}%
+\BNE_defbin_b  +   {12} {12}  \BNE_Op_add
+\BNE_defbin_b  -   {12} {12}  \BNE_Op_sub
+\BNE_defbin_b  *   {14} {14}  \BNE_Op_mul
+\BNE_defbin_b  /   {14} {14}  \BNE_Op_divround
+\BNE_defbin_b {//} {14} {14}  \BNE_Op_div
+\BNE_defbin_b {/:} {14} {14}  \BNE_Op_mod
+\BNE_defbin_b  ^   {18} {17}  \BNE_Op_pow
+\BNE_defbin_b {**} {18} {17}  \BNE_Op_pow
+\expandafter\def\csname BNE_itself_**\endcsname {**}%
+\expandafter\def\csname BNE_itself_//\endcsname {//}%
+\expandafter\def\csname BNE_itself_/:\endcsname {/:}%
+\let\BNE_prec_tacit\xint_c_xvi
+\def\bnumdefinfix #1#2#3#4%
+{%
+    \edef\BNE_tmpa{#1}%
+    \edef\BNE_tmpa{\xint_zapspaces_o\BNE_tmpa}%
+    \edef\BNE_tmpL{\the\numexpr#3\relax}%
+    \edef\BNE_tmpL{\ifnum\BNE_tmpL<4 4\else\ifnum\BNE_tmpL<23 \BNE_tmpL\else 22\fi\fi}%
+    \edef\BNE_tmpR{\the\numexpr#4\relax}%
+    \edef\BNE_tmpR{\ifnum\BNE_tmpR<4 4\else\ifnum\BNE_tmpR<23 \BNE_tmpR\else 22\fi\fi}%
+    \BNE_defbin_b \BNE_tmpa\BNE_tmpL\BNE_tmpR #2%
+    \expandafter\BNE_dotheitselves\BNE_tmpa\relax
+  \ifxintverbose
+    \PackageInfo{bnumexpr}{infix operator \BNE_tmpa\space
+    \ifxintglobaldefs globally \fi
+        does
+        \unexpanded{#2}\MessageBreak with precedences \BNE_tmpL, \BNE_tmpR;}%
+  \fi
+}%
+\def\BNE_dotheitselves#1#2%
+{%
+    \if#2\relax\expandafter\xint_gobble_ii
+    \else
+  \XINT_global
+      \expandafter\edef\csname BNE_itself_#1#2\endcsname{#1#2}%
+      \unless\ifcsname BNE_precedence_#1\endcsname
+  \XINT_global
+        \expandafter\edef\csname BNE_precedence_#1\endcsname
+                         {\csname BNE_precedence_\BNE_tmpa\endcsname}%
+  \XINT_global
+        \expandafter\odef\csname BNE_op_#1\endcsname
+                         {\csname BNE_op_\BNE_tmpa\endcsname}%
+      \fi
+    \fi
+    \BNE_dotheitselves{#1#2}%
+}%
+\def\bnumdefpostfix #1#2#3%
+{%
+    \edef\BNE_tmpa{#1}%
+    \edef\BNE_tmpa{\xint_zapspaces_o\BNE_tmpa}%
+    \edef\BNE_tmpL{\the\numexpr#3\relax}%
+    \edef\BNE_tmpL{\ifnum\BNE_tmpL<4 4\else\ifnum\BNE_tmpL<23 \BNE_tmpL\else 22\fi\fi}%
+  \XINT_global
+    \expandafter\let\csname BNE_precedence_\BNE_tmpa\expandafter\endcsname
+                    \csname xint_c_\romannumeral\BNE_tmpL\endcsname
+  \XINT_global
+    \expandafter\def\csname BNE_op_\BNE_tmpa\endcsname ##1%
+    {%
+        \expandafter\BNE_put_op_first
+        \expanded{{{#2##1}}\expandafter}\romannumeral`&&@\BNE_getop
+    }%
+    \expandafter\BNE_dotheitselves\BNE_tmpa\relax
+  \ifxintverbose
+    \PackageInfo{bnumexpr}{postfix operator \BNE_tmpa\space
+    \ifxintglobaldefs globally \fi
+        does \unexpanded{#2}\MessageBreak
+        with precedence \BNE_tmpL;}%
+  \fi
+}%
+\bnumdefpostfix{!}{\BNE_Op_fac}{20}%
+\let\BNE_tmpa\relax \let\BNE_tmpb\relax \let\BNE_tmpc\relax
+\let\BNE_tmpR\relax \let\BNE_tmpL\relax
+\BNErestorecatcodesendinput%
+\endinput
+%%
+%% End of file `bnumexpr.sty'.

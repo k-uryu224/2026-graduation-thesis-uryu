@@ -1,0 +1,19 @@
+name arraysort
+category Package
+revision 31576
+shortdesc Sort arrays (or portions of them)
+longdesc The package provides a mechanism for sorting arrays (or
+longdesc portions of them); the arrays should have been created using
+longdesc the arrayjobx package.
+containersize 2056
+containerchecksum 6dd3c6a79c7b7e1f9a0fa29f2d7f4fda8c3aceb0b900c4e42773c81f8a49e84dd62ae24027065cf19cdff93d4addff11d0b25cde62f2d4854b84fec26eb98c61
+doccontainersize 302944
+doccontainerchecksum 1070b880c7bfb6101fa9294ee8d1ab4c61b21af41316ab711c3226173b73249944533cf0594571f90215a46322b1ef07322daf7230d95e7c23bf21650e1d6047
+srccontainersize 10728
+srccontainerchecksum a8a5d1506a5cc9a33f5393ad6dcfa7ee84af9de69d0760d90fc633391cd21f6d274995e372d91f47929b098d64ab5464d7d7cc2454266bc52972b8708e3bec98
+runfiles size=2
+ texmf-dist/tex/latex/arraysort/arraysort.sty
+catalogue-ctan /macros/latex/contrib/arraysort
+catalogue-license lppl1.2
+catalogue-topics macro-supp
+catalogue-version 1.0

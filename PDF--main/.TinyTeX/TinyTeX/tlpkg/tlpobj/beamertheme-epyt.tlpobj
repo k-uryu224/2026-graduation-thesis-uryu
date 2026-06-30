@@ -1,0 +1,20 @@
+name beamertheme-epyt
+category Package
+revision 41404
+shortdesc A simple and clean theme for LaTeX beamer class
+longdesc This package provides a simple but nice theme for Beamer, with
+longdesc the following features: simple structure: with page numbers at
+longdesc footer, no head bar and side bar simple templates: displaying
+longdesc theorems with traditional inline style simple colors: using
+longdesc only several foreground and background colors
+containersize 3560
+containerchecksum 2bf451ccfe095384aeec149e97d7022cefaf997cd19dedffcad5606fc149739cf21b6128ef08e609aaffd6afbaa59b1cdc401cbd3ee4fbe0e997d724b713a620
+doccontainersize 164664
+doccontainerchecksum a615bddd7955869d7e175f734a06308b166057dce0b479a4b11d2bd1d06fda7e0a4fdf8185d0a3db2d2302cea2890184616b92d0b7abd5321fe9edaca6dbbd2e
+runfiles size=4
+ texmf-dist/tex/latex/beamertheme-epyt/beamerthemeepyt.sty
+catalogue-contact-repository https://github.com/zohooo/epyt
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-epyt
+catalogue-license lppl1.3
+catalogue-topics presentation
+catalogue-version 1.0

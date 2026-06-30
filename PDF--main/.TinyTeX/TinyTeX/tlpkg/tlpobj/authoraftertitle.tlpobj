@@ -1,0 +1,18 @@
+name authoraftertitle
+category Package
+revision 79461
+shortdesc Make author, etc., available after \maketitle
+longdesc This jiffy package makes the author, title and date of the
+longdesc package available to the user (as \MyAuthor, etc) after the
+longdesc \maketitle command has been executed.
+containersize 832
+containerchecksum 08ca81b5ea000a03983261805a0d45d044b5b4fbe4e93a790662ad72b6846cf6dd710a8c7b13494f840d6d568a46afdae2b22aa8edaeaaff80670a657477c320
+doccontainersize 114940
+doccontainerchecksum 836fff87a4d6155c3f28e17b31c915553cf7b29ef97a17824a353a7d0340dcb08384108d15ab8782f86fff1d0f39264a57bd7799a9a3cc74d95ecaa8a272c85a
+runfiles size=1
+ texmf-dist/tex/latex/authoraftertitle/authoraftertitle.sty
+catalogue-also titling
+catalogue-ctan /macros/latex/contrib/authoraftertitle
+catalogue-license cc0
+catalogue-topics macro-supp tagged-pdf
+catalogue-version 1.0

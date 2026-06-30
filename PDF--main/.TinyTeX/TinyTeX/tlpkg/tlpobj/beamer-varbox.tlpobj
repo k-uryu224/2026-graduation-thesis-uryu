@@ -1,0 +1,21 @@
+name beamer-varbox
+category Package
+revision 78996
+shortdesc Provide beamer boxes with variable size corners
+longdesc This package provides beamer boxes with variable size corners.
+longdesc It scales the corner arc of a beamer block relative to the
+longdesc standard rounded predefined option provided by the beamer
+longdesc class. The package depends on beamer and xkeyval.
+containersize 3096
+containerchecksum 5d75d47664f366270c05f9e7e193353a9796ed065d30b4c5c232b5eed4dbe32a9e63327e6314a5e6250429eb2d36a22af02f34bc95f96290125e0950080e9409
+doccontainersize 234004
+doccontainerchecksum 342742f25ef21c11e292ace7893e05f25ef78bce4585686088949678f2438eaffa3515a9b816e60a33b1e0d4a891bdc4ed3dba89415d27de4d7ad6325fc44776
+srccontainersize 4140
+srccontainerchecksum 2c3ae3d7ea9f39e0312633345519f689d6005173b7080614f2cc482fa65f630e63a3ab6f92beff5e2cc168d4f1b665c23f8cafc7d706add6fe7126701886ace8
+runfiles size=3
+ texmf-dist/tex/latex/beamer-varbox/beamer-varbox.sty
+catalogue-contact-bugs https://github.com/fabian-m-fuchs/beamer-varbox/issues
+catalogue-contact-repository https://github.com/fabian-m-fuchs/beamer-varbox
+catalogue-ctan /macros/latex/contrib/beamer-contrib/beamer-varbox
+catalogue-license lppl gpl
+catalogue-topics presentation box-manip

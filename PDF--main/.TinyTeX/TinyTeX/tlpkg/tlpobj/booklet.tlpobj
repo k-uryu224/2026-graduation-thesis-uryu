@@ -1,0 +1,24 @@
+name booklet
+category Package
+revision 79461
+shortdesc Aids for printing simple booklets
+longdesc Pages of a document processed with the booklet package will be
+longdesc reordered and scaled so that they can be printed as four pages
+longdesc per physical sheet of paper, two pages per side. The resulting
+longdesc sheets will, when folded in half, assemble into a booklet.
+longdesc Instructions on producing the manual itself as a booklet are
+longdesc included.
+containersize 3224
+containerchecksum 745412f2ede7f6dfed8a631fb7fe7412d0451d7601a6041f598da4a7b6d989cf53acc0a87d9a84d093178b1a274f194f23e708013d1a065a2195f732403e4203
+doccontainersize 207680
+doccontainerchecksum a5547d0a382fff2a032217f86da997fb86bffd167076a1aead1bfc02ba3b4f02e800d11946998190bc72ff7bfeebb66d1639c3e8d6579eb6ac553ea0efd63891
+srccontainersize 23512
+srccontainerchecksum d36710319ccb5821c645f057649e53af7df55dd6c5bc57f6c39bce0a2360a92357693cb3b1958d5097fe8998e90644180d7f684aa7871647dfc8cc7a3890fea6
+runfiles size=3
+ texmf-dist/tex/latex/booklet/bkltprnt.sty
+ texmf-dist/tex/latex/booklet/booklet.sty
+catalogue-contact-repository https://github.com/LaTeX-Package-Repositories/herries-press
+catalogue-ctan /macros/latex/contrib/booklet
+catalogue-license lppl1.3
+catalogue-topics layout tagged-pdf-incompatible
+catalogue-version 0.7b

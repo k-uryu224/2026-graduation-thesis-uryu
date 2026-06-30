@@ -1,0 +1,21 @@
+name adigraph
+category Package
+revision 70422
+shortdesc Augmenting directed graphs
+longdesc This LaTeX package provides the means to easily draw augmenting
+longdesc oriented graphs, as well as cuts on them, to demonstrate steps
+longdesc of algorithms for solving max-flow min-cut problems. This
+longdesc package requires the other LaTeX packages fp, xparse, xstring,
+longdesc and TikZ (in particular the TikZ calc library).
+containersize 5624
+containerchecksum a556d38f280f96dfc3d3ef466c59e6316e374d3ba765f2e5810864e791969adbdfeb45eb6727d44f4e26199db35ae312dc5e60f9912d6a10d348814416108dd8
+doccontainersize 586676
+doccontainerchecksum f07ec2fff9c40c93847c7f2cfc3b305a3b531cee45fcaff6ea1340dcbfa41a51856983b6efb1c9aa7b5cbcf69616d354ad34cf692c20e878c366f6ee2d89aafb
+runfiles size=6
+ texmf-dist/tex/latex/adigraph/adigraph.sty
+catalogue-contact-bugs https://github.com/LucaCappelletti94/adigraph/issues
+catalogue-contact-repository https://github.com/LucaCappelletti94/adigraph
+catalogue-ctan /graphics/pgf/contrib/adigraph
+catalogue-license mit
+catalogue-topics pgf-tikz diagram
+catalogue-version 1.7.2

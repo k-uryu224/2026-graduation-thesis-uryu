@@ -1,0 +1,131 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% beamerinnerthemecsh.sty - CSH Inner Theme
+% Complexity Science Hub Vienna
+%
+% Copyright (c) 2025 Complexity Science Hub Vienna
+% This work may be distributed under the terms of the LPPL 1.3c.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerinnerthemecsh}[2025/11/27 v1.1 CSH Beamer Inner Theme]
+
+\RequirePackage{totcount}
+\regtotcounter{framenumber}
+
+\mode<presentation>
+
+% Logo configuration
+% Logos must be in the same directory as the .sty files (or in TEXINPUTS)
+\def\institutionlogomain{csh-logo-web}
+\def\institutionlogosmall{csh-logo-star-crop}
+
+\newcounter{sectionslide}
+\setcounter{sectionslide}{0}
+
+\setbeamertemplate{itemize item}{\(\bullet\)}
+\setbeamertemplate{itemize subitem}{\(\circ\)}
+\setbeamertemplate{itemize subsubitem}{\textbullet}
+\setbeamertemplate{caption label separator}{: }
+\setbeamertemplate{caption}[numbered]
+
+\setbeamertemplate{bibliography item}[triangle]
+
+\defbeamertemplate*{sidebar right}{csh}{%
+  \vfill%
+  \llap{\insertlogo\hskip0.4cm}%
+  \vskip0.35cm%
+}
+
+\setbeamertemplate{background}{%
+  \begin{tikzpicture}
+  \useasboundingbox (0, 0) rectangle(\the\paperwidth, \the\paperheight);
+
+  % last slide
+  \ifnum\value{framenumber}=\totvalue{framenumber}
+    \fill[fill=tertiary] (0, 0)--
+                    (\the\paperwidth, 0)--
+                    (\the\paperwidth, \the\paperheight)--
+                    (0*\the\paperwidth, \the\paperheight);
+    \node[xshift=80pt, yshift=-40pt] at (current page.north west)%
+      {\includegraphics[height=1.2cm]{\institutionlogomain}};
+  \fi
+
+  % first slide
+  \ifnum\thepage=1
+    \fill[fill=tertiary] (0, 0)--
+                    (\the\paperwidth, 0)--
+                    (\the\paperwidth, \the\paperheight)--
+                    (0*\the\paperwidth, \the\paperheight);
+    \node[xshift=80pt, yshift=-40pt] at (current page.north west)%
+      {\includegraphics[height=1.2cm]{\institutionlogomain}};
+  %  other slides
+  \else%
+    % section slide
+    \ifnum\value{sectionslide}>0
+      \fill[fill=tertiary] (0, 0)--
+                        (\the\paperwidth, 0)--
+                        (\the\paperwidth, \the\paperheight)--
+                        (0*\the\paperwidth, \the\paperheight);
+    \fi
+  \fi
+  \end{tikzpicture}
+
+  % logo for normal slides
+  \ifnum\thepage>1\relax%
+    \ifnum\value{sectionslide}>0
+      % section slide - no additional logo
+    \else
+      % normal slide
+      \begin{tikzpicture}[remember picture,overlay]
+      	\useasboundingbox (0, 0) %
+      	rectangle(0.65*\the\paperwidth, \the\paperheight);
+      	\node[yshift=10pt] at (current page.south)%
+      	{\scriptsize\insertframenumber};
+      \end{tikzpicture}
+      \begin{tikzpicture}[remember picture,overlay]
+        \node[xshift=-25pt, yshift=25pt] at (current page.south east)%
+          {\includegraphics[height=0.55cm]{\institutionlogosmall}};
+      \end{tikzpicture}
+    \fi
+  \fi
+}
+
+% title page
+\defbeamertemplate*{title page}{csh}[1][]{%
+  \vskip4.0cm%
+  \begin{beamercolorbox}[wd=12cm,sep=0pt,#1]{title page header}
+      \usebeamerfont{title}\textcolor{dark}{\huge\textbf{\inserttitle}\vphantom{Aq}}\par%
+  \end{beamercolorbox}%
+  \vskip10pt%%
+  \begin{beamercolorbox}[wd=12cm,sep=0pt,#1]{title page header}
+      \usebeamerfont{title}\textcolor{dark}{\large\textbf{\insertsubtitle}\vphantom{Aq}}\par%
+  \end{beamercolorbox}%
+  \vskip10pt%%
+  \begin{beamercolorbox}[wd=10cm,sep=0pt,#1]{author}
+      \usebeamerfont{author}\textcolor{dark}{\insertauthor}%
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=10cm,sep=0pt,#1]{author}
+      \usebeamerfont{author}\textcolor{dark}{\insertinstitute}%
+  \end{beamercolorbox}
+  \vskip8pt%%
+  \begin{beamercolorbox}[wd=8cm,sep=0pt,#1]{date}
+      \usebeamerfont{author}\textcolor{dark}{\insertdate}%
+  \end{beamercolorbox}
+  \vfill
+}
+
+% add support for \sectionpage
+\makeatletter
+\setbeamertemplate{section page} {
+  \vfill
+  \begin{beamercolorbox}[wd=12cm,sep=0pt]{title page header}
+      \usebeamerfont{title}\textcolor{dark}{\huge\insertsectionhead\vphantom{Aq}}\par%
+  \end{beamercolorbox}%
+  \vfill
+}
+\makeatother
+\def\sectionpage{\usebeamertemplate*{section page}}
+\AtBeginSection{\setcounter{sectionslide}{1}%
+                \begin{frame}\sectionpage\end{frame}%
+                \setcounter{sectionslide}{0}}
+
+\mode<all>

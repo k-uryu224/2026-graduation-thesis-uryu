@@ -1,0 +1,32 @@
+name anima
+category Package
+revision 79461
+shortdesc Create slideshows with simple animations
+longdesc The idea for this package arose from noticing that including
+longdesc the \pause command from the beamer class within the \foreach
+longdesc loop command from the TikZ package creates a sequence of
+longdesc frames, where each slide presents a step in the construction of
+longdesc the image. The purpose of the anima class is to provide macros
+longdesc that simplify the use of this effect for creating animated
+longdesc slide presentations. Although the functionality of this class
+longdesc can be compared to the transition effects of the beamer class,
+longdesc it is not a dependency of the anima class. However, the class
+longdesc makes extensive use of the image creation language provided by
+longdesc the TikZ package. Lastly, it is worth noting a comparison
+longdesc between this class and the animate package. The animate package
+longdesc can create embedded animations within the document, while the
+longdesc anima class produces an animation where each frame corresponds
+longdesc to a page of the document. This distinction highlights the
+longdesc different design goals of the anima class.
+containersize 3760
+containerchecksum 4ce82ae7d4eec7f110c9a14c4a8740e3784e6a018e70e86a7066846aefaf71aa451e255f57dc019a421146551dfc220185782de7c329ed78d49a484730fdeddf
+doccontainersize 436308
+doccontainerchecksum 2f9a4f829d3ffa9bfc489405edd487c36b14074b335e2f1c9703bb6ae7ee87d997f5912de73600f7819fe94944da010e3f1ea30f5f87623ab2a59c388269f9b3
+srccontainersize 10016
+srccontainerchecksum 34fd537616c1763dbf7afcc2396da857d39239784ba4315d5fe7e88e8e414ceedb6222e1e122b42bdd24a30c851626f5f51f27541531eb48082110cc01c1223c
+runfiles size=3
+ texmf-dist/tex/latex/anima/anima.cls
+catalogue-ctan /macros/latex/contrib/anima
+catalogue-license lppl1.3c
+catalogue-topics class graphics-motion presentation
+catalogue-version 1.1

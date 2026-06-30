@@ -1,0 +1,27 @@
+name akletter
+category Package
+revision 15878
+shortdesc Comprehensive letter support
+longdesc An advanced letter document class which extends LaTeX's usual
+longdesc letter class, providing support for building your own
+longdesc letterhead and marking fold points for window envelopes.
+longdesc Options supported by the package include: letterpaper for US
+longdesc letter; a4offset for a modified A4 layout suitable for platic
+longdesc binders that cover a part of the left margin. The class's
+longdesc handling of dates has inspired an extended version of
+longdesc date-handling in the isodate package. The class supersedes an
+longdesc earlier class called myletter.
+containersize 9720
+containerchecksum fc0702fce74b32b04ce2b1e03960a7617c84a89d4581f16bbbe1b16fc01d45300c0a46682460d78cc572b6e20cc42ec7701c5067adf5e4960ed1bdfd5a69e910
+doccontainersize 202824
+doccontainerchecksum 6a951bf2ad4a7af4a6c87b24e8f4c3b4ff520430024a6abe6b54cf56269a903d78e591def71ce7cac832a4d3f822e8baa14f8decc960b455688801f406d01e74
+runfiles size=11
+ texmf-dist/tex/latex/akletter/akfax.cfg
+ texmf-dist/tex/latex/akletter/akletter.cfg
+ texmf-dist/tex/latex/akletter/akletter.cls
+ texmf-dist/tex/latex/akletter/myletter.cls
+catalogue-also dinbrief envlab formlett
+catalogue-ctan /macros/latex/contrib/akletter
+catalogue-license lppl
+catalogue-topics letter class
+catalogue-version 1.5i

@@ -1,0 +1,19 @@
+name answers
+category Package
+revision 77682
+shortdesc Setting questions (or exercises) and answers
+longdesc The package allows a lot of flexibility in constructing
+longdesc question and answer sheets.
+containersize 2148
+containerchecksum b037e7bf8fa99418329b8acea739bcfe64b147bd47b96b8ab7938d05547462d528fcc7ee659c59295256ae73cb982233ebe3777ca85317a758c96da821879408
+doccontainersize 211316
+doccontainerchecksum ccf77d53b1403bade7dfbf999e06317406d16739ba20614b69b485a2001be0c41c4b0d18724f46e12a60c37f9c19cf9249b0b7b9ddef05514d21379fe74c041e
+srccontainersize 7844
+srccontainerchecksum 8713cc3a3287c2c397ec0289381ff9ed55ac9ea51d4539a55377feb5429f31b677230fd1ad411c039fb150743fde3676d6d0d023341620cb40649acd4de2a9d2
+runfiles size=2
+ texmf-dist/tex/latex/answers/answers.sty
+catalogue-also exams
+catalogue-ctan /macros/latex/contrib/answers
+catalogue-license lppl
+catalogue-topics exercise tagged-pdf
+catalogue-version 2.16

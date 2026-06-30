@@ -1,0 +1,44 @@
+% arguelles 2.6.0 2026-04-26
+% Michele Piazzai <hello@piazzai.addy.io>
+% https://piazzai.github.io/
+% https://mit-license.org/
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerfontthemeArguelles}[2026-04-26 Argüelles]
+
+\mode<presentation>
+
+% set url style
+\urlstyle{same}
+
+% title page elements
+\if@optNoalegre
+  \setbeamerfont{title}{series=\sffamily\bfseries,size=\LARGE}
+  \setbeamerfont{subtitle}{series=\sffamily\bfseries,size=\Large}
+\else
+  \setbeamerfont{title}{series=\AlegreyaSansBlack,size=\LARGE}
+  \setbeamerfont{subtitle}{series=\AlegreyaSansMedium,size=\Large}
+\fi
+\setbeamerfont{event}{series=\itshape}
+\setbeamerfont{venue}{series=\itshape}
+\setbeamerfont{date}{series=\itshape}
+\setbeamerfont{author}{series=\bfseries,size=\large}
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{email}{size=\small}
+\setbeamerfont{homepage}{size=\small}
+\setbeamerfont{github}{size=\small}
+
+% frame elements
+\if@optNoalegre
+  \setbeamerfont{headline section}{series=\sffamily}
+  \setbeamerfont{footline section}{series=\sffamily,size=\footnotesize}
+\else
+  \setbeamerfont{headline section}{series=\AlegreyaSans\scshape}
+  \setbeamerfont{footline section}{series=\AlegreyaSans\scshape,size=\footnotesize}
+\fi
+\setbeamerfont{frame title}{series=\mediumfont,size=\Large}
+\setbeamerfont{frame subtitle}{series=\mediumfont,size=\large}
+\setbeamerfont{block title}{series=\mediumfont\itshape}
+
+\mode<all>
+\endinput

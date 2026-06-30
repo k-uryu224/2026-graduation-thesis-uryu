@@ -1,0 +1,17 @@
+name aurl
+category Package
+revision 75878
+shortdesc Extends the hyperref package with a mechanism for hyperlinked URLs abbreviated with prefixes
+longdesc Semantic Web resource URLs are often abbreviated with prefixes,
+longdesc like owl:Class or rdf:type. The abbreviated URL (aurl) package
+longdesc provides the correct hyperlinks for those URLs. The 1000 most
+longdesc common prefixes are predefined and more can be added.
+containersize 13744
+containerchecksum 749e571cd04bc144d9e6610fdd7dccc82692726d1f1715cbf45c620df00785c16b4926954970dba30d08e84baacc3e6efb359b21bf9baa4d6812cff03585c8f9
+doccontainersize 1052
+doccontainerchecksum 29d46010bc5a7c22491a5b3945da7df4730c70ba396410132095d948e2fc074176227483cbccc38759ffa138d686ea2abec915cbdea27a622c706c74ade2276b
+runfiles size=14
+ texmf-dist/tex/latex/aurl/aurl.sty
+catalogue-ctan /macros/latex/contrib/aurl
+catalogue-license pd
+catalogue-topics hyper

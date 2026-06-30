@@ -1,0 +1,43 @@
+name academicons
+category Package
+revision 79395
+shortdesc Font containing high quality icons of online academic profiles
+longdesc The academicons package provides access in (La)TeX to 146 high
+longdesc quality icons of online academic profiles included in the free
+longdesc "Academicons" font. This package works with both Xe(La)TeX or
+longdesc Lua(La)TeX by using fontspec to load the included font, as well
+longdesc as with pdf(La)TeX by loading a Type 1 converted format of the
+longdesc original font. The "Academicons" font was designed by James
+longdesc Walsh and released (see http://jpswalsh.github.io/academicons/)
+longdesc under the open SIL Open Font License. This package is a
+longdesc redistribution of the free "Academicons" font with specific
+longdesc bindings for (La)TeX. It is inspired and based on the
+longdesc fontawesome package. The generic \aiicon macro takes as
+longdesc mandatory argument the [?]name[?] of the desired icon. Icons
+longdesc can also be accessed directly by their respective macro. For
+longdesc example, \aiicon{googlescholar} yields the same result as
+longdesc \aiGoogleScholar. The full list of icons with their respective
+longdesc names and direct commands can be found in the manual.
+execute addMap academicons.map
+containersize 260388
+containerchecksum eea32dcd7e3d37abf0af8cc67c165e765523940514a4005a42ca8c0ce1555bc0b22af99d62b9977b58760c2c5a6bb9d4525d15721cc1fc3ab3c8ccc48521d72a
+doccontainersize 104764
+doccontainerchecksum 3e9df1ca2eba792ce622ca992a66684818088110dde5329ededa39b979e9bd5939afdd354e59bd1f245d7be3f1a5a25f8856b301744c901929f55cad8b63dfc0
+runfiles size=119
+ texmf-dist/fonts/enc/dvips/academicons/academicons.enc
+ texmf-dist/fonts/map/dvips/academicons/academicons.map
+ texmf-dist/fonts/opentype/public/academicons/academicons.otf
+ texmf-dist/fonts/tfm/public/academicons/academicons.tfm
+ texmf-dist/fonts/truetype/public/academicons/academicons.ttf
+ texmf-dist/fonts/type1/public/academicons/Academicons.pfb
+ texmf-dist/tex/latex/academicons/academicons-generic.tex
+ texmf-dist/tex/latex/academicons/academicons-pdftex.tex
+ texmf-dist/tex/latex/academicons/academicons-xeluatex.tex
+ texmf-dist/tex/latex/academicons/academicons.sty
+ texmf-dist/tex/latex/academicons/tuacademicons.fd
+ texmf-dist/tex/latex/academicons/uacademicons.fd
+catalogue-contact-repository https://github.com/diogo-fernan/academicons
+catalogue-ctan /fonts/academicons
+catalogue-license lppl1.3c ofl
+catalogue-topics font font-supp-symbol font-symbol font-ttf tagged-pdf-partially
+catalogue-version 1.9.6-2

@@ -1,0 +1,24 @@
+name booktabstabular
+category Package
+revision 79487
+shortdesc Automatic application of the booktabs style
+longdesc This package provides wrapper environments around tabular and
+longdesc tabular* that insert \toprule at the beginning, \bottomrule at
+longdesc the end, and locally remap the legacy \hline and \cline
+longdesc commands to their booktabs equivalents \midrule and \cmidrule.
+longdesc It also provides commands to temporarily override the standard
+longdesc tabular and tabular* environments so that existing documents
+longdesc can opt into this behaviour without rewriting each table.
+containersize 1604
+containerchecksum 4dcbf9bb4f7127e73118560b4777f9aeab13a9c004880c79e4d7d3017609e475222cb904e276b74ae28ad4f255f856b72065a01c2d8d797a9f86a0de4aa324d6
+doccontainersize 345812
+doccontainerchecksum c9ed104b7bd27185dcf47ce7f67e647575c981b427811655145e9e1a2b3862ee158fd4f99d42b1f2cd8329460a991153b9364d41aec47a24e2527ee0ead0dfe4
+srccontainersize 4016
+srccontainerchecksum af3348610654e1e686241e4c8b8e93e4e97a957e84596d6ae8469b740eb094598876ae30187faa230cbadb9271dff3061d5bb7d77981045c20791d06ac3a83ea
+runfiles size=1
+ texmf-dist/tex/latex/booktabstabular/booktabstabular.sty
+catalogue-contact-repository https://gitlab.com/M0M097/booktabstabular
+catalogue-ctan /macros/latex/contrib/booktabstabular
+catalogue-license lppl1.3c
+catalogue-topics table-rule
+catalogue-version 1.1.1

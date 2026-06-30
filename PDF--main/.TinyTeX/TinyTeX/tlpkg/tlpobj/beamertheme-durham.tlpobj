@@ -1,0 +1,28 @@
+name beamertheme-durham
+category Package
+revision 78101
+shortdesc A content-first Beamer theme for teaching, research, and long-form academic presentations
+longdesc This package provides the Durham Beamer Theme, a content-first
+longdesc presentation theme for LaTeX Beamer designed for teaching,
+longdesc research, and long-form academic presentations. The theme
+longdesc emphasizes structural clarity, pacing awareness, and layout
+longdesc stability under dense textual and mathematical content. It is
+longdesc implemented entirely from first principles and not derived from
+longdesc any existing Beamer theme. Conceptual inspiration from
+longdesc established themes such as Metropolis is acknowledged; no
+longdesc external code is reused. The color palette is inspired by the
+longdesc visual identity of Durham University. This package is an
+longdesc independent academic contribution and not an official or
+longdesc endorsed Durham University template. The package includes a
+longdesc modular theme implementation, a demo document with compiled
+longdesc PDF, and a user manual.
+containersize 3892
+containerchecksum c5f3fa4b273db6ad0b195ac31ac2045c3501aceb91c527784cf3671f14e211c2e206f8ba3554f8f4d94fc69b5f9b05438e07b5a7093cc0023af4fbc17c0ef2b5
+doccontainersize 1476752
+doccontainerchecksum b727e7882cdbc4b157814d028497fb88b4e552526a86f39f9658dafc66160fbbd32fd58e3971ea806feb29f24c6fcb642c8bb057858e29c08ce930a5863bad22
+runfiles size=4
+ texmf-dist/tex/latex/beamertheme-durham/beamerthemedurham.sty
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-durham
+catalogue-license lppl1.3c
+catalogue-topics presentation luatex
+catalogue-version 1.1.0

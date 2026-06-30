@@ -1,0 +1,16 @@
+name bilingualpages
+category Package
+revision 59643
+shortdesc Typeset two columns in parallel
+longdesc This is a simple wrapper for the paracol package for setting
+longdesc two-column parallel text.
+containersize 664
+containerchecksum e7d92cd1e11e1604f94b3a825953ed1f876a39dce3dd383e7ea1e4e166b9ffb21786911f4b408ab5d53e6f770225176251096ca9df0a187feb530a27ad167b5c
+doccontainersize 700
+doccontainerchecksum bcbd9f48dad1b84c96fef7d6b5e0a343a261a20ff35434c5e01d4b200229764adff383f2a718c6cbd89e4b208e6de1c403fd7c614dc1c247bc5a344cd3f3d504
+runfiles size=1
+ texmf-dist/tex/latex/bilingualpages/bilingualpages.sty
+catalogue-ctan /macros/latex/contrib/bilingualpages
+catalogue-license lppl1.3c
+catalogue-topics parallel
+catalogue-version 1.0.0

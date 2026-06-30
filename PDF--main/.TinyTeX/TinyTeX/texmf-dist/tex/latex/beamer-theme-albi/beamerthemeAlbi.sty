@@ -1,0 +1,946 @@
+% Copyright (C) 2016-2025 by Paul Gaborit
+% -----------------------------------
+%
+% This work may be distributed and/or modified under the conditions of
+% the LaTeX Project Public License, either version 1.3 of this license
+% or (at your option) any later version.  The latest version of this
+% license is in
+%
+% <http://www.latex-project.org/lppl.txt>
+%
+% and version 1.3 or later is part of all distributions of LaTeX version
+% 2005/12/01 or later.
+% 
+% This work has the LPPL maintenance status “maintained”.
+% 
+% The Current Maintainer of this work is Paul Gaborit.
+%
+\def\BTA@version{v1.5}
+\def\BTA@date{2025/04/07}
+\ProvidesPackage{beamerthemeAlbi}[\BTA@date\space\BTA@version\space Albi beamer theme]
+
+% required packages
+\RequirePackage{pgfopts}
+\RequirePackage{etoolbox}
+\RequirePackage{tikz}
+\usetikzlibrary{calc,backgrounds,fit}
+
+% albi keys use /BTA family
+\pgfkeys{/BTA/.is family}
+\NewDocumentCommand\Albikeys{m}{\pgfkeys{/BTA,#1}}
+
+% ------------------------------------------------------------
+% package options
+%------------------------------------------------------------
+
+\newbool{BTA@compact@footline}
+\newbool{BTA@compact@title}
+\newbool{BTA@partpage}
+\newbool{BTA@sectionpage}
+
+\Albikeys{
+  % option to get compact footline
+  compactfootline/.is choice,
+  compactfootline/.default=true,
+  compactfootline/true/.code={%
+     \booltrue{BTA@compact@footline}%
+     \setbeamerfont*{footline}{size=\Tiny}
+  },
+  compactfootline/false/.code={%
+     \boolfalse{BTA@compact@footline}%
+     \setbeamerfont*{footline}{size=\tiny}
+  },
+  % option to get compact title
+  compacttitle/.is choice,
+  compacttitle/.default=true,
+  compacttitle/true/.code={%
+    \booltrue{BTA@compact@title}%
+    \def\frameminheight{1.5em}
+  },
+  compacttitle/false/.code={%
+    \boolfalse{BTA@compact@title}%
+    \def\frameminheight{3em}
+  },
+  % options to add part pages and section pages
+  partpage/.is if={BTA@partpage},
+  sectionpage/.is if={BTA@sectionpage},
+  % compress headline
+  compress/.is if={beamer@compress},
+  % unknown options
+  .unknown/.code={
+    \PackageError{beamer-theme-albi}{Unknown option '\pgfkeyscurrentname'!}
+  },
+}
+
+\Albikeys{
+  % initial values
+  compactfootline=false,
+  compacttitle=false,
+  partpage=true,
+  sectionpage=true,
+}
+
+\ProcessPgfPackageOptions{/BTA}
+
+\Albikeys{
+  .unknown/.code={
+    \PackageError{beamer-theme-albi}{Unknown \string\AlbiKeys\space key '\pgfkeyscurrentname'!}
+  },
+}
+
+% ------------------------------------------------------------
+% useful tikz style
+% ------------------------------------------------------------
+\tikzset{
+  fix node/.style={
+    execute at begin node=\vphantom{Ég},
+    execute at end node=\vphantom{Ég},
+  },
+}
+
+% ------------------------------------------------------------
+% specific colors
+% ------------------------------------------------------------
+
+\mode
+<all>
+
+% specific colors
+\definecolor{albi blue}{RGB}{0,20,137}
+\definecolor{albi dark blue}{RGB}{12,35,64}
+\definecolor{albi black}{RGB}{60,60,60}
+\definecolor{albi gray}{RGB}{92,102,112}
+\definecolor{albi silver}{RGB}{217,225,226}
+\definecolor{albi orange}{RGB}{239,125,0}
+\definecolor{albi red}{RGB}{200,50,50}
+\definecolor{albi yellow}{RGB}{245,219,55}
+\definecolor{albi cyan}{RGB}{0,184,222}
+\definecolor{albi green}{RGB}{46,125,47}
+
+\mode
+<presentation>
+
+% beamer colors from specific colors
+\setbeamercolor{albi blue}{fg=albi blue,bg=white}
+\setbeamercolor{albi dark blue}{fg=albi dark blue,bg=white}
+\setbeamercolor{albi black}{fg=albi black,bg=white}
+\setbeamercolor{albi gray}{fg=albi gray,bg=white}
+\setbeamercolor{albi silver}{fg=albi silver,bg=black}
+\setbeamercolor{albi orange}{fg=albi orange,bg=white}
+\setbeamercolor{albi red}{fg=albi red,bg=white}
+\setbeamercolor{albi yellow}{fg=albi yellow,bg=black}
+\setbeamercolor{albi cyan}{fg=albi cyan,bg=white}
+\setbeamercolor{albi green}{fg=albi green,bg=white}
+
+% beamer colors of elements
+\setbeamercolor{structure}{fg=,bg=}
+\setbeamercolor{normal text}{fg=albi black,bg=white}
+\setbeamercolor{alerted text}{parent=normal text,fg=albi orange,bg=normal text.bg}
+
+\setbeamercolor{section number}{use=alerted text,fg=alerted text.bg,bg=alerted text.fg}
+\setbeamercolor{section number shaded}{use=section number,bg=section number.bg!50!section number.fg,fg=section number.fg}
+
+\setbeamercolor{section in toc shaded}{parent=alerted text,fg=alerted text.fg!50!alerted text.bg}
+\setbeamercolor{section in toc}{parent=alerted text}
+
+\setbeamercolor{frame number}{use=albi orange,fg=albi orange.fg}
+\setbeamercolor{frametitle}{fg=albi black,bg=albi silver}
+
+\setbeamercolor{item projected}{use=alerted text,fg=alerted text.bg,bg=alerted text.fg}
+\setbeamercolor{item}{use=alerted text,fg=alerted text.fg}
+\setbeamercolor{subitem}{use=alerted text,fg=alerted text.fg}
+\setbeamercolor{subsubitem}{use=alerted text,fg=alerted text.fg}
+
+\setbeamercolor{block title alerted}{use={normal text,alerted text},fg=alerted text.fg,bg=alerted text.fg!20!normal text.bg}
+\setbeamercolor{block body alerted}{use={normal text,alerted text},bg=alerted text.fg!10!normal text.bg,fg=alerted text.fg!50!normal text.fg}
+
+\setbeamercolor{block}{parent=normal text,fg=albi blue,bg=albi blue!20!normal text.bg}
+\setbeamercolor{block title}{parent=block}
+\setbeamercolor{block body}{use={normal text,block},fg=block.fg!50!normal text.fg,bg=block.bg!50!normal text.bg}
+
+\setbeamercolor{example}{parent=normal text,fg=albi green,bg=albi green!20!normal text.bg}
+\setbeamercolor{block title example}{parent=example}
+\setbeamercolor{block body example}{use={normal text,example},fg=example.fg!50!normal text.fg,bg=example.bg!50!normal text.bg}
+
+
+\setbeamercolor{button border}{fg=albi blue}
+\setbeamercolor{button}{fg=albi black,bg=albi gray}
+
+% ------------------------------------------------------------
+% inner theme
+% ------------------------------------------------------------
+\useinnertheme{rectangles}
+
+% ------------------------------------------------------------
+% new font size macros
+% ------------------------------------------------------------
+
+\Albikeys{
+  size/.cd,
+  % to define new size command
+  defsize/.code n args={3}{\NewDocumentCommand#1{}{\@setfontsize#1{#2}{#3}}},
+  % define \semitiny and \HUGE
+  size/.is choice,
+  size/size8.clo/.style={defsize={\semitiny}{5}{6},defsize={\HUGE}{22}{25}},
+  size/size9.clo/.style={defsize={\semitiny}{5.5}{6.5},defsize={\HUGE}{22}{25}},
+  size/size10.clo/.style={defsize={\semitiny}{6}{7},defsize={\HUGE}{32}{38}},
+  size/size11.clo/.style={defsize={\semitiny}{7}{8},defsize={\HUGE}{32}{38}},
+  size/size12.clo/.style={defsize={\semitiny}{7}{8},defsize={\HUGE}{32}{38}},
+  size/size14.clo/.style={defsize={\semitiny}{7}{8},defsize={\HUGE}{42}{50}},
+  size/size17.clo/.style={defsize={\semitiny}{9}{10},defsize={\HUGE}{48}{57}},
+  size/size20.clo/.style={defsize={\semitiny}{11}{12.5},defsize={\HUGE}{58}{65}},
+  size/.expanded=\beamer@size,
+  %
+}
+
+
+% ------------------------------------------------------------
+% misc
+% ------------------------------------------------------------
+%\setbeamerfont{alerted text}{series=\bfseries}
+\setbeamerfont{description item}{series=\mdseries}
+
+\defbeamertemplate{background canvas}{albi}{}
+
+% new option for short texts
+\define@key{beamerst}{raggedleft}[true]{\def\beamer@stalign{\raggedleft}}
+
+% ------------------------------------------------------------
+% main logo
+% ------------------------------------------------------------
+\setbeamertemplate{part logo}{}
+\setbeamertemplate{section logo}{}
+\setbeamertemplate{footline logo}{}
+\newbox\BTA@box
+
+\Albikeys{
+  @define generic logo lengths/.code={% logo@beamer@template
+    \ifcslength{BTA@#1@height}{}{\ExpandArgs{e}\newlength{\csname BTA@#1@height\endcsname}}
+    \ifcslength{BTA@#1@depth}{}{\ExpandArgs{e}\newlength{\csname BTA@#1@depth\endcsname}}
+    \ifcslength{BTA@#1@width}{}{\ExpandArgs{e}\newlength{\csname BTA@#1@width\endcsname}}
+  },
+  @set generic logo template/.code n args={3}{% logo beamer template, logo@beamer@template, material
+    \setbeamertemplate{#1}{#3}
+    \ifbeamertemplateempty{#1}{%
+      \setlength{\csname BTA@#2@height\endcsname}{0pt}%
+      \setlength{\csname BTA@#2@depth\endcsname}{0pt}%
+      \setlength{\csname BTA@#2@width\endcsname}{0pt}%
+    }{
+      \savebox\BTA@box{\usebeamertemplate***{#1}}
+      \settoheight{\csname BTA@#2@height\endcsname}{\usebox\BTA@box}%
+      \settodepth{\csname BTA@#2@depth\endcsname}{\usebox\BTA@box}%
+      \settowidth{\csname BTA@#2@width\endcsname}{\usebox\BTA@box}%
+    }%
+  },
+  @generic logo/.style n args={3}{% logo beamer template, logo@beamer@template, material
+    @define generic logo lengths={#2},
+    @set generic logo template={#1}{#2}{#3},
+  },
+  % 
+  logo/.style={@generic logo={logo}{logo}{#1}},
+  part logo/.style={@generic logo={part logo}{part@logo}{#1}},
+  section logo/.style={@generic logo={section logo}{section@logo}{#1}},
+  footline logo/.style={@generic logo={footline logo}{footline@logo}{#1}},
+  % 
+  all logos/.style={
+    logo={#1},
+    part logo={#1},
+    section logo={#1},
+    footline logo={#1},
+  },
+  % initial value
+  logo={},
+}
+
+\NewDocumentCommand\Albisetlogofilename{m}{\Albikeys{all logos={\includegraphics{#1}}}}
+
+\RenewDocumentCommand\logo{m}{\Albikeys{all logos={#1}}}
+
+% ------------------------------------------------------------
+% Other logos list
+% ------------------------------------------------------------
+\Albikeys{
+  other logos list/.code={%
+    \def\BTA@list@of@logos{#1}%
+  },
+  % initial value
+  other logos list={},
+}
+
+\NewDocumentCommand\Albiotherlogoslist{m}{\Albikeys{other logos list={#1}}}
+
+% ------------------------------------------------------------
+% footline
+% ------------------------------------------------------------
+
+\setbeamercolor{footline}{fg=black,bg=albi silver}
+\setbeamercolor{author in head/foot}{parent=footline}
+\setbeamercolor{date in head/foot}{parent=footline}
+\setbeamercolor{title in head/foot}{parent=footline}
+\setbeamercolor{institute in head/foot}{parent=footline}
+
+
+\setbeamerfont{author in head/foot}{parent={footline}}
+\setbeamerfont{title in head/foot}{parent={footline}}
+\setbeamerfont{institute in head/foot}{parent={footline}}
+\setbeamerfont{date in head/foot}{parent={footline}}
+
+\defbeamertemplate{footline}{albi}
+{%
+  \begin{tikzpicture}[remember picture]
+    \hypersetup{linkcolor=.}
+    \ifbool{BTA@compact@footline}{
+      \def\myheight{3.5mm}
+      \def\mylogosep{.25mm}
+    }{
+      \def\myheight{5mm}
+      \def\mylogosep{1mm}
+    }
+    % logo
+    \coordinate (left) at (\Gm@lmargin,0);
+    \ifbeamertemplateempty{footline logo}{}{
+      \node[inner ysep=\mylogosep,inner xsep=0,anchor=west] at (left) (logo)
+      {\resizebox*{!}{\myheight}{\usebeamertemplate{footline logo}}};
+      \coordinate (left) at ([xshift=1mm]logo.east);
+    }
+    % other logos
+    \coordinate (right) at (\paperwidth-\Gm@rmargin,0);
+    \ifx\BTA@list@of@logos\@empty\else
+      % insert other logos
+      \foreach \image/\wid [count=\logn] in \BTA@list@of@logos {%
+        \node[inner sep=0,anchor=east] at (right) (logosup)
+        {\includegraphics[width=\wid]{\image}};
+        \coordinate (right) at ([xshift=-1mm]logosup.west);
+      }
+    \fi
+    %
+    \path let
+    \p1 = (left),
+    \p2 = (right),
+    \n1 = {(\x2 - \x1)*.5 - 1mm},
+    in
+    % move to
+    (left)
+    node[node font=\usebeamerfont*{title in head/foot},anchor=west,text width=\n1,align=flush left,inner sep=0,fix node]
+    (title and date)
+    {%
+      \usebeamercolor[fg]{title in head/foot}\usebeamerfont*{title in head/foot}\insertshorttitle[width=\n1]\\%
+      \usebeamercolor[fg]{date in head/foot}\usebeamerfont*{date in head/foot}\insertshortdate[width=\n1]%
+    }
+    % move to
+    (right)
+    node[node font=\usebeamerfont*{author in head/foot},anchor=east,text width=\n1,align=flush right,inner sep=0,fix node]
+    (author and institute)
+    {% 
+      \usebeamercolor[fg]{author in head/foot}\usebeamerfont*{author in head/foot}\insertshortauthor[raggedleft,width=\n1]\\%
+      \usebeamercolor[fg]{institute in head/foot}\usebeamerfont*{institute in head/foot}\insertshortinstitute[raggedleft,width=\n1]%
+    };
+    \begin{pgfonlayer}{background}
+      \coordinate (a) at (0,0);
+      \coordinate (b) at (\paperwidth,0);
+      \node[fit=(current bounding box)(a)(b),inner sep=0](bb){};
+      \begin{scope}[overlay]
+        \usebeamercolor{footline}%
+        \fill [fill=bg] (bb.south west) rectangle (bb.north east);
+        \draw[line width=.4pt,draw=bg] (bb.north west) -- (bb.north east);
+      \end{scope}
+    \end{pgfonlayer}
+  \end{tikzpicture}%
+}
+
+% ------------------------------------------------------------
+% headline
+% ------------------------------------------------------------
+
+\setbeamercolor{section in head/foot}{use=albi dark blue,fg=albi dark blue.bg,bg=albi dark blue.fg}
+\setbeamercolor{subsection in head/foot}{use=albi orange,fg=albi orange.bg,bg=albi orange.fg}
+\setbeamercolor{separator in head/foot}{use={section in head/foot,subsection in head/foot},fg=subsection in head/foot.bg,bg=section in head/foot.bg}
+
+\setbeamerfont{section in head/foot}{parent={headline},series=\bfseries}
+\setbeamerfont{subsection in head/foot}{parent={headline},series=\bfseries}
+
+\defbeamertemplate{section in head/foot}{albi}{\hfill\insertsectionhead}
+\defbeamertemplate{section in head/foot shaded}{albi}{\hfill\color{fg!50!bg}\insertsectionhead}
+
+\defbeamertemplate{section in head/foot}{albi with number}{\hfill\insertsectionheadnumber~\insertsectionhead}
+\defbeamertemplate{section in head/foot shaded}{albi with number}{\hfill\color{fg!50!bg}\insertsectionheadnumber~\insertsectionhead}
+
+\defbeamertemplate{subsection in head/foot}{albi}{\insertsubsectionhead\hfill}
+\defbeamertemplate{subsection in head/foot shaded}{albi}{\color{fg!50!bg}\insertsubsectionhead\hfill}
+
+\defbeamertemplate{subsection in head/foot}{albi with number}{\insertsectionheadnumber.\insertsubsectionheadnumber~\insertsubsectionhead\hfill}
+\defbeamertemplate{subsection in head/foot shaded}{albi with number}{\color{fg!50!bg}\insertsectionheadnumber.\insertsubsectionheadnumber~\insertsubsectionhead\hfill}
+
+\defbeamertemplate{headline}{albi}
+{%
+  \hypersetup{linkcolor=.}
+  \ifbeamer@compress%
+    % compressed headline (one line)
+    \leavevmode%
+    \ifnum\ifnum\beamer@subsectionmax>0 1\else\ifnum\beamer@sectionmax>0 1\else0\fi\fi=1\relax%
+      % current section
+      \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex]{section in head/foot}%
+        \hfill\bfseries\insertsection\hspace*{1mm}%
+      \end{beamercolorbox}%
+      % current subsection
+      \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex]{subsection in head/foot}%
+        \hspace*{1mm}\bfseries\insertsubsection\hfill
+      \end{beamercolorbox}%
+    \fi%
+  \else%
+    % default headline
+    \leavevmode%
+    \@tempdimb=2.5375ex%
+    \ifnum\beamer@subsectionmax<\beamer@sectionmax%
+      \multiply\@tempdimb by\beamer@sectionmax%
+    \else%
+      \multiply\@tempdimb by\beamer@subsectionmax%
+    \fi%
+    \ifdim\@tempdimb>0pt%
+      \advance\@tempdimb by 1.825ex%
+      \@tempdimc=\dimexpr.5\paperwidth-.5\@tempdimb\relax
+      % sections
+      \begin{beamercolorbox}[wd=\@tempdimc,ht=\@tempdimb]{section in head/foot}%
+        \vbox to\@tempdimb{\vfil\insertsectionnavigation{\@tempdimc}\vfil}%
+      \end{beamercolorbox}%
+      % separator
+      \begin{beamercolorbox}[wd=\@tempdimb,ht=\@tempdimb]{separator in head/foot}%
+        \usebeamercolor{separator in head/foot}%
+        \tikz[baseline=0,line width=0,line join=bevel]{
+          \path[draw=bg,fill=bg] (0,0) |- (\@tempdimb,\@tempdimb) -- cycle;
+          \path[draw=fg,fill=fg] (0,0) -| (\@tempdimb,\@tempdimb) -- cycle;
+        }%
+      \end{beamercolorbox}%
+      % subsections
+      \begin{beamercolorbox}[wd=\@tempdimc,ht=\@tempdimb]{subsection in head/foot}%
+        \vbox to\@tempdimb{\vfil\insertsubsectionnavigation{\@tempdimc}\vfil}%
+      \end{beamercolorbox}%
+    \fi%
+  \fi
+}
+
+% ------------------------------------------------------------
+% toc
+% ------------------------------------------------------------
+
+\setbeamerfont{section in toc}{size=\normalsize}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+
+\defbeamertemplate{section in toc}{albi}
+{%
+  \leavevmode%
+  \hypersetup{linkcolor=.}%
+  \leftskip=\dimexpr 4mm + 5mm\relax%
+  \llap{%
+    \usebeamerfont*{section number projected}%
+    \usebeamercolor[bg]{section number}%
+    \vrule width 4mm height 1.85ex depth .4ex%
+    \hskip-4mm%
+    \hbox to 4mm{\hfil\color{fg}\inserttocsectionnumber\hfil}%
+    %\hskip-2mm%
+    \hspace*{3mm}%
+  }%
+  \usebeamerfont*{section in toc}%
+  \usebeamercolor{section in toc}%
+  \vphantom{\rule{0em}{1em}}%
+  \inserttocsection\par%
+}
+
+\defbeamertemplate{section in toc shaded}{albi}
+{%
+  \leavevmode%
+  \hypersetup{linkcolor=.}%
+  \leftskip=\dimexpr 4mm + 5mm\relax%
+  \llap{%
+    \usebeamerfont*{section number projected}%
+    \usebeamercolor[bg]{section number shaded}%
+    \vrule width 4mm height 1.85ex depth .4ex%
+    \hskip-4mm%
+    \hbox to 4mm{\hfil\color{fg}\inserttocsectionnumber\hfil}%
+    %\hskip-2mm%
+    \hspace*{3mm}%
+  }%
+  \usebeamerfont*{section in toc shaded}%
+  \usebeamercolor{section in toc shaded}%
+  \vphantom{\rule{0em}{1em}}%
+  %\smallskip
+  \inserttocsection\par%
+}
+
+\defbeamertemplate{subsection in toc}{albi}
+{%
+  \leavevmode%
+  \hypersetup{linkcolor=.}%
+  \leftskip=\dimexpr 4mm + 5mm\relax%
+  \llap{%
+    \usebeamerfont*{subsection number projected}%
+    \usebeamercolor[bg]{section number}%
+    \hspace*{3mm}%
+    \vrule width 1mm height 1ex depth 0ex%
+    %\hskip-2mm%
+    \hspace*{3mm}%
+  }%
+  \usebeamerfont*{subsection in toc}%
+  \usebeamercolor{subsection in toc}%
+  \vphantom{\rule{0em}{1em}}%
+  \inserttocsubsection\par%
+}
+
+% ------------------------------------------------------------
+% itemize, enumerate
+% ------------------------------------------------------------
+
+\setbeamerfont{item projected}{size=\scriptsize}
+
+\defbeamertemplate{itemize item}{albi}
+{\raisebox{.2ex}{\hbox{\vrule width 1ex height 1ex}}}
+
+\defbeamertemplate{itemize subitem}{albi}
+{\small\raisebox{.2ex}{\hbox{\vrule width 1ex height 1ex}}}
+
+\defbeamertemplate{itemize subsubitem}{albi}
+{\small\raisebox{.2ex}{\hbox{\vrule width 1ex height 1ex}}}
+
+\defbeamertemplate{enumerate item}{albi}
+{%
+  \raisebox{.2ex}{\hbox{%
+    \usebeamerfont*{item projected}%
+    \usebeamercolor[bg]{item projected}%
+    \vrule width2.25ex height1.85ex depth.4ex%
+    \hskip-2.25ex%
+    \hbox to2.25ex{%
+      \hfil%
+      \color{fg}\insertenumlabel%
+      \hfil}%
+  }}%
+}
+
+\defbeamertemplate{enumerate subitem}{albi}
+{%
+  \raisebox{.2ex}{\hbox{%
+    \usebeamerfont*{subitem projected}%
+    \usebeamercolor[bg]{subitem projected}%
+    \vrule width2.25ex height1.85ex depth.4ex%
+    \hskip-2.25ex%
+    \hbox to2.25ex{%
+      \hfil%
+      \color{fg}\insertsubenumlabel%
+      \hfil}%
+  }}%
+}
+
+\defbeamertemplate{enumerate subsubitem}{albi}
+{%
+  \raisebox{.2ex}{\hbox{%
+    \usebeamerfont*{subsubitem projected}%
+    \usebeamercolor[bg]{subsubitem projected}%
+    \vrule width2.25ex height1.85ex depth.4ex%
+    \hskip-2.25ex%
+    \hbox to2.25ex{%
+      \hfil%
+      \color{fg}\insertsubsubenumlabel%
+      \hfil}%
+  }}%
+}
+
+\defbeamertemplate{enumerate mini template}{albi}
+{%
+  \raisebox{.2ex}{\hbox{%
+    \usebeamerfont*{\beameritemnestingprefix item projected}%
+    \usebeamercolor[bg]{\beameritemnestingprefix item projected}%
+    \vrule width2.25ex height1.85ex depth.4ex%
+    \hskip-2.25ex%
+    \hbox to2.25ex{%
+      \hfil%
+      \color{fg}\insertenumlabel%
+      \hfil}%
+  }}%
+}
+
+% ------------------------------------------------------------
+% frame number
+% ------------------------------------------------------------
+\def\insertslidenumberifuseful{\ifnum\insertframestartpage=\insertframeendpage\relax\else\@alph{\insertslidenumber}\fi}
+
+\defbeamertemplate{frame number}{none}{}
+
+\defbeamertemplate{frame number}{frame}{%
+  \usebeamerfont{frame number}\insertframenumber%
+}
+
+\defbeamertemplate{frame number}{frame with total}{%
+  \usebeamerfont{frame number}\insertframenumber%
+  \usebeamerfont{slide number}/\inserttotalframenumber%
+}
+
+\defbeamertemplate{frame number}{frame+slide}{%
+  \usebeamerfont{frame number}\insertframenumber%
+  \usebeamerfont{slide number}\insertslidenumberifuseful%
+}
+
+\defbeamertemplate{frame number}{frame+slide with total}{%
+  \usebeamerfont{frame number}\insertframenumber%
+  \usebeamerfont{slide number}\insertslidenumberifuseful/\inserttotalframenumber%
+}
+
+\setbeamerfont{frame number}{series=\bfseries,size=\large}
+\setbeamerfont{slide number}{series=\bfseries,size=\small}
+
+% ------------------------------------------------------------
+% frame title
+% ------------------------------------------------------------
+
+\setbeamerfont{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\small,series=\bfseries}
+
+\defbeamertemplate{frametitle}{albi}
+{%
+  \hypersetup{linkcolor=.}%
+  \nointerlineskip%
+  \noindent
+  \begin{tikzpicture}[outer sep=0,inner sep=0]
+    \usebeamerfont{frametitle}\usebeamercolor{frametitle}
+    \tikzset{%
+      frame number/.style={
+        minimum height=\frameminheight,fill=bg,align=flush right,anchor=east,line width=0,
+      },
+      frame title/.style={
+        minimum height=\frameminheight,anchor=east,text=fg,line width=0,inner sep=0,inner ysep=.2em,
+        line width=0,text width=\n2,align=flush
+        left,
+      },
+    }
+
+    \node[frame number] (framenumber) at  (\paperwidth-\Gm@rmargin,0)
+    {\usebeamercolor[fg]{frame number}\usebeamertemplate{frame number}};
+
+    \path let
+    \p1 = (framenumber.west),
+    \p2 = (framenumber.east),
+    \n1 = {\paperwidth - \Gm@lmargin - \Gm@rmargin - (\x2 - \x1)},
+    \n2 = {\n1 - .5em}
+    in ([xshift=-.5em]\p1) node[frame title]
+    {%
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}%
+      \vphantom{É}\insertframetitle\vphantom{g}\par%
+      \ifx\insertframesubtitle\@empty%
+      \else%
+        % \vskip-.5em%
+        \usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}%
+        \leavevmode\vphantom{É}\insertframesubtitle\vphantom{g}\par%
+      \fi%
+    };
+    \begin{pgfonlayer}{background}
+      \begin{scope}[overlay]
+        \coordinate (a) at (0,0);
+        \coordinate (b) at (\paperwidth,0);
+        \node[fit=(current bounding box)(a)(b),inner sep=0](bb){};
+        \fill [fill=bg]
+        (bb.south west) rectangle (bb.north east);
+      \end{scope}
+    \end{pgfonlayer}
+  \end{tikzpicture}%
+}
+
+% ------------------------------------------------------------
+% title page
+% ------------------------------------------------------------
+
+\setbeamercolor{albi title page.title}{use=albi orange,fg=albi orange.bg,bg=albi orange.fg}
+\setbeamercolor{albi title page.author}{use=albi cyan,fg=albi cyan.bg,bg=albi cyan.fg}
+\setbeamercolor{albi title page.empty}{use=albi dark blue,fg=albi dark blue.bg,bg=albi dark blue.fg}
+\setbeamercolor{albi title page.logo}{fg=black,bg=white}
+
+\setbeamerfont{title}{series=\bfseries,size=\LARGE}
+\setbeamerfont{author}{series=\bfseries,size=\large}
+
+\defbeamertemplate{title page}{albi}
+{%
+  \begin{tikzpicture}[overlay,remember picture,shift={(current
+        page.north west)}]
+
+    \IfPackageLoadedTF{babel}{\ifbabelshorthand{!}{\shorthandoff*{!}}{}}{}
+
+    % coordinates
+    \path
+    coordinate (p1) at ({.8*\paperheight},0) 
+    %coordinate (p2) at ({\paperwidth-.4*\paperheight},{-1*\paperheight}) 
+    coordinate (p2) at ({.9*\paperheight},{-1*\paperheight}) 
+    coordinate (p3) at (0,{-.8*\paperheight})
+    coordinate (p4) at ($(p1)!(p2)!(p3)$) 
+    coordinate (se) at (current page.south east)
+    coordinate (p5) at ($(se)+([rotate=90]$(se)-(p2)$)$)
+    coordinate (p6) at ($(p1)!.6!(p4)$)
+    coordinate (p7) at (p6 |- p4)
+    ;
+
+    % triangles
+    \usebeamercolor{albi title page.title}%
+    \fill[fill=bg,line width=0] (p1) -- (p4) -- (p2) -- (p5) -- (current page.north east) -- cycle;
+    \usebeamercolor{albi title page.author}%
+    \fill[fill=bg,line width=0] (p4) -- (p3) -- (current page.south west) -- (p2) -- cycle;
+    \usebeamercolor{albi title page.empty}%
+    \fill[fill=bg,line width=0] (p2) -- (p5) -- (current page.south east) -- cycle;
+    \usebeamercolor{albi title page.logo}%
+    \fill[fill=bg,line width=0] (p1) -- (p3) -- (current page.north west) -- cycle;
+    
+    % logo
+    \hypersetup{linkcolor=.}%
+    \ifbeamertemplateempty{logo}{}{
+      % le logo
+      \edef\BTA@logo@ratio{
+        \fpeval{(0.55 * \paperheight)/(\BTA@logo@width +\BTA@logo@depth + \BTA@logo@height)}}
+      \node[anchor=north west,inner sep=0] at
+      ([shift={(.1*\paperheight,-.1*\paperheight)}] 0,0)
+      (logo)
+      {\scalebox{\BTA@logo@ratio}{\insertlogo}};
+    }
+    
+    % title and subtitle
+    \usebeamercolor{albi title page.title}
+    \path let
+    \p6 = (p6),
+    \n1 = {\paperwidth - \x6 - \Gm@rmargin},
+    \n2 = {\n1 - 1em}
+    in
+    (p7) node [anchor=west,inner sep=.5em,text width=\n2,align=flush left,text=albi title page.title.fg]
+    {%
+      \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.5em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%
+    };
+    
+    % author, institute, date and titlegraphic
+    \usebeamercolor{albi title page.author}
+    \path let
+    \p7 = ($(p3)!{sqrt(2)*\Gm@lmargin}!(p4)$),
+    \p4 = (p4),
+    \p8 = ({\x4 + (\x4 - \x7)},\y7),
+    \n1 = {(\x8 - \x7)},
+    \n2 = {\n1}
+    in
+    (\Gm@lmargin,{-\paperheight+\Gm@lmargin})
+    node [anchor=south west,inner sep=0,text width=\n2,align=flush left,text=albi title page.author.fg] (author institute)
+    {%
+      \usebeamerfont*{author}\usebeamercolor[fg]{author}\insertauthor\par%
+      \usebeamerfont*{institute}\usebeamercolor[fg]{institute}\insertinstitute\par%
+      \usebeamerfont*{date}\usebeamercolor[fg]{date}\insertdate\par%
+      \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par
+    };
+
+  \end{tikzpicture}%
+}
+
+% ------------------------------------------------------------
+% customize part name and number with babel and french
+% ------------------------------------------------------------
+\newcommand\insertpartnameandnumber{%
+  \IfPackageLoadedTF{babel}{%
+    \iflanguage{french}{\partname}{\partname~\insertromanpartnumber}%
+  }{%
+    \partname~\insertromanpartnumber%
+  }%
+}
+
+% ------------------------------------------------------------
+% part page
+% ------------------------------------------------------------
+
+\setbeamercolor{albi part page.title}{use=albi cyan,fg=albi cyan.bg,bg=albi cyan.fg}
+\setbeamercolor{albi part page.empty}{use=albi orange,fg=albi orange.bg,bg=albi orange.fg}
+\setbeamercolor{albi part page.logo}{fg=black,bg=white}
+
+\setbeamerfont{part name in part page}{parent=part name}
+\setbeamerfont{part title in part page}{parent=part title}
+
+\defbeamertemplate{part page}{albi}
+{%
+  \begin{tikzpicture}[overlay,remember picture,shift={(current page.north west)}]
+    \hypersetup{linkcolor=.}%
+    \IfPackageLoadedTF{babel}{\ifbabelshorthand{!}{\shorthandoff*{!}}{}}{}
+
+    % coordinates
+    \path
+    coordinate (p1) at ({.8*\paperheight},{-1*\paperheight})
+    coordinate (p2) at (0,{-1*\paperheight + .8*\paperheight})
+    coordinate (p3) at ({.8*\paperheight},0)
+    coordinate (p4) at ($(p1)!(p3)!(p2)$)
+    coordinate (p5) at ($(p4)!.5!(p3)$)
+    coordinate (p6) at (p5 |- p4)
+    ;
+
+    % triangles
+    \usebeamercolor{albi part page.title}%
+    \fill[fill=bg,line width=0] (current page.south east) -- (p1) -- (p4) -- (p3) -| cycle;
+    \usebeamercolor{albi part page.empty}%
+    \fill[fill=bg,line width=0] (current page.north west) -- (p3) -- (p4) -- (p2) -- cycle;
+    \usebeamercolor{albi part page.logo}%
+    \fill[fill=bg,line width=0] (current page.south west) -- (p2) -- (p1) -- cycle;
+
+    % part title
+    \path let
+    \p6 = (p6),
+    \n1 = {\paperwidth - \x6 - \Gm@rmargin},
+    \n2 = {\n1 - 1em}
+    in (p6)
+    node[anchor=west,text width=\n2,inner sep=.5em,align=flush right] {%
+      \usebeamercolor[fg]{albi part page.title}%
+      %
+      \usebeamerfont*{part name in part page}%
+      \usebeamercolor[fg]{part name in part page}%
+      \insertpartnameandnumber%
+      \par%
+      %
+      \usebeamerfont*{part title in part page}%
+      \usebeamercolor[fg]{part title in part page}%
+      \insertpart%
+      \par%
+    };
+
+    % logo
+    \ifbeamertemplateempty{part logo}{}{
+      \edef\BTA@part@logo@ratio{%
+        \fpeval{(0.55 * \paperheight)/(\BTA@part@logo@width + \BTA@part@logo@depth + \BTA@part@logo@height)}}
+      \node[at={(current page.south west)},shift={(.1*\paperheight,.1*\paperheight)},
+        anchor=south west,inner sep=0]
+      {\scalebox{\BTA@part@logo@ratio}{\usebeamertemplate***{part logo}}};
+    }
+  \end{tikzpicture}
+}
+
+% ------------------------------------------------------------
+% section page
+% ------------------------------------------------------------
+
+\setbeamercolor{albi section page.toc}{parent=normal text}
+\setbeamercolor{albi section page.part}{use=albi orange,fg=albi orange.bg,bg=albi orange.fg}
+\setbeamercolor{albi section page.logo}{use=albi silver,fg=albi silver.bg,bg=albi silver.fg}
+
+\setbeamerfont{part name in section page}{parent=part name,size=\normalsize}
+\setbeamerfont{part title in section page}{parent=part title,size=\normalsize}
+
+\defbeamertemplate{section page}{albi}
+{%
+  \begin{tikzpicture}[overlay,remember picture,shift={(current page.north west)}]
+    \hypersetup{linkcolor=.}%
+    \IfPackageLoadedTF{babel}{\ifbabelshorthand{!}{\shorthandoff*{!}}{}}{}
+    \path
+    coordinate (p1) at ({.8*\paperheight},{-1*\paperheight})
+    coordinate (p2) at (0,{-1*\paperheight + .8*\paperheight})
+    coordinate (p3) at ({.8*\paperheight},0)
+    coordinate (p4) at ($(p1)!(p3)!(p2)$)
+    coordinate (p5) at (0,{-.8*\paperheight})
+    ;
+    
+    % triangles
+    \usebeamercolor{albi section page.logo}
+    \fill[fill=bg,line width=0]  (p1) -- (p4) -- (p5) |- cycle;
+    \usebeamercolor{albi section page.part}
+    \fill[fill=bg,line width=0]  (p5) -- (p3) -| cycle;
+    \usebeamercolor{albi section page.toc}
+    \fill[fill=bg,line width=0]  (current page.north east) -- (p3) -- (p4) -- (p1) -|  cycle;
+
+    % logo
+    \ifbeamertemplateempty{section logo}{}{
+      \edef\BTA@section@logo@ratioi{
+        \fpeval{(0.55 * \paperheight)/(\BTA@section@logo@width + \BTA@section@logo@depth + \BTA@section@logo@height)}}
+      \edef\BTA@section@logo@ratioii{
+        \fpeval{(0.15 * \paperheight)/(\BTA@section@logo@depth + \BTA@section@logo@height)}}
+      \edef\BTA@section@logo@ratio{
+        \fpeval{\BTA@section@logo@ratioi < \BTA@section@logo@ratioii
+          ? \BTA@section@logo@ratioi : \BTA@section@logo@ratioii}}
+      \node[at={(current page.south west)},shift={(.1*\paperheight,.1*\paperheight)},anchor=south west,inner sep=0]
+      {\scalebox{\BTA@section@logo@ratio}{\usebeamertemplate***{section logo}}};
+    }
+    
+    % part title 
+    \ifnum\c@part>0\relax
+      \node[at={(current page.north west)},shift={(.1*\paperheight,-.1*\paperheight)},
+        anchor=north west,inner sep=0,text=white,text width=.3\paperwidth,align=flush left]
+      {%
+        \usebeamercolor[fg]{albi section page.part}
+        \usebeamerfont{part name in section page}%
+        \usebeamercolor[fg]{part name in section page}%
+        \insertpartnameandnumber%
+        \par%
+        \usebeamerfont{part title in section page}%
+        \usebeamercolor[fg]{part title in section page}%
+        \insertpart%
+        \par%
+      };
+    \fi
+  \end{tikzpicture}
+
+  % toc (with current section open)
+  \begin{columns}
+    \usebeamercolor[fg]{albi section page.toc}%
+    \usebeamerfont{albi section page.toc}%
+    \hypersetup{linkcolor=.}%
+    \column{.8\paperheight}
+    \column{\dimexpr\paperwidth-.8\paperheight-\Gm@rmargin}
+    \tableofcontents[currentsection,hideothersubsections,subsubsectionstyle=hide]%
+    \column{\Gm@rmargin}
+  \end{columns}
+}
+
+% ------------------------------------------------------------
+% activate all templates
+% ------------------------------------------------------------
+
+\setbeamertemplate{part page}[albi]
+\setbeamertemplate{section page}[albi]
+
+\setbeamertemplate{section in head/foot}[albi]
+\setbeamertemplate{section in head/foot shaded}[albi]
+\setbeamertemplate{subsection in head/foot}[albi]
+\setbeamertemplate{subsection in head/foot shaded}[albi]
+\setbeamertemplate{headline}[albi]
+
+\setbeamertemplate{footline}[albi]
+
+\setbeamertemplate{section in toc}[albi]
+\setbeamertemplate{section in toc shaded}[albi]
+\setbeamertemplate{subsection in toc}[albi]
+
+\setbeamertemplate{background canvas}[albi]
+
+\setbeamertemplate{title page}[albi]
+
+\setbeamertemplate{frametitle}[albi]
+
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{sidebar right}{}
+
+\setbeamertemplate{itemize item}[albi]
+\setbeamertemplate{itemize subitem}[albi]
+\setbeamertemplate{itemize subsubitem}[albi]
+
+\setbeamertemplate{enumerate item}[albi]
+\setbeamertemplate{enumerate subitem}[albi]
+\setbeamertemplate{enumerate subsubitem}[albi]
+
+\setbeamertemplate{enumerate mini template}[albi]
+
+%\setbeamertemplate{frame number}[none]
+%\setbeamertemplate{frame number}[frame]
+%\setbeamertemplate{frame number}[frame with total]
+%\setbeamertemplate{frame number}[frame+slide]
+\setbeamertemplate{frame number}[frame+slide with total]
+
+\setbeamercovered{transparent=10}
+
+\setbeamersize{text margin left=.1\paperheight,text margin right=.1\paperheight}
+
+% ------------------------------------------------------------
+% install part pages and section pages
+% ------------------------------------------------------------
+\AtBeginPart{\ifbool{BTA@partpage}{\frame[plain]{\partpage}}{}}
+\AtBeginSection{\ifbool{BTA@sectionpage}{\frame[plain]{\usebeamertemplate*{section page}}}{}}
+
+\mode
+<all>
+

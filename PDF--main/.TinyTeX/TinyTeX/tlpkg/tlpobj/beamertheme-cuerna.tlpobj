@@ -1,0 +1,27 @@
+name beamertheme-cuerna
+category Package
+revision 42161
+shortdesc A beamer theme with 4 colour palettes
+longdesc The package contains a theme for Beamer which is referenced as
+longdesc "Cuerna" inside beamer and has four basic colour themes. The
+longdesc title page shows rectangles that represent the Fibonacci
+longdesc sequence, and spiral is drawn on top of the rectangles. Besides
+longdesc that the rest of the graphic elements in the slides are scarce
+longdesc to keep it clean
+containersize 2492
+containerchecksum f0433d4a4582958ad057fddcddf1f1f992ec98a199943bcf80a7834e37eb7fa5660258edb08e2bd9205628dc1b8a69419c907b6c007a1c63cd1fb335e439125d
+doccontainersize 332524
+doccontainerchecksum 96f4e9c3afbb81a7841130ea076b2cd35477e93eb105c03add6077fd76981cbd14b609c3b9e573f143572764ac87b1ff76ce18c377f3bbd9b02a1ed45a02eaab
+srccontainersize 4008
+srccontainerchecksum a4381e52d7e46336d8d8989be45c185156e67df776d5ad159f2db6c62c751dae59e0c19fa0c5ec3de4b0385047d5f6fdf166b6c12707c889cffeabe11802a10f
+runfiles size=8
+ texmf-dist/tex/latex/beamertheme-cuerna/beamercolorthemeCuerna.sty
+ texmf-dist/tex/latex/beamertheme-cuerna/beamercolorthemebluesimplex.sty
+ texmf-dist/tex/latex/beamertheme-cuerna/beamercolorthemebrick.sty
+ texmf-dist/tex/latex/beamertheme-cuerna/beamercolorthemelettuce.sty
+ texmf-dist/tex/latex/beamertheme-cuerna/beamerinnerthemeCuerna.sty
+ texmf-dist/tex/latex/beamertheme-cuerna/beamerouterthemeCuerna.sty
+ texmf-dist/tex/latex/beamertheme-cuerna/beamerthemeCuerna.sty
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-cuerna
+catalogue-license lppl1.3
+catalogue-topics presentation

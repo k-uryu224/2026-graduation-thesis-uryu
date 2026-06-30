@@ -1,0 +1,106 @@
+\chapter{データと実験設計}
+
+\section{本章の概要}
+
+本章では、評価用データ、対照ペアの設計、実験機材、比較手法、評価指標、および統計検定の方針について述べる。
+
+\section{データセット}
+
+机上片付けを想定した画像データを作成する。対象物は、コップ、ペン、小物、布、箱、ケーブル、スポンジブロックなどとし、各画像に対して複数の工程文脈を付与する。これにより、同一視覚状態に対して異なる分岐が正解となる対照ペアを構成する。
+
+\begin{table}[tbp]
+\centering
+\caption{データ数の目安}
+\label{tab:dataset}
+\begin{tabular}{lrr}
+\toprule
+要素 & 数 & 備考 \\
+\midrule
+基本画像状態 & 40--60 & 机上場面の多様化を含む \\
+工程文脈バリエーション & 3--5 & 各画像あたり \\
+合計評価ペア & 150--250 & 対照ペア中心 \\
+実機デモ & 10--20 & シナリオ数 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+データ設計の要点は、単純な画像分類ではなく、同じ画像に対して工程文脈のみを変えた場合に、VLM が適切に分岐を切り替えられるかを評価できるようにする点にある。
+
+\section{評価指標}
+
+本研究では、処理分岐分類性能だけでなく、誤実行や文脈切り替えの失敗も評価する。主要指標は以下のとおりである。
+\begin{itemize}
+  \item Resolution Mode Accuracy
+  \item Macro F1
+  \item False Act Rate
+  \item Branch Contrast Accuracy（BCA）
+  \item uncertainty source F1
+  \item unsafe non-stop rate
+  \item unnecessary ask rate
+  \item unnecessary reobserve rate
+\end{itemize}
+
+特に、BCA は同一画像に対して工程文脈だけを変えた対照ペアにおいて、モデルが両方の分岐を正しく分類し、かつ文脈に応じて分岐を切り替えられた割合を表すため、本研究の中心的指標とする。
+
+\section{ベースライン手法}
+
+比較対象は、Zero-shot VLM、分岐定義のみを与える条件、工程条件リストのみを与える条件、各種アブレーション、人間上限である。\tabref{tab:baseline} に比較手法を示す。
+
+\begin{table}[tbp]
+\centering
+\caption{比較手法}
+\label{tab:baseline}
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+手法 & 説明 \\
+\midrule
+Zero-shot VLM & 画像と工程文脈を入力し、そのまま分岐を質問する \\
+VLM + 分岐定義のみ & act / reobserve / ask\_user / stop / defer の説明のみを与える \\
+VLM + 工程条件リスト & 各工程の条件リストを与える \\
+提案法 & 工程条件、履歴、証拠充足性、不確実性原因、工程関連性を構造化して診断する \\
+Ablation & 履歴なし、現在工程なし、次工程候補なしを比較する \\
+人間上限 & 人間が同じ入力から分岐を判断する \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{実験設定}
+
+実験では、小型ロボットアーム、RGB カメラ、卓上作業環境、ローカル VLM、評価用アノテーションデータを用いる。統計検定の方針を \tabref{tab:stats} に示す。
+
+\begin{table}[tbp]
+\centering
+\caption{評価指標に対する統計検定}
+\label{tab:stats}
+\begin{tabularx}{\linewidth}{lXl}
+\toprule
+比較 & 指標 & 検定 \\
+\midrule
+Zero-shot VLM vs 提案法 & Resolution Mode Accuracy & McNemar 検定 \\
+工程条件あり / なし & Branch Contrast Accuracy & McNemar 検定 \\
+Zero-shot VLM vs 提案法 & False Act Rate & Fisher の正確確率検定 \\
+提案法 vs アブレーション & 推論時間 & Wilcoxon 符号順位検定 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{対照ペア例}
+
+\tabref{tab:contrast_pairs} に、同一視覚状態・異なる工程文脈の対照ペア例を示す。
+
+\begin{table}[tbp]
+\centering
+\caption{同一視覚状態・異なる工程文脈の対照ペア例}
+\label{tab:contrast_pairs}
+\begin{tabularx}{\linewidth}{XXl}
+\toprule
+視覚状態 & 工程文脈 & 正解分岐 \\
+\midrule
+対象物が見えない & まだ探索中 & reobserve \\
+対象物が見えない & まだ配置していない & act \\
+対象物が見えない & 配置済み履歴あり & reobserve \\
+コップの中身不明 & コップ移動直前 & ask\_user + stop\_until\_confirmed \\
+コップの中身不明 & 現在はペン片付け中 & defer \\
+\bottomrule
+\end{tabularx}
+\end{table}

@@ -1,0 +1,24 @@
+name blindtext
+category Package
+revision 77682
+shortdesc Producing 'blind' text for testing
+longdesc The package provides the commands \blindtext and \Blindtext for
+longdesc creating 'blind' text useful in testing new classes and
+longdesc packages, and \blinddocument, \Blinddocument for creating an
+longdesc entire random document with sections, lists, mathematics, etc.
+longdesc The package supports three languages, english, (n)german and
+longdesc latin; the latin option provides a short "lorem ipsum" (for a
+longdesc fuller lorem ipsum text, see the lipsum package).
+containersize 10500
+containerchecksum a661332e727d24e89fd27780cebc5362fa49ca13441bdeba53beec0d3e2374eabdfaaf4cc9f5ff0464476196bd20f11ea8bd01ae87d311e1c2cc34e68b3a5ec0
+doccontainersize 341172
+doccontainerchecksum 1aca305ccbdf37515c021a8f162afc622ac16e970b8399016830d86d3fb80235bc480ac6dd6856951e5660d993655c260ee97bb02403b44d3779cae4b8872393
+srccontainersize 17668
+srccontainerchecksum 2e36c689180e7b6653c2cd010ed90b2cf3453bb7c344234f9a0d9883dece3edbe244a619add2189e792d7d312ac416d99449c0b992a8c58599cd4567ed80bb6a
+runfiles size=12
+ texmf-dist/tex/latex/blindtext/blindtext.sty
+catalogue-also kantlipsum
+catalogue-ctan /macros/latex/contrib/blindtext
+catalogue-license lppl
+catalogue-topics macro-supp dummy-gen tagged-pdf
+catalogue-version 2.0

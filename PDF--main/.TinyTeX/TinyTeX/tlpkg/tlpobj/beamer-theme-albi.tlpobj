@@ -1,0 +1,15 @@
+name beamer-theme-albi
+category Package
+revision 74899
+shortdesc The Albi beamer theme
+longdesc The Albi beamer theme features a colorful triangular design.
+containersize 6692
+containerchecksum 8e46981c004f972c75681f625745834750ba77711d75a13e75a326a6f59ba895d5ba70ee51046845aeea19f9c1e01b64d1308b904297fab594816417c31a4669
+doccontainersize 384112
+doccontainerchecksum 13d94589907d3434593f7ba4f1b1007805963467b57a9952cc431b78545c5c070a04b4a98a5cf74f1bd09e811fe27b7e18069e933e59d979efc41d8e866bcf45
+runfiles size=9
+ texmf-dist/tex/latex/beamer-theme-albi/beamerthemeAlbi.sty
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamer-theme-albi
+catalogue-license lppl1.3
+catalogue-topics presentation
+catalogue-version 1.5

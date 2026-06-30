@@ -1,0 +1,105 @@
+%%
+%% This is file `booktabstabular.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% booktabstabular.dtx  (with options: `package')
+%% This is a generated file.
+%% 
+%% It was extracted from booktabstabular.dtx.
+%% 
+%% This work may be distributed and/or modified under the conditions of the
+%% LaTeX Project Public License, either version 1.3c of this license or (at your
+%% option) any later version.  The latest version of this license is in
+%%   https://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX version
+%% 2008-05-04 or later.
+\RequirePackage{booktabs}
+\ProvidesExplPackage
+  {booktabstabular}
+  {2026-06-26}
+  {1.1.1}
+  {tabular/tabular* wrappers with booktabs rules}
+\NewEnvironmentCopy { origtabular } { tabular }
+\NewEnvironmentCopy { origtabular* } { tabular* }
+\NewDocumentEnvironment { booktabstabular } { o m }
+  {
+    \__booktabstabular_begin:n
+      {
+        \IfNoValueTF { #1 }
+          { \origtabular { #2 } }
+          { \origtabular [ #1 ] { #2 } }
+      }
+  }
+  { \__booktabstabular_end:n { \endorigtabular } }
+\NewDocumentEnvironment { booktabstabular* } { m o m }
+  {
+    \__booktabstabular_begin:n
+      {
+        \IfNoValueTF { #2 }
+          { \use:c { origtabular* } { #1 } { #3 } }
+          { \use:c { origtabular* } { #1 } [ #2 ] { #3 } }
+      }
+  }
+  { \__booktabstabular_end:n { \use:c { endorigtabular* } } }
+\NewDocumentCommand \overridetabular {}
+  {
+    \RenewEnvironmentCopy { tabular } { booktabstabular }
+    \RenewEnvironmentCopy { tabular* } { booktabstabular* }
+  }
+\NewDocumentCommand \restoretabular {}
+  {
+    \RenewEnvironmentCopy { tabular } { origtabular }
+    \RenewEnvironmentCopy { tabular* } { origtabular* }
+  }
+\str_new:N \l__booktabstabular_override_str
+\DeclareKeys [ booktabstabular ]
+  {
+    override .choices:nn =
+      { none , table , global }
+      { \str_set_eq:NN \l__booktabstabular_override_str \l_keys_choice_str } ,
+    override .initial:n = none ,
+    overridetabular .meta:n        = { override = global } ,
+  }
+
+\ProcessKeyOptions [ booktabstabular ]
+\cs_new_protected:Nn \__booktabstabular_begin:n
+  {
+    \group_begin:
+    \cs_set_eq:NN \hline \midrule
+    \cs_set_eq:NN \cline \cmidrule
+    #1
+    \toprule
+  }
+\cs_new_protected:Nn \__booktabstabular_end:n
+  {
+    \crcr
+    \bottomrule
+    #1
+    \group_end:
+  }
+\cs_new_protected:Nn \__booktabstabular_apply_override:
+  {
+    \str_case:Vn \l__booktabstabular_override_str
+      {
+        { none }   { }
+        { global } { \__booktabstabular_activate_global: }
+        { table }  { \__booktabstabular_activate_float: }
+      }
+  }
+\cs_new_protected:Nn \__booktabstabular_activate_global:
+  {
+    \hook_gput_code:nnn { cmd/maketitle/before } { . } { \restoretabular }
+    \hook_gput_code:nnn { cmd/maketitle/after }  { . } { \overridetabular }
+    \overridetabular
+  }
+\cs_new_protected:Nn \__booktabstabular_activate_float:
+  {
+    \hook_gput_code:nnn { env/table/begin }  { . } { \overridetabular }
+    \hook_gput_code:nnn { env/table*/begin } { . } { \overridetabular }
+  }
+\__booktabstabular_apply_override:
+\endinput
+%%
+%% End of file `booktabstabular.sty'.

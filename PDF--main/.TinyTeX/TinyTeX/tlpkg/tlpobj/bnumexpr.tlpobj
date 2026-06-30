@@ -1,0 +1,23 @@
+name bnumexpr
+category Package
+revision 77682
+shortdesc Extends eTeX's \numexpr...\relax construct to big integers
+longdesc The package provides the command \bnumeval, which extends
+longdesc LaTeX's \inteval with support for arbitrarily big integers, //
+longdesc for floored division, /: for the associated remainder, ^ and **
+longdesc for powers, ! for factorials, 0b, 0o and ', 0x and ", as
+longdesc prefixes for binary, octal, or hexadecimal inputs. With the
+longdesc optional argument [h] (or [o] or [b]) the output is converted
+longdesc to hexadecimal (or octal, or binary).
+containersize 4960
+containerchecksum f67b3e0e015b221fdfa33cffefab55106eb5e50107c1ce322605acba9ea2fbed77d6618757d35f196247c257892758b9258e849a23070786a53293db731fce70
+doccontainersize 198188
+doccontainerchecksum 111b5142c919fd1388d45934f9242189a040c36adc94bf143caa161b5c22a6ac3eb8a1d6ff84f0ff311b26b77ce41f5cd8193d67bd6be6679425f28126a37cd5
+srccontainersize 38440
+srccontainerchecksum 5ee74d8e78ba2fb238e5171aa869a9382268605c4bec90d1dc637f1e462d820f705ae91c36beabd02b6df412998d66f32213cfc1dfa1b417e92475aabec9f5cb
+runfiles size=7
+ texmf-dist/tex/latex/bnumexpr/bnumexpr.sty
+catalogue-ctan /macros/latex/contrib/bnumexpr
+catalogue-license lppl1.3c
+catalogue-topics arithmetic calculation tagged-pdf
+catalogue-version 1.7b

@@ -1,0 +1,159 @@
+\ProvidesPackage{beamertheme-bilkent-econ}[2025/09/21 v0.0.1 Bilkent Economics Beamer Theme]
+\mode<presentation>
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{fontspec}
+\usepackage{array} % For better table formatting
+\setmainfont{Arial}
+
+% Define colors
+\definecolor{bilkentred}{HTML}{8B0000}
+\definecolor{bilkentblue}{HTML}{001699}
+
+% Set color theme
+\setbeamerfont{title}{size=\LARGE, series=\bfseries}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{frametitle}{fg=white,bg=bilkentred}
+\setbeamercolor{title}{fg=white,bg=bilkentred}
+\setbeamercolor{block title}{bg=bilkentblue, fg=white}
+\setbeamercolor{block body}{bg=white, fg=black}
+\setbeamercolor{footline}{fg=bilkentblue, bg=white}
+\setbeamercolor{author in head/foot}{fg=bilkentblue, bg=white}
+\setbeamercolor{title in head/foot}{fg=bilkentblue, bg=white}
+\setbeamercolor{date in head/foot}{fg=bilkentblue, bg=white}
+\setbeamercolor{page number in head/foot}{fg=bilkentblue, bg=white}
+
+% Override all theorem-like environments to use red color scheme
+\setbeamercolor{theorem}{bg=bilkentred, fg=white}
+\setbeamercolor{theorem body}{bg=white, fg=black}
+\setbeamercolor{proof}{bg=bilkentred, fg=white}
+\setbeamercolor{proof body}{bg=white, fg=black}
+\setbeamercolor{example}{bg=bilkentred, fg=white}
+\setbeamercolor{example body}{bg=white, fg=black}
+\setbeamercolor{definition}{bg=bilkentred, fg=white}
+\setbeamercolor{definition body}{bg=white, fg=black}
+\setbeamercolor{corollary}{bg=bilkentred, fg=white}
+\setbeamercolor{corollary body}{bg=white, fg=black}
+\setbeamercolor{lemma}{bg=bilkentred, fg=white}
+\setbeamercolor{lemma body}{bg=white, fg=black}
+
+% Force theorem environments to use block template
+\setbeamertemplate{theorem begin}{%
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=.75ex]{theorem}%
+    \usebeamerfont*{theorem}%
+    \inserttheoremname
+    \ifx\inserttheoremaddition\@empty\else\ (\inserttheoremaddition)\fi%
+  \end{beamercolorbox}%
+  {\parskip0pt\par}%
+  \ifbeamercolorempty[bg]{theorem body}{}{\nointerlineskip\vskip-0.5pt}%
+  \usebeamerfont{theorem body}%
+  \begin{beamercolorbox}[colsep*=.75ex,vmode]{theorem body}%
+}
+\setbeamertemplate{theorem end}{%
+  \end{beamercolorbox}\vskip\smallskipamount%
+}
+
+% Apply the same template to all theorem-like environments
+\setbeamertemplate{proof begin}{%
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=.75ex]{proof}%
+    \usebeamerfont*{proof}%
+    \insertproofname
+  \end{beamercolorbox}%
+  {\parskip0pt\par}%
+  \ifbeamercolorempty[bg]{proof body}{}{\nointerlineskip\vskip-0.5pt}%
+  \usebeamerfont{proof body}%
+  \begin{beamercolorbox}[colsep*=.75ex,vmode]{proof body}%
+}
+\setbeamertemplate{proof end}{%
+  \end{beamercolorbox}\vskip\smallskipamount%
+}
+
+\setbeamerfont{institute}{size=\normalsize}
+\setbeamercolor{institute}{fg=bilkentblue}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Define new commands for co-authors
+\newcommand{\coauthors}[1]{\def\@coauthors{#1}}
+\newcommand{\insertcoauthors}{\@coauthors}
+\newcommand{\location}[1]{\def\@location{#1}}
+\newcommand{\insertlocation}{\@location}
+
+% Initialize commands to empty
+\coauthors{}
+\location{}
+
+\setbeamertemplate{title page}{
+  \begin{center}
+    \vspace*{0.5em}
+    \includegraphics[height=0.10\textheight]{bilkent_logo.png}\par\vspace{0.7em}
+   
+   {\color{bilkentred}\rule{0.5\linewidth}{1.5pt}\par}
+   
+    \vspace{1em}
+    {\usebeamerfont{title}\color{bilkentblue}\uppercase{\inserttitle}\par}
+    
+    \vspace{1em}
+    
+    {\color{bilkentred}\rule{0.3\linewidth}{1.5pt}\par}
+    
+    \vspace{1.2em}
+    
+    % Check if coauthors are defined
+    \ifx\@coauthors\@empty
+      % Single author format (original)
+      {\usebeamerfont{author}\insertauthor\par}
+      \vspace{0.5em}
+      {\usebeamerfont{institute}\insertinstitute\par}
+    \else
+      % Multi-author format with smaller font
+      {\footnotesize\insertcoauthors}
+    \fi
+    
+    \vspace{1.2em}
+    
+    % Check if location is defined
+    \ifx\@location\@empty\else
+      {\usebeamerfont{author}\textbf{\insertlocation}\par}
+      \vspace{0.4em}
+    \fi
+    
+    {\usebeamerfont{date}\insertdate\par}
+  \end{center}
+}
+
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \ifnum\insertpagenumber=1
+    % On title page: only show logo and page number
+    \hbox to \paperwidth{%
+    \raisebox{5ex}{
+      \begin{beamercolorbox}
+      [wd=1\paperwidth,center,sep=0pt]{logo in head/foot}
+      \end{beamercolorbox}%
+      \hspace*{1.5mm}
+    }}%
+  \else
+    % On other slides: show logo, author+subtitle, and slide number
+    \hbox to \paperwidth{%
+      \begin{beamercolorbox}[wd=0.25\paperwidth,center,sep=0pt]{logo in head/foot}
+        \includegraphics[height=7ex]{bilkent_logo.png}
+      \end{beamercolorbox}%
+     \raisebox{1.2ex}{ 
+    \begin{beamercolorbox}[wd=0.50\paperwidth,center,sep=0pt]{author in head/foot}
+        \insertauthor\par\tiny\insertsubtitle
+      \end{beamercolorbox}%
+      }
+      \begin{beamercolorbox}[wd=0.23\paperwidth,right,sep=0pt]{author in head/foot}
+        \vspace{1.5mm}
+        \insertframenumber{} / \inserttotalframenumber
+      \end{beamercolorbox} \hspace*{1.5mm}
+    }%
+  \fi
+  \vskip2pt%
+}
+
+\mode<all>

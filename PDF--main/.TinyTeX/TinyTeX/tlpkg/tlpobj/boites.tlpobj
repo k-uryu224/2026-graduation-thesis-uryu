@@ -1,0 +1,20 @@
+name boites
+category Package
+revision 79461
+shortdesc Boxes that may break across pages
+longdesc Defines environments that allow page breaks inside framed boxes
+longdesc whose edges may be variously fancy. The bundle includes a few
+longdesc examples (shaded box, box with a wavy line on its side, etc).
+containersize 4268
+containerchecksum 4d3dae8b600aab3ed54ef874af20717877215c9d08f59272238d714db902c7fdde0a2d2b61693708da1f765ac346e64543b2a0ba342cd598caaa804d4ca6402d
+doccontainersize 273008
+doccontainerchecksum b8c7a4d1ce6a7d6e9e6aa4f999c615daa8277a5a95452f419f502029afd24bc3296f39ee3e7f4d8549d6a95dfe69a83c7b701be36f3e44141436e1fd848119ec
+srccontainersize 6424
+srccontainerchecksum 735f21feb243f827334892a2bd97d50a3d7d6957846b953caa707b5bcbe5591ab09d737c89534a66d6639ff2c16665c809d8b33ef4faff8db9be5186f9c25f04
+runfiles size=4
+ texmf-dist/tex/latex/boites/boites.sty
+ texmf-dist/tex/latex/boites/boites_exemples.sty
+catalogue-ctan /macros/latex/contrib/boites
+catalogue-license gpl
+catalogue-topics box-breaking boxing decoration tagged-pdf-incompatible
+catalogue-version 1.1

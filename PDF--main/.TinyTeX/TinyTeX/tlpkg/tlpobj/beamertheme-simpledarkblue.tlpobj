@@ -1,0 +1,25 @@
+name beamertheme-simpledarkblue
+category Package
+revision 73454
+shortdesc Template for a simple presentation
+longdesc This package provides a simple and clear LaTeX template for
+longdesc creating professional presentations. Featuring dark blue as its
+longdesc primary color, the theme prioritizes clarity and readability,
+longdesc making it an excellent choice for researchers, educators, and
+longdesc students.
+containersize 2000
+containerchecksum aa82276be946f01f870859820c0e90c9b0ec56549437a6b6f50793b1ed12aa1a9db2ba536765f260aacd40042f065b412f4dd34e8cdfa34832a1b78c6bb853a0
+doccontainersize 119204
+doccontainerchecksum 1ac2ab0c81a24f9db1c254d7d35eb46ecec1a948452f6ab7e26237a742ce0c485d1ec808255f74417c8230a6dae0b6d68128886d0d31d4f10e442a4a08609d34
+runfiles size=4
+ texmf-dist/tex/latex/beamertheme-simpledarkblue/beamercolorthemeSimpleDarkBlue.sty
+ texmf-dist/tex/latex/beamertheme-simpledarkblue/beamerfontthemeSimpleDarkBlue.sty
+ texmf-dist/tex/latex/beamertheme-simpledarkblue/beamerinnerthemeSimpleDarkBlue.sty
+ texmf-dist/tex/latex/beamertheme-simpledarkblue/beamerthemeSimpleDarkBlue.sty
+catalogue-contact-bugs https://github.com/pm25/SimpleDarkBlue-BeamerTheme/issues
+catalogue-contact-development https://pm25.github.io
+catalogue-contact-repository https://github.com/pm25/SimpleDarkBlue-BeamerTheme
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-simpledarkblue
+catalogue-license pd
+catalogue-topics presentation
+catalogue-version 1.1

@@ -1,0 +1,23 @@
+name beamerthemelalic
+category Package
+revision 58777
+shortdesc A beamer theme for LALIC
+longdesc This package provides the beamer theme for LALIC (Laboratorio
+longdesc de Linguistica e Inteligencia Computacional of the Federal
+longdesc University of Sao Carlos, Brazil).
+containersize 2924
+containerchecksum 70d789b4490e5ceb9d578be03f815eea97706fc89e41756908d41f1953c2b4cee4ce7c142406a0abef0497b89b74dfb2dc6d2a841898996f32025f53626a8548
+doccontainersize 224372
+doccontainerchecksum b79c55da51785c42c68a2bd5f7a386b21fbb36948df8b5e87e60b9eab263e43592b7265902b6f3a2d3bd214dce122fcf0d504ff807a7bee0ebccf7241fa8e1fd
+runfiles size=5
+ texmf-dist/tex/latex/beamerthemelalic/beamercolorthemelalic.sty
+ texmf-dist/tex/latex/beamerthemelalic/beamerfontthemelalic.sty
+ texmf-dist/tex/latex/beamerthemelalic/beamerinnerthemelalic.sty
+ texmf-dist/tex/latex/beamerthemelalic/beamerouterthemelalic.sty
+ texmf-dist/tex/latex/beamerthemelalic/beamerthemelalic.sty
+catalogue-contact-bugs https://github.com/jandermoreira/temabeamerlalic/issues
+catalogue-contact-repository https://github.com/jandermoreira/temabeamerlalic
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamerthemelalic
+catalogue-license gpl3+
+catalogue-topics presentation
+catalogue-version 1.0

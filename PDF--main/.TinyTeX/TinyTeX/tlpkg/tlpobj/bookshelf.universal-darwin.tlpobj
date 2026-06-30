@@ -1,0 +1,9 @@
+name bookshelf.universal-darwin
+category Package
+revision 72501
+shortdesc universal-darwin files of bookshelf
+containersize 372
+containerchecksum 1b1c88d140a72fc7ebf8696070f7661ef93c56ba75b9de2e2dabfbc902f89c539cacc8e71efec94b36adc64607c79e03264cbb5bae5f58ce4a82a24f6199a703
+binfiles arch=universal-darwin size=2
+ bin/universal-darwin/bookshelf-listallfonts
+ bin/universal-darwin/bookshelf-mkfontsel

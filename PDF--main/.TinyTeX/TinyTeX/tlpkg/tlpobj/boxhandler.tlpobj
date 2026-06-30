@@ -1,0 +1,31 @@
+name boxhandler
+category Package
+revision 76790
+shortdesc Flexible Captioning and Deferred Box/List Printing
+longdesc The package allows the user to optimise presentation of LaTeX
+longdesc tables and figures. Boxhandler will lay out table and figure
+longdesc captions with a variety of stylistic appearances, and will also
+longdesc allow figures and tables to be "wrapped" in a manner consistent
+longdesc with many business and government documents. For a document
+longdesc that might appear in different venues with different
+longdesc formatting, boxhandler permits the creation of a LaTeX source
+longdesc document that can, with a single-line change in the source
+longdesc code, produce an output that has very different layout from the
+longdesc baseline configuration, not only in terms of caption style, but
+longdesc more importantly in terms of the locations where figures,
+longdesc tables and lists appear (or not) in the document. Deferral
+longdesc routines also allow one to keep all figure and table data in a
+longdesc separate source file, while nonetheless producing a document
+longdesc with figures and tables appearing in the desired location.
+containersize 5456
+containerchecksum 6edb0d3469340819c6a87791382b170bc5efd7b6108e96214a3a975379386b47b0ab8cd79c19c8d70eb00521e290c797f6dd5f5cfa31a6f819cb62089bddf45e
+doccontainersize 325432
+doccontainerchecksum 39b554b7fe3b0f6be95fa3b3fdf805a58f57c44e442b0944df20a03b8ee193fa5827c40099dd01ca315377bdb288d5e7a032990c43f18ff9529e187066da64c5
+srccontainersize 22644
+srccontainerchecksum d2f5b5fe43807d27db047aae8b44a0b467b679a5346a6e87a587f23e5cbc1d0387a7aff95b4a9549d9a899c8c797edebf6bdc84d0af3106bd62bfaa34745735d
+runfiles size=6
+ texmf-dist/tex/latex/boxhandler/boxhandler.sty
+catalogue-ctan /macros/latex/contrib/boxhandler
+catalogue-license lppl
+catalogue-topics float caption defer-stuff
+catalogue-version 1.30

@@ -1,0 +1,23 @@
+name beamertheme-westlake
+category Package
+revision 78290
+shortdesc A beamer theme inspired by West Lake and Westlake University
+longdesc This beamer theme is inspired by West Lake, a famous freshwater
+longdesc lake in Hangzhou, China, and Westlake University. Interfaces
+longdesc are provided for customizing theme color, logo, badge, etc.
+containersize 2656
+containerchecksum c563c52e72dec6239c2d5b773d50dde76f7943297fbf250a9d9f88476927d869286e9526bd9e3c04e0c688c6a2fc60c11d50e8f818bb50d63ed35586898d17a5
+doccontainersize 4517784
+doccontainerchecksum bcbc76cd6955ce6d144ffce4a7a7f5db73c10688886d2244cbf35c45da76cda384fb3d7554e78cec484f1994d59a95ca24293d9172ee342eee6c2c5cde7dc840
+srccontainersize 4276
+srccontainerchecksum e56dfdae447c58cce711b94ffcc61312602702402a55780bc3e4620d44a1567bccf100123853db4e118ce41b6d74760b6403712ff49926126b39db5f3f2f506b
+runfiles size=3
+ texmf-dist/tex/latex/beamertheme-westlake/beamerthemewestlake.sty
+catalogue-contact-development https://github.com/myhsia
+catalogue-contact-home https://github.com/myhsia
+catalogue-contact-repository https://github.com/myhsia/beamertheme-westlake
+catalogue-contact-support https://github.com/myhsia/beamertheme-westlake/issues
+catalogue-ctan /macros/latex/contrib/beamer-contrib/themes/beamertheme-westlake
+catalogue-license lppl1.3c
+catalogue-topics presentation
+catalogue-version 0.2A

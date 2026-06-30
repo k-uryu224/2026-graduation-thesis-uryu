@@ -1,0 +1,113 @@
+%%%%% Theme ``beamerthemelight'': a colored beamer theme %%%%%
+%%%%% Authors: Fabien Vergnet and Vivien Goepp %%%%%
+%%%%% Contact: f.j.vergnet@gmail.com and vivien.goepp@gmail.com %%%%%
+%%%%% Special thanks to: निरंजन <hi.niranjan@pm.me> %%%%%
+%%%%% Repository: https://github.com/goepp/beamertheme-light/ %%%%%
+%%%%% Package version 1.2 (18/12/2024) %%%%%
+%%%%% License: GNU General Public License, version 3
+\mode<presentation>
+
+%%%%% Define colors %%%%%
+% Defaut:
+\definecolor{vertfonce}{rgb}{0.20,0.43,0.09} 
+% Blue:
+\definecolor{frenchblue}{rgb}{0.0, 0.45, 0.73}
+\definecolor{sanddune}{rgb}{0.59, 0.44, 0.09}
+% Purple:
+\definecolor{darkmagenta}{rgb}{0.55, 0.0, 0.55}
+\definecolor{byzantium}{rgb}{0.44, 0.16, 0.39}
+\definecolor{sanddune}{rgb}{0.59, 0.44, 0.09}
+% Beige:
+\definecolor{darkpastelred}{rgb}{0.76, 0.23, 0.13}
+\definecolor{desertsand}{rgb}{0.93, 0.79, 0.69}
+
+%%%%% Define body and title colors %%%%%
+%% Foreground colors
+\newcommand{\light@wordcolor}{vertfonce} % Text color
+%% Optional colors
+\DeclareOption{blue}{\renewcommand{\light@wordcolor}{frenchblue}}
+\DeclareOption{red}{\renewcommand{\light@wordcolor}{darkpastelred}}
+\DeclareOption{purple}{\renewcommand{\light@wordcolor}{darkmagenta}}
+\DeclareOption*{\PackageWarning{descartes}{Unknown ‘\CurrentOption’}}
+\ProcessOptions\relax
+
+%% Background colors
+\newcommand{\light@strbg}{white!90!black} % Structure background color
+\DeclareOption{blue}{\renewcommand{\light@strbg}{sanddune!15!white}}
+\DeclareOption{red}{\renewcommand{\light@strbg}{desertsand!30!white}}
+\DeclareOption{purple}{\renewcommand{\light@strbg}{byzantium!25!white}}
+\DeclareOption*{\PackageWarning{descartes}{Unknown ‘\CurrentOption’}}
+\ProcessOptions\relax
+
+%% Set colors
+\setbeamercolor{title in head/foot}{fg=\light@wordcolor,bg=white!90!black}
+\setbeamercolor{structure}{fg=\light@wordcolor,bg=\light@strbg}
+\setbeamercolor{title}{fg=\light@wordcolor,bg=white}
+
+%%%%% Define title frame %%%%%
+\defbeamertemplate*{title page}{customized}[1][]%
+{%
+  \vspace{1cm}%
+  \usebeamerfont{title}\usebeamercolor[fg]{title}\center{\huge \inserttitle}\par
+   \center{\rule{0.6666\paperwidth}{0.02cm}\par}%
+  \bigskip
+  \usebeamerfont{author}\usebeamercolor[black]{author}{\large \insertauthor}\\%
+  \bigskip
+  \usebeamerfont{institute}{\small \insertinstitute}\par
+  \bigskip
+  \vspace{1cm}%
+  \usebeamerfont{date}{\small \insertdate}\par
+}
+%%%%% End define title frame %%%%%
+
+%%%%% Define footline %%%%%
+\setbeamertemplate{footline}%
+{%
+  \leavevmode
+  \hbox{%
+  \begin{beamercolorbox}[wd =.45\paperwidth, ht = 2.25ex, dp = 1ex, center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\colorbox{structure.bg}{\makebox[0.45\paperwidth]{\insertshortauthor}}%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd =.45\paperwidth, ht = 2.25ex, dp = 1ex, center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\colorbox{structure.bg}{\makebox[0.45\paperwidth]{\insertshorttitle}}%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.10\paperwidth, ht = 2.25ex, dp = 1ex, right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\colorbox{structure.bg}{\makebox[0.10\paperwidth]{%
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}}}%
+  \end{beamercolorbox}}%
+  \vskip0pt\relax
+}
+%%%%% End define footline %%%%%
+
+%%%%% Define command for the "Thank you" frame
+\newcommand{\thankframe}[1]{%
+\setbeamercolor{background canvas}{fg = title.fg,bg = title.fg!50!black}%
+\setbeamertemplate{footline}{}%
+\begin{frame}%
+	\center{\Huge \textcolor{white}{#1}}%
+\end{frame}%
+\setbeamercolor{structure}{fg = \light@wordcolor, bg = \light@strbg}%
+\setbeamercolor{background canvas}{fg = black,bg = white}%
+}
+%%%%% End define command for the "Thank you" frame
+
+%% Rounded block (for definition, prop, theorems, etc...)
+\setbeamertemplate{blocks}[rounded][shadow = true]
+
+%% No navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+%% Redefine itemize
+\setbeamercolor{item}{fg = title.fg, bg = title.fg}
+\setbeamertemplate{itemize item}{{\tiny{\textbullet}}}
+
+%% Redefine the way the legend of a figure is written
+\setbeamertemplate{caption}{\raggedright\scriptsize{\insertcaption}\par}
+
+%% To have "[number]" before any reference in bibliography
+\setbeamertemplate{bibliography item}[text]
+
+%% Remove 1 from the counter (title frame is 0)
+\addtocounter{framenumber}{-1}
+
+\mode<all>

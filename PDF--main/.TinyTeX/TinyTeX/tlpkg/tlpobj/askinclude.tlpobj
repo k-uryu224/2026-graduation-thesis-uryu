@@ -1,0 +1,21 @@
+name askinclude
+category Package
+revision 79461
+shortdesc Interactive use of \includeonly
+longdesc The package asks the user which files to put in a \includeonly
+longdesc command. There is provision for answering "same as last time"
+longdesc or "all files".
+containersize 4388
+containerchecksum 69ebbed2519c54f5408ff39474c6f473879b752b3bdf8aebf057dabb86359a55d5bd2c9731633520ac26dda2d8dbd0ebc8bbafb82581b135f69a97482faa2604
+doccontainersize 591300
+doccontainerchecksum 7145e8de6018f3d61914ca1d67cc66165f084f559404efc373dc7015641aea7bf4e81d179d4bed09b4fb81f690e27a9f86f8bd9a742ec2b64cac430e6295bda7
+srccontainersize 12220
+srccontainerchecksum 0da4d10e66e9d05c96fae4155b32bf858dde114f1dcec4621636c6e13e8af2f747a3afba77696a8233e1987084a707f4a4fd5a9421ff5bef6fb1ddf8b3ebcdcc
+runfiles size=5
+ texmf-dist/tex/latex/askinclude/askinclude.sty
+catalogue-contact-bugs https://github.com/LaTeX-Package-Repositories/askinclude/issues
+catalogue-contact-repository https://github.com/LaTeX-Package-Repositories/askinclude
+catalogue-ctan /macros/latex/contrib/askinclude
+catalogue-license lppl1.3
+catalogue-topics compilation tagged-pdf
+catalogue-version 2.7

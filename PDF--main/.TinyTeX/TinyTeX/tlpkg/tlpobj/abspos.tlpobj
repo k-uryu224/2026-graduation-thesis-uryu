@@ -1,0 +1,26 @@
+name abspos
+category Package
+revision 76924
+shortdesc Absolute placement with coffins
+longdesc This package lets you place contents at an absolute position,
+longdesc anchored at some specified part of the contents, similar to how
+longdesc TikZ nodes work, though without using the two-pass strategy of
+longdesc TikZ. It also avoids messing with the order of beamer overlays,
+longdesc which is what happens when one uses the textpos package with
+longdesc the overlay option. The solution used is quite straightforward,
+longdesc combining coffins (using l3coffins) with the placement
+longdesc mechanisms of atbegshi.
+containersize 2452
+containerchecksum 46185984b766c859533dbe0097fed1af6a28de97e98003381630aa4341afee07e0b4a7abab6f576e6d1056fcb4328524ee016800019b2c4fb8d51e76cc83c6a4
+doccontainersize 443580
+doccontainerchecksum 281e2e8a21afadb3fc2c1d7ab261ee43b8acd67ac20cca18cc6dc2542f1476a7625f7d03d47ce88ed5a6a371629c99762ff40226ae597a1d75a0b8208fbacfaf
+srccontainersize 7184
+srccontainerchecksum 75b25ea6f7e7f2f2b5c66aa264d68a7dcdda812a9e493dfdea842cc9e1c94ea0a9394c3077dad6a8354c1458799919e3028f279e25c518483464beae7a8362ce
+runfiles size=2
+ texmf-dist/tex/latex/abspos/abspos.sty
+catalogue-contact-bugs https://github.com/mlhetland/abspos.sty/issues
+catalogue-contact-repository https://github.com/mlhetland/abspos.sty
+catalogue-ctan /macros/latex/contrib/abspos
+catalogue-license mit
+catalogue-topics layout
+catalogue-version 0.1

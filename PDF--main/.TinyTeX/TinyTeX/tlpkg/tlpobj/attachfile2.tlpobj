@@ -1,0 +1,29 @@
+name attachfile2
+category Package
+revision 79461
+shortdesc Attach files into PDF
+longdesc This package can be used to attach files to a PDF document. It
+longdesc is a further development of Scott Pakin's package attachfile
+longdesc for pdfTeX. Apart from bug fixes, this package adds support for
+longdesc dvips, some new options, and gets and writes meta information
+longdesc data about the attached files.
+depend attachfile2.ARCH
+containersize 11112
+containerchecksum d061384fa295bcb12ce9a4fd86b39e0a4c751c83f8650f23a268de2c54a231b2cebdd4509fb68c979bd802d9a6cce9b5afb2007b06c8eedcecb59ebd6c33b4a3
+doccontainersize 466340
+doccontainerchecksum a082a878973e4d8fb548b9fa15c354d91bec2c21f2b3ded98cb6d907d0f0cfe94358fac1c05ebb988b43fdd4476934cec258fb2690715992c89f17751f746d22
+srccontainersize 19220
+srccontainerchecksum 8eda1324beb8e0531838a38ac3c69732562d65ffbb83069f9b46d22196faa607ce10edd33faeac156e3046448019cc2a86296d97218b1b3ad564bc59eaa5fb52
+runfiles size=18
+ texmf-dist/scripts/attachfile2/pdfatfi.pl
+ texmf-dist/tex/latex/attachfile2/atfi-dvipdfmx.def
+ texmf-dist/tex/latex/attachfile2/atfi-dvips.def
+ texmf-dist/tex/latex/attachfile2/atfi-luatex.def
+ texmf-dist/tex/latex/attachfile2/atfi-pdftex.def
+ texmf-dist/tex/latex/attachfile2/attachfile2.sty
+catalogue-contact-bugs https://github.com/LaTeX-Package-Repositories/attachfile2/issues
+catalogue-contact-repository https://github.com/LaTeX-Package-Repositories/attachfile2
+catalogue-ctan /macros/latex/contrib/attachfile2
+catalogue-license lppl1.3c
+catalogue-topics pdf-feat tagged-pdf-incompatible
+catalogue-version 2.12

@@ -1,0 +1,18 @@
+name bibletext
+category Package
+revision 45196
+shortdesc Insert Bible passages by their reference
+longdesc The package allows to insert Bible texts in a document by
+longdesc specifying references.
+containersize 1156
+containerchecksum 3c5170b747c6426099c021390f7ac226ebf9dbe42ff586c698b3489d47639fcd4198a4cf49261bba9335caebf8f39488d65fe851d60d9f3c2cc2127539ef080a
+doccontainersize 142004
+doccontainerchecksum ea38659b5b2bc252760937ecf21d4ac3e8986ac8be6afdc1f2205d84696b8da55e02037bcddb24de389d54a692240ae946ab3e41a0a7913015da4d7b5e12da7f
+runfiles size=1
+ texmf-dist/tex/latex/bibletext/bibletext.sty
+catalogue-contact-bugs https://github.com/camilstaps/bibletext/issues
+catalogue-contact-repository https://github.com/camilstaps/bibletext
+catalogue-ctan /macros/latex/contrib/bibletext
+catalogue-license mit
+catalogue-topics theology
+catalogue-version 0.1.2
